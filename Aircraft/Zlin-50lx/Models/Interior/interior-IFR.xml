@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>interior.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>interieur</object-name>
+    <object-name>tour</object-name>
+
+    <!-- Objets transparents -->
+    <object-name>intverriere</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>intverriere</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>intverriere</object-name>
+  </animation>
+
+  <!-- Pilote -->
+  <model>
+    <path>Aircraft/Zlin-50lx/Models/Pilot/pilot-IFR.xml</path>
+    <offsets>
+      <x-m> -0.776 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.060 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Planche de bord -->
+  <model>
+    <path>Aircraft/Zlin-50lx/Models/Interior/Panel/panel-IFR.xml</path>
+    <offsets>
+      <x-m> -1.168 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.140 </z-m>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>intverriere</object-name>
+    <property>instrumentation/doors/crew/position-norm</property>
+    <factor> -95 </factor>
+    <axis>
+      <x1-m> -1.059 </x1-m>
+      <y1-m>  0.338 </y1-m>
+      <z1-m>  0.123 </z1-m>
+      <x2-m> -0.217 </x2-m>
+      <y2-m>  0.370 </y2-m>
+      <z2-m>  0.270 </z2-m>
+    </axis>
+  </animation>
+
+</PropertyList>
+

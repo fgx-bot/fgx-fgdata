@@ -1,0 +1,330 @@
+<?xml version="1.0"?>
+  <!--  Submodels are objects which can be dropped or launched from the user aircraft.
+      The trigger is a boolean property, which you define, which when "true" causes
+      the submodel to be released/launched. 
+      A submodel will create an AIBallistic object which will follow a ballistic path.
+      By default one submodel will be released when the corresponding trigger is "true".
+      The initial conditions (IC) define the object's starting point (relative to the
+      user aircraft's "reported position"), and its initial speed and direction
+      (relative to the user aircraft).  If you want to release many similar objects
+      with similar IC, then you may use the <repeat>, <delay> and <count> properties
+      to define this.  The allowed properties are:
+
+      <name>         The name of the submodel.
+      <model>        The path to the visual model.
+      <trigger>      The property which will act as the trigger. 
+      <speed>        Initial speed, in feet/sec, relative to user aircraft.
+      <repeat>       Set "true" if you want multiple releases of this submodel.
+      <delay>        Time, in seconds, between repeated releases.
+      <count>        Number of submodels available for multiple release.
+      <x-offset>     Submodel's initial fore/aft position relative to user aircraft.  
+                     Fore is positive.
+      <y-offset>     Submodel's initial left/right position relative to user aircraft.  
+                     Right is positive.
+      <z-offset>     Submodel's initial up/down position relative to user aircraft.  
+                     Up is positive.
+      <yaw-offset>   Submodel's initial azimuth, in degrees, relative to user aircraft's
+                     nose.  Right is positive.
+      <pitch-offset> Submodel's initial elevation, in degrees, relative to user aircraft's
+                     pitch.  Up is positive.
+	<buoyancy>     Submodel's upward acceleration (fps) due to buoyancy in air. 32 is neutral
+	               (contrails),  > 32 exhaust gas, smoke. 
+      <wind>	   If true, Submodel is affected by local wind. Defaults to false.
+	<cd>           The Coeffient of Drag. Varies with submodel shape - 0.295 for a bullet, 
+	               0.045 for an airfoil. Enter an appropriate value. Defaults to 0.295.
+	<eda>          Effective drag area (sq ft). Usually the cross-sectional area of the 
+                     submodel normal to the airflow.
+      <weight>       The weight of the submodel (lbs). Defaults to 0.25	 
+-->
+  <PropertyList> 
+    <submodel> 
+      <name>Browning L inner</name>
+      <model>Models/Geometry/tracer.ac</model>
+      <trigger>ai/submodels/trigger</trigger>
+      <speed>2444.2</speed>
+      <repeat>true</repeat>
+      <delay>0.0526</delay>
+      <count>300</count>
+      <x-offset>-7.41</x-offset>
+      <y-offset>-5.97</y-offset>
+      <z-offset>-1.80</z-offset>
+      <yaw-offset>1.5</yaw-offset>
+      <pitch-offset>1.8</pitch-offset>
+      <cd>0.193</cd>
+      <weight>0.0249122356</weight>
+      <eda>0.000500740417</eda>
+      <life>5</life>
+    </submodel>
+    <submodel> 
+      <name>Browning L inner smoke</name>
+      <model>Aircraft/Hurricane/Models/smoke.xml</model>
+      <trigger>ai/submodels/trigger</trigger>
+      <speed>10</speed>
+      <repeat>true</repeat>
+      <delay>0.052631579</delay>
+      <count>300</count>
+      <x-offset>-7.41</x-offset>
+      <y-offset>-5.97</y-offset>
+      <z-offset>-1.80</z-offset>
+      <yaw-offset>1.5</yaw-offset>
+      <pitch-offset>1.8</pitch-offset>
+      <eda>10</eda>
+      <wind>true</wind>
+      <buoyancy>33</buoyancy>
+      <life>5</life>
+    </submodel>
+    <submodel> 
+      <name>Browning R inner</name>
+      <model>Models/Geometry/tracer.ac</model>
+      <trigger>ai/submodels/trigger</trigger>
+      <speed>2444.2</speed>
+      <repeat>true</repeat>
+      <delay>0.0526</delay>
+      <count>300</count>
+      <x-offset>-7.41</x-offset>
+      <y-offset>5.97</y-offset>
+      <z-offset>-1.80</z-offset>
+      <yaw-offset>-1.5</yaw-offset>
+      <pitch-offset>1.8</pitch-offset>
+      <wind>false</wind>
+      <cd>0.193</cd>
+      <weight>0.0249122356</weight>
+      <eda>0.000500740417</eda>
+      <life>5</life>
+    </submodel>
+    <submodel> 
+      <name>Browning R inner smoke</name>
+      <model>Aircraft/Hurricane/Models/smoke.xml</model>
+      <trigger>ai/submodels/trigger</trigger>
+      <speed>10</speed>
+      <repeat>true</repeat>
+      <delay>0.052631579</delay>
+      <count>300</count>
+      <x-offset>-7.41</x-offset>
+      <y-offset>5.80</y-offset>
+      <z-offset>-1.77</z-offset>
+      <yaw-offset>-1.5</yaw-offset>
+      <pitch-offset>1.8</pitch-offset>
+      <wind>true</wind>
+      <eda>10</eda>
+      <wind>true</wind>
+      <buoyancy>33</buoyancy>
+      <life>5</life>
+    </submodel>
+    <submodel> 
+      <name>browning L inner centre smoke</name>
+      <model>Aircraft/Hurricane/Models/smoke.xml</model>
+      <trigger>ai/submodels/trigger</trigger>
+      <speed>10</speed>
+      <repeat>true</repeat>
+      <delay>0.052631579</delay>
+      <count>300</count>
+      <x-offset>-7.48</x-offset>
+      <y-offset>-6.49 </y-offset>
+      <z-offset>-1.77</z-offset>
+      <yaw-offset>1.5</yaw-offset>
+      <pitch-offset>1.75</pitch-offset>
+      <eda>10</eda>
+      <wind>true</wind>
+      <buoyancy>33</buoyancy>
+      <life>5</life>
+    </submodel>
+    <submodel> 
+      <name>browning R inner centre smoke</name>
+      <model>Aircraft/Hurricane/Models/smoke.xml</model>
+      <trigger>ai/submodels/trigger</trigger>
+      <speed>10</speed>
+      <repeat>true</repeat>
+      <delay>0.052631579</delay>
+      <count>300</count>
+      <x-offset>-7.48</x-offset>
+      <y-offset>6.49 </y-offset>
+      <z-offset>-1.77</z-offset>
+      <yaw-offset>-1.5</yaw-offset>
+      <pitch-offset>1.75</pitch-offset>
+      <eda>10</eda>
+      <wind>true</wind>
+      <buoyancy>33</buoyancy>
+      <life>5</life>
+    </submodel>
+    <submodel> 
+      <name>browning L outer centre smoke</name>
+      <model>Aircraft/Hurricane/Models/smoke.xml</model>
+      <trigger>ai/submodels/trigger</trigger>
+      <speed>10</speed>
+      <repeat>true</repeat>
+      <delay>0.052631579</delay>
+      <count>300</count>
+      <x-offset>-7.54 </x-offset>
+      <y-offset>-6.98 </y-offset>
+      <z-offset>-1.73 </z-offset>
+      <yaw-offset>1.75</yaw-offset>
+      <pitch-offset>1.75</pitch-offset>
+      <eda>10</eda>
+      <wind>true</wind>
+      <buoyancy>33</buoyancy>
+      <life>5</life>
+    </submodel>
+    <submodel> 
+      <name>browning R outer centre smoke</name>
+      <model>Aircraft/Hurricane/Models/smoke.xml</model>
+      <trigger>ai/submodels/trigger</trigger>
+      <speed>10</speed>
+      <repeat>true</repeat>
+      <delay>0.052631579</delay>
+      <count>300</count>
+      <x-offset>-7.54 </x-offset>
+      <y-offset> 6.98 </y-offset>
+      <z-offset>-1.73 </z-offset>
+      <yaw-offset>-1.75</yaw-offset>
+      <pitch-offset>1.8</pitch-offset>
+      <eda>10</eda>
+      <wind>true</wind>
+      <buoyancy>33</buoyancy>
+      <life>5</life>
+    </submodel>
+    <submodel> 
+      <name>browning L outer smoke</name>
+      <model>Aircraft/Hurricane/Models/smoke.xml</model>
+      <trigger>ai/submodels/trigger</trigger>
+      <speed>10</speed>
+      <repeat>true</repeat>
+      <delay>0.08</delay>
+      <count>120</count>
+      <x-offset>-7.57 </x-offset>
+      <y-offset>-7.51 </y-offset>
+      <z-offset>-1.71 </z-offset>
+      <yaw-offset>-1</yaw-offset>
+      <pitch-offset>0</pitch-offset>
+      <eda>10</eda>
+      <wind>true</wind>
+      <buoyancy>33</buoyancy>
+      <life>5</life>
+    </submodel>
+    <submodel> 
+      <name>browning R center inner smoke</name>
+      <model>Aircraft/Hurricane/Models/smoke.xml</model>
+      <trigger>ai/submodels/trigger</trigger>
+      <speed>10</speed>
+      <repeat>true</repeat>
+      <delay>0.08</delay>
+      <count>120</count>
+      <x-offset>-7.57 </x-offset>
+      <y-offset> 7.51 </y-offset>
+      <z-offset>-1.71 </z-offset>
+      <yaw-offset>1</yaw-offset>
+      <pitch-offset>0</pitch-offset>
+      <eda>10</eda>
+      <wind>true</wind>
+      <buoyancy>33</buoyancy>
+      <life>5</life>
+    </submodel>
+    <submodel> 
+      <name>browning L outer L smoke</name>
+      <model>Aircraft/Hurricane/Models/smoke.xml</model>
+      <trigger>ai/submodels/trigger</trigger>
+      <speed>10</speed>
+      <repeat>true</repeat>
+      <delay>0.08</delay>
+      <count>120</count>
+      <x-offset>-7.579 </x-offset>
+      <y-offset>-11.32 </y-offset>
+      <z-offset>-1.27 </z-offset>
+      <yaw-offset>1</yaw-offset>
+      <pitch-offset>0</pitch-offset>
+      <eda>10</eda>
+      <wind>true</wind>
+      <buoyancy>33</buoyancy>
+      <life>5</life>
+    </submodel>
+    <submodel> 
+      <name>browning R outer L smoke</name>
+      <model>Aircraft/Hurricane/Models/smoke.xml</model>
+      <trigger>ai/submodels/trigger</trigger>
+      <speed>10</speed>
+      <repeat>true</repeat>
+      <delay>0.08</delay>
+      <count>120</count>
+      <x-offset>-7.579 </x-offset>
+      <y-offset>11.32 </y-offset>
+      <z-offset>-1.27 </z-offset>
+      <yaw-offset>1</yaw-offset>
+      <pitch-offset>0</pitch-offset>
+      <eda>10</eda>
+      <wind>true</wind>
+      <buoyancy>33</buoyancy>
+      <life>5</life>
+    </submodel>
+    <submodel> 
+      <name>browning L outer R smoke</name>
+      <model>Aircraft/Hurricane/Models/smoke.xml</model>
+      <trigger>ai/submodels/trigger</trigger>
+      <speed>10</speed>
+      <repeat>true</repeat>
+      <delay>0.08</delay>
+      <count>120</count>
+      <x-offset>-7.67 </x-offset>
+      <y-offset>-12.13 </y-offset>
+      <z-offset>-1.41 </z-offset>
+      <yaw-offset>1</yaw-offset>
+      <pitch-offset>0</pitch-offset>
+      <eda>10</eda>
+      <wind>true</wind>
+      <buoyancy>33</buoyancy>
+      <life>5</life>
+    </submodel>
+    <submodel> 
+      <name>browning R outer R smoke</name>
+      <model>Aircraft/Hurricane/Models/smoke.xml</model>
+      <trigger>ai/submodels/trigger</trigger>
+      <speed>10</speed>
+      <repeat>true</repeat>
+      <delay>0.08</delay>
+      <count>120</count>
+      <x-offset>-7.67 </x-offset>
+      <y-offset>12.13 </y-offset>
+      <z-offset>-1.41 </z-offset>
+      <yaw-offset>1</yaw-offset>
+      <pitch-offset>0</pitch-offset>
+      <eda>10</eda>
+      <wind>true</wind>
+      <buoyancy>33</buoyancy>
+      <life>5</life>
+    </submodel>
+    <submodel> 
+      <name>exhaust smoke r</name>
+      <model>Aircraft/Hurricane/Models/exhaust.xml</model>
+      <trigger>engines/engine/cranking</trigger>
+      <speed>50</speed>
+      <repeat>false</repeat>
+      <delay>0.001</delay>
+      <count>-1</count>
+      <x-offset>-4</x-offset>
+      <y-offset>2.8</y-offset>
+      <z-offset>0.5</z-offset>
+      <yaw-offset>-160</yaw-offset>
+      <pitch-offset>0.0</pitch-offset>
+      <eda>10</eda>
+      <life>1</life>
+      <buoyancy>34</buoyancy>
+      <wind>true</wind>
+    </submodel>
+    <submodel> 
+      <name>exhaust smoke l</name>
+      <model>Aircraft/Hurricane/Models/exhaust.xml</model>
+      <trigger>engines/engine/cranking</trigger>
+      <speed>50</speed>
+      <repeat>false</repeat>
+      <delay>0.001</delay>
+      <count>-1</count>
+      <x-offset>-4</x-offset>
+      <y-offset>-2.8</y-offset>
+      <z-offset>0.5</z-offset>
+      <yaw-offset>160</yaw-offset>
+      <pitch-offset>0.0</pitch-offset>
+      <eda>10</eda>
+      <life>1</life>
+      <buoyancy>34</buoyancy>
+      <wind>true</wind>
+    </submodel>
+  </PropertyList>

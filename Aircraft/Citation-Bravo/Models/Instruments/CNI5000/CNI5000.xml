@@ -1,0 +1,1737 @@
+<?xml version="1.0"?>
+<!--
+Author : Syd Adams
+CNI-5000 radio stack
+-->
+<PropertyList>
+
+    <path>CNI5000.ac</path>
+
+    <panel>
+        <path>Aircraft/Citation-Bravo/Models/Instruments/CNI5000/CNI5000-panel.xml</path>
+        <bottom-left>
+            <x-m>0.003</x-m>
+            <y-m>-0.082</y-m>
+            <z-m>-0.124</z-m>
+        </bottom-left>
+        <bottom-right>
+            <x-m>0.003</x-m>
+            <y-m>0.082</y-m>
+            <z-m>-0.124</z-m>
+        </bottom-right>
+        <top-left>
+            <x-m>0.003</x-m>
+            <y-m>-0.082</y-m>
+            <z-m>0.124</z-m>
+        </top-left>
+    </panel>
+
+<!--  KR-87-->
+
+<!-- KT-70 unit 1-->
+
+    <animation>
+        <type>select</type>
+        <object-name>CNI.alt1</object-name>
+        <condition>
+            <property>instrumentation/kt-70/annunciators/alt</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>CNI.fl1</object-name>
+        <condition>
+            <property>instrumentation/kt-70/annunciators/fl</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>CNI.gnd1</object-name>
+        <condition>
+            <property>instrumentation/kt-70/annunciators/gnd</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>CNI.on1</object-name>
+        <condition>
+            <property>instrumentation/kt-70/annunciators/on</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>CNI.R1</object-name>
+        <condition>
+            <property>instrumentation/kt-70/annunciators/reply</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>CNI.sby1</object-name>
+        <condition>
+            <property>instrumentation/kt-70/annunciators/sby</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Xpdr1.knob</object-name>
+        <property>instrumentation/kt-70/inputs/func-knob</property>
+        <interpolation>
+            <entry><ind>0</ind><dep>0.0</dep></entry>
+            <entry><ind>1</ind><dep>30.0</dep></entry>
+            <entry><ind>2</ind><dep>60.0</dep></entry>
+            <entry><ind>3</ind><dep>90.0</dep></entry>
+            <entry><ind>4</ind><dep>130.0</dep></entry>
+            <entry><ind>5</ind><dep>160.0</dep></entry>
+        </interpolation>
+        <axis>
+            <x>-1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>0.064</y-m>
+            <z-m>-0.070</z-m>
+        </center>
+    </animation>
+
+<!-- KT-70 unit 2-->
+
+    <animation>
+        <type>select</type>
+        <object-name>CNI.alt2</object-name>
+        <condition>
+            <property>instrumentation/kt-70[1]/annunciators/alt</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>CNI.fl2</object-name>
+        <condition>
+            <property>instrumentation/kt-70[1]/annunciators/fl</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>CNI.gnd2</object-name>
+        <condition>
+            <property>instrumentation/kt-70[1]/annunciators/gnd</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>CNI.on2</object-name>
+        <condition>
+            <property>instrumentation/kt-70[1]/annunciators/on</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>CNI.R2</object-name>
+        <condition>
+            <property>instrumentation/kt-70[1]/annunciators/reply</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>CNI.sby2</object-name>
+        <condition>
+            <property>instrumentation/kt-70[1]/annunciators/sby</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Xpdr2.knob</object-name>
+        <property>instrumentation/kt-70[1]/inputs/func-knob</property>
+        <interpolation>
+            <entry><ind>0</ind><dep>0.0</dep></entry>
+            <entry><ind>1</ind><dep>30.0</dep></entry>
+            <entry><ind>2</ind><dep>60.0</dep></entry>
+            <entry><ind>3</ind><dep>90.0</dep></entry>
+            <entry><ind>4</ind><dep>130.0</dep></entry>
+            <entry><ind>5</ind><dep>160.0</dep></entry>
+        </interpolation>
+        <axis>
+            <x>-1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>0.064</y-m>
+            <z-m>-0.105</z-m>
+        </center>
+    </animation>
+
+<!--  hotspots-->
+
+<!--  Comm1-->
+
+<animation>
+    <type>pick</type>
+    <object-name>Comm1.flipflop</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-swap</command>
+            <property>instrumentation/comm/frequencies/selected-mhz</property>
+            <property>instrumentation/comm/frequencies/standby-mhz</property>
+        </binding>
+    </action>
+</animation>
+
+<!-- mouse clicks -->
+<animation>
+    <type>pick</type>
+    <object-name>Comm1.knob</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>true</repeatable>
+        <interval-sec>0.2</interval-sec>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/comm/frequencies/standby-mhz</property>
+            <step>1.000</step>
+            <min>118.000</min>
+            <max>136.975</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Comm1.knob</object-name>
+    <action>
+        <button>1</button>
+        <repeatable>true</repeatable>
+        <interval-sec>0.2</interval-sec>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/comm/frequencies/standby-mhz</property>
+            <step>-1.000</step>
+            <min>118.000</min>
+            <max>136.975</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Comm1.knob2</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>true</repeatable>
+        <interval-sec>0.2</interval-sec>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/comm/frequencies/standby-mhz</property>
+            <step>0.025</step>
+            <min>118.000</min>
+            <max>136.975</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Comm1.knob2</object-name>
+    <action>
+        <button>1</button>
+        <repeatable>true</repeatable>
+        <interval-sec>0.2</interval-sec>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/comm/frequencies/standby-mhz</property>
+            <step>-0.025</step>
+            <min>118.000</min>
+            <max>136.975</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<!-- mouse wheel -->
+<animation>
+    <type>pick</type>
+    <object-name>Comm1.knob</object-name>
+    <action>
+        <button>3</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/comm/frequencies/standby-mhz</property>
+            <step>1.000</step>
+            <min>118.000</min>
+            <max>136.975</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Comm1.knob</object-name>
+    <action>
+        <button>4</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/comm/frequencies/standby-mhz</property>
+            <step>-1.000</step>
+            <min>118.000</min>
+            <max>136.975</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Comm1.knob2</object-name>
+    <action>
+        <button>3</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/comm/frequencies/standby-mhz</property>
+            <step>0.025</step>
+            <min>118.000</min>
+            <max>136.975</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Comm1.knob2</object-name>
+    <action>
+        <button>4</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/comm/frequencies/standby-mhz</property>
+            <step>-0.025</step>
+            <min>118.000</min>
+            <max>136.975</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<!--  Comm2-->
+
+<animation>
+    <type>pick</type>
+    <object-name>Comm2.flipflop</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-swap</command>
+            <property>instrumentation/comm[1]/frequencies/selected-mhz</property>
+            <property>instrumentation/comm[1]/frequencies/standby-mhz</property>
+        </binding>
+    </action>
+</animation>
+
+<!-- mouse clicks -->
+<animation>
+    <type>pick</type>
+    <object-name>Comm2.knob</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>true</repeatable>
+        <interval-sec>0.2</interval-sec>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/comm[1]/frequencies/standby-mhz</property>
+            <step>1.000</step>
+            <min>118.000</min>
+            <max>136.975</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Comm2.knob</object-name>
+    <action>
+        <button>1</button>
+        <repeatable>true</repeatable>
+        <interval-sec>0.2</interval-sec>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/comm[1]/frequencies/standby-mhz</property>
+            <step>-1.000</step>
+            <min>118.000</min>
+            <max>136.975</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Comm2.knob2</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>true</repeatable>
+        <interval-sec>0.2</interval-sec>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/comm[1]/frequencies/standby-mhz</property>
+            <step>0.025</step>
+            <min>118.000</min>
+            <max>136.975</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Comm2.knob2</object-name>
+    <action>
+        <button>1</button>
+        <repeatable>true</repeatable>
+        <interval-sec>0.2</interval-sec>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/comm[1]/frequencies/standby-mhz</property>
+            <step>-0.025</step>
+            <min>118.000</min>
+            <max>136.975</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<!-- mouse wheel -->
+<animation>
+    <type>pick</type>
+    <object-name>Comm2.knob</object-name>
+    <action>
+        <button>3</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/comm[1]/frequencies/standby-mhz</property>
+            <step>1.000</step>
+            <min>118.000</min>
+            <max>136.975</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Comm2.knob</object-name>
+    <action>
+        <button>4</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/comm[1]/frequencies/standby-mhz</property>
+            <step>-1.000</step>
+            <min>118.000</min>
+            <max>136.975</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Comm2.knob2</object-name>
+    <action>
+        <button>3</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/comm[1]/frequencies/standby-mhz</property>
+            <step>0.025</step>
+            <min>118.000</min>
+            <max>136.975</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Comm2.knob2</object-name>
+    <action>
+        <button>4</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/comm[1]/frequencies/standby-mhz</property>
+            <step>-0.025</step>
+            <min>118.000</min>
+            <max>136.975</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<!--  Nav1-->
+
+<animation>
+    <type>pick</type>
+    <object-name>Nav1.flipflop</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-swap</command>
+            <property>instrumentation/nav/frequencies/selected-mhz</property>
+            <property>instrumentation/nav/frequencies/standby-mhz</property>
+        </binding>
+    </action>
+</animation>
+
+<!-- mouse clicks -->
+<animation>
+    <type>pick</type>
+    <object-name>Nav1.knob</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>true</repeatable>
+        <interval-sec>0.2</interval-sec>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/nav/frequencies/standby-mhz</property>
+            <step>1.000</step>
+            <min>108.00</min>
+            <max>117.95</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Nav1.knob</object-name>
+    <action>
+        <button>1</button>
+        <repeatable>true</repeatable>
+        <interval-sec>0.2</interval-sec>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/nav/frequencies/standby-mhz</property>
+            <step>-1.000</step>
+            <min>108.00</min>
+            <max>117.95</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Nav1.knob2</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>true</repeatable>
+        <interval-sec>0.2</interval-sec>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/nav/frequencies/standby-mhz</property>
+            <step>0.05</step>
+            <min>108.00</min>
+            <max>117.95</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Nav1.knob2</object-name>
+    <action>
+        <button>1</button>
+        <repeatable>true</repeatable>
+        <interval-sec>0.2</interval-sec>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/nav/frequencies/standby-mhz</property>
+            <step>-0.05</step>
+            <min>108.00</min>
+            <max>117.95</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<!-- mouse wheel -->
+<animation>
+    <type>pick</type>
+    <object-name>Nav1.knob</object-name>
+    <action>
+        <button>3</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/nav/frequencies/standby-mhz</property>
+            <step>1.000</step>
+            <min>108.00</min>
+            <max>117.95</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Nav1.knob</object-name>
+    <action>
+        <button>4</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/nav/frequencies/standby-mhz</property>
+            <step>-1.000</step>
+            <min>108.00</min>
+            <max>117.95</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Nav1.knob2</object-name>
+    <action>
+        <button>3</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/nav/frequencies/standby-mhz</property>
+            <step>0.05</step>
+            <min>108.00</min>
+            <max>117.95</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Nav1.knob2</object-name>
+    <action>
+        <button>4</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/nav/frequencies/standby-mhz</property>
+            <step>-0.05</step>
+            <min>108.00</min>
+            <max>117.95</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<!--  Nav2-->
+
+<animation>
+    <type>pick</type>
+    <object-name>Nav2.flipflop</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-swap</command>
+            <property>instrumentation/nav[1]/frequencies/selected-mhz</property>
+            <property>instrumentation/nav[1]/frequencies/standby-mhz</property>
+        </binding>
+    </action>
+</animation>
+
+<!-- mouse clicks -->
+<animation>
+    <type>pick</type>
+    <object-name>Nav2.knob</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>true</repeatable>
+        <interval-sec>0.2</interval-sec>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/nav[1]/frequencies/standby-mhz</property>
+            <step>1.000</step>
+            <min>108.00</min>
+            <max>117.95</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Nav2.knob</object-name>
+    <action>
+        <button>1</button>
+        <repeatable>true</repeatable>
+        <interval-sec>0.2</interval-sec>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/nav[1]/frequencies/standby-mhz</property>
+            <step>-1.000</step>
+            <min>108.00</min>
+            <max>117.95</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Nav2.knob2</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>true</repeatable>
+        <interval-sec>0.2</interval-sec>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/nav[1]/frequencies/standby-mhz</property>
+            <step>0.05</step>
+            <min>108.00</min>
+            <max>117.95</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Nav2.knob2</object-name>
+    <action>
+        <button>1</button>
+        <repeatable>true</repeatable>
+        <interval-sec>0.2</interval-sec>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/nav[1]/frequencies/standby-mhz</property>
+            <step>-0.05</step>
+            <min>108.00</min>
+            <max>117.95</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<!-- mouse wheel -->
+<animation>
+    <type>pick</type>
+    <object-name>Nav2.knob</object-name>
+    <action>
+        <button>3</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/nav[1]/frequencies/standby-mhz</property>
+            <step>1.000</step>
+            <min>108.00</min>
+            <max>117.95</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Nav2.knob</object-name>
+    <action>
+        <button>4</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/nav[1]/frequencies/standby-mhz</property>
+            <step>-1.000</step>
+            <min>108.00</min>
+            <max>117.95</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Nav2.knob2</object-name>
+    <action>
+        <button>3</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/nav[1]/frequencies/standby-mhz</property>
+            <step>0.05</step>
+            <min>108.00</min>
+            <max>117.95</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Nav2.knob2</object-name>
+    <action>
+        <button>4</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/nav[1]/frequencies/standby-mhz</property>
+            <step>-0.05</step>
+            <min>108.00</min>
+            <max>117.95</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+
+<!--  ADF-->
+
+<animation>
+    <type>pick</type>
+    <object-name>ADF.adf</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-assign</command>
+            <property>instrumentation/adf/mode</property>
+            <value>adf</value>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>ADF.bfo</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-assign</command>
+            <property>instrumentation/adf/mode</property>
+            <value>bfo</value>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>ADF.flipflop</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-swap</command>
+            <property>instrumentation/adf/frequencies/selected-khz</property>
+            <property>instrumentation/adf/frequencies/standby-khz</property>
+        </binding>
+    </action>
+</animation>
+
+<!-- mouse clicks -->
+<animation>
+    <type>pick</type>
+    <object-name>ADF.knob</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>true</repeatable>
+        <interval-sec>0.2</interval-sec>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/adf/frequencies/standby-khz</property>
+            <step>100.0</step>
+            <min>200.00</min>
+            <max>1799.0</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>ADF.knob</object-name>
+    <action>
+        <button>1</button>
+        <repeatable>true</repeatable>
+        <interval-sec>0.2</interval-sec>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/adf/frequencies/standby-khz</property>
+            <step>-100.0</step>
+            <min>200.00</min>
+            <max>1799.0</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>ADF.knob2</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>true</repeatable>
+        <interval-sec>0.2</interval-sec>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/adf/frequencies/standby-khz</property>
+            <step>1.0</step>
+            <min>200.00</min>
+            <max>1799.0</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>ADF.knob2</object-name>
+    <action>
+        <button>1</button>
+        <repeatable>true</repeatable>
+        <interval-sec>0.2</interval-sec>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/adf/frequencies/standby-khz</property>
+            <step>-1.0</step>
+            <min>200.00</min>
+            <max>1799.0</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<!-- mouse wheel -->
+<animation>
+    <type>pick</type>
+    <object-name>ADF.knob</object-name>
+    <action>
+        <button>3</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/adf/frequencies/standby-khz</property>
+            <step>100.0</step>
+            <min>200.00</min>
+            <max>1799.0</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>ADF.knob</object-name>
+    <action>
+        <button>4</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/adf/frequencies/standby-khz</property>
+            <step>-100.0</step>
+            <min>200.00</min>
+            <max>1799.0</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>ADF.knob2</object-name>
+    <action>
+        <button>3</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/adf/frequencies/standby-khz</property>
+            <step>1.0</step>
+            <min>200.00</min>
+            <max>1799.0</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>ADF.knob2</object-name>
+    <action>
+        <button>4</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/adf/frequencies/standby-khz</property>
+            <step>-1.0</step>
+            <min>200.00</min>
+            <max>1799.0</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+</animation>
+
+
+<!--  KT70 unit1-->
+
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr1.idt</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>instrumentation/kt-70/inputs/ident-btn</property>
+        <value>true</value>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+          <property>instrumentation/kt-70/inputs/ident-btn</property>
+          <value>false</value>
+        </binding>
+      </mod-up>
+    </action>
+</animation>
+
+<!-- func knob-->
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr1.knob</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70/inputs/func-knob</property>
+                <step>1</step>
+                <min>0</min>
+                <max>5</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr1.knob</object-name>
+    <action>
+        <button>1</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70/inputs/func-knob</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>5</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr1.knob</object-name>
+    <action>
+        <button>3</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70/inputs/func-knob</property>
+                <step>1</step>
+                <min>0</min>
+                <max>5</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr1.knob</object-name>
+    <action>
+        <button>4</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70/inputs/func-knob</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>5</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<!-- digit 1 knob-->
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr1.frq1</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70/inputs/digit1</property>
+                <step>1</step>
+                <min>0</min>
+                <max>9</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr1.frq1</object-name>
+    <action>
+        <button>1</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70/inputs/digit1</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>9</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr1.frq1</object-name>
+    <action>
+        <button>3</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70/inputs/digit1</property>
+                <step>1</step>
+                <min>0</min>
+                <max>9</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr1.frq1</object-name>
+    <action>
+        <button>4</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70/inputs/digit1</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>9</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<!-- digit 2 knob-->
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr1.frq2</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70/inputs/digit2</property>
+                <step>1</step>
+                <min>0</min>
+                <max>9</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr1.frq2</object-name>
+    <action>
+        <button>1</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70/inputs/digit2</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>9</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr1.frq2</object-name>
+    <action>
+        <button>3</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70/inputs/digit2</property>
+                <step>1</step>
+                <min>0</min>
+                <max>9</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr1.frq2</object-name>
+    <action>
+        <button>4</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70/inputs/digit2</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>9</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<!-- digit 3 knob-->
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr1.frq3</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70/inputs/digit3</property>
+                <step>1</step>
+                <min>0</min>
+                <max>9</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr1.frq3</object-name>
+    <action>
+        <button>1</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70/inputs/digit3</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>9</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr1.frq3</object-name>
+    <action>
+        <button>3</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70/inputs/digit3</property>
+                <step>1</step>
+                <min>0</min>
+                <max>9</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr1.frq3</object-name>
+    <action>
+        <button>4</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70/inputs/digit3</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>9</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<!-- digit 4 knob-->
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr1.frq4</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70/inputs/digit4</property>
+                <step>1</step>
+                <min>0</min>
+                <max>9</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr1.frq4</object-name>
+    <action>
+        <button>1</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70/inputs/digit4</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>9</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr1.frq4</object-name>
+    <action>
+        <button>3</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70/inputs/digit4</property>
+                <step>1</step>
+                <min>0</min>
+                <max>9</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr1.frq4</object-name>
+    <action>
+        <button>4</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70/inputs/digit4</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>9</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<!--  KT70 unit2-->
+
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr2.idt</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>instrumentation/kt-70[1]/inputs/ident-btn</property>
+        <value>true</value>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+          <property>instrumentation/kt-70[1]/inputs/ident-btn</property>
+          <value>false</value>
+        </binding>
+      </mod-up>
+    </action>
+</animation>
+
+<!-- func knob-->
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr2.knob</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70[1]/inputs/func-knob</property>
+                <step>1</step>
+                <min>0</min>
+                <max>5</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr2.knob</object-name>
+    <action>
+        <button>1</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70[1]/inputs/func-knob</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>5</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr2.knob</object-name>
+    <action>
+        <button>3</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70[1]/inputs/func-knob</property>
+                <step>1</step>
+                <min>0</min>
+                <max>5</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr2.knob</object-name>
+    <action>
+        <button>4</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70[1]/inputs/func-knob</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>5</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<!-- digit 1 knob-->
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr2.frq1</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70[1]/inputs/digit1</property>
+                <step>1</step>
+                <min>0</min>
+                <max>9</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr2.frq1</object-name>
+    <action>
+        <button>1</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70[1]/inputs/digit1</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>9</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr2.frq1</object-name>
+    <action>
+        <button>3</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70[1]/inputs/digit1</property>
+                <step>1</step>
+                <min>0</min>
+                <max>9</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr2.frq1</object-name>
+    <action>
+        <button>4</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70[1]/inputs/digit1</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>9</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<!-- digit 2 knob-->
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr2.frq2</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70[1]/inputs/digit2</property>
+                <step>1</step>
+                <min>0</min>
+                <max>9</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr2.frq2</object-name>
+    <action>
+        <button>1</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70[1]/inputs/digit2</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>9</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr2.frq2</object-name>
+    <action>
+        <button>3</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70[1]/inputs/digit2</property>
+                <step>1</step>
+                <min>0</min>
+                <max>9</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr2.frq2</object-name>
+    <action>
+        <button>4</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70[1]/inputs/digit2</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>9</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<!-- digit 3 knob-->
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr2.frq3</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70[1]/inputs/digit3</property>
+                <step>1</step>
+                <min>0</min>
+                <max>9</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr2.frq3</object-name>
+    <action>
+        <button>1</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70[1]/inputs/digit3</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>9</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr2.frq3</object-name>
+    <action>
+        <button>3</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70[1]/inputs/digit3</property>
+                <step>1</step>
+                <min>0</min>
+                <max>9</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr2.frq3</object-name>
+    <action>
+        <button>4</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70[1]/inputs/digit3</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>9</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<!-- digit 4 knob-->
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr2.frq4</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70[1]/inputs/digit4</property>
+                <step>1</step>
+                <min>0</min>
+                <max>9</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr2.frq4</object-name>
+    <action>
+        <button>1</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70[1]/inputs/digit4</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>9</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr2.frq4</object-name>
+    <action>
+        <button>3</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70[1]/inputs/digit4</property>
+                <step>1</step>
+                <min>0</min>
+                <max>9</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Xpdr2.frq4</object-name>
+    <action>
+        <button>4</button>
+        <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kt-70[1]/inputs/digit4</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>9</max>
+                <wrap>false</wrap>
+            </binding>
+    </action>
+</animation>
+
+</PropertyList>

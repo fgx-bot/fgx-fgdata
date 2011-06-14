@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<trafficlist>
+    <aircraft>
+        <model>Aircraft/737-300/Models/737-300.xml</model>
+        <livery>UAL</livery> 
+        <airline>UAL</airline>
+        <actype>737-300</actype>
+        <offset>10</offset>
+        <radius>23</radius>
+        <flighttype>gate</flighttype>
+        <performance-class>jet_transport</performance-class>
+        <registration>N390UA</registration>
+        <heavy>false</heavy>
+
+        <flight>
+            <callsign>United0788</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KSFO</port>
+               <time>16:37:00</time>
+            </departure>
+            <cruise-alt>300</cruise-alt>
+            <arrival>
+                <port>KSEA</port>
+                <time>18:35:00</time>
+            </arrival>
+        <repeat>24Hr</repeat>
+       </flight> 
+
+       <flight>
+            <callsign>United1053</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KSEA</port>
+               <time>19:20:00</time>
+            </departure>
+            <cruise-alt>310</cruise-alt>
+            <arrival>
+                <port>KSFO</port>
+                <time>21:20:00</time>
+            </arrival>
+        <repeat>24Hr</repeat>
+       </flight>
+
+       <flight>
+            <callsign>United1053</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KSFO</port>
+               <time>22:10:00</time>
+            </departure>
+            <cruise-alt>310</cruise-alt>
+            <arrival>
+                <port>KSAN</port>
+                <time>23:40:00</time>
+            </arrival>
+        <repeat>24Hr</repeat>
+       </flight>
+
+       <flight>
+            <callsign>United0992</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KSAN</port>
+               <time>00:25:00</time>
+            </departure>
+            <cruise-alt>310</cruise-alt>
+            <arrival>
+                <port>KSFO</port>
+                <time>01:25:00</time>
+            </arrival>
+        <repeat>24Hr</repeat>
+       </flight>
+
+     
+    </aircraft>
+</trafficlist>

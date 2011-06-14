@@ -1,0 +1,51 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+
+    <path>cabin.ac</path>
+
+    <animation>
+        <name>Cabin</name>
+        <object-name>cabin</object-name>
+        <object-name>seat1</object-name>
+        <object-name>seat2</object-name>
+        <object-name>seat1.001</object-name>
+        <object-name>seat2.001</object-name>
+        <object-name>seat1.002</object-name>
+        <object-name>seat2.002</object-name>
+        <object-name>Cabin.door.001</object-name>
+    </animation>
+
+<!--                        Lights                               -->
+
+    <animation>
+        <type>material</type>
+        <object-name>Cabin</object-name>
+        <emission>
+            <red>0.020-</red>
+            <green>0.015</green>
+            <blue>0.010</blue>
+            <factor-prop>systems/electrical/outputs/cabin-lights</factor-prop>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Cabin.door.001</object-name>
+        <property>sim/multiplay/generic/float</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>1.0</ind><dep>-130.0</dep></entry>
+        </interpolation>
+        <center>
+            <x-m>4.129</x-m>
+            <y-m>-0.805</y-m>
+            <z-m>0.535</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>0.0</y>
+            <z>1.0</z>
+        </axis>
+    </animation>
+
+</PropertyList>

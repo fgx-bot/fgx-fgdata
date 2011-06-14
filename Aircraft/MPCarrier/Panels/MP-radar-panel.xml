@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+<!--
+Multiplayer Carrier Radar Control Panel.
+Jun 2009
+Vivian Meazza
+-->
+
+<PropertyList>
+
+	<instruments>
+
+		<instrument include="display-controls.xml">
+			<name>display</name>
+			<x>825</x>
+			<y>384</y>
+			<w>512</w>
+			<h>384</h>
+		</instrument>
+
+		<instrument include="target-controls.xml">
+			<name>target</name>
+			<x>20</x>
+			<y>384</y>
+			<w>1024</w>
+			<h>768</h>
+		</instrument>
+
+		<instrument include="status-display.xml">
+			<name>target</name>
+			<x>20</x>
+			<y>640</y>
+			<w>512</w>
+			<h>384</h>
+		</instrument>
+
+		<instrument include="environment-display.xml">
+			<name>environment</name>
+			<x>825</x>
+			<y>640</y>
+			<w>512</w>
+			<h>384</h>
+		</instrument>
+
+		<instrument include="radar-screen.xml">
+			<name>screen</name>
+			<x>512</x>
+			<y>384</y>
+			<w>1024</w>
+			<h>768</h>
+		</instrument>
+
+		<instrument>
+			<name>action</name>
+			<x>512</x>
+			<y>384</y>
+			<w>1024</w>
+			<h>768</h>
+			<w-base>1024</w-base>
+			<h-base>768</h-base>
+
+<actions>
+	
+<!--		<layers>
+					<layer>
+						<name>background</name>
+						<condition>
+							<property>instrumentation/radar/display-controls/background</property>
+						</condition>
+						<w>1024</w>
+						<h>768</h>
+						<texture>
+							<path>Aircraft/ATC/Ver2/tint.png</path>
+							<x1>0</x1>
+							<y1>0</y1>
+							<x2>1</x2>
+							<y2>1</y2>
+						</texture>
+					</layer>
+				</layers>-->
+
+				<action>
+					<name>set symbol</name>
+					<button>0</button>
+					<x>0</x>
+					<y>0</y>
+					<w>40</w>
+					<h>15</h>
+					<repeatable>false</repeatable>
+					<binding>
+						<command>property-toggle</command>
+						<property>instrumentation/radar/display-controls/symbol</property>
+					</binding>
+				</action>
+
+			</actions>
+
+
+		</instrument>
+
+
+	</instruments>
+
+	<name>Panel Background</name>
+	<!--<background>Aircraft/ATC/Ver2/transparent-bg.png</background>-->
+	<background>Aircraft/ATC/Ver2/tint.png</background>
+	<!--<background>Aircraft/Spitfire/Models/hotspotgrid.rgb</background>-->
+	<w>1024</w>
+	<h>768</h>
+	<y-offset>0</y-offset>
+	<view-width>1024</view-width>
+	<view-height>768</view-height>
+	<autohide>false</autohide>
+
+
+
+</PropertyList>
+

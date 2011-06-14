@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<PropertyList include="A320-fb-main.xml">
+  <description>A320</description>
+  <author>Frederic Bouvier</author>
+  <path>Models/a320-fb.ac</path>
+</PropertyList>
+
+

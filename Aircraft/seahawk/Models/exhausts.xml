@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+
+<!-- heat haze cone test animation -->
+
+<PropertyList>
+
+ <path>exhausts.ac</path>
+
+ <!-- ********************** Exhaust ******************* 
+
+ <animation>
+  <type>shader</type>
+  <shader>heat-haze</shader>
+  <object-name>noshadow.Exhaust</object-name>
+  <factor>0.12</factor> -->
+  <!-- factor-property>test/factor</factor-property
+  <speed-property>engines/engine/n1</speed-property>
+ </animation> -->
+ 
+  <!--<animation>
+  <type>shader</type>
+  <shader>heat-haze</shader>
+  <object-name>noshadow.Exhaust3</object-name>
+  <factor>0.12</factor>
+  factor-property>test/factor</factor-property 
+  <speed-property>engines/engine/n1</speed-property>
+ </animation>-->
+<!-- 
+ <animation>
+  <type>blend</type>
+  <object-name>noshadow.Exhaust3</object-name>
+  <property>/engines/engine/n1</property>
+  <factor>.01</factor>
+  <offset>0.45</offset>
+  <max>0.9</max>
+ </animation>
+ 
+ <animation>
+  <type>blend</type>
+  <object-name>noshadow.Exhaust</object-name>
+  <property>/engines/engine/n1</property>
+  <factor>-0.01</factor>
+  <offset>1</offset>
+  <max>0.99</max>
+  <min>0.4</min>
+ </animation>
+ 
+ 
+ <animation>
+  <type>translate</type>
+  <object-name>noshadow.Exhaust</object-name>
+  <property>/engines/engine/n1</property>
+  <factor>0.05</factor>
+  <offset-m>0</offset-m>
+  <max-m>5</max-m>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ 
+ <animation>
+  <type>scale</type>
+  <object-name>noshadow.Exhaust</object-name>
+  <property>/engines/engine/n1</property>
+  <x-factor>0.1</x-factor>
+  <x-offset>0.5</x-offset>
+  <x-max>2</x-max>
+  <x-min>0.5</x-min>
+  <y-factor>0</y-factor>
+  <y-offset>1</y-offset>
+  <z-factor>0</z-factor>
+  <z-offset>1</z-offset>
+ </animation>-->
+<!--
+
+ 
+ <animation>
+  <type>translate</type>
+  <object-name>noshadow.Exhaust3</object-name>
+  <property>/engines/engine/n1</property>
+  <factor>0.05</factor>
+  <offset-m>0</offset-m>
+  <max-m>5</max-m>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>scale</type>
+  <object-name>noshadow.Exhaust3</object-name>
+  <property>/engines/engine/n1</property>
+  <x-factor>0.01</x-factor>
+  <x-offset>0.5</x-offset>
+  <x-max>2</x-max>
+  <x-min>0.5</x-min>
+  <y-factor>-0.01</y-factor>
+  <y-offset>1.45</y-offset>
+  <y-max>1</y-max>
+  <y-min>-1</y-min>
+  <z-factor>-0.01</z-factor>
+  <z-offset>1.45</z-offset>
+  <z-max>1</z-max>
+  <z-min>-1</z-min>
+ </animation>
+
+  <animation>
+  <type>select</type>
+  <object-name>noshadow.Exhaust3</object-name>
+  <condition>
+   <less-than>
+    <property>/velocities/airspeed-kt</property>
+    <value>50</value>
+   </less-than>
+  </condition>
+ </animation>-->
+
+
+<!-- *** LoD *** 
+ <animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>5000</max-m>
+ </animation>-->
+</PropertyList>

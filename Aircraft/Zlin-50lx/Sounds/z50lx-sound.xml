@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<PropertyList>
+
+  <fx>
+ 
+    <crank>
+      <name>engstart</name>
+      <path>Sounds/engstart.wav</path>
+      <property>/engines/engine/cranking</property>
+      <volume>
+        <offset>0.4</offset>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </crank>
+
+    <crank>
+      <name>crank</name>
+      <mode>looped</mode>
+      <path>Sounds/cranking.wav</path>
+      <condition>
+        <property>/engines/engine/cranking</property>
+        <not>
+          <property>/engines/engine/running</property>
+        </not>
+      </condition>
+      <volume>
+        <offset>0.5</offset>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </crank>
+
+    <crank>
+      <name>cough</name>
+      <path>Sounds/coughing.wav</path>
+      <property>/engines/engine/running</property>
+      <volume>
+        <offset>0.3</offset>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </crank>
+
+    <engine>
+      <name>engine</name>
+      <mode>looped</mode>
+      <path>Aircraft/Zlin-50lx/Sounds/Zlin50-engine-out.wav</path>
+      <property>/engines/engine/running</property>
+      <volume>
+        <property>/engines/engine/mp-osi</property>
+        <factor>0.00375</factor>
+        <min>0.25</min>
+        <max>0.75</max>
+      </volume>
+      <volume>
+        <property>/orientation/alpha-deg</property>
+        <type>log</type>
+        <min>1.0</min>
+        <max>1.5</max>
+      </volume>
+      <volume>
+        <property>/sim/current-view/internal</property>
+        <offset>1.0</offset>
+        <factor>-0.5</factor>
+      </volume>
+      <pitch>
+        <property>/engines/engine/rpm</property>
+        <factor>0.0004</factor>
+        <min>0.5</min>
+        <max>2.3</max>
+        <offset>0.25</offset>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine>
+
+    <propeller>
+      <name>propeller</name>
+      <mode>looped</mode>
+      <path>Aircraft/Zlin-50lx/Sounds/ZLin-prop1.wav</path>
+      <property>/engines/engine/running</property>
+      <volume>
+        <property>/orientation/alpha-deg</property>
+        <type>log</type>
+        <min>0.2</min>
+        <max>1.0</max>
+      </volume>
+      <volume>
+        <property>/sim/current-view/internal</property>
+        <factor>0.5</factor>
+      </volume>
+      <pitch>
+        <property>/engines/engine/mp-osi</property>
+        <factor>0.0036</factor>
+        <min>0.5</min>
+        <max>2.0</max>
+        <offset>0.9</offset>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </propeller>
+
+    <rumble>
+      <name>rumble</name>
+      <mode>looped</mode>
+      <path>Sounds/rumble.wav</path>
+      <condition>
+        <or>
+          <property>/gear/gear[0]/wow</property>
+          <property>/gear/gear[1]/wow</property>
+          <property>/gear/gear[2]/wow</property>
+        </or>
+      </condition>
+      <volume>
+        <property>/velocities/airspeed-kt</property>
+        <type>log</type>
+        <factor>0.25</factor>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </rumble>
+
+    <squeal>
+      <name>squeal</name>
+      <path>Sounds/squeal.wav</path>
+      <condition>
+        <or>
+          <property>/gear/gear[0]/wow</property>
+          <property>/gear/gear[1]/wow</property>
+          <property>/gear/gear[2]/wow</property>
+        </or>
+      </condition>
+      <volume>
+        <property>/velocities/speed-down-fps</property>
+        <factor>0.5</factor>
+        <max>1.0</max>
+      </volume>
+      <volume>
+        <property>/velocities/airspeed-kt</property>
+        <factor>0.01</factor>
+        <max>1.0</max>
+      </volume>
+      <volume>
+        <internal>dt_stop</internal>
+        <factor>0.05</factor>
+        <max>1.0</max>
+      </volume>
+      <pitch>
+        <property>/velocities/airspeed-kt</property>
+        <factor>0.0025</factor>
+        <offset>1.2</offset>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </squeal>
+ 
+    <wind>
+      <name>wind</name>
+      <mode>looped</mode>
+      <path>Sounds/wind.wav</path>
+      <property>/velocities/airspeed-kt</property>
+      <volume>
+        <property>/position/altitude-ft</property>
+        <factor>-0.000015</factor>
+        <offset>1.0</offset>
+        <min>0.1</min>
+        <max>1.0</max>
+      </volume>
+      <volume>
+        <property>/velocities/airspeed-kt</property>
+        <factor>0.0015</factor>
+        <min>0.03</min>
+        <max>0.25</max>
+      </volume>
+      <pitch>
+        <property>/velocities/airspeed-kt</property>
+        <factor>0.0035</factor>
+        <offset>1.25</offset>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </wind>
+ 
+    <stall>
+      <name>stall</name>
+      <mode>looped</mode>
+      <path>Sounds/stall.wav</path>
+      <condition>
+        <and>
+          <property>/sim/alarms/stall-warning</property>
+          <greater-than>
+            <property>/velocities/airspeed-kt</property>
+            <value>10</value>
+          </greater-than>
+          <not>
+            <property>/gear/gear[0]/wow</property>
+            <property>/gear/gear[1]/wow</property>
+            <property>/gear/gear[2]/wow</property>
+          </not>
+        </and>
+      </condition>
+      <volume>
+        <property>/sim/alarms/stall-warning</property>
+        <max>1.0</max>
+      </volume>
+      <reference-dist>10.0</reference-dist>
+      <max-dist>20.0</max-dist>
+    </stall>
+
+    <click> 
+      <name>Magnetos-off</name>
+      <path>Sounds/click.wav</path>
+      <condition>
+       <not>
+        <property>controls/engines/engine/magnetos</property>
+       </not>
+      </condition>
+      <volume> 
+        <factor>1.0</factor>
+      </volume>
+    </click>
+	 
+    <click> 
+      <name>Magnetos-R</name>
+      <path>Sounds/click.wav</path>
+      <condition>
+        <equals>
+          <property>controls/engines/engine/magnetos</property>
+          <value>1</value>
+        </equals>
+      </condition>
+      <volume> 
+        <factor>1.0</factor>
+      </volume>
+    </click>
+  
+    <click> 
+      <name>Magnetos-L</name>
+      <path>Sounds/click.wav</path>
+      <condition>
+        <equals>
+          <property>controls/engines/engine/magnetos</property>
+          <value>2</value>
+        </equals>
+      </condition>
+      <volume> 
+        <factor>1.0</factor>
+      </volume>
+    </click>
+  
+    <click> 
+      <name>Magnetos-B</name>
+      <path>Sounds/click.wav</path>
+      <condition>
+        <equals>
+          <property>controls/engines/engine/magnetos</property>
+          <value>3</value>
+        </equals>
+      </condition>
+      <volume> 
+        <factor>1.0</factor>
+      </volume>
+    </click>
+
+    <click> 
+      <name>Strobe Lights On</name>
+      <path>Sounds/click.wav</path>
+      <condition> 
+        <property>controls/switches/strobe-lights</property>
+      </condition>
+      <volume> 
+        <factor>1.0</factor>
+      </volume>
+    </click>
+
+    <click> 
+      <name>Strobe Lights Off</name>
+      <path>Sounds/click.wav</path>
+      <condition>
+        <not> 
+          <property>controls/switches/strobe-lights</property>
+        </not>
+      </condition>
+      <volume> 
+        <factor>1.0</factor>
+      </volume>
+    </click>
+
+    <click> 
+      <name>Avionics Master On</name>
+      <path>Sounds/click.wav</path>
+      <condition>
+        <property>controls/switches/master-avionics</property>
+      </condition>
+      <volume> 
+        <factor>1.0</factor>
+     </volume>
+    </click>
+ 
+    <click> 
+      <name>Avionics Master Off</name>
+      <path>Sounds/click.wav</path>
+      <condition>
+        <not>
+          <property>controls/switches/master-avionics</property>
+        </not>
+      </condition>
+      <volume> 
+        <factor>1.0</factor>
+      </volume>
+    </click>
+
+    <click> 
+      <name>Nav Light On</name>
+      <path>Sounds/click.wav</path>
+      <condition>
+        <property>controls/switches/nav-lights</property>
+      </condition>
+      <volume> 
+        <factor>1.0</factor>
+      </volume>
+    </click>
+
+    <click> 
+      <name>Nav Light Off</name>
+      <path>Sounds/click.wav</path>
+      <condition>
+        <not>
+          <property>controls/switches/nav-lights</property>
+        </not>
+      </condition>
+      <volume> 
+        <factor>1.0</factor>
+      </volume>
+    </click>
+ 
+    <click>
+      <name>Landing Light On</name>
+      <path>Sounds/click.wav</path>
+      <condition>
+        <property>controls/switches/landing-light</property>
+      </condition>
+      <volume>
+        <factor>1.0</factor>
+      </volume>
+    </click>
+      
+    <click>
+      <name>Landing Light Off</name>
+      <path>Sounds/click.wav</path>
+      <condition>
+        <not>
+          <property>controls/switches/landing-light</property>
+        </not>
+      </condition>
+      <volume>
+        <factor>1.0</factor>
+      </volume>
+    </click>
+
+    <click>
+      <name>Smoke On</name>
+      <path>Sounds/click.wav</path>
+      <condition>
+        <property>controls/smoke</property>
+      </condition>
+      <volume>
+        <factor>1.0</factor>
+      </volume>
+    </click>
+
+    <click>
+      <name>Smoke Off</name>
+      <path>Sounds/click.wav</path>
+      <condition>
+        <not>
+          <property>controls/smoke</property>
+        </not>
+      </condition>
+      <volume>
+        <factor>1.0</factor>
+      </volume>
+    </click>
+
+    <rain>
+      <name>rain</name>
+      <mode>looped</mode>
+      <path>Aircraft/Zlin-50lx/Sounds/rain_canopy.wav</path>
+      <condition>
+        <greater-than>
+          <property>/environment/metar/rain-norm</property>
+          <value>0.2</value>
+        </greater-than>
+      </condition>
+      <volume>
+        <property>/environment/metar/rain-norm</property>
+        <factor>1.00</factor>
+        <offset>0.00</offset>
+        <min>0.4</min>
+        <max>0.9</max>
+      </volume>
+      <pitch>
+        <property>/velocities/airspeed-kt</property>
+        <factor>0.001</factor>
+        <offset>1.0</offset>
+      </pitch>
+    </rain>
+
+  </fx>
+ 
+</PropertyList>

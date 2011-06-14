@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+<trafficlist>
+    <aircraft>
+       <model>AI/Aircraft/737/737-Delta.xml</model>
+        <livery>DAL</livery> 
+        <airline>DAL</airline>
+        <actype>737-300</actype>
+        <offset>10</offset>
+        <radius>23</radius>
+        <flighttype>gate</flighttype>
+        <performance-class>jet_transport</performance-class>
+        <registration>N36557LX</registration>
+        <heavy>false</heavy>
+
+        <flight>
+            <callsign>DAL3197LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KLAX</port>
+               <time>06:07:00</time>
+            </departure>
+            <cruise-alt>296</cruise-alt>
+            <arrival>
+                <port>KSEA</port>
+                <time>08:42:00</time>
+            </arrival>
+        <repeat>8Hr</repeat>
+       </flight> 
+
+       <flight>
+            <callsign>DAL3157LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KSEA</port>
+               <time>10:07:00</time>
+            </departure>
+            <cruise-alt>335</cruise-alt>
+            <arrival>
+                <port>KLAX</port>
+                <time>12:42:00</time>
+            </arrival>
+        <repeat>8Hr</repeat>
+       </flight>  
+
+    </aircraft>   
+
+    <aircraft>
+       <model>AI/Aircraft/737/737-Delta.xml</model>
+        <livery>DAL</livery> 
+        <airline>DAL</airline>
+        <actype>737-300</actype>
+        <offset>10</offset>
+        <radius>23</radius>
+        <flighttype>gate</flighttype>
+        <performance-class>jet_transport</performance-class>
+        <registration>N36556LX</registration>
+        <heavy>false</heavy>
+
+        <flight>
+            <callsign>DAL3196LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KLAX</port>
+               <time>08:07:00</time>
+            </departure>
+            <cruise-alt>296</cruise-alt>
+            <arrival>
+                <port>KSEA</port>
+                <time>10:42:00</time>
+            </arrival>
+        <repeat>8Hr</repeat>
+       </flight> 
+
+       <flight>
+            <callsign>DAL3156LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KSEA</port>
+               <time>12:07:00</time>
+            </departure>
+            <cruise-alt>335</cruise-alt>
+            <arrival>
+                <port>KLAX</port>
+                <time>14:42:00</time>
+            </arrival>
+        <repeat>8Hr</repeat>
+       </flight>  
+
+    </aircraft>   
+
+    
+    <aircraft>
+       <model>AI/Aircraft/737/737-Delta.xml</model>
+        <livery>DAL</livery> 
+        <airline>DAL</airline>
+        <actype>737-300</actype>
+        <offset>10</offset>
+        <radius>23</radius>
+        <flighttype>gate</flighttype>
+        <performance-class>jet_transport</performance-class>
+        <registration>N36555LX</registration>
+        <heavy>false</heavy>
+
+        <flight>
+            <callsign>DAL3195LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KLAX</port>
+               <time>10:07:00</time>
+            </departure>
+            <cruise-alt>296</cruise-alt>
+            <arrival>
+                <port>KSEA</port>
+                <time>12:42:00</time>
+            </arrival>
+        <repeat>8Hr</repeat>
+       </flight> 
+
+       <flight>
+            <callsign>DAL3155LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KSEA</port>
+               <time>14:07:00</time>
+            </departure>
+            <cruise-alt>335</cruise-alt>
+            <arrival>
+                <port>KLAX</port>
+                <time>16:42:00</time>
+            </arrival>
+        <repeat>8Hr</repeat>
+       </flight>  
+
+    </aircraft>   
+
+    
+    <aircraft>
+       <model>AI/Aircraft/737/737-Delta.xml</model>
+        <livery>DAL</livery> 
+        <airline>DAL</airline>
+        <actype>737-300</actype>
+        <offset>10</offset>
+        <radius>23</radius>
+        <flighttype>gate</flighttype>
+        <performance-class>jet_transport</performance-class>
+        <registration>N36554LX</registration>
+        <heavy>false</heavy>
+
+        <flight>
+            <callsign>DAL3194LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KLAX</port>
+               <time>12:07:00</time>
+            </departure>
+            <cruise-alt>296</cruise-alt>
+            <arrival>
+                <port>KSEA</port>
+                <time>14:42:00</time>
+            </arrival>
+        <repeat>8Hr</repeat>
+       </flight> 
+
+       <flight>
+            <callsign>DAL3154LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KSEA</port>
+               <time>16:07:00</time>
+            </departure>
+            <cruise-alt>335</cruise-alt>
+            <arrival>
+                <port>KLAX</port>
+                <time>18:42:00</time>
+            </arrival>
+        <repeat>8Hr</repeat>
+       </flight>  
+
+    </aircraft>   
+        
+</trafficlist>

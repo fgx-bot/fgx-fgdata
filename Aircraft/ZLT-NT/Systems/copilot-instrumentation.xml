@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <!-- Local: setting-inhg is set by the pilot over MP. -->
+  <altimeter>
+    <name>altimeter</name>
+    <number>0</number>
+    <static-pressure>/systems/static/pressure-inhg</static-pressure>
+    <quantum>0</quantum>
+    <tau>0</tau>
+  </altimeter>
+
+  <!-- Local: Should be sluggish enough to behave correctly -->
+  <vertical-speed-indicator>
+    <name>vertical-speed-indicator</name>
+    <number>0</number>
+    <static-pressure>/systems/static/pressure-inhg</static-pressure>
+  </vertical-speed-indicator>
+
+  <!-- Local: Uncertain if it will behave correctly. Appears OK. -->
+  <magnetic-compass>
+    <name>magnetic-compass</name>
+    <number>0</number>
+  </magnetic-compass>
+
+  <!-- Local. -->
+  <clock>
+    <name>clock</name>
+    <number>0</number>
+  </clock>
+
+  <!-- Remote: Local doesn't behave correctly. -->
+  <!-- slip-skid-ball>
+    <name>slip-skid-ball</name>
+    <number>0</number>
+  </slip-skid-ball -->
+
+  <!-- Remote: Local doesn't behave correctly. -->
+  <!-- turn-indicator>
+    <name>turn-indicator</name>
+    <number>0</number>
+  </turn-indicator -->
+
+  <!-- Local: Works ok. -->
+  <marker-beacon>
+    <name>marker-beacon</name>
+    <number>0</number>
+  </marker-beacon>
+
+  <!-- Local: Works ok. -->
+  <nav-radio>
+    <name>nav</name>
+    <number>0</number>
+  </nav-radio>
+  <nav-radio>
+    <name>nav</name>
+    <number>1</number>
+  </nav-radio>
+
+  <!-- Local: Works ok. -->
+  <adf>
+    <name>adf</name>
+    <number>0</number>
+  </adf>
+
+  <!-- Local: Works ok. -->
+  <dme>
+    <name>dme</name>
+    <number>0</number>
+  </dme>
+
+ <gps>
+  <name>gps</name>
+  <number>0</number>
+ </gps>
+
+</PropertyList>

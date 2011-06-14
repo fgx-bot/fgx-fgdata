@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!--
+Author : Syd Adams
+Hobbs flight meter
+-->
+<PropertyList>
+
+<path>Hobbs.ac</path>
+<!-- Flight Meter-->
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Fmeter.001</object-name>
+        <property>instrumentation/clock/flight-meter-hour</property>
+        <factor>0.0001</factor>
+        <step>1000</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Fmeter.002</object-name>
+        <property>instrumentation/clock/flight-meter-hour</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Fmeter.003</object-name>
+        <property>instrumentation/clock/flight-meter-hour</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Fmeter.004</object-name>
+        <property>instrumentation/clock/flight-meter-hour</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Fmeter.005</object-name>
+        <property>instrumentation/clock/flight-meter-hour</property>
+        <factor>1.0</factor>
+        <step>0.1</step>
+        <bias>0.05</bias>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+</PropertyList>

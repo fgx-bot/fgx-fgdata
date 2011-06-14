@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<name>view</name>
+	<modal>false</modal>
+	<layout>vbox</layout>
+
+  <group>
+    <layout>hbox</layout>
+	  <empty><stretch>1</stretch></empty>
+
+    <text>
+      <label>View Options</label>
+    </text>
+
+	  <empty><stretch>1</stretch></empty>
+
+    <button>
+      <pref-width>16</pref-width>
+      <pref-height>16</pref-height>
+      <legend></legend>
+      <keynum>27</keynum>
+      <border>2</border>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+    </button>
+  </group>
+
+  <hrule/>
+
+	<text>
+		<label>Choose Active Views</label>
+	</text>
+
+  <nasal>
+		<open>
+			var group = cmdarg().getChildren("group")[1];
+			var ac = getprop("/sim/aircraft");
+			group.removeChildren("checkbox");
+			group.removeChildren("hrule");
+			group.removeChildren("text");
+			var mode = 0;
+			foreach (var v; view.views) {
+				var index = v.getIndex();
+				var enabled = v.initNode("enabled", 1, "BOOL");
+
+				if (index >= 200) {
+					if (mode != 2) {
+						mode = 2;
+						group.getChild("hrule", 1, 1);
+						var t = group.getChild("text", 1, 1);
+						t.getNode("label", 1).setValue("Other Views");
+					}
+
+				} elsif (index >= 100) {
+					aircraft.data.add(enabled);
+					if (mode != 1) {
+						mode = 1;
+						group.getChild("hrule", 0, 1);
+						var t = group.getChild("text", 0, 1);
+						t.getNode("label", 1).setValue("\"" ~ ac ~ "\" Specific Views");
+					}
+				}
+
+				var target = group.getChild("checkbox", index, 1);
+				props.copy(group.getNode("checkbox-template"), target);
+				var name = v.getNode("name");
+				target.getNode("label").setValue(name != nil ? name.getValue() : ("** unnamed view " ~ index ~ " **"));
+				target.getNode("property").setValue(enabled.getPath());
+			}
+		</open>
+	</nasal>
+
+	<group>
+		<layout>vbox</layout>
+		<halign>center</halign>
+
+		<checkbox-template>
+			<halign>left</halign>
+			<label><!----></label>
+			<property><!----></property>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+		</checkbox-template>
+	</group>
+
+	<hrule/>
+
+	<button>
+		<legend>Close</legend>
+		<default>true</default>
+		<key>Esc</key>
+		<binding>
+			<command>dialog-apply</command>
+		</binding>
+		<binding>
+			<command>dialog-close</command>
+		</binding>
+	</button>
+</PropertyList>

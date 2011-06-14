@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<trafficlist>
+    <aircraft>
+        <model>Aircraft/c172/Models/c172-dpm.xml</model>
+        <livery>UAL</livery>
+        <registration>C-DPM</registration>
+        <heavy>false</heavy>
+
+        <flight>
+            <callsign>C-DPM</callsign>
+            <fltrules>VFR</fltrules>
+            <departure>
+               <port>KSFO</port>
+               <time>15:00:00</time>
+            </departure>
+            <cruise-alt>300</cruise-alt>
+            <arrival>
+                <port>KOAK</port>
+                <time>15:30:00</time>
+            </arrival>
+        <repeat>2Hr</repeat>
+       </flight> 
+
+       <flight>
+            <callsign>C-DPM</callsign>
+            <fltrules>VFR</fltrules>
+            <departure>
+               <port>KOAK</port>
+               <time>16:00:00</time>
+            </departure>
+            <cruise-alt>310</cruise-alt>
+            <arrival>
+                <port>KSFO</port>
+                <time>16:30:00</time>
+            </arrival>
+        <repeat>2Hr</repeat>
+       </flight>
+    </aircraft>
+</trafficlist>

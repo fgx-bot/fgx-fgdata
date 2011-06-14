@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+ <path>altocumulus3.ac</path>
+
+<effect>
+  <object-name>rect</object-name>
+  <inherits-from>Effects/clouds-thin</inherits-from>
+</effect>
+
+<animation>
+  <object-name>rect</object-name>
+  <enable-hot type="bool">false</enable-hot>
+</animation>
+
+
+
+</PropertyList>

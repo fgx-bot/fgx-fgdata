@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+ <path>oiltemp.ac</path>
+
+ <animation>
+  <type>material</type>
+  <object-name>Face</object-name>
+  <object-name>Needle1</object-name>
+  <emission>
+    <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+    <red>0.5</red>
+    <green>0.25</green>
+    <blue>0.25</blue>
+  </emission>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Needle1</object-name>
+  <property>engines/engine[0]/oil-temperature-degf</property>
+  <min>-112.0</min>
+  <max>302</max>
+  <interpolation>
+   <entry>
+    <ind>-112.0</ind>
+    <dep> 0.0</dep>
+   </entry>
+   <entry>
+    <ind>302</ind>
+    <dep>122.5</dep>
+   </entry>
+  </interpolation>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>-0.006</z-m>
+  </center>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+</PropertyList>

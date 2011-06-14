@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+    <path>Ralt.ac</path>
+
+    <animation>
+        <type>select</type>
+        <object-name>RAlt.DHon</object-name>
+        <condition>
+            <less-than>
+                <property>position/gear-agl-ft</property>
+                <property>instrumentation/altimeter/DH</property>
+                </less-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>RAlt.needle</object-name>
+        <property>position/gear-agl-ft</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>100</ind><dep>180</dep></entry>
+            <entry><ind>500</ind><dep>240</dep></entry>
+            <entry><ind>2500</ind><dep>300</dep></entry>
+        </interpolation>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>RAlt.bug</object-name>
+        <property>instrumentation/altimeter/DH</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>100</ind><dep>180</dep></entry>
+            <entry><ind>500</ind><dep>240</dep></entry>
+            <entry><ind>2500</ind><dep>300</dep></entry>
+        </interpolation>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+        </center>
+    </animation>
+
+</PropertyList>

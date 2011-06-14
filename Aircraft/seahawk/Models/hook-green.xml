@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+
+<!-- hook down -->
+
+<PropertyList>
+
+	<path>hook-green.ac</path>
+
+	<!-- **************** lamp **************** -->
+
+	<!-- hook down -->
+
+	<animation>
+		<type>select</type>
+		<object-name>lamp-hook</object-name>
+		<condition>
+			<equals>
+				<property>/gear/tailhook/position-norm</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+
+	<!-- Panel Lighting -->
+	<animation>
+		<type>material</type>
+		<object-name>plate</object-name>
+		<object-name>cylinder</object-name>
+		<emission>
+			<factor-prop>//controls/lighting/panel-norm</factor-prop>
+			<red>0.75</red>
+			<green>0.25</green>
+			<blue>0.25</blue>
+		</emission>
+	</animation>
+
+	<!-- *** LoD *** -->
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
+	</animation>
+</PropertyList>
+
+
+

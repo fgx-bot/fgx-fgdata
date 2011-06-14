@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<!--
+************************************************************************
+Common configuration for all C310 models.
+************************************************************************
+-->
+
+<PropertyList>
+
+ <sim>
+
+  <systems>
+    <electrical>
+      <path>Aircraft/c310/c310-electrical.xml</path>
+    </electrical>
+  </systems>
+  
+  <sound>
+   <path>Aircraft/c310/c310-sound.xml</path>
+  </sound>
+
+  <hud>
+   <enable3d>false</enable3d>
+  </hud>
+
+  <help>
+    <title>Cessna 310R</title>
+   <line>Velocities</line>
+   <line>  Va1 (maneuvering)   : 148 KIAS</line>
+   <line>  Vno (max cruise)    : 189 KIAS</line>
+   <line>  Vne (never exceed)  : 223 KIAS</line>
+   <line>  Vmc (min control)   : 74  KIAS</line>
+   <line>  Vref (approach)     : 110 KIAS</line>
+   <line>  Vso (stall,flaps)   : 63 KIAS</line>
+   <line></line>
+    <line>Maximum cruise speed: 189 KTAS at 8,000 ft</line>
+    <line>Econo-cruise speed: 144 KTAS at 7,500 ft</line>
+   <line></line>   
+   <line>Maximum Flap Extension Speeds</line>
+   <line>  15  degrees : 155 KIAS</line>
+   <line>  15+ degrees : 140 KIAS</line>
+   <key>
+    <name>n/N</name>
+    <desc>Propeller pitch finer/coarser</desc>
+   </key>
+  </help>
+
+ </sim>
+
+ <controls>
+  <engines>
+   <engine n="0">
+    <magnetos>3</magnetos>
+   </engine>
+   <engine n="1">
+    <magnetos>3</magnetos>
+   </engine>
+  </engines>
+ </controls>
+
+ <consumables>
+  <fuel>
+   <tank n="0">
+    <level-gal_us archive="y">20</level-gal_us>
+   </tank>
+   <tank n="1">
+    <level-gal_us archive="y">20</level-gal_us>
+   </tank>
+   <tank n="2">
+    <level-gal_us archive="y">15</level-gal_us>
+   </tank>
+   <tank n="3">
+    <level-gal_us archive="y">15</level-gal_us>
+   </tank>
+  </fuel>
+ </consumables>
+ 
+ <engines>
+  <engine n="0">
+   <rpm>500</rpm>
+  </engine>
+  <engine n="1">
+   <rpm>500</rpm>
+  </engine>
+ </engines>
+  
+ <autopilot>
+   <config>
+     <min-climb-speed-kt type="float">81.0</min-climb-speed-kt>
+     <best-climb-speed-kt type="float">107.0</best-climb-speed-kt>
+     <target-climb-rate-fpm type="float">1000.0</target-climb-rate-fpm>
+     <target-descent-rate-fpm type="float">1000.0</target-descent-rate-fpm>
+     <elevator-adj-factor type="float">3000.0</elevator-adj-factor>
+     <integral-contribution type="float">0.004</integral-contribution>
+     <zero-pitch-throttle type="float">0.45</zero-pitch-throttle>
+     <zero-pitch-trim-full-throttle type="float">0.11</zero-pitch-trim-full-throttle>
+   </config>
+ </autopilot>
+
+</PropertyList>

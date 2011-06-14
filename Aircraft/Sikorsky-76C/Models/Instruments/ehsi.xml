@@ -1,0 +1,260 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+    <path>ehsi.ac</path>
+
+<!--
+    <animation>
+        <type>material</type>
+        <object-name>EHSI.ticks</object-name>
+        <object-name>EHSI.hdg-bug</object-name>
+        <object-name>EHSI.crsneedle</object-name>
+        <object-name>EHSI.crsneedle.1</object-name>
+        <object-name>EHSI.vsi</object-name>
+        <emission>
+            <red>1.0</red>
+            <green>1.0</green>
+            <blue>1.0</blue>
+            <factor-prop>/systems/electrical/outputs/efis-lights</factor-prop>
+        </emission>
+    </animation>
+-->
+    <animation>
+        <type>rotate</type>
+        <object-name>EHSI.hdg-bug</object-name>
+        <property>/autopilot/internal/fdm-heading-bug-error-deg</property>
+        <axis>
+            <x>-1.0</x>
+            <y>0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.007</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>EHSI.compass</object-name>
+        <property>orientation/heading-magnetic-deg</property>
+        <axis>
+            <x>1.0</x>
+            <y>0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.007</z-m>
+        </center>
+    </animation>
+
+<!--  COURSE -->
+
+    <animation>
+        <type>rotate</type>
+        <object-name>EHSI.crsneedle</object-name>
+        <object-name>EHSI.crsneedle.1</object-name>
+        <property>orientation/heading-magnetic-deg</property>
+        <axis>
+            <x>1.0</x>
+            <y>0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.007</z-m>
+        </center>
+    </animation>
+
+
+    <animation>
+        <type>rotate</type>
+        <object-name>EHSI.crsneedle</object-name>
+        <object-name>EHSI.crsneedle.1</object-name>
+        <property>/instrumentation/nav/radials/selected-deg</property>
+        <axis>
+            <x>-1.0</x>
+            <y>0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.007</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>EHSI.crsneedle.1</object-name>
+        <property>/instrumentation/nav/heading-needle-deflection</property>
+        <interpolation>
+            <entry><ind>-999.0</ind><dep>-0.02</dep></entry>
+            <entry><ind>-10.0</ind><dep>-0.02</dep></entry>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>10.0</ind><dep>0.02</dep></entry>
+            <entry><ind>999.0</ind><dep>0.02</dep></entry>
+        </interpolation>
+        <axis>
+            <x>0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.007</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>EHSI.vsi</object-name>
+        <property>autopilot/internal/vert-speed-fpm</property>
+        <interpolation>
+            <entry><ind>-3000.0</ind><dep>-31.0</dep></entry>
+            <entry><ind>-2000.0</ind><dep>-24.0</dep></entry>
+            <entry><ind>-1000.0</ind><dep>-17.50</dep></entry>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>1000.0</ind><dep>17.50</dep></entry>
+            <entry><ind>2000.0</ind><dep>24.0</dep></entry>
+            <entry><ind>3000.0</ind><dep>31.0</dep></entry>
+        </interpolation>
+        <axis>
+            <x>-1.0</x>
+            <y>0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>0.104</y-m>
+            <z-m>0.007</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>EHSI.crs1</object-name>
+        <property>/instrumentation/nav/radials/selected-deg</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>EHSI.crs2</object-name>
+        <property>/instrumentation/nav/radials/selected-deg</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>EHSI.crs3</object-name>
+        <property>/instrumentation/nav/radials/selected-deg</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+<!--  hdg bug -->
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>EHSI.hdg1</object-name>
+        <property>/autopilot/settings/heading-bug-deg</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>EHSI.hdg2</object-name>
+        <property>/autopilot/settings/heading-bug-deg</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>EHSI.hdg3</object-name>
+        <property>/autopilot/settings/heading-bug-deg</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+<!--  groundspeed -->
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>EHSI.gsp1</object-name>
+        <property>velocities/groundspeed-kt</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>EHSI.gsp2</object-name>
+        <property>velocities/groundspeed-kt</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>EHSI.gsp3</object-name>
+        <property>velocities/groundspeed-kt</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+</PropertyList>

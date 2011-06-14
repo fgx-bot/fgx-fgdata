@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<trafficlist>
+    <aircraft>
+        <model>Aircraft/737-300/Models/737-300.xml</model>
+        <livery>UAL</livery> 
+        <airline>UAL</airline>
+        <actype>737-300</actype>
+        <offset>10</offset>
+        <radius>23</radius>
+        <flighttype>gate</flighttype>
+        <performance-class>jet_transport</performance-class>
+        <registration>N376UA</registration>
+        <heavy>false</heavy>
+
+        <flight>
+            <callsign>United1232</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KBUR</port>
+               <time>15:45:00</time>
+            </departure>
+            <cruise-alt>300</cruise-alt>
+            <arrival>
+                <port>KDEN</port>
+                <time>17:55:00</time>
+            </arrival>
+        <repeat>24Hr</repeat>
+       </flight> 
+
+       <flight>
+            <callsign>United0549</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KDEN</port>
+               <time>20:45:00</time>
+            </departure>
+            <cruise-alt>310</cruise-alt>
+            <arrival>
+                <port>KSFO</port>
+                <time>23:13:00</time>
+            </arrival>
+        <repeat>24Hr</repeat>
+       </flight>
+
+       <flight>
+            <callsign>United07940</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KSFO</port>
+               <time>02:30:00</time>
+            </departure>
+            <cruise-alt>310</cruise-alt>
+            <arrival>
+                <port>KBUR</port>
+                <time>03:35:00</time>
+            </arrival>
+        <repeat>24Hr</repeat>
+       </flight>
+    </aircraft>
+</trafficlist>

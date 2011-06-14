@@ -1,0 +1,980 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <!-- Tout les fauteuils de gauche -->
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -7.249 </x-m>
+      <y-m> -1.429 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -7.249 </x-m>
+      <y-m> -1.009 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -7.249 </x-m>
+      <y-m> -0.589 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -6.549 </x-m>
+      <y-m> -1.429 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -6.549 </x-m>
+      <y-m> -1.009 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -6.549 </x-m>
+      <y-m> -0.589 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -5.849 </x-m>
+      <y-m> -1.429 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -5.849 </x-m>
+      <y-m> -1.009 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -5.849 </x-m>
+      <y-m> -0.589 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -5.149 </x-m>
+      <y-m> -1.429 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -5.149 </x-m>
+      <y-m> -1.009 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -5.149 </x-m>
+      <y-m> -0.589 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -4.449 </x-m>
+      <y-m> -1.429 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -4.449 </x-m>
+      <y-m> -1.009 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -4.449 </x-m>
+      <y-m> -0.589 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -3.749 </x-m>
+      <y-m> -1.429 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -3.749 </x-m>
+      <y-m> -1.009 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -3.749 </x-m>
+      <y-m> -0.589 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -3.049 </x-m>
+      <y-m> -1.429 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -3.049 </x-m>
+      <y-m> -1.009 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -3.049 </x-m>
+      <y-m> -0.589 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -2.349 </x-m>
+      <y-m> -1.429 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -2.349 </x-m>
+      <y-m> -1.009 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -2.349 </x-m>
+      <y-m> -0.589 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -1.649 </x-m>
+      <y-m> -1.429 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -1.649 </x-m>
+      <y-m> -1.009 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -1.649 </x-m>
+      <y-m> -0.589 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -0.949 </x-m>
+      <y-m> -1.429 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -0.949 </x-m>
+      <y-m> -1.009 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -0.949 </x-m>
+      <y-m> -0.589 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -0.249 </x-m>
+      <y-m> -1.429 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -0.249 </x-m>
+      <y-m> -1.009 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -0.249 </x-m>
+      <y-m> -0.589 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  0.451 </x-m>
+      <y-m> -1.429 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  0.451 </x-m>
+      <y-m> -1.009 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  0.451 </x-m>
+      <y-m> -0.589 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  1.151 </x-m>
+      <y-m> -1.429 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  1.151 </x-m>
+      <y-m> -1.009 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  1.151 </x-m>
+      <y-m> -0.589 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  1.851 </x-m>
+      <y-m> -1.429 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  1.851 </x-m>
+      <y-m> -1.009 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  1.851 </x-m>
+      <y-m> -0.589 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  2.551 </x-m>
+      <y-m> -1.429 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  2.551 </x-m>
+      <y-m> -1.009 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  2.551 </x-m>
+      <y-m> -0.589 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  3.251 </x-m>
+      <y-m> -1.429 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  3.251 </x-m>
+      <y-m> -1.009 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  3.251 </x-m>
+      <y-m> -0.589 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  4.051 </x-m>
+      <y-m> -1.429 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  4.051 </x-m>
+      <y-m> -1.009 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  4.051 </x-m>
+      <y-m> -0.589 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  4.851 </x-m>
+      <y-m> -1.429 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  4.851 </x-m>
+      <y-m> -1.009 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  4.851 </x-m>
+      <y-m> -0.589 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Tout les fauteuils de droite -->
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -7.249 </x-m>
+      <y-m>  1.429 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -7.249 </x-m>
+      <y-m>  1.009 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -7.249 </x-m>
+      <y-m>  0.589 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -6.549 </x-m>
+      <y-m>  1.429 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -6.549 </x-m>
+      <y-m>  1.009 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -6.549 </x-m>
+      <y-m>  0.589 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -5.849 </x-m>
+      <y-m>  1.429 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -5.849 </x-m>
+      <y-m>  1.009 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -5.849 </x-m>
+      <y-m>  0.589 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -5.149 </x-m>
+      <y-m>  1.429 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -5.149 </x-m>
+      <y-m>  1.009 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -5.149 </x-m>
+      <y-m>  0.589 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -4.449 </x-m>
+      <y-m>  1.429 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -4.449 </x-m>
+      <y-m>  1.009 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -4.449 </x-m>
+      <y-m>  0.589 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -3.749 </x-m>
+      <y-m>  1.429 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -3.749 </x-m>
+      <y-m>  1.009 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -3.749 </x-m>
+      <y-m>  0.589 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -3.049 </x-m>
+      <y-m>  1.429 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -3.049 </x-m>
+      <y-m>  1.009 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -3.049 </x-m>
+      <y-m>  0.589 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -2.349 </x-m>
+      <y-m>  1.429 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -2.349 </x-m>
+      <y-m>  1.009 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -2.349 </x-m>
+      <y-m>  0.589 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -1.649 </x-m>
+      <y-m>  1.429 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -1.649 </x-m>
+      <y-m>  1.009 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -1.649 </x-m>
+      <y-m>  0.589 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -0.949 </x-m>
+      <y-m>  1.429 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -0.949 </x-m>
+      <y-m>  1.009 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -0.949 </x-m>
+      <y-m>  0.589 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -0.249 </x-m>
+      <y-m>  1.429 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -0.249 </x-m>
+      <y-m>  1.009 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m> -0.249 </x-m>
+      <y-m>  0.589 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  0.451 </x-m>
+      <y-m>  1.429 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  0.451 </x-m>
+      <y-m>  1.009 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  0.451 </x-m>
+      <y-m>  0.589 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  1.151 </x-m>
+      <y-m>  1.429 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  1.151 </x-m>
+      <y-m>  1.009 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  1.151 </x-m>
+      <y-m>  0.589 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  1.851 </x-m>
+      <y-m>  1.429 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  1.851 </x-m>
+      <y-m>  1.009 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  1.851 </x-m>
+      <y-m>  0.589 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  2.551 </x-m>
+      <y-m>  1.429 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  2.551 </x-m>
+      <y-m>  1.009 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  2.551 </x-m>
+      <y-m>  0.589 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  3.251 </x-m>
+      <y-m>  1.429 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  3.251 </x-m>
+      <y-m>  1.009 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  3.251 </x-m>
+      <y-m>  0.589 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  4.051 </x-m>
+      <y-m>  1.429 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  4.051 </x-m>
+      <y-m>  1.009 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  4.051 </x-m>
+      <y-m>  0.589 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  4.851 </x-m>
+      <y-m>  1.429 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  4.851 </x-m>
+      <y-m>  1.009 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/seat.xml</path>
+    <offsets>
+      <x-m>  4.851 </x-m>
+      <y-m>  0.589 </y-m>
+      <z-m> -2.306 </z-m>
+    </offsets>
+  </model>
+
+</PropertyList>
+

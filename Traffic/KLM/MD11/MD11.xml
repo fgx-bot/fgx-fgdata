@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<trafficlist>
+   <traffic include="KLM/MD11/PH-KCA.xml"/>
+   <traffic include="KLM/MD11/PH-KCB.xml"/>
+   <traffic include="KLM/MD11/PH-KCC.xml"/>
+   <traffic include="KLM/MD11/PH-KCD.xml"/>
+   <traffic include="KLM/MD11/PH-KCE.xml"/>
+   <traffic include="KLM/MD11/PH-KCF.xml"/>
+   <traffic include="KLM/MD11/PH-KCG.xml"/>
+</trafficlist>

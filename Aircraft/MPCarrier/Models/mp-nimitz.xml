@@ -1,0 +1,74 @@
+<!-- $Id$ -->
+<!--
+  Multiplayer carrier Nimitz for FlightGear.
+
+  Copyright (C) 2007 - 2009  Anders Gidenstam  (anders(at)gidenstam.org)
+  This file is released under the GPL license version 2 or later.
+-->
+<PropertyList>
+
+ <path>../../../Models/Geometry/null.ac</path>
+ <offsets>
+  <!-- x/y/z == back/right/up -->
+  <x-m> 0.0 </x-m>
+  <y-m> 0.0 </y-m>
+  <z-m> -500.0 </z-m>
+ </offsets>
+
+ <nasal>
+  <load>
+##############################################################################
+# The on-load Nasal is not executed when this file is loaded as the user
+# aircraft.
+
+var rplayer = cmdarg();
+print("LOAD MP-Nimitz " ~ rplayer.getPath());
+
+# Set aircraft type property.
+rplayer.getNode("sim/model/ac-type", 1).setValue("MP-Nimitz");
+
+# Load the main MPCarriers Nasal module if needed.
+if (!contains(globals, "MPCarriers")) {
+  if (contains(io, "load_nasal")) {
+    io.load_nasal(getprop("/sim/fg-root") ~
+                  "/Aircraft/MPCarrier/Systems/MPCarriers.nas", "MPCarriers");
+  } else {
+    debug.load_nasal(getprop("/sim/fg-root") ~
+                     "/Aircraft/MPCarrier/Systems/MPCarriers.nas",
+                     "MPCarriers");
+  }
+}
+
+# Create manager class.
+var manager = nil;
+var accept_callsign = "/sim/mp-carriers/nimitz-callsign";
+
+var init = func {
+  # Initialize the callsign property if not done already.
+  if (props.globals.getNode(accept_callsign) == nil) {
+      props.globals.getNode(accept_callsign, 1).setValue("");
+  }
+
+  manager = MPCarriers.Manager.new(rplayer,
+                                   "Nimitz",
+                                   props.globals.getNode(accept_callsign));
+  print("LOAD MP-Nimitz " ~ rplayer.getPath() ~ " done.");
+}
+
+settimer(init, 15);
+print("LOAD MP-Nimitz " ~ rplayer.getPath() ~ " waiting.");
+
+##############################################################################
+  </load>
+  <unload>
+##############################################################################
+   print("UNLOAD MP-Nimitz ", cmdarg().getPath());
+   # Unset aircraft type property.
+   cmdarg().getNode("sim/model/ac-type", 1).setValue("");
+   cmdarg().getNode("sim/model/ac-type", 1).remove();
+   manager.die();
+##############################################################################
+  </unload>
+ </nasal>
+
+</PropertyList>

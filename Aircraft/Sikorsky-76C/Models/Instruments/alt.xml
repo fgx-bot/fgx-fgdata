@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+    <path>alt.ac</path>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>ALTneedle100</object-name>
+        <property>instrumentation/altimeter/indicated-altitude-ft</property>
+        <factor>0.36</factor>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>-0</z>
+        </axis>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>ALTneedle1000</object-name>
+        <property>instrumentation/altimeter/indicated-altitude-ft</property>
+        <factor>0.036</factor>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>-0</z>
+        </axis>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>ALTneedle10000</object-name>
+        <property>instrumentation/altimeter/indicated-altitude-ft</property>
+        <factor>0.0036</factor>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>-0</z>
+        </axis>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>texrotate</type>
+        <object-name>inhg</object-name>
+        <property>instrumentation/altimeter/setting-inhg</property>
+        <interpolation>
+            <entry><ind>27.9</ind><dep>0</dep></entry>
+            <entry><ind>31.4</ind><dep>350</dep></entry>
+        </interpolation>
+        <axis>
+            <x>0</x>
+            <y>0</y>
+            <z>-1</z>
+        </axis>
+        <center>
+            <x>0.75</x>
+            <y>0.75</y>
+        </center>
+    </animation>
+
+    <animation>
+        <type>texrotate</type>
+        <object-name>mb</object-name>
+        <property>instrumentation/altimeter/setting-inhg</property>
+        <interpolation>
+            <entry><ind>27.9</ind><dep>0</dep></entry>
+            <entry><ind>31.4</ind><dep>257.5</dep></entry>
+        </interpolation>
+        <axis>
+            <x>0</x>
+            <y>0</y>
+            <z>-1</z>
+        </axis>
+        <center>
+            <x>0.25</x>
+            <y>0.25</y>
+        </center>
+    </animation>
+
+</PropertyList>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!-- White Center Line Light -->
+<PropertyList>
+	<path>light-white.ac</path>
+
+	<animation>
+		<type>select</type>
+		<object-name>Light</object-name>
+		<condition>
+			<property>controls/lighting/deck-lights</property>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>scale</type>
+		<object-name>Light</object-name>
+		<property>/sim/time/sun-angle-rad</property>
+		<offset>-1.4</offset>
+		<x-min>1</x-min>
+		<y-min>1</y-min>
+		<z-min>1</z-min>
+		<x-factor>1.1</x-factor>
+		<y-factor>1.1</y-factor>
+		<z-factor>1.1</z-factor>
+	</animation>
+
+	<animation> 
+            <enable-hot type="bool">false</enable-hot>
+	    <!-- *** LoD *** -->
+            <!--<type>range</type>
+                <max-m>5000</max-m>-->
+        </animation>
+</PropertyList>

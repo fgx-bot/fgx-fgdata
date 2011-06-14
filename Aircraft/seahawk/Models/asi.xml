@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+
+<!-- air speed indicator -->
+
+<PropertyList>
+
+	<path>asi.ac</path>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>asi-Needle1</object-name>
+		<property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>100</ind>
+				<dep>50</dep>
+			</entry>
+			<entry>
+				<ind>150</ind>
+				<dep>100</dep>
+			</entry>
+			<entry>
+				<ind>200</ind>
+				<dep>150</dep>
+			</entry>
+			<entry>
+				<ind>250</ind>
+				<dep>200</dep>
+			</entry>
+			<entry>
+				<ind>300</ind>
+				<dep>250</dep>
+			</entry>
+			<entry>
+				<ind>350</ind>
+				<dep>300</dep>
+			</entry>
+			<entry>
+				<ind>400</ind>
+				<dep>350</dep>
+			</entry>
+			<entry>
+				<ind>450</ind>
+				<dep>425</dep>
+			</entry>
+			<entry>
+				<ind>550</ind>
+				<dep>460</dep>
+			</entry>
+			<entry>
+				<ind>650</ind>
+				<dep>530</dep>
+			</entry>
+			<entry>
+				<ind>750</ind>
+				<dep>590</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<!-- Panel Lighting -->
+	<animation>
+		<type>material</type>
+		<emission>
+			<factor-prop>/controls/lighting/panel-norm</factor-prop>
+			<red>0.75</red>
+			<green>0.25</green>
+			<blue>0.25</blue>
+		</emission>
+	</animation>
+
+
+	<!-- *** LoD *** -->
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
+	</animation>
+
+</PropertyList>

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<path>dimmer.ac</path>
+	<animation>
+		<type>rotate</type>
+		<object-name>Knob</object-name>
+		<property>/controls/lighting/panel-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>160</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-160</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>material</type>
+		<emission>
+			<factor-prop>/controls/lighting/panel-norm</factor-prop>
+			<red>0.75</red>
+			<green>0.25</green>
+			<blue>0.25</blue>
+		</emission>
+	</animation>
+
+	<!-- *** LoD for the whole model *** -->
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
+	</animation>
+</PropertyList>

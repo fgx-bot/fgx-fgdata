@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<path>hdg-gauge.ac</path>
+
+    <animation>
+        <type>material</type>
+        <object-name>HDGpointer</object-name>
+        <object-name>HDGneedle</object-name>
+        <object-name>HDGscale</object-name>
+        <emission>
+            <red>0.5</red>
+            <green>0.2</green>
+            <blue>0.0</blue>
+            <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>texrotate</type>
+        <object-name>HDGneedle</object-name>
+        <property>/instrumentation/heading-indicator/indicated-heading-deg</property>
+        <axis>
+            <x>0.0</x>
+            <y>0.0</y>
+            <z>-1.0</z>
+        </axis>
+        <center>
+            <x>0.5</x>
+            <y>0.5</y>
+        </center>
+    </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>HDG.clickL</object-name>
+      <visible>false</visible>
+      <action>
+          <name>small decrease</name>
+          <button>0</button>
+          <binding>
+              <command>property-adjust</command>
+              <property>/instrumentation/heading-indicator/offset-deg</property>
+              <step>-1</step>
+              <min>0</min>
+              <max>360</max>
+              <wrap>1</wrap>
+          </binding>
+      </action>
+      <action>
+          <name>large decrease</name>
+          <button>1</button>
+          <binding>
+              <command>property-adjust</command>
+              <property>/instrumentation/heading-indicator/offset-deg</property>
+              <step>-5</step>
+              <min>0</min>
+              <max>360</max>
+              <wrap>1</wrap>
+          </binding>
+      </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>HDG.clickR</object-name>
+    <visible>false</visible>
+    <action>
+            <name>small increase</name>
+            <button>0</button>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/heading-indicator/offset-deg</property>
+                <step>1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+        </action>
+        <action>
+            <name>large increase</name>
+            <button>1</button>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/heading-indicator/offset-deg</property>
+                <step>5</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+        </action>
+
+  </animation>
+
+</PropertyList>

@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+  <name>snowplow-config</name>
+  <layout>vbox</layout>
+  <x>40</x>
+  <y>40</y>
+
+  <group>
+    <layout>hbox</layout>
+
+    <empty><stretch>true</stretch></empty>
+
+    <text>
+      <label>Snowplow Configuration</label>
+    </text>
+
+    <empty><stretch>true</stretch></empty>
+
+    <button>
+      <pref-width>16</pref-width>
+      <pref-height>16</pref-height>
+      <legend></legend>
+      <default>1</default>
+      <keynum>27</keynum>
+      <border>2</border>
+
+      <binding>
+        <command>nasal</command>
+        <script>snowplow.dialog.close()</script>
+      </binding>
+    </button>
+  </group>
+
+  <hrule/>
+
+  <group>
+    <layout>table</layout>
+
+    <!-- row zero -->
+    <checkbox>
+      <row>0</row> <col>0</col>
+      <halign>left</halign>
+      <label>Autonomous Mode</label>
+      <property>/me5286/control-mode</property>
+      <live>true</live>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+    </checkbox>
+
+    <!-- row one -->
+    <text>
+      <row>1</row> <col>0</col>
+      <halign>right</halign>
+      <label>Target speed:</label>
+    </text>
+
+    <slider>
+      <row>1</row> <col>1</col>
+      <property>/me5286/target-speed-kt</property>
+      <min>0.0</min>
+      <max>70.0</max>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+    </slider>
+
+    <text>
+      <label>0123456789</label>
+      <row>1</row> <col>2</col>
+      <format>%.1f</format>
+      <property>/me5286/target-speed-kt</property>
+      <live>true</live>
+    </text>
+
+    <!-- row two -->
+    <text>
+      <row>2</row> <col>0</col>
+      <halign>right</halign>
+      <label>Steering Servo Voltage:</label>
+    </text>
+
+    <!--
+    <slider>
+      <row>2</row> <col>1</col>
+      <property>/me5286/servo/steer/volts</property>
+      <min>-5.0</min>
+      <max>5.0</max>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+    </slider>
+    -->
+
+    <text>
+      <label>0123456789</label>
+      <row>2</row> <col>2</col>
+      <format>%.2f</format>
+      <property>/me5286/servo/steer/volts</property>
+      <live>true</live>
+    </text>
+
+    <!-- row three -->
+    <text>
+      <row>3</row> <col>0</col>
+      <halign>right</halign>
+      <label>Wheel Angle:</label>
+    </text>
+
+    <text>
+      <label>0123456789</label>
+      <row>3</row> <col>2</col>
+      <format>%.2f</format>
+      <property>/me5286/servo/steer/angle-deg</property>
+      <live>true</live>
+    </text>
+
+    <!-- row four -->
+    <text>
+      <row>4</row> <col>0</col>
+      <halign>right</halign>
+      <label>Radar:</label>
+    </text>
+
+    <text>
+      <label>0123456789</label>
+      <row>4</row> <col>1</col>
+      <property>/me5286/radar/callsign</property>
+      <live>true</live>
+    </text>
+
+    <text>
+      <label>0123456789</label>
+      <row>4</row> <col>2</col>
+      <format>%.0f</format>
+      <property>/me5286/radar/dist_m</property>
+      <live>true</live>
+    </text>
+
+    <!-- row five -->
+    <text>
+      <row>5</row> <col>0</col>
+      <halign>right</halign>
+      <label>Accelerator:</label>
+    </text>
+
+    <text>
+      <label>0123456789</label>
+      <row>5</row> <col>2</col>
+      <format>%.2f</format>
+      <property>/controls/engines/engine/throttle</property>
+      <live>true</live>
+    </text>
+
+    <!-- row six -->
+    <text>
+      <row>6</row> <col>0</col>
+      <halign>right</halign>
+      <label>Brake:</label>
+    </text>
+
+    <text>
+      <label>0123456789</label>
+      <row>6</row> <col>2</col>
+      <format>%.2f</format>
+      <property>/controls/gear/brake-left</property>
+      <live>true</live>
+    </text>
+
+  </group>
+
+  <hrule/>
+
+</PropertyList>

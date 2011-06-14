@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Source :  http://users.skynet.be/jcordon/ -->
+
+<PropertyList>
+
+  <path>pedest.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>pedest</object-name>
+  </animation>
+
+  <!-- Throttle -->
+  <model>
+    <path>Aircraft/737-100/Models/Interior/Panel/pedest/throttle/throttle.xml</path>
+    <offsets>
+      <x-m> -0.110 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.044 </z-m>
+      <roll-deg>     0.000 </roll-deg>
+      <pitch-deg>   -9.504 </pitch-deg>
+      <heading-deg>  0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Sous éléments -->
+  <model>
+    <path>Aircraft/737-100/Models/Interior/Panel/pedest/parts/fire/fire.xml</path>
+    <offsets>
+      <x-m> -0.049 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.159 </z-m>
+      <roll-deg>     0.000 </roll-deg>
+      <pitch-deg>   -9.504 </pitch-deg>
+      <heading-deg>  0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/Panel/pedest/parts/vhf/vhf.xml</path>
+    <offsets>
+      <x-m>  0.003 </x-m>
+      <y-m> -0.126 </y-m>
+      <z-m>  0.163 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/Panel/pedest/parts/vhf/vhf.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> 0.126 </y-m>
+      <z-m> 0.163 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/Panel/pedest/parts/nav/nav.xml</path>
+    <offsets>
+      <x-m>  0.060 </x-m>
+      <y-m> -0.126 </y-m>
+      <z-m>  0.163 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/Panel/pedest/parts/nav/nav.xml</path>
+    <offsets>
+      <x-m> 0.060 </x-m>
+      <y-m> 0.126 </y-m>
+      <z-m> 0.163 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/Panel/pedest/parts/mic/mic.xml</path>
+    <offsets>
+      <x-m>  0.139 </x-m>
+      <y-m> -0.126 </y-m>
+      <z-m>  0.163 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/Panel/pedest/parts/mic/mic.xml</path>
+    <offsets>
+      <x-m> 0.139 </x-m>
+      <y-m> 0.126 </y-m>
+      <z-m> 0.163 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/Panel/pedest/parts/hf/hf.xml</path>
+    <offsets>
+      <x-m>  0.219 </x-m>
+      <y-m> -0.126 </y-m>
+      <z-m>  0.163 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/Panel/pedest/parts/hf/hf.xml</path>
+    <offsets>
+      <x-m> 0.219 </x-m>
+      <y-m> 0.126 </y-m>
+      <z-m> 0.163 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/Panel/pedest/parts/empty/empty1.xml</path>
+    <offsets>
+      <x-m>  0.290 </x-m>
+      <y-m> -0.126 </y-m>
+      <z-m>  0.163 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/Panel/pedest/parts/empty/empty1.xml</path>
+    <offsets>
+      <x-m> 0.290 </x-m>
+      <y-m> 0.126 </y-m>
+      <z-m> 0.163 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/Panel/pedest/parts/flood/flood.xml</path>
+    <offsets>
+      <x-m>  0.357 </x-m>
+      <y-m> -0.126 </y-m>
+      <z-m>  0.163 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/Panel/pedest/parts/stab-trim/stab-trim.xml</path>
+    <offsets>
+      <x-m> 0.357 </x-m>
+      <y-m> 0.126 </y-m>
+      <z-m> 0.163 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/Panel/pedest/parts/det/det.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.163 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/Panel/pedest/parts/mode/mode.xml</path>
+    <offsets>
+      <x-m> 0.060 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.163 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/Panel/pedest/parts/selcal/selcal.xml</path>
+    <offsets>
+      <x-m> 0.105 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.163 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/Panel/pedest/parts/transponder/transponder.xml</path>
+    <offsets>
+      <x-m> 0.147 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.163 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/Panel/pedest/parts/adf/adf.xml</path>
+    <offsets>
+      <x-m> 0.202 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.163 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/Panel/pedest/parts/empty/empty2.xml</path>
+    <offsets>
+      <x-m> 0.265 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.163 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/737-100/Models/Interior/Panel/pedest/parts/trim/trim.xml</path>
+    <offsets>
+      <x-m> 0.340 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.163 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+</PropertyList>
+

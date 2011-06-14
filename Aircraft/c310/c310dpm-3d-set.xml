@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+
+<PropertyList include="c310-jsbsim-base.xml">
+
+ <sim>
+
+  <startup>
+   <splash-texture>Aircraft/c310/c310-splash.rgb</splash-texture>
+  </startup>
+
+  <description>Cessna 310R (1979 model) with 3D cockpit</description>
+  <author>David Megginson (maintained by Stuart Buchanan)</author>
+  <status>production</status>
+
+  <virtual-cockpit archive="y">true</virtual-cockpit>
+  <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
+
+  <panel>
+    <path>Aircraft/c310/Panels/c310-vfr-panel.xml</path>
+    <visibility>false</visibility>
+  </panel>
+
+  <panel_2>
+    <path>Aircraft/c310/Panels/c310-mini-panel.xml</path>
+    <visibility>false</visibility>
+  </panel_2>
+
+  <model>
+   <path archive="y">Aircraft/c310/Models/c310-dpm.xml</path>
+  </model> 
+
+  <view n="0">
+   <internal archive="y">true</internal>
+   <config>
+    <x-offset-m archive="y">-0.2</x-offset-m>
+    <y-offset-m archive="y">1.0</y-offset-m>
+    <z-offset-m archive="y">-0.2</z-offset-m>
+    <pitch-offset-deg>-15</pitch-offset-deg>
+   </config>
+  </view>
+
+ </sim>
+
+ <limits>
+   <max-flap-extension-speed>
+     <flaps>0.3</flaps>
+     <speed>155</speed>
+   </max-flap-extension-speed>
+   <max-flap-extension-speed>
+     <flaps>0.6</flaps>
+     <speed>140</speed>
+   </max-flap-extension-speed>
+   <max-flap-extension-speed>
+     <flaps>0.9</flaps>
+     <speed>140</speed>
+   </max-flap-extension-speed>
+   <max-gear-extension-speed>140</max-gear-extension-speed>
+   <max-positive-g>3.5</max-positive-g>
+   <max-negative-g>-1.52</max-negative-g>
+   <vne>223</vne>
+ </limits>
+
+<nasal>
+  <failures> 
+    <file>Aircraft/Generic/limits.nas</file>
+  </failures>
+ </nasal>
+
+</PropertyList>

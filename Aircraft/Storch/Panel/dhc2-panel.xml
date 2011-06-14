@@ -1,0 +1,477 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+<PropertyList>
+
+<name>DHC2 Panel</name>
+<background>Aircraft/Storch/Panel/transparent-bg.rgb</background>
+<w>1024</w>
+<h>768</h>
+
+<instruments>
+
+    <instrument>
+        <name>panel hotspots</name>
+        <x>512</x>
+        <y>384</y>
+        <w>1024</w>
+        <h>768</h>
+        <w-base>1024</w-base>
+        <h-base>768</h-base>
+
+    <actions>
+
+        <action>
+            <name>Fuelselect-CW</name>
+            <button>0</button>
+            <x>-470</x>
+            <y>-340</y>
+            <w>60</w>
+            <h>60</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/fuel/switch-position</property>
+                <step>1</step>
+                <min>-1</min>
+                <max>3</max>
+                <wrap>1</wrap>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/sound/switch</property>
+            </binding>
+        </action>
+
+        <action>
+            <name>magneto increase</name>
+            <button>0</button>
+            <x>-375</x>
+            <y>-320</y>
+            <w>20</w>
+            <h>40</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/engines/engine[0]/magnetos</property>
+                <step>1</step>
+                <min>0</min>
+                <max>4</max>
+                <wrap>0</wrap>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/sound/switch</property>
+            </binding>
+        </action>
+
+        <action>
+            <name>magneto decrease</name>
+            <button>0</button>
+            <x>-355</x>
+            <y>-320</y>
+            <w>20</w>
+            <h>40</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/engines/engine[0]/magnetos</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>4</max>
+                <wrap>0</wrap>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/sound/switch</property>
+            </binding>
+        </action>
+
+        <action>
+            <name>battery switch</name>
+            <button>0</button>
+            <x>-362</x>
+            <y>-374</y>
+            <w>16</w>
+            <h>16</h>
+            <binding>
+                <command>property-toggle</command>
+                <property>/controls/electric/battery-switch</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/sound/switch</property>
+            </binding>
+        </action>
+
+        <action>
+            <name>starter</name>
+            <button>0</button>
+            <x>-328</x>
+            <y>-374</y>
+            <w>16</w>
+            <h>16</h>
+            <binding>
+                <command>nasal</command>
+                <script>Fi156.starter(1)</script>
+            </binding>
+            <mod-up>
+                <binding>
+                    <command>nasal</command>
+                    <script>Fi156.starter(0)</script>
+                </binding>
+            </mod-up>
+        </action>
+
+        <action>
+            <name>alternator</name>
+            <button>0</button>
+            <x>-294</x>
+            <y>-374</y>
+            <w>16</w>
+            <h>16</h>
+            <binding>
+                <command>property-toggle</command>
+                <property>/controls/electric/engine/generator</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/sound/switch</property>
+            </binding>
+        </action>
+
+        <action>
+            <name>fuel pump</name>
+            <button>0</button>
+            <x>-260</x>
+            <y>-374</y>
+            <w>16</w>
+            <h>16</h>
+            <binding>
+                <command>property-toggle</command>
+                <property>/controls/engines/engine/fuel-pump</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/sound/switch</property>
+            </binding>
+        </action>
+
+        <action>
+            <name>carb heat</name>
+            <button>0</button>
+            <x>-226</x>
+            <y>-374</y>
+            <w>16</w>
+            <h>16</h>
+            <binding>
+                <command>property-toggle</command> 
+                <property>/controls/anti-ice/engine/carb-heat</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/sound/switch</property>
+                </binding>
+        </action>
+
+        <action>
+            <name>instr light</name>
+            <button>0</button>
+            <x>-180</x>
+            <y>-374</y>
+            <w>16</w>
+            <h>16</h>
+            <binding>
+                <command>property-toggle</command>
+                <property>/controls/lighting/instrument-lights</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/sound/switch</property>
+            </binding>
+        </action>
+
+        <action>
+            <name>landing light</name>
+            <button>0</button>
+            <x>-146</x>
+            <y>-374</y>
+            <w>16</w>
+            <h>16</h>
+            <binding>
+                <command>property-toggle</command>
+                <property>/controls/lighting/landing-lights[0]</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/sound/switch</property>
+            </binding>
+        </action>
+
+        <action>
+            <name>nav lights</name>
+            <button>0</button>
+            <x>-112</x>
+            <y>-374</y>
+            <w>16</w>
+            <h>16</h>
+            <binding>
+                <command>property-toggle</command>
+                <property>/controls/lighting/nav-lights</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>/controls/lighting/beacon</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/sound/switch</property>
+            </binding>
+        </action>
+
+<!--    Heading    -->
+
+        <action>
+            <name>small decrease</name>
+            <button>0</button>
+            <x>-392</x>
+            <y>-214</y>
+            <w>10</w>
+            <h>12</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/heading-indicator/offset-deg</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+        </action>
+
+        <action>
+            <name>large decrease</name>
+            <button>1</button>
+            <x>-392</x>
+            <y>-214</y>
+            <w>10</w>
+            <h>12</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/heading-indicator/offset-deg</property>
+                <step>-5</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+        </action>
+
+        <action>
+            <name>small increase</name>
+            <button>0</button>
+            <x>-382</x>
+            <y>-214</y>
+            <w>10</w>
+            <h>12</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/heading-indicator/offset-deg</property>
+                <step>1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+        </action>
+
+        <action>
+            <name>large increase</name>
+            <button>1</button>
+            <x>-382</x>
+            <y>-214</y>
+            <w>10</w>
+            <h>12</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/heading-indicator/offset-deg</property>
+                <step>5</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+        </action>
+
+<!--    Altimeter    -->
+
+        <action>
+            <name>calibrate fine</name>
+            <button>0</button>
+            <x>-200</x>
+            <y>-112</y>
+            <w>8</w>
+            <h>12</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/altimeter/setting-inhg</property>
+                <step>-0.01</step>
+                <min>26.0</min>
+                <max>33.0</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+
+        <action>
+            <name>calibrate coarse</name>
+            <button>1</button>
+            <x>-200</x>
+            <y>-112</y>
+            <w>8</w>
+            <h>12</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/altimeter/setting-inhg</property>
+                <step>-0.1</step>
+                <min>26.0</min>
+                <max>33.0</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+
+        <action>
+            <name>calibrate fine</name>
+            <button>0</button>
+            <x>-192</x>
+            <y>-112</y>
+            <w>8</w>
+            <h>12</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/altimeter/setting-inhg</property>
+                <step>0.01</step>
+                <min>26.0</min>
+                <max>33.0</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+
+        <action>
+            <name>calibrate coarse</name>
+            <button>1</button>
+            <x>-192</x>
+            <y>-112</y>
+            <w>8</w>
+            <h>12</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/altimeter/setting-inhg</property>
+                <step>0.1</step>
+                <min>26.0</min>
+                <max>33.0</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+
+        <action>
+            <name>increase throttle</name>
+            <button>0</button>
+            <x>-65</x>
+            <y>20</y>
+            <w>20</w>
+            <h>20</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/engines/engine[0]/throttle</property>
+                <step>0.1</step>
+                <min>0.0</min>
+                <max>1.0</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+
+        <action>
+            <name>decrease throttle</name>
+            <button>0</button>
+            <x>-48</x>
+            <y>-60</y>
+            <w>20</w>
+            <h>20</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/engines/engine[0]/throttle</property>
+                <step>-0.1</step>
+                <min>0.0</min>
+                <max>1.0</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+
+        <action>
+            <name>increase prop</name>
+            <button>0</button>
+            <x>-20</x>
+            <y>20</y>
+            <w>20</w>
+            <h>20</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/engines/engine[0]/propeller-pitch</property>
+                <step>0.1</step>
+                <min>0.0</min>
+                <max>1.0</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+
+        <action>
+            <name>decrease prop</name>
+            <button>0</button>
+            <x>05</x>
+            <y>-60</y>
+            <w>20</w>
+            <h>20</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/engines/engine[0]/propeller-pitch</property>
+                <step>-0.1</step>
+                <min>0.0</min>
+                <max>1.0</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+
+        <action>
+            <name>increase mixture</name>
+            <button>0</button>
+            <x>28</x>
+            <y>20</y>
+            <w>20</w>
+            <h>20</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/engines/engine[0]/mixture</property>
+                <step>0.1</step>
+                <min>0.0</min>
+                <max>1.0</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+
+        <action>
+            <name>decrease mixture</name>
+            <button>0</button>
+            <x>55</x>
+            <y>-60</y>
+            <w>20</w>
+            <h>20</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/engines/engine[0]/mixture</property>
+                <step>-0.1</step>
+                <min>0.0</min>
+                <max>1.0</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+
+    </actions>
+
+    </instrument>
+</instruments>
+
+</PropertyList>

@@ -1,0 +1,9 @@
+<PropertyList>
+    <radar>
+        <name>radar</name>
+        <number>0</number>
+    </radar>
+    <groundradar>
+        <name>groundradar</name>
+    </groundradar>
+</PropertyList>

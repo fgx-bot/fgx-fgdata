@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<system name="Property-Helpers">
+
+  <channel name="Left">
+    <pure_gain name="propulsion/engine[0]/oil-pressure-psi">
+      <input>/engines/engine[0]/oil-pressure-psi</input>
+      <gain>1.0</gain>
+    </pure_gain>
+  </channel>
+
+  <channel name="Right">
+    <pure_gain name="propulsion/engine[1]/oil-pressure-psi">
+      <input>/engines/engine[1]/oil-pressure-psi</input>
+      <gain>1.0</gain>
+    </pure_gain>
+  </channel>
+
+</system>

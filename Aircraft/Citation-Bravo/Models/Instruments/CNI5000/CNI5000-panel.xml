@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+    <name>CNI5000 2d Panel</name>
+    <background>Aircraft/Citation-Bravo/Models/Instruments/CNI5000/transparent.png</background>
+    <w>400</w>
+    <h>600</h>
+
+    <instruments>
+
+        <instrument include="comm1.xml">
+            <name>Comm1</name>
+            <condition>
+                <greater-than>
+                    <property>systems/electrical/outputs/comm</property>
+                    <value>5</value>
+                </greater-than>
+            </condition>
+            <x>174</x>
+            <y>560</y>
+            <w>255</w>
+            <h>32</h>
+        </instrument>
+
+        <instrument include="comm2.xml">
+            <name>Comm2</name>
+            <condition>
+                <greater-than>
+                    <property>systems/electrical/outputs/comm[1]</property>
+                    <value>5</value>
+                </greater-than>
+            </condition>
+            <x>174</x>
+            <y>478</y>
+            <w>255</w>
+            <h>32</h>
+        </instrument>
+
+        <instrument include="nav1.xml">
+            <name>Nav1</name>
+            <condition>
+                <greater-than>
+                    <property>systems/electrical/outputs/nav</property>
+                    <value>5</value>
+                </greater-than>
+            </condition>
+            <x>174</x>
+            <y>396</y>
+            <w>255</w>
+            <h>32</h>
+        </instrument>
+
+        <instrument include="nav2.xml">
+            <name>Nav2</name>
+            <condition>
+                <greater-than>
+                    <property>systems/electrical/outputs/nav[1]</property>
+                    <value>5</value>
+                </greater-than>
+            </condition>
+            <x>174</x>
+            <y>314</y>
+            <w>255</w>
+            <h>32</h>
+        </instrument>
+
+        <instrument include="adf.xml">
+            <name>ADF</name>
+            <condition>
+                <greater-than>
+                    <property>systems/electrical/outputs/adf</property>
+                    <value>5</value>
+                </greater-than>
+            </condition>
+            <x>174</x>
+            <y>232</y>
+            <w>255</w>
+            <h>32</h>
+        </instrument>
+
+        <instrument include="kt70-1.xml">
+            <name>ADF</name>
+            <condition>
+                <greater-than>
+                    <property>systems/electrical/outputs/transponder</property>
+                    <value>5</value>
+                </greater-than>
+            </condition>
+            <x>199</x>
+            <y>148</y>
+            <w>255</w>
+            <h>32</h>
+        </instrument>
+
+        <instrument include="kt70-2.xml">
+            <name>ADF</name>
+            <condition>
+                <greater-than>
+                    <property>systems/electrical/outputs/adf</property>
+                    <value>5</value>
+                </greater-than>
+            </condition>
+            <x>199</x>
+            <y>67</y>
+            <w>255</w>
+            <h>32</h>
+        </instrument>
+
+    </instruments>
+</PropertyList>

@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+ <path>alt-ger.ac</path>
+
+ <animation>
+  <type>material</type>
+  <object-name>Face</object-name>
+  <object-name>needle</object-name>
+  <object-name>kilodisk</object-name>
+  <emission>
+    <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+    <red>0.5</red>
+    <green>0.25</green>
+    <blue>0.25</blue>
+  </emission>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>needle</object-name>
+  <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+  <factor>0.11</factor>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>kilodisk</object-name>
+  <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+  <factor>0.011</factor>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-0.01</z-m>
+  </center>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ 
+</PropertyList>
+
+

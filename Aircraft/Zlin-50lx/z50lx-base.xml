@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <sim include="Nasal/views.xml">
+
+    <author>Emmanuel BARANGER (3D), Pierre GEOFFROY (FDM), Sebastien MARQUE (Panel), Laurent HAYVEL (Texture)</author>
+    <aircraft-version>0.1</aircraft-version>
+    <status>Alpha</status>
+
+    <fuel-fraction>0.75</fuel-fraction>
+
+    <startup>
+      <splash-texture>Aircraft/Zlin-50lx/z50lx-splash.png</splash-texture>
+    </startup>
+
+    <sound>
+      <path archive="y">Aircraft/Zlin-50lx/Sounds/z50lx-sound.xml</path>
+    </sound>
+
+    <model>
+      <path archive="y">Aircraft/Zlin-50lx/Models/z50lx.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+      <hide-fiche type="bool"> 0 </hide-fiche>
+    </model>
+
+    <panel>
+      <visibility archive="y">false</visibility>
+    </panel>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic> 
+        <int type="int">0</int>  <!-- 0 immat -->
+        <int type="int">0</int>  <!-- 1 immat -->
+        <int type="int">0</int>  <!-- 2 immat -->
+        <int type="int">0</int>  <!-- 3 immat -->
+        <int type="int">0</int>  <!-- 4 immat -->
+        <int type="int">0</int>  <!-- 5 immat -->
+        <int type="bool">0</int> <!-- 6 smoke -->
+        <int type="int">0</int>  <!-- 7 color -->
+        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
+        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
+      </generic>
+    </multiplay>
+
+    <help>
+      <title>Zlin z50 lx</title>
+      <key>
+        <name>d</name>
+        <desc>Open/Close canopy</desc>
+      </key>
+      <key>
+        <name>S</name>
+        <desc>Start smoke</desc>
+      </key>
+      <key>
+        <name>u</name>
+        <desc>Stop smoke</desc>
+      </key>
+    </help>
+
+    <weight n="0">
+      <name>Pilot</name>
+      <weight-lb>175</weight-lb>
+      <max-lb>200</max-lb>
+    </weight>
+
+    <menubar include="Dialogs/z50lx-menu.xml"/>
+
+  </sim>
+  
+  <controls>
+    <smoke alias="/sim/multiplay/generic/int[6]"/>
+  </controls>
+  
+  <input>
+    <keyboard include="Nasal/z50lx-keyboard.xml"/>
+  </input>
+
+  <nasal>
+    <doors>
+      <file>Aircraft/Zlin-50lx/Nasal/doors.nas</file>
+    </doors>
+    <z50lx>
+      <file>Aircraft/Zlin-50lx/Nasal/fluids.nas</file>
+      <file>Aircraft/Zlin-50lx/Nasal/liveries.nas</file>
+      <file>Aircraft/Zlin-50lx/Nasal/immat.nas</file>
+      <file>Aircraft/Zlin-50lx/Nasal/light.nas</file>
+    </z50lx>
+  </nasal>
+
+</PropertyList>
+

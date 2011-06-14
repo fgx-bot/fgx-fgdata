@@ -1,0 +1,246 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<name>Display Controls</name>
+	<w-base>1024</w-base>
+	<h-base>768</h-base>
+
+	<layers>
+
+		<layer>
+			<name>tracking on</name>
+			<type>text</type>
+			<font>helvetica_bold</font>
+			<point-size>14</point-size>
+			<color>
+				<red>0</red>
+				<green>1</green>
+				<blue>0</blue>
+			</color>
+			<chunks>
+				<chunk>
+					<type>literal</type>
+					<text>TARGET CONTROLS</text>
+				</chunk>
+			</chunks>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>0</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>0</offset>
+				</transformation>
+			</transformations>
+		</layer>
+
+		<layer>
+			<name>Target</name>
+			<type>text</type>
+			<font>helvetica_bold</font>
+			<point-size>14</point-size>
+			<color>
+				<red>0</red>
+				<green>1</green>
+				<blue>0</blue>
+			</color>
+			<chunks>
+				<chunk>
+					<type>number-value</type>
+					<property>instrumentation/radar/target-number</property>
+					<format>Target No.: &lt; %3.0f &gt;</format>
+				</chunk>
+			</chunks>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>-0</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>-20</offset>
+				</transformation>
+			</transformations>
+		</layer>
+
+		<layer>
+			<name>MP Callsign</name>
+			<type>text</type>
+			<font>helvetica_bold</font>
+			<point-size>14</point-size>
+			<color>
+				<red>0</red>
+				<green>1</green>
+				<blue>0</blue>
+			</color>
+			<chunks>
+				<chunk>
+					<type>text-value</type>
+					<property>instrumentation/radar/target-callsign</property>
+					<format>Callsign: %s</format>
+				</chunk>
+			</chunks>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>0</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>-60</offset>
+				</transformation>
+			</transformations>
+		</layer>
+
+		<layer>
+			<name>MP brg</name>
+			<type>text</type>
+			<font>helvetica_bold</font>
+			<point-size>14</point-size>
+			<color>
+				<red>0</red>
+				<green>1</green>
+				<blue>0</blue>
+			</color>
+			<chunks>
+				<chunk>
+					<type>number-value</type>
+					<property>instrumentation/radar/target-brg</property>
+					<format>Bearing: %3.1f T</format>
+				</chunk>
+			</chunks>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>0</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>-80</offset>
+				</transformation>
+			</transformations>
+		</layer>
+
+		<layer>
+			<name>MP range</name>
+			<type>text</type>
+			<font>helvetica_bold</font>
+			<point-size>14</point-size>
+			<color>
+				<red>0</red>
+				<green>1</green>
+				<blue>0</blue>
+			</color>
+			<chunks>
+				<chunk>
+					<type>number-value</type>
+					<property>instrumentation/radar/target-range</property>
+					<format>Range: %3.1f Nm</format>
+				</chunk>
+			</chunks>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>-0</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>-100</offset>
+				</transformation>
+			</transformations>
+		</layer>
+
+		<layer>
+			<name>MP spd</name>
+			<type>text</type>
+			<font>helvetica_bold</font>
+			<point-size>14</point-size>
+			<color>
+				<red>0</red>
+				<green>1</green>
+				<blue>0</blue>
+			</color>
+			<chunks>
+				<chunk>
+					<type>number-value</type>
+					<property>instrumentation/radar/target-kt</property>
+					<format>Spd:%3.0f Kt</format>
+				</chunk>
+			</chunks>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>-0</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>-120</offset>
+				</transformation>
+			</transformations>
+		</layer>
+
+		<layer>
+			<name>MP altitude</name>
+			<type>text</type>
+			<font>helvetica_bold</font>
+			<point-size>14</point-size>
+			<color>
+				<red>0</red>
+				<green>1</green>
+				<blue>0</blue>
+			</color>
+			<chunks>
+				<chunk>
+					<type>number-value</type>
+					<property>instrumentation/radar/target-alt</property>
+					<format>Altitude: %6.0f ft</format>
+				</chunk>
+			</chunks>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>0</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>-140</offset>
+				</transformation>
+			</transformations>
+		</layer>
+
+	</layers>
+
+	<actions>
+
+		<action>
+			<name>prev target</name>
+			<button>0</button>
+			<x>100</x>
+			<y>-25</y>
+			<w>40</w>
+			<h>20</h>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>Radar.radar.step_target(-1);</script>
+			</binding>
+		</action>
+
+		<action>
+			<name>next target</name>
+			<button>0</button>
+			<x>140</x>
+			<y>-25</y>
+			<w>40</w>
+			<h>20</h>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>Radar.radar.step_target(1);</script>
+			</binding>
+		</action>
+
+	</actions>
+
+</PropertyList>

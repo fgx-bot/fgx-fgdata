@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<!-- ejection seat -->
+
+<PropertyList>
+
+	<path>MB-MK2.ac</path>
+
+	<animation>
+		<type>select</type>
+		<object-name>Pilot</object-name>
+	</animation>
+
+</PropertyList>

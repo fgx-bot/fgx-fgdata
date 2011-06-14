@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+
+<!--
+command interface /autopilot/route-manager/input:
+
+  @clear             ... clear route
+  @pop               ... remove first entry
+  @delete3           ... delete 4th entry
+  @insert2:ksfo@900  ... insert "ksfo@900" as 3rd entry
+  ksfo@900           ... append "ksfo@900"
+
+-->
+
+<PropertyList>
+    <name>map</name>
+    <layout>vbox</layout>
+    <resizable>true</resizable>
+
+    <nasal>
+        <open>
+
+        </open>
+
+        <close>
+
+        </close>
+    </nasal>
+
+        <group>
+            <layout>hbox</layout>
+            <empty><stretch>1</stretch></empty>
+
+            <text>
+                <label>Map</label>
+            </text>
+
+            <empty><stretch>1</stretch></empty>
+
+            <button>
+                <pref-width>16</pref-width>
+                <pref-height>16</pref-height>
+                <legend></legend>
+                <keynum>27</keynum>
+                <border>2</border>
+
+                <binding>
+                    <command>dialog-close</command>
+                </binding>
+            </button>
+        </group>
+        <hrule/>
+
+        <group>
+            <layout>hbox</layout>
+            <stretch>true</stretch>
+
+            <!-- sidebar -->
+            <group>
+                <layout>vbox</layout>
+                <text>
+                    <label>Display:</label>
+                </text>
+
+                <checkbox>
+                    <label>Fixes</label>
+                    <pref-width>100</pref-width>
+                    <property>/gui/map/draw-fixes</property>
+                    <live>true</live>
+                    <binding>
+                      <command>dialog-apply</command>
+                    </binding>
+                    <binding>
+                      <command>property-toggle</command>
+                    </binding>
+                </checkbox>
+
+                <checkbox>
+                    <label>Navaids</label>
+                    <pref-width>100</pref-width>
+                    <property>/gui/map/draw-navaids</property>
+                    <live>true</live>
+                    <binding>
+                      <command>dialog-apply</command>
+                    </binding>
+                    <binding>
+                      <command>property-toggle</command>
+                    </binding>
+                </checkbox>
+<!--
+                <button>
+                    <legend>Airways</legend>
+                    <pref-width>100</pref-width>
+                </button>
+-->
+
+                <checkbox>
+                    <label>Traffic</label>
+                    <pref-width>100</pref-width>
+                    <property>/gui/map/draw-traffic</property>
+                    <live>true</live>
+                    <binding>
+                      <command>dialog-apply</command>
+                    </binding>
+                    <binding>
+                      <command>property-toggle</command>
+                    </binding>
+                </checkbox>
+
+<!--
+                <button>
+                    <legend>Obstacles</legend>
+                    <pref-width>100</pref-width>
+                </button>
+-->
+
+                <checkbox>
+                    <label>Data</label>
+                    <pref-width>100</pref-width>
+                    <property>/gui/map/draw-data</property>
+                    <live>true</live>
+                    <binding>
+                      <command>dialog-apply</command>
+                    </binding>
+                    <binding>
+                      <command>property-toggle</command>
+                    </binding>
+                </checkbox>
+
+                <empty><stretch>true</stretch></empty>
+
+                <checkbox>
+                    <label>Center on Acft</label>
+                    <pref-width>100</pref-width>
+                    <property>/gui/map/centre-on-aircraft</property>
+                    <live>true</live>
+                    <binding>
+                      <command>dialog-apply</command>
+                    </binding>
+                    <binding>
+                      <command>property-toggle</command>
+                    </binding>
+                </checkbox>
+
+                <checkbox>
+                    <label>Aircraft Hdg Up</label>
+                    <pref-width>100</pref-width>
+                    <property>/gui/map/aircraft-heading-up</property>
+                    <live>true</live>
+                    <binding>
+                      <command>dialog-apply</command>
+                    </binding>
+                    <binding>
+                      <command>property-toggle</command>
+                    </binding>
+                </checkbox>
+
+                <checkbox>
+                    <label>Magnetic Hdgs</label>
+                    <pref-width>100</pref-width>
+                    <property>/gui/map/magnetic-headings</property>
+                    <live>true</live>
+                    <binding>
+                      <command>dialog-apply</command>
+                    </binding>
+                    <binding>
+                      <command>property-toggle</command>
+                    </binding>
+                </checkbox>
+
+                <empty><stretch>true</stretch></empty>
+
+                <button>
+                    <legend>Close</legend>
+                    <pref-width>100</pref-width>
+                    <default>true</default>
+                    <binding>
+                      <command>dialog-close</command>
+                    </binding>
+                </button>
+
+            </group>
+
+            <vrule/>
+
+            <map>
+                <!-- <halign>fill</halign> -->
+                <valign>fill</valign>
+                <halign>fill</halign>
+                <stretch>true</stretch>
+                <pref-height>400</pref-height>
+                <pref-width>600</pref-width>
+                <property>/gui/map</property>
+            </map>
+
+        </group>
+</PropertyList>
+

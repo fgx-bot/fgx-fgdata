@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+
+<airplane mass="720">
+
+<!-- Approach configuration -->
+<approach speed="30" aoa="4" glide-angle="4">
+</approach>
+
+<!-- Cruise configuration -->
+<cruise speed="50" alt="5000" glide-angle="5">
+</cruise>
+
+<!-- pilot's eyepoint -->
+<cockpit x="-1.648" y="0" z="0.572"/>
+
+<fuselage ax="0.0" ay="0.0" az="0.0" bx="-8.35" by="0.0" bz="0.3"
+		  width="0.68" taper="0.28" midpoint="0.25" idrag:="1" />
+
+<wing x="-3.059" y="0.370" z="0.351" taper="0.15" incidence="5.0" twist="-2.5"
+	  length="8.334" chord="1.445" sweep="-5" dihedral="5" >
+	<stall aoa="30" width="12" peak="1.5"/>
+		<flap0 start="0.43" end="0.97" lift="1.55" drag="1.3"/>
+			<control-input axis="/controls/flight/aileron" control="FLAP0" split="true"/>
+			<control-output control="FLAP0" side="left" prop="surface-positions/left-aileron-pos-norm"/>
+			<control-output control="FLAP0" side="right" prop="surface-positions/right-aileron-pos-norm"/>
+			<control-speed control="FLAP0" transition-time="0.5"/>
+	<spoiler start="0.34" end="0.44" lift="-2" drag="15.5"/>
+	<control-input axis="/controls/flight/aileron" control="FLAP0" split="true"/>
+	<control-output control="FLAP0" side="left"
+			prop="surface-positions/left-aileron-pos-norm"/>
+	<control-output control="FLAP0" side="right"
+			prop="surface-positions/right-aileron-pos-norm"/>
+	<control-speed control="FLAP0" transition-time="0.8"/>
+			<control-input axis="/controls/engines/engine/throttle" control="SPOILER"/>
+	<control-input axis="/controls/engines/engine[0]/throttle" control="SPOILER"/>
+	<control-output control="SPOILER" prop="/surface-positions/speedbrake-pos-norm"/>
+	<control-speed control="SPOILER" transition-time="1.5"/>
+</wing>
+
+<hstab x="-7.125" y="0.0" z="0.385" taper="0.2" 
+	   length="2.8" chord="0.861" sweep="0" incidence="5.0" effectiveness="1.8">
+	<stall aoa="30" width="16" peak="1.5"/>
+		<flap0 start="0.0" end="0.89" lift="1.6" drag="1.3"/>
+			<control-input axis="/controls/flight/elevator" control="FLAP0"/>
+			<control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
+			<control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+</hstab>
+
+<vstab x="-7.043" y="0" z="0.432" taper="0.19" effectiveness="2.5"
+	   length="1.13" chord="0.5" sweep="0">
+	<stall aoa="15" width="14" peak="1.5"/>
+		<flap0 start="0" end="0.88" lift="1.6" drag="1.3"/>
+			<control-input axis="/controls/flight/rudder" square="true" control="FLAP0" invert="true"/>
+			<control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
+			<control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm" min="1" max="-1"/>
+</vstab>
+
+
+<!-- nose wheel -->
+<gear x="-0.916" y="0" z="-0.342" compression="0.1" spring="1" damp="2" 
+   dfric="0.2" sfric ="0.24" >
+</gear>
+
+<!-- main wheel-->
+<gear x="-3.188" y="0" z="-0.390" compression="0.1" spring="1" damp="1"
+   dfric="0.14" sfric ="0.16">
+  <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
+  <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+</gear>
+
+<!-- Tail wheel -->
+
+<gear x="-7.78" y="0" z="+0.074" compression="0.1" dfric="0.2" sfric ="0.24" damp="2" skid="1">
+</gear>
+
+<!--right wing skid-->
+<gear x="-2.60" y="-8.371" z="0.871" skid="1" compression="0.10" spring="0.8" sfric="0.5" dfric="0.4"/>
+<gear x="-3.05" y="-8.371" z="0.871" skid="1" compression="0.10" spring="0.8" sfric="0.5" dfric="0.4"/>
+
+
+<!--lef wing skid-->
+<gear x="-2.60" y="8.371" z="0.871" skid="1" compression="0.10" spring="0.8" sfric="0.5" dfric="0.4"/>
+<gear x="-3.05" y="8.371" z="0.871" skid="1" compression="0.10" spring="0.8" sfric="0.5" dfric="0.4"/>
+
+<!-- pilots -->
+
+<ballast x="-1.571" y="0" z="0.011" mass="140"/>
+<ballast x="-2.4" y="0" z="0.099" mass="140"/>
+
+
+<!-- hitch -->
+
+<hitch name="winch" x="-0.73" y="0" z="-0.211">
+	<tow length="51" weight-per-meter="0.1" elastic-constant="40000"  break-force="10000"/>
+	<!-- 4.5mm steel wire-->
+	<winch max-tow-length="1000" min-tow-length="1" initial-tow-length="1000" max-winch-speed="40" power="150" max-force="6000" />
+	<control-input axis="/controls/winch/place" control="PLACEWINCH"/>
+</hitch>
+
+<hitch name="aerotow" x="-0.73" y="0" z="-0.211" force-is-calculated-by-other="0">
+	<tow length="60" weight-per-meter="0.035" elastic-constant="9000" break-force="10000" mp-auto-connect-period="0.0"/>
+	<winch max-tow-length="1000" min-tow-length="60" initial-tow-length="60"/>
+	<control-input axis="/controls/aerotow/find-aircraft" control="FINDAITOW"/>
+
+</hitch>
+
+</airplane>

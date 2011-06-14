@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <locale n="0">
+  <lang type="string">POSIX</lang>
+  <lang type="string">C</lang>
+  <lang type="string">en</lang>
+  <lang type="string">en_US</lang>
+  <lang type="string">en_AU</lang>
+  <lang type="string">en_CA</lang>
+  <lang type="string">en_CA.ISO8859-15</lang>
+  <lang type="string">en_AU.ISO8859-15</lang>
+  <lang type="string">en_GB.ISO8859-15</lang>
+  <lang type="string">en_US.ISO8859-15</lang>
+
+  <font>Helvetica.txf</font>
+  <strings>Translations/strings-default.xml</strings>
+ </locale>
+ 
+ <locale>
+  <lang type="string">es</lang>
+  <lang type="string">es_AR</lang>
+  <lang type="string">es_MX</lang>
+  <lang type="string">es_ES.ISO8859-15</lang>
+  <lang type="string">es_AR.ISO8859-15</lang>
+  <lang type="string">es_MX.ISO8859-15</lang>
+
+  <strings>Translations/strings-es.xml</strings>
+ </locale>
+
+ <locale>
+  <lang type="string">de</lang>
+  <lang type="string">de_AT</lang>
+  <lang type="string">de_CH</lang>
+  <lang type="string">de_AT.ISO8859-15</lang>
+  <lang type="string">de_DE.ISO8859-15</lang>
+  <lang type="string">de_CH.ISO8859-15</lang>
+
+  <strings>Translations/strings-de.xml</strings>
+ </locale>
+
+ <locale>
+  <lang type="string">fr</lang>
+  <lang type="string">fr_BE</lang>
+  <lang type="string">fr_CA</lang>
+  <lang type="string">fr_CH</lang>
+  <lang type="string">fr_FR.ISO8859-15</lang>
+  <lang type="string">fr_BE.ISO8859-15</lang>
+  <lang type="string">fr_CA.ISO8859-15</lang>
+  <lang type="string">fr_CH.ISO8859-15</lang>
+
+  <strings>Translations/strings-fr.xml</strings>
+ </locale>
+
+<locale>
+  <lang type="string">it</lang>
+  <lang type="string">italian</lang>
+  <lang type="string">it_CH</lang>
+  <lang type="string">it_CH.ISO-8859-1</lang>
+  <lang type="string">it_CH.UTF-8</lang>
+  <lang type="string">it_IT</lang>
+  <lang type="string">it_IT.ISO-8859-1</lang>
+  <lang type="string">it_IT.ISO-8859-15</lang>
+  <lang type="string">it_IT.UTF-8</lang>
+  <strings>Translations/strings-it.xml</strings>
+ </locale>
+
+ <locale>
+  <lang type="string">nl</lang>
+  <lang type="string">nl_BE</lang>
+  <lang type="string">nl_NL.ISO8859-15</lang>
+  <lang type="string">nl_BE.ISO8859-15</lang>
+
+  <strings>Translations/strings-nl.xml</strings>
+ </locale>
+
+ <locale>
+  <lang type="string">pl</lang>
+  <lang type="string">pl_PL</lang>
+  <lang type="string">pl_PL.ISO8859-2</lang>
+  <lang type="string">pl_PL.Windows-1250</lang>
+
+  <strings>Translations/strings-pl.xml</strings>
+ </locale>
+
+<!--
+ <locale>
+  <lang type="string">cs</lang>
+
+  <strings>Translations/strings-cs.xml</strings>
+ </locale>
+
+ <locale>
+  <lang type="string">da</lang>
+  <lang type="string">da_DK.ISO8859-15</lang>
+
+  <strings>Translations/strings-da.xml</strings>
+ </locale>
+
+ <locale>
+  <lang type="string">de</lang>
+  <lang type="string">de_AT</lang>
+  <lang type="string">de_CH</lang>
+  <lang type="string">de_AT.ISO8859-15</lang>
+  <lang type="string">de_DE.ISO8859-15</lang>
+  <lang type="string">de_CH.ISO8859-15</lang>
+
+  <strings>Translations/strings-de.xml</strings>
+ </locale>
+
+ <locale>
+  <lang type="string">el</lang>
+
+  <strings>Translations/strings-el.xml</strings>
+ </locale>
+
+ <locale>
+  <lang type="string">es</lang>
+  <lang type="string">es_AR</lang>
+  <lang type="string">es_MX</lang>
+  <lang type="string">es_ES.ISO8859-15</lang>
+  <lang type="string">es_AR.ISO8859-15</lang>
+  <lang type="string">es_MX.ISO8859-15</lang>
+
+  <strings>Translations/strings-es.xml</strings>
+ </locale>
+
+ <locale>
+  <lang type="string">fi</lang>
+  <lang type="string">fi_FI.ISO8859-15</lang>
+
+  <strings>Translations/strings-fi.xml</strings>
+ </locale>
+
+ <locale>
+  <lang type="string">hu</lang>
+
+  <strings>Translations/strings-en.xml</strings>
+ </locale>
+
+ <locale>
+  <lang type="string">is</lang>
+  <lang type="string">is_IS.ISO8859-15</lang>
+
+  <strings>Translations/strings-is.xml</strings>
+ </locale>
+
+ <locale>
+  <lang type="string">it</lang>
+  <lang type="string">it_CH</lang>
+  <lang type="string">it_IT.ISO8859-15</lang>
+  <lang type="string">it_CH.ISO8859-15</lang>
+
+  <strings>Translations/strings-it.xml</strings>
+ </locale>
+
+ <locale>
+  <lang type="string">no</lang>
+  <lang type="string">no_NO.ISO8859-15</lang>
+
+  <strings>Translations/strings-no.xml</strings>
+ </locale>
+
+ <locale>
+  <lang type="string">pt</lang>
+  <lang type="string">pt_BR</lang>
+  <lang type="string">pt_BR.ISO8859-15</lang>
+  <lang type="string">pt_PT.ISO8859-15</lang>
+
+  <strings>Translations/strings-pt.xml</strings>
+ </locale>
+
+ <locale>
+  <lang type="string">ru</lang>
+
+  <strings>Translations/strings-ru.xml</strings>
+ </locale>
+
+ <locale>
+  <lang type="string">sk</lang>
+
+  <strings>Translations/strings-sk.xml</strings>
+ </locale>
+
+ <locale>
+  <lang type="string">sv</lang>
+  <lang type="string">sv_SE.ISO8859-15</lang>
+
+  <strings>Translations/strings-sv.xml</strings>
+ </locale>
+
+ <locale>
+  <lang type="string">tr</lang>
+
+  <strings>Translations/strings-tr.xml</strings>
+ </locale>
+-->
+
+</PropertyList>

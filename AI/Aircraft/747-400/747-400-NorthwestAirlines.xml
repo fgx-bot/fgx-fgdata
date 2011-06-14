@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<PropertyList include="747-400-main.xml">
+  <description>Boeing-747-400</description>
+  <author>Innis Cunningham</author>
+  <path>Models/747-AI.ac</path>
+  <texture-path>Textures/NorthwestAirlines</texture-path>
+      	<animation>
+		<type>select</type>
+		<object-name>gear</object-name>
+		<condition>
+			<less-than>
+				<property>velocities/true-airspeed-kt</property>
+				<value>200</value>
+			</less-than>
+		</condition>
+	</animation>
+</PropertyList>
+
+
+

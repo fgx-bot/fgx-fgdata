@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!-- 
+     (c)2003 Peter Michael Jaworski                   		     v.1.5PLX  		
+     <pjawor@et.put.poznan.pl>                       		    Poznan, POLAND  
+     Tlumaczenia opcji i menu dla FlightGeara na jezyk polski (bez polskich znakow)			  		
+     FlightGear menu and options tranlations for Polish (without Polish letters)      			  		
+     GNU GPL Licence                                        			  		
+     Special thanks to Wojciech Jozwiak, Maciej Obarski and Krzysztof Nowak	  		
+     When there will be some new texts, simply add them at the end of file, 
+     I will translate them later.     			         			  			
+-->
+
+<PropertyList>
+  <!-- Fall back -->
+  <null>Brak tlumaczenia</null>
+
+ <!--         -->
+ <!-- General -->
+ <!--         -->
+
+ <system-time>Czas systemowy</system-time>
+ <gmt>Czas uniwersalny GMT</gmt>
+ <locale-aricraft-time>Lokalny czas samolotu</locale-aricraft-time>
+ <units-feet>(w stopach gdy brak parametru: --units-meters)</units-feet>
+ <multiple-instance>Zezwol na kilka instancji programu</multiple-instance>
+
+  <!-- File menu -->
+  <file>Plik</file>
+  <save-flight>Zapisz lot</save-flight>
+  <load-flight>Zaladuj lot</load-flight>
+  <reset>Reset</reset>
+  <hi-res-snap-shot>Zrzut (wys. roz.)</hi-res-snap-shot>
+  <snap-shot>Zrzut ekranu</snap-shot>
+  <print>Drukuj</print>
+  <exit>Zamknij</exit>
+
+  <!-- View menu -->
+  <view>Widok</view>
+  <toggle-panel>Przelacz panel (2D/3D)</toggle-panel>
+  <pilot-offset>Polozenie pilota</pilot-offset>
+  <hud-alpha>Antyaliasing wyswietlacza przeziernego wl./wy.</hud-alpha>
+  <properties>Wlasciwosci</properties>
+
+  <!-- Environment menu -->
+  <environment>Srodowisko</environment>
+  <goto-airport>Wybierz lotnisko</goto-airport>
+ <presets>Ustawienia</presets>
+ <preset-airport>Nowe lotnisko</preset-airport>
+ <preset-runway>Nowy pas startowy</preset-runway>
+ <preset-offset-distance>Ustaw odleglosc przesuniecia</preset-offset-distance>
+ <preset-altitude>Ustaw wysokosc</preset-altitude>
+ <preset-glideslope>Ustaw kat schodzenia [stopnie]</preset-glideslope>
+ <preset-airspeed>Ustaw predkosc [kts]</preset-airspeed>
+ <preset-commit>Zatwierdz zmiany</preset-commit>
+
+  <!-- Autopilot menu -->
+  <autopilot>Autopilot</autopilot>
+  <set-heading>Ustaw kierunek </set-heading>
+  <set-altitude>Ustaw wysokosc</set-altitude>
+  <add-waypoint>Dodaj punkt przelotowy</add-waypoint>
+  <skip-current-waypoint>Przeskocz obecny punkt</skip-current-waypoint>
+  <clear-route>Wyczysc trase</clear-route>
+  <adjust-ap-settings>Dostosuj ustawienia AP</adjust-ap-settings>
+  <toggle-hud-format>Przelacz format wyswietlacza przeziernego</toggle-hud-format>
+
+  <!-- Help menu -->
+  <help>Pomoc</help>
+
+ <!--              -->
+ <!-- options file -->
+ <!--              -->
+ <usage>fgfs [ opcje ... ]</usage>
+ <verbose-help>W celu uzyskania listy opcji uruchom z: --help --verbose</verbose-help>
+
+ <!-- General options -->
+ <general-options>Ustawienia ogolne</general-options>
+ <help-desc>Pokaz najczesciej stosowane opcje startowe</help-desc>
+ <verbose-desc>Pokazuje wszystkie opcje linii komend: --help or -h</verbose-desc>
+ <fg-root-desc>Sciezka do glownego katalogu danych</fg-root-desc>
+ <fg-scenery-desc n="0">Sciezka do scenerii;</fg-scenery-desc>
+ <fg-scenery-desc n="1">Domyslna sciezka $FG_ROOT/Scenery</fg-scenery-desc>
+ <language-desc>Wybierz jezyk dla tej sesji</language-desc>
+ <disable-game-mode-desc>Wylaczony tryb pelnoekranowy</disable-game-mode-desc>
+ <enable-game-mode-desc>Zezwol na tryb pelnoekranowy</enable-game-mode-desc>
+ <disable-splash-screen-desc>Brak ekranu powitalnego</disable-splash-screen-desc>
+ <enable-splash-screen-desc>Wlacz ekran powitalny</enable-splash-screen-desc>
+ <disable-intro-music-desc>Brak intro muzycznego</disable-intro-music-desc>
+ <enable-intro-music-desc>Wlacz intro muzyczne</enable-intro-music-desc>
+ <disable-mouse-pointer-desc>Niedostepny dodatkowy wskaznik myszy</disable-mouse-pointer-desc>
+ <enable-mouse-pointer-desc n="0">Dostepny dodatkowy wskaznik myszy</enable-mouse-pointer-desc>
+ <enable-mouse-pointer-desc n="1">(np. dla trybu pelnoekranowego dla kart bazujacych na Voodoo)</enable-mouse-pointer-desc>
+ <disable-random-objects-desc>Wylaczone losowe obiekty terenowe</disable-random-objects-desc>
+ <enable-random-objects-desc>Wlaczone losowe obiekty terenowe</enable-random-objects-desc>
+ <random-objects-desc>(budynki, itp.)</random-objects-desc>
+ <disable-freeze-desc>Start w stanie uruchomionym</disable-freeze-desc>
+ <enable-freeze-desc>Uruchom w trybie wstrzynanym</enable-freeze-desc>
+ <disable-fuel-freeze-desc>Paliwo jest normalnie wykorzystywane</disable-fuel-freeze-desc>
+ <enable-fuel-freeze-desc>Nie ubywa paliwa w zbiorniku</enable-fuel-freeze-desc>
+ <disable-clock-freeze-desc>Zegar zlicza normalnie</disable-clock-freeze-desc>
+ <enable-clock-freeze-desc>Unieruchom zegar</enable-clock-freeze-desc>
+ <control-desc>Glowny tryb sterowania (dzojstik, klawiatura, mysz)</control-desc>
+ <enable-auto-coordination-desc>Dostepna autokoordynacja</enable-auto-coordination-desc>
+ <disable-auto-coordination-desc>Niedostepna autokoordynacja</disable-auto-coordination-desc>
+ <browser-app-desc>Sciezka do twojej przegladarki internetowej</browser-app-desc>
+ <prop-desc>Ustaw wlasciwosc &lt;name&gt; na &lt;value&gt;</prop-desc>
+ <config-desc>Zaladuj dodatkowe wlasciwosci z ...</config-desc>
+ <units-feet-desc>Uzyj miary w stopach dla odleglosci</units-feet-desc>
+ <units-meters-desc>Uzyj miary w metrach dla odleglosci</units-meters-desc>
+
+ <!-- Features options -->
+ <features-options>Dodatki</features-options>
+ <disable-hud-desc>Niedostepny wyswietlacz przezierny </disable-hud-desc>
+ <enable-hud-desc>Dostepny wyswietlacz przezierny (HUD)</enable-hud-desc>
+ <disable-panel-desc>Niedostepny kokpit</disable-panel-desc>
+ <enable-panel-desc>Dostepny kokpit</enable-panel-desc>
+ <disable-sound-desc>Niedostepne efekty dzwiekowe</disable-sound-desc>
+ <enable-sound-desc>Dostepne efekty dzwiekowe</enable-sound-desc>
+ <disable-anti-alias-hud-desc>Niedostepny antyaliasing HUDa</disable-anti-alias-hud-desc>
+ <enable-anti-alias-hud-desc>Dostepny antyaliasing HUDa</enable-anti-alias-hud-desc>
+
+ <!-- Aircraft options -->
+ <aircraft-options>Samolot</aircraft-options>
+ <aircraft-desc>Wybierz profil samolotu podany przez: gorny poziom &lt;name&gt;-set.xml</aircraft-desc>
+ <show-aircraft-desc>Drukuj liste dostepnych samolotow</show-aircraft-desc>
+
+ <!-- Flight Dynamics Model options -->
+ <fdm-options>Model dynamiki lotu (FDM)</fdm-options>
+ <fdm-desc n="0">Wybierz glowny model dynamiki lotu</fdm-desc>
+ <fdm-desc n="1">Dostepne: jsb, larcsim, yasim, magic, balloon, ada, external, lub null</fdm-desc>
+ <aero-desc>Wybierz model areodynamiki do wczytania:</aero-desc>
+ <model-hz-desc>Uruchom FDM z wspolczynnikiem..(krok na sekunde)</model-hz-desc>
+ <speed-desc>Uruchamiaj FDM 'n' razy szybciej niz w rzeczywistosci</speed-desc>
+ <notrim-desc n="0">NIE probuj zrownowazyc model</notrim-desc>
+ <notrim-desc n="1">(tylko z dynamika lotu fdm=jsbsim)</notrim-desc>
+ <on-ground-desc>Start z ziemi(domyslnie)</on-ground-desc>
+ <in-air-desc>Rozpocznij w powietrzu(gdy wywolanie z parametrem --altitude)</in-air-desc>
+ <wind-desc>Parametry wiatru: z kierunku [stopnie] z predkoscia [knots]</wind-desc>
+ <aircraft-dir-desc>Katalog z samolotami (Sciezka wzgledem pliku startowego programu)</aircraft-dir-desc>
+ <aircraft-model-options>Katalog z samolotami (tylko dla UIUC FDM)</aircraft-model-options>
+
+ <!-- Position and Orientation options -->
+ <position-options>Poczatkowa pozycja i orientacja</position-options>
+ <runway-no-desc>Wybierz pas do startu (musisz podac rowniez lotnisko)</runway-no-desc>
+ <offset-distance-desc>Dystans do progu drogi startowej</offset-distance-desc>
+ <offset-azimuth-desc>Kierunek do progu drogi startowej</offset-azimuth-desc>
+ <lon-desc>Dlugosc geograficzna pozycji startu (zachod = -)</lon-desc>
+ <lat-desc>Szerokosc geograficzna pozycji startu (poludnie = -)</lat-desc>
+ <altitude-desc>Wysokosc poczatkowa</altitude-desc>
+ <heading-desc>Podaj kierunek odchylenia (Psi)</heading-desc>
+ <roll-desc>Podaj kat  przechylu (Phi)</roll-desc>
+ <pitch-desc>Podaj kat pochylenia (Theta)</pitch-desc>
+ <uBody-desc>Podaj predkosc wzdluz osi X</uBody-desc>
+ <vBody-desc>Podaj predkosc wzdluz osi Y</vBody-desc>
+ <wBody-desc>Podaj predkosc wzdluz osi Z</wBody-desc>
+ <vc-desc>Podaj poczatkowa predkosc</vc-desc>
+ <mach-desc>Podaj poczatkowa liczbe Mach</mach-desc>
+ <glideslope-desc>Podaj wzgledny azymut podejscia (moze byc dodatni)</glideslope-desc>
+ <roc-desc>Poczatkowy wspolczynnik wznoszenia (moze byc ujemny)</roc-desc>
+
+ <!-- Rendering options -->
+ <rendering-options>Opcje renderowania</rendering-options>
+ <bpp-desc>Liczba bitow na piksel</bpp-desc>
+ <fog-disable-desc>Niedostepna mgla/mgielka</fog-disable-desc>
+ <fog-fastest-desc>Mozliwa silna mgla/mgielka</fog-fastest-desc>
+ <fog-nicest-desc>Mozliwa lekka mgla/mgielka</fog-nicest-desc>
+ <enable-clouds-desc>Dostepne plaskie (2D) warstwy chmur</enable-clouds-desc>
+ <disable-clouds-desc>Niedostepne plaskie (2D) warstwy chmur</disable-clouds-desc>
+ <enable-clouds3d-desc>Dostepne przestrzenne (3D) warstwy chmur</enable-clouds3d-desc>
+ <disable-clouds3d-desc>Niedostepne przestrzenne (3D) warstwy chmur</disable-clouds3d-desc>
+ <fov-desc>Obszar kata widzenia</fov-desc>
+ <disable-fullscreen-desc>Niedostepny tryb pelnoekranowy</disable-fullscreen-desc>
+ <enable-fullscreen-desc>Dostepny tryb pelnoekranowy</enable-fullscreen-desc>
+ <shading-flat-desc>Zezwol na plaskie cieniowanie</shading-flat-desc>
+ <shading-smooth-desc>Zezwol na gladkie cieniowanie</shading-smooth-desc>
+ <disable-skyblend-desc>Niedostepna przezroczystosc nieba</disable-skyblend-desc>
+ <enable-skyblend-desc>Dostepna przezroczystosc nieba</enable-skyblend-desc>
+ <disable-textures-desc>Teksturowanie wylaczone</disable-textures-desc>
+ <enable-textures-desc>Teksturowanie wlaczone</enable-textures-desc>
+ <disable-wireframe-desc>Niedostepny tryb rysowania konturowego</disable-wireframe-desc>
+ <enable-wireframe-desc>Wlaczony tryb rysowania konturowego</enable-wireframe-desc>
+ <geometry-desc>Podaj wymiary okna(640x480, itp.)</geometry-desc>
+ <view-offset-desc>Domyslny widok do przodu jako odchylenie od kierunku na wprost. Dopuszczalne wartosci: LEFT [lewo], RIGHT [prawo], CENTER [wysrodkuj], lub podaj w stopniach</view-offset-desc>
+ <visibility-desc>Podaj poczatkowa widzialnosc</visibility-desc>
+ <visibility-miles-desc>Podaj poczatkowa widzialnosc w milach</visibility-miles-desc>
+
+ <!-- Hud options -->
+ <hud-options>Wyswietlacza przezierny</hud-options>
+ <hud-tris-desc>HUD pokazuje liczbe renderowanych trojkatow</hud-tris-desc>
+ <hud-culled-desc>HUD pokazuje procent przyslonietych trojkatow</hud-culled-desc>
+
+ <!-- Time options -->
+ <time-options>Opcje czasu</time-options>
+ <time-offset-desc>Dodaj to przesuniecie czasu</time-offset-desc>
+ <time-match-real-desc>Synchronizuj czas z rzeczywistym (GMT)</time-match-real-desc>
+ <time-match-local-desc>Synchronizuj czas z lokalnym czasem rzeczywistym</time-match-local-desc>
+ <start-date-desc>Podaj date/czas startu ze wzg. na </start-date-desc>
+
+ <!-- Network options -->
+ <network-options>Opcje sieciowe</network-options>
+ <httpd-desc>Utworz serwer HTTP na podanym porcie</httpd-desc>
+ <telnet-desc>Utworz serwer telnet na podanym porcie</telnet-desc>
+ <jpg-httpd-desc>Utworz serwer HTTP zrzutow ekranu na podanym porcie</jpg-httpd-desc>
+
+ <!-- Route/Way Point Options -->
+ <route-options>Opcje trasy/punktow przelotowych</route-options>
+ <wp-desc>Podaj punkty przelotowe autopilotowi GC;</wp-desc>
+ <flight-plan-desc>Wczytaj punkty przelotu z pliku</flight-plan-desc>
+
+ <!-- IO Options -->
+ <io-options>Opcje we./wy.</io-options>
+ <garmin-desc>Polacz uzywajac protokolu Garmin GPS</garmin-desc>
+ <joyclient-desc>Podlacz do Agwagon dzojstik</joyclient-desc>
+ <native-ctrls-desc>Polacz uzywajac protokolu FG Native Controls</native-ctrls-desc>
+ <native-fdm-desc>Polacz uzywajac protokolu FG Native FDM </native-fdm-desc>
+ <native-desc>Polacz uzywajac protokolu FG Native</native-desc>
+ <nmea-desc>Polacz uzywajac protokolu NMEA</nmea-desc>
+ <opengc-desc>Polacz uzywajac protokolu OpenGC</opengc-desc>
+ <props-desc>Polacz uzywajac interaktywnego menadzera wlasciwosci</props-desc>
+ <pve-desc>Polacz uzywajac protokolu PVE</pve-desc>
+ <ray-desc>Polacz uzywajac protokolu Ray Woodworth motion chair</ray-desc>
+ <rul-desc>Polacz uzywajac protokolu RUL</rul-desc>
+ <atc610x-desc>Zezwol na interfejs atc610x</atc610x-desc>
+
+ <!-- Debugging Options -->
+ <debugging-options>Opcje debugera</debugging-options>
+ <trace-read-desc>Sledzenie odczytow pod wzg. wlasciwosci;</trace-read-desc>
+ <trace-write-desc>Sledzenie zapisow pod wzg. wlasciwosci;</trace-write-desc>
+
+</PropertyList>
+

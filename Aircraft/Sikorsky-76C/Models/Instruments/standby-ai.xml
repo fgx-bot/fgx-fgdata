@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+    <path>standby-ai.ac</path>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>AI.ball</object-name>
+            <property>instrumentation/attitude-indicator/indicated-roll-deg</property>
+            <axis>
+                <x>1</x>
+                <y>0</y>
+                <z>0</z>
+            </axis>
+            <center>
+                <x-m>-0.03</x-m>
+                <y-m>0</y-m>
+                <z-m>0</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>AI.ball</object-name>
+            <property>instrumentation/attitude-indicator/indicated-pitch-deg</property>
+            <axis>
+                <x>0</x>
+                <y>1</y>
+                <z>0</z>
+            </axis>
+            <center>
+                <x-m>-0.03</x-m>
+                <y-m>0</y-m>
+                <z-m>0</z-m>
+        </center>
+    </animation>
+
+
+    <animation>
+        <type>rotate</type>
+        <object-name>AI.rollarrow</object-name>
+            <property>instrumentation/attitude-indicator/indicated-roll-deg</property>
+            <axis>
+                <x>1</x>
+                <y>0</y>
+                <z>0</z>
+            </axis>
+            <center>
+                <x-m>0</x-m>
+                <y-m>0</y-m>
+                <z-m>0</z-m>
+        </center>
+    </animation>
+
+</PropertyList>

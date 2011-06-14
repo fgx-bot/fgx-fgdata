@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!--
+************************************************************************
+
+1903 Wright Flyer simulation config used to tie together the flight
+data model, instrument panel, and visual model.
+
+Flight model details: 
+Aircraft/UIUC/wrightFlyer1903-v1-nl/README.wrightFlyer1903.html
+
+Visual model details:  
+Aircraft/wrightFlyer1903/Models/
+(courtesy of Jim Wilson, jimw@kelcomaine.com)
+
+Last update: Dec 21, 2002 Michael Selig, m-selig@uiuc.edu
+************************************************************************
+-->
+
+<PropertyList>
+
+ <sim>
+
+  <description>1903 Wright Flyer (UIUC)</description>
+  <author>Jim Wilson (3D), Michael Selig, PhD (FDM)</author>
+
+  <flight-model>larcsim</flight-model>
+  <aero>uiuc</aero>
+  <uiuc-type>uiuc-prop</uiuc-type>
+  <aircraft-dir>Aircraft/UIUC/wrightFlyer1903-v1-nl</aircraft-dir>
+
+  <auto-coordination>true</auto-coordination>
+
+  <sound>
+   <path>Aircraft/wrightFlyer1903/Sounds/uiuc/wrightFlyer1903-sound.xml</path>
+  </sound>
+
+  <panel>
+   <path>Aircraft/Generic/Panels/generic-vfr-panel.xml</path>
+   <visibility archive="n">false</visibility>
+  </panel>
+
+  <panel_2>
+   <path>Aircraft/Generic/Panels/generic-trans-mini-panel.xml</path>
+  </panel_2>
+
+  <model>
+   <path>Aircraft/wrightFlyer1903/Models/WrightFlyer-pb-jw.xml</path>
+  </model>
+
+  <!-- pilot's view -->
+  <view>
+   <internal archive="y">true</internal>
+   <config>
+     <x-offset-m archive="y">-0.46</x-offset-m>
+     <y-offset-m archive="y">-0.08</y-offset-m>
+     <z-offset-m archive="y">-0.82</z-offset-m>
+   </config>
+  </view>
+  <!-- chase view -->
+  <view>
+   <config>
+     <x-offset-m archive="y">0</x-offset-m>
+     <y-offset-m archive="y">0</y-offset-m>
+     <z-offset-m archive="y">-15</z-offset-m>
+   </config>
+  </view>
+
+  <view n="1">
+   <config>
+    <eye-heading-deg-path>/orientation/gamma-horiz-deg</eye-heading-deg-path>
+   </config>
+  </view>
+
+  <hud>
+   <enable3d>false</enable3d>
+  </hud>
+
+  <help>
+   <title>1903 Wright Flyer</title>
+  </help>
+
+ </sim>
+</PropertyList>

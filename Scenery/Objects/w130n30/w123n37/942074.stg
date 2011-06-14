@@ -1,0 +1,16 @@
+OBJECT_SHARED Models/Communications/radio-medium.xml -122.359694 37.955556 -144.72 180
+OBJECT_SHARED Models/Communications/radio-medium.xml -122.325111 37.895611 -116.01 180
+OBJECT_SHARED Models/Communications/radio-medium.xml -122.324667 37.977417 -94.18 180
+OBJECT_SHARED Models/Communications/radio-medium.xml -122.324444 37.895861 -116 180
+OBJECT_SHARED Models/Communications/radio-medium.xml -122.295278 37.908333 -120.62 180
+OBJECT_SHARED Models/Communications/radio-medium.xml -122.254167 37.989444 11.27 180
+OBJECT_SHARED Models/Power/generic_pylon_100m.xml -122.4953179 37.997269 221.56 275.88
+OBJECT_SHARED Models/Power/generic_pylon_100m.xml -122.4951043 37.9956354 240.7 273.25
+OBJECT_SHARED Models/Power/generic_pylon_100m.xml -122.494985 37.986922 209.78 270.62
+OBJECT_SHARED Models/Power/generic_pylon_100m.xml -122.2686892 37.9969224 106.31 354.2
+OBJECT_SHARED Models/Power/generic_pylon_100m.xml -122.2647152 37.9966045 113.79 354.66
+OBJECT_SHARED Models/Power/generic_pylon_100m.xml -122.262079 37.996922 129.19 339.83
+OBJECT_SHARED Models/Power/generic_pylon_100m.xml -122.260501 37.9963204 136.83 355.11
+OBJECT_SHARED Models/Power/generic_pylon_100m.xml -122.258279 37.995822 152.25 342.26
+OBJECT_SHARED Models/Power/generic_pylon_100m.xml -122.256341 37.995404 147.22 343.56
+OBJECT_SHARED Models/Power/generic_pylon_100m.xml -122.255375 37.995163 143.95 343.69

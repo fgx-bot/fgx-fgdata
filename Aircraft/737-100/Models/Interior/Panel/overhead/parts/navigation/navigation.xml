@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Source :  http://users.skynet.be/jcordon/ -->
+
+<PropertyList>
+
+  <path>navigation.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>navigation</object-name>
+    <object-name>visses</object-name>
+  </animation>
+
+</PropertyList>
+

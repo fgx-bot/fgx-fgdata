@@ -1,0 +1,2181 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+
+    <path>flightdeck.ac</path>
+
+    <text>
+        <name>Preg</name>
+        <offsets>
+            <x-m>2.400</x-m>
+            <y-m>-0.327</y-m>
+            <z-m>0.806</z-m>
+            <roll-deg>0</roll-deg>
+            <pitch-deg>-10</pitch-deg>
+            <heading-deg>0</heading-deg>
+        </offsets>
+        <alignment>center-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type type="string">text-value</type>
+        <property type="string">sim/multiplay/generic/string[0]</property>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.018</character-size>
+        <character-aspect-ratio type="double">1.8</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+
+    <text>
+        <name>Creg</name>
+        <offsets>
+            <x-m>2.400</x-m>
+            <y-m>0.367</y-m>
+            <z-m>0.806</z-m>
+            <roll-deg>0</roll-deg>
+            <pitch-deg>-10</pitch-deg>
+            <heading-deg>0</heading-deg>
+        </offsets>
+        <alignment>center-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type type="string">text-value</type>
+        <property type="string">sim/multiplay/generic/string[0]</property>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.018</character-size>
+        <character-aspect-ratio type="double">1.8</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+
+    <animation>
+        <type>material</type><!--white-->
+        <object-name>Creg</object-name>
+        <object-name>Preg</object-name>
+        <emission>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </emission>
+        <ambient>
+            <red>0.8</red>
+            <green>0.8</green>
+            <blue>0.8</blue>
+        </ambient>
+        <diffuse>
+            <red>0.8</red>
+            <green>0.8</green>
+            <blue>0.8</blue>
+        </diffuse>
+        <specular>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </specular>
+    </animation>
+
+    <model>
+        <name>PFD1</name>
+        <path>Aircraft/Instruments-3d/primus-1000/PFD/PFD.xml</path>
+        <offsets>
+            <x-m>2.430</x-m>
+            <y-m>-0.327</y-m>
+            <z-m>0.635</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>PFD2</name>
+        <path>Aircraft/Instruments-3d/primus-1000/PFD/PFD.xml</path>
+        <offsets>
+            <x-m>2.430</x-m>
+            <y-m>0.350</y-m>
+            <z-m>0.635</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>MFD1</name>
+        <path>Aircraft/Instruments-3d/primus-1000/MFD/MFD.xml</path>
+        <offsets>
+            <x-m>2.444</x-m>
+            <y-m>-0.051</y-m>
+            <z-m>0.557</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Citation-Bravo/Models/Instruments/dc550.xml</path>
+        <offsets>
+            <x-m>2.421</x-m>
+            <y-m>-0.498</y-m>
+            <z-m>0.679</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Citation-Bravo/Models/Instruments/dc550.xml</path>
+        <offsets>
+            <x-m>2.421</x-m>
+            <y-m>0.53</y-m>
+            <z-m>0.679</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Citation-Bravo/Models/Instruments/fmc.xml</path>
+        <offsets>
+            <x-m>2.404</x-m>
+            <y-m>-0.327</y-m>
+            <z-m>0.779</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Citation-Bravo/Models/Instruments/AP-control.xml</path>
+        <offsets>
+            <x-m>2.971</x-m>
+            <y-m>0.02</y-m>
+            <z-m>0.267</z-m>
+            <pitch-deg>-87.3</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Citation-Bravo/Models/Instruments/RIC.xml</path>
+        <offsets>
+            <x-m>2.914</x-m>
+            <y-m>0.02</y-m>
+            <z-m>0.270</z-m>
+            <pitch-deg>-87.3</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Citation-Bravo/Models/Instruments/CDU/gnx.xml</path>
+        <offsets>
+            <x-m>2.835</x-m>
+            <y-m>0.02</y-m>
+            <z-m>0.273</z-m>
+            <pitch-deg>-87.3</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Citation-Bravo/Models/Instruments/mfc.xml</path>
+        <offsets>
+            <x-m>2.741</x-m>
+            <y-m>0.02</y-m>
+            <z-m>0.277</z-m>
+            <pitch-deg>-87.3</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Instruments-3d/clock/M877/m877.xml</path>
+        <offsets>
+            <x-m>2.409</x-m>
+            <y-m>-0.530</y-m>
+            <z-m>0.742</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Instruments-3d/clock/M877/m877.xml</path>
+        <offsets>
+            <x-m>2.409</x-m>
+            <y-m>0.515</y-m>
+            <z-m>0.742</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Citation-Bravo/Models/Instruments/hobbs.xml</path>
+        <offsets>
+            <x-m>2.405</x-m>
+            <y-m>0.191</y-m>
+            <z-m>0.765</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Citation-Bravo/Models/Instruments/dme.xml</path>
+        <offsets>
+            <x-m>2.444</x-m>
+            <y-m>-0.190</y-m>
+            <z-m>0.543</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Citation-Bravo/Models/Instruments/stby-gyro.xml</path>
+        <offsets>
+            <x-m>2.416</x-m>
+            <y-m>-0.189</y-m>
+            <z-m>0.712</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Citation-Bravo/Models/Instruments/hsi.xml</path>
+        <offsets>
+            <x-m>2.434</x-m>
+            <y-m>-0.189</y-m>
+            <z-m>0.608</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>CNI5000</name>
+        <path>Aircraft/Citation-Bravo/Models/Instruments/CNI5000/CNI5000.xml</path>
+        <offsets>
+            <x-m>2.442</x-m>
+            <y-m>0.127</y-m>
+            <z-m>0.557</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Citation-Bravo/Models/Instruments/aoa.xml</path>
+        <offsets>
+            <x-m>2.410</x-m>
+            <y-m>-0.471</y-m>
+            <z-m>0.742</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Models/Aircraft/testpilot.xml</path>
+        <offsets>
+            <x-m>3.05</x-m>
+            <y-m>-0.333</y-m>
+            <z-m>0.282</z-m>
+            <pitch-deg>0.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <animation>
+        <type>select</type>
+        <object-name>PFD1</object-name>
+        <object-name>PFD2</object-name>
+        <object-name>MFD1</object-name>
+        <object-name>CNI5000</object-name>
+        <condition>
+            <property>sim/current-view/internal</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <name>Flightdeck</name>
+        <object-name>panel</object-name>
+        <object-name>fusebox</object-name>
+        <object-name>Bezels</object-name>
+        <object-name>Bezels.002</object-name>
+        <object-name>Bezels.004</object-name>
+        <object-name>Bezels.001</object-name>
+        <object-name>cockpit</object-name>
+        <object-name>Seats</object-name>
+        <object-name>seats.001</object-name>
+        <object-name>lgen.switch</object-name>
+        <object-name>batt.switch</object-name>
+        <object-name>lgen.switch</object-name>
+        <object-name>inverter.switch</object-name>
+        <object-name>inverter.select</object-name>
+        <object-name>LHboost.switch</object-name>
+        <object-name>RHboost.switch</object-name>
+        <object-name>LHign.switch</object-name>
+        <object-name>recog.switch</object-name>
+        <object-name>amt.switch</object-name>
+        <object-name>nav.switch</object-name>
+        <object-name>wing.switch</object-name>
+    </animation>
+
+<!--                        Lights                               -->
+    <animation>
+        <type>material</type>
+        <object-name>Flightdeck</object-name>
+        <emission>
+            <red>0.010-</red>
+            <green>0.008</green>
+            <blue>0.002</blue>
+            <factor-prop>systems/electrical/outputs/map-lights</factor-prop>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Fan01</object-name>
+        <object-name>Fan02</object-name>
+        <object-name>ITT01</object-name>
+        <object-name>ITT02</object-name>
+        <object-name>OilP01</object-name>
+        <object-name>OilP02</object-name>
+        <object-name>OilT01</object-name>
+        <object-name>OilT02</object-name>
+        <object-name>FQty01</object-name>
+        <object-name>FQty02</object-name>
+        <condition>
+            <greater-than>
+                <property>systems/electrical/left-bus</property>
+                <value>2.0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>N1dec</object-name>
+        <object-name>LHn1</object-name>
+        <object-name>LHn1.01</object-name>
+        <object-name>LHn1.02</object-name>
+        <object-name>LHn1.03</object-name>
+        <condition>
+            <greater-than>
+                <property>systems/electrical/left-bus</property>
+                <value>2.0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>N1limit</object-name>
+        <object-name>N1limit.001</object-name>
+        <object-name>N1limit.002</object-name>
+        <object-name>N1limit.003</object-name>
+        <condition>
+            <greater-than>
+                <property>systems/electrical/left-bus</property>
+                <value>2.0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>RHn1</object-name>
+        <object-name>RHn1.01</object-name>
+        <object-name>RHn1.02</object-name>
+        <object-name>RHn1.03</object-name>
+        <condition>
+            <greater-than>
+                <property>systems/electrical/left-bus</property>
+                <value>2.0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>N2dec</object-name>
+        <object-name>LHn2</object-name>
+        <object-name>LHn2.01</object-name>
+        <object-name>LHn2.02</object-name>
+        <object-name>LHn2.03</object-name>
+        <condition>
+            <greater-than>
+                <property>systems/electrical/left-bus</property>
+                <value>2.0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>RHn2</object-name>
+        <object-name>RHn2.01</object-name>
+        <object-name>RHn2.02</object-name>
+        <object-name>RHn2.03</object-name>
+        <condition>
+            <greater-than>
+                <property>systems/electrical/left-bus</property>
+                <value>2.0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>LHflow.001</object-name>
+        <object-name>LHflow.002</object-name>
+        <object-name>LHflow.003</object-name>
+        <object-name>LHflow.004</object-name>
+        <condition>
+            <greater-than>
+                <property>systems/electrical/left-bus</property>
+                <value>2.0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>RHflow.001</object-name>
+        <object-name>RHflow.002</object-name>
+        <object-name>RHflow.003</object-name>
+        <object-name>RHflow.004</object-name>
+        <condition>
+            <greater-than>
+                <property>systems/electrical/left-bus</property>
+                <value>2.0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+   <!--  ____________________ Flight controls _________________________ -->
+
+    <animation>
+        <type>select</type>
+        <condition>
+            <property>sim/yokes-visible</property>
+        </condition>
+        <object-name>Yoke</object-name>
+        <object-name>Yoke1</object-name>
+        <object-name>Yoke2</object-name>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>GearLever</object-name>
+        <property>controls/gear/gear-down</property>
+        <factor>35</factor>
+        <center>
+            <x-m>2.396</x-m>
+            <y-m>-0.146</y-m>
+            <z-m>0.388</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>ThrLever01</object-name>
+        <property>controls/engines/engine[0]/throttle</property>
+        <factor>45</factor>
+        <center>
+            <x-m>2.633</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.277</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>ThrLever02</object-name>
+        <property>controls/engines/engine[1]/throttle</property>
+        <factor>45</factor>
+        <center>
+            <x-m>2.633</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.277</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>FlapLever</object-name>
+        <property>controls/flight/flaps</property>
+        <factor>50</factor>
+        <center>
+            <x-m>2.633</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.277</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Yoke</object-name>
+        <object-name>Yoke1</object-name>
+        <object-name>Yoke2</object-name>
+        <property>controls/flight/elevator</property>
+        <factor>10</factor>
+        <center>
+            <x-m>2.615</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.001</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Yoke1</object-name>
+        <property>controls/flight/aileron</property>
+        <factor>30</factor>
+        <center>
+            <x-m>2.669</x-m>
+            <y-m>-0.327</y-m>
+            <z-m>0.559</z-m>
+        </center>
+        <axis>
+            <x>-1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Yoke2</object-name>
+        <property>controls/flight/aileron</property>
+        <factor>30</factor>
+        <center>
+            <x-m>2.669</x-m>
+            <y-m>0.382</y-m>
+            <z-m>0.559</z-m>
+        </center>
+        <axis>
+            <x>-1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>Ebrake.lever</object-name>
+        <property>controls/gear/brake-parking</property>
+        <factor>0.025</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+<!--####    Annunciator / Warning Lights    ####-->
+
+    <animation>
+        <type>select</type>
+        <object-name>GrNose</object-name>
+        <condition>
+            <property>instrumentation/annunciators/gear-N</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>GrLH</object-name>
+        <condition>
+            <property>instrumentation/annunciators/gear-L</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>GrRH</object-name>
+        <condition>
+            <property>instrumentation/annunciators/gear-R</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>GrUnlocked</object-name>
+        <condition>
+            <property>instrumentation/annunciators/gear-unlocked</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>GWarn.lamp</object-name>
+        <condition>
+            <property>instrumentation/alerts/gear-horn</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Rvrsr-arm</object-name>
+        <condition>
+            <greater-than>
+            <property>surface-positions/reverser-norm</property>
+            <value>0.1</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Rvrsr-unlock</object-name>
+        <condition>
+            <greater-than>
+            <property>surface-positions/reverser-norm</property>
+            <value>0.2</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Rvrsr-deploy</object-name>
+        <condition>
+            <greater-than>
+            <property>surface-positions/reverser-norm</property>
+            <value>0.9</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>LHbottle.on</object-name>
+        <condition>
+            <property>controls/engines/engine[0]/fire-bottle-discharge</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>RHbottle.on</object-name>
+        <condition>
+            <property>controls/engines/engine[1]/fire-bottle-discharge</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>LHFire.on</object-name>
+        <condition>
+            <property>controls/engines/engine[0]/fire-switch</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>RHFire.on</object-name>
+        <condition>
+            <property>controls/engines/engine[1]/fire-switch</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Mcaution</object-name>
+        <condition>
+            <property>instrumentation/annunciators/master-caution</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Mwarning</object-name>
+        <condition>
+            <property>instrumentation/annunciators/master-warning</property>
+        </condition>
+    </animation>
+
+<!--  Annunciators -->
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc</object-name>
+        <condition>
+            <property>instrumentation/annunciators/batt</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.B</object-name>
+        <condition>
+            <property>instrumentation/annunciators/batt160</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.001</object-name>
+        <condition>
+            <property>instrumentation/annunciators/cab-alt</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.001B</object-name>
+        <condition>
+            <property>instrumentation/annunciators/ac-fail</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.002</object-name>
+        <condition>
+            <property>instrumentation/annunciators/oil-psi</property>
+    </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.003</object-name>
+        <condition>
+            <property>instrumentation/annunciators/fire-det</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.004</object-name>
+        <condition>
+            <property>instrumentation/annunciators/oil-fltr-bp</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.005</object-name>
+        <condition>
+            <property>instrumentation/annunciators/fuel-gauge</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.006</object-name>
+        <condition>
+            <property>instrumentation/annunciators/fuel-boost</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.007</object-name>
+        <condition>
+            <and>
+                <property>instrumentation/annunciators/fuel-lo</property>
+                <not>
+                    <property>instrumentation/annunciators/state</property>
+                </not>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.008</object-name>
+        <condition>
+            <property>instrumentation/annunciators/fuel-psi</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.009</object-name>
+        <condition>
+            <property>instrumentation/annunciators/fuel-fltr-bp</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.010</object-name>
+        <condition>
+            <property>instrumentation/annunciators/gen-off</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.011</object-name>
+        <condition>
+            <property>instrumentation/annunciators/invtr-fail</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.012</object-name>
+        <condition>
+            <and>
+                <property>instrumentation/annunciators/lo-brk-psi</property>
+                <not>
+                    <property>instrumentation/annunciators/state</property>
+                </not>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.012B</object-name>
+        <condition>
+            <property>instrumentation/annunciators/antiskid</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.013</object-name>
+        <condition>
+            <property>instrumentation/annunciators/emer-psi</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.013B</object-name>
+        <condition>
+            <property>instrumentation/annunciators/spd-brk</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.014</object-name>
+        <condition>
+            <property>instrumentation/annunciators/hyd-flow</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.015</object-name>
+        <condition>
+            <property>instrumentation/annunciators/lo-hyd-lvl</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.015B</object-name>
+        <condition>
+            <property>instrumentation/annunciators/hyd-psi</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.016</object-name>
+        <condition>
+            <property>instrumentation/annunciators/eng-vib</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.017</object-name>
+        <condition>
+            <property>instrumentation/annunciators/door-seal</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.017B</object-name>
+        <condition>
+            <property>instrumentation/annunciators/bld-air-gnd</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.018</object-name>
+        <condition>
+            <property>instrumentation/annunciators/bagg-door</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.019</object-name>
+        <condition>
+            <property>instrumentation/annunciators/cabin-door</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.019B</object-name>
+        <condition>
+            <property>instrumentation/annunciators/aft-bagg-door</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.020</object-name>
+        <condition>
+            <property>instrumentation/annunciators/ap-pitch-trim</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.020B</object-name>
+        <condition>
+            <property>instrumentation/annunciators/ap-roll-trim</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.021</object-name>
+        <condition>
+            <property>instrumentation/annunciators/chk-pfd-1</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.021B</object-name>
+        <condition>
+            <property>instrumentation/annunciators/chk-pfd-2</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.022</object-name>
+        <condition>
+            <property>instrumentation/annunciators/nose-av-fan</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.023</object-name>
+        <condition>
+            <property>controls/engines/grnd-idle</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.023B</object-name>
+        <condition>
+            <property>instrumentation/annunciators/tas-htr</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.024</object-name>
+        <condition>
+            <property>instrumentation/annunciators/fw-shutoff</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.025</object-name>
+        <condition>
+            <property>instrumentation/annunciators/stby-ps-htr</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.025B</object-name>
+        <condition>
+            <property>instrumentation/annunciators/aoa-htr</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.026</object-name>
+        <condition>
+            <property>instrumentation/annunciators/ps-htr</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.027</object-name>
+        <condition>
+            <property>instrumentation/annunciators/eng-antice</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.028</object-name>
+        <condition>
+            <property>instrumentation/annunciators/ws-oheat</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.028B</object-name>
+        <condition>
+            <property>instrumentation/annunciators/surf-deice</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.029</object-name>
+        <condition>
+            <property>instrumentation/annunciators/air-dct-oheat</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Annc.029B</object-name>
+        <condition>
+            <property>instrumentation/annunciators/acm-psi</property>
+        </condition>
+    </animation>
+
+<!--####    Instruments    ####-->
+
+<!--####    N1 Gauge    ####-->
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Fan01</object-name>
+        <property>engines/engine[0]/fan</property>
+        <interpolation>
+            <entry><ind>0</ind><dep>0</dep></entry>
+            <entry><ind>80</ind><dep>0.1975</dep></entry>
+            <entry><ind>100</ind><dep>0.3600</dep></entry>
+            <entry><ind>110</ind><dep>0.4453</dep></entry>
+        </interpolation>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Fan02</object-name>
+        <property>engines/engine[1]/fan</property>
+        <interpolation>
+            <entry><ind>0</ind><dep>0</dep></entry>
+            <entry><ind>80</ind><dep>0.1975</dep></entry>
+            <entry><ind>100</ind><dep>0.3600</dep></entry>
+            <entry><ind>110</ind><dep>0.4453</dep></entry>
+        </interpolation>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>ITT01</object-name>
+        <property>engines/engine/itt-norm</property>
+        <interpolation>
+            <entry><ind>0</ind><dep>0</dep></entry>
+            <entry><ind>1.3</ind><dep>0.4453</dep></entry>
+        </interpolation>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>ITT02</object-name>
+        <property>engines/engine[1]/itt-norm</property>
+        <interpolation>
+            <entry><ind>0</ind><dep>0</dep></entry>
+            <entry><ind>1.3</ind><dep>0.4453</dep></entry>
+        </interpolation>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+<!--####    Fuel Gauge    ####-->
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>FQty01</object-name>
+        <property>consumables/fuel/tank[0]/level-lbs</property>
+        <interpolation>
+            <entry><ind>0</ind><dep>0</dep></entry>
+            <entry><ind>3000</ind><dep>0.4453</dep></entry>
+        </interpolation>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>FQty02</object-name>
+        <property>consumables/fuel/tank[1]/level-lbs</property>
+        <interpolation>
+            <entry><ind>0</ind><dep>0</dep></entry>
+            <entry><ind>3000</ind><dep>0.4453</dep></entry>
+        </interpolation>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>OilT01</object-name>
+        <property>engines/engine[0]/oilt-norm</property>
+        <interpolation>
+            <entry><ind>0</ind><dep>0</dep></entry>
+            <entry><ind>1</ind><dep>0.4453</dep></entry>
+        </interpolation>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>OilT02</object-name>
+        <property>engines/engine[1]/oilt-norm</property>
+        <interpolation>
+            <entry><ind>0</ind><dep>0</dep></entry>
+            <entry><ind>1</ind><dep>0.4453</dep></entry>
+        </interpolation>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>OilP01</object-name>
+        <property>engines/engine[0]/oilp-norm</property>
+        <interpolation>
+            <entry><ind>0</ind><dep>0</dep></entry>
+            <entry><ind>2</ind><dep>0.4453</dep></entry>
+        </interpolation>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>OilP02</object-name>
+        <property>engines/engine[1]/oilp-norm</property>
+        <interpolation>
+            <entry><ind>0</ind><dep>0</dep></entry>
+            <entry><ind>2</ind><dep>0.4453</dep></entry>
+        </interpolation>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>compassrose</object-name>
+        <property>instrumentation/magnetic-compass/indicated-heading-deg</property>
+        <axis>
+            <x>0.0</x>
+            <y>0.0</y>
+            <z>1.0</z>
+        </axis>
+        <center>
+            <x-m>2.378</x-m>
+            <y-m>0.00</y-m>
+            <z-m>0.942</z-m>
+        </center>
+    </animation>
+
+<!--####    Engines    ####-->
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>LHn1</object-name>
+        <property>engines/engine[0]/fan</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>LHn1.01</object-name>
+        <property>engines/engine[0]/fan</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>LHn1.02</object-name>
+        <property>engines/engine[0]/fan</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>LHn1.03</object-name>
+        <property>engines/engine[0]/fan</property>
+        <factor>1.0</factor>
+        <step>0.1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>RHn1</object-name>
+        <property>engines/engine[1]/fan</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>RHn1.01</object-name>
+        <property>engines/engine[1]/fan</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>RHn1.02</object-name>
+        <property>engines/engine[1]/fan</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>RHn1.03</object-name>
+        <property>engines/engine[1]/fan</property>
+        <factor>1.0</factor>
+        <step>0.1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>N1limit.001</object-name>
+        <property>controls/engines/N1-limit</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>N1limit.002</object-name>
+        <property>controls/engines/N1-limit</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>N1limit.003</object-name>
+        <property>controls/engines/N1-limit</property>
+        <factor>1.0</factor>
+        <step>0.1</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>LHn2</object-name>
+        <property>engines/engine[0]/turbine</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>LHn2.01</object-name>
+        <property>engines/engine[0]/turbine</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>LHn2.02</object-name>
+        <property>engines/engine[0]/turbine</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>LHn2.03</object-name>
+        <property>engines/engine[0]/turbine</property>
+        <factor>1.0</factor>
+        <step>0.1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>RHn2</object-name>
+        <property>engines/engine[1]/turbine</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>RHn2.01</object-name>
+        <property>engines/engine[1]/turbine</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>RHn2.02</object-name>
+        <property>engines/engine[1]/turbine</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>RHn2.03</object-name>
+        <property>engines/engine[1]/turbine</property>
+        <factor>1.0</factor>
+        <step>0.1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+<!--####    LEFT ENGINE FUEL FLOW    ####-->
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>LHflow.001</object-name>
+        <property>engines/engine[0]/fuel-flow_pph</property>
+        <factor>0.0001</factor>
+        <step>1000</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>LHflow.002</object-name>
+        <property>engines/engine[0]/fuel-flow_pph</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>LHflow.003</object-name>
+        <property>engines/engine[0]/fuel-flow_pph</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>LHflow.004</object-name>
+        <property>engines/engine[0]/fuel-flow_pph</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>LHflow.001</object-name>
+        <condition>
+            <greater-than>
+                <property>engines/engine[0]/fuel-flow_pph</property>
+                <value>999.999</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>LHflow.002</object-name>
+        <condition>
+            <greater-than>
+                <property>engines/engine[0]/fuel-flow_pph</property>
+                <value>99.999</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>LHflow.003</object-name>
+        <condition>
+            <greater-than>
+                <property>engines/engine[0]/fuel-flow_pph</property>
+                <value>9.999</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+<!--####    RIGHT ENGINE FUEL FLOW    ####-->
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>RHflow.001</object-name>
+        <property>engines/engine[1]/fuel-flow_pph</property>
+        <factor>0.0001</factor>
+        <step>1000</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>RHflow.002</object-name>
+        <property>engines/engine[1]/fuel-flow_pph</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>RHflow.003</object-name>
+        <property>engines/engine[1]/fuel-flow_pph</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>RHflow.004</object-name>
+        <property>engines/engine[1]/fuel-flow_pph</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>RHflow.001</object-name>
+        <condition>
+            <greater-than>
+                <property>engines/engine[1]/fuel-flow_pph</property>
+                <value>999.999</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>RHflow.002</object-name>
+        <condition>
+            <greater-than>
+                <property>engines/engine[1]/fuel-flow_pph</property>
+                <value>99.999</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>RHflow.003</object-name>
+        <condition>
+            <greater-than>
+                <property>engines/engine[1]/fuel-flow_pph</property>
+                <value>9.999</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>DCvolts</object-name>
+        <property>systems/electrical/left-bus</property>
+        <interpolation>
+            <entry><ind>0</ind><dep>0</dep></entry>
+            <entry><ind>40.0</ind><dep>-280</dep></entry>
+        </interpolation>
+        <axis>
+            <x>0.985</x>
+            <y>0.0</y>
+            <z>0.174</z>
+        </axis>
+        <center>
+            <x-m>2.444</x-m>
+            <y-m>-0.566</y-m>
+            <z-m>0.557</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>DCamps1</object-name>
+        <property>systems/electrical/gen-load</property>
+        <interpolation>
+            <entry><ind>0</ind><dep>0</dep></entry>
+            <entry><ind>1.0</ind><dep>-280</dep></entry>
+        </interpolation>
+        <axis>
+            <x>0.985</x>
+            <y>0.0</y>
+            <z>0.174</z>
+        </axis>
+        <center>
+            <x-m>2.444</x-m>
+            <y-m>-0.522</y-m>
+            <z-m>0.557</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>DCamps2</object-name>
+        <property>systems/electrical/gen-load[1]</property>
+        <interpolation>
+            <entry><ind>0</ind><dep>0</dep></entry>
+            <entry><ind>1.0</ind><dep>-280</dep></entry>
+        </interpolation>
+        <axis>
+            <x>0.985</x>
+            <y>0.0</y>
+            <z>0.174</z>
+        </axis>
+        <center>
+            <x-m>2.444</x-m>
+            <y-m>-0.479</y-m>
+            <z-m>0.557</z-m>
+        </center>
+    </animation>
+
+<!--    Switches    -->
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Lgen.toggle</object-name>
+        <property>controls/electric/engine/generator</property>
+        <factor>30</factor>
+        <axis>
+            <x>0.0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>2.451</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.514</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Batt.toggle</object-name>
+        <property>controls/electric/battery-switch</property>
+        <factor>30</factor>
+        <axis>
+            <x>0.0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>2.451</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.514</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Rgen.toggle</object-name>
+        <property>controls/electric/engine[1]/generator</property>
+        <factor>30</factor>
+        <axis>
+            <x>0.0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>2.451</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.514</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Invtr.select</object-name>
+        <property>controls/electric/inverter-switch</property>
+        <factor>30</factor>
+        <axis>
+            <x>0.0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>2.451</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.514</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>AVN.toggle</object-name>
+        <property>controls/electric/avionics-switch</property>
+        <factor>30</factor>
+        <axis>
+            <x>0.0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>2.451</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.514</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>LHign.toggle</object-name>
+        <property>controls/engines/engine[0]/ignition</property>
+        <factor>30</factor>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>2.459</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.471</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>RHign.toggle</object-name>
+        <property>controls/engines/engine[1]/ignition</property>
+        <factor>30</factor>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>2.459</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.471</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>recog.toggle</object-name>
+        <property>controls/lighting/recog-lights</property>
+        <factor>30</factor>
+        <axis>
+            <x>0.0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>2.473</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.391</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>strobe.toggle</object-name>
+        <property>controls/lighting/strobe</property>
+        <factor>30</factor>
+        <axis>
+            <x>0.0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>2.473</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.391</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>nav.toggle</object-name>
+        <property>controls/lighting/nav-lights</property>
+        <factor>30</factor>
+        <axis>
+            <x>0.0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>2.473</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.391</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>wing.toggle</object-name>
+        <property>controls/lighting/wing-lights</property>
+        <factor>30</factor>
+        <axis>
+            <x>0.0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>2.473</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.391</z-m>
+        </center>
+    </animation>
+
+<!-- Hotspots-->
+
+<animation>
+    <type>pick</type>
+    <object-name>MW.off</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-assign</command>
+            <property>instrumentation/annunciators/master-warning</property>
+            <value>0</value>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>MC.off</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-assign</command>
+            <property>instrumentation/annunciators/master-caution</property>
+            <value>0</value>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Batt.toggle</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-toggle</command>
+            <property>controls/electric/battery-switch</property>
+        </binding>
+        <binding>
+            <command>property-toggle</command>
+            <property>sim/sound/click</property>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Lgen.toggle</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-toggle</command>
+            <property>controls/electric/engine[0]/generator</property>
+        </binding>
+            <binding>
+            <command>property-toggle</command>
+            <property>sim/sound/click</property>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Rgen.toggle</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-toggle</command>
+            <property>controls/electric/engine[1]/generator</property>
+        </binding>
+            <binding>
+            <command>property-toggle</command>
+            <property>sim/sound/click</property>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>Invtr.select</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-toggle</command>
+            <property>controls/electric/inverter-switch</property>
+        </binding>
+        <binding>
+            <command>property-toggle</command>
+            <property>sim/sound/click</property>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>AVN.toggle</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-toggle</command>
+            <property>controls/electric/avionics-switch</property>
+        </binding>
+        <binding>
+            <command>property-toggle</command>
+            <property>sim/sound/click</property>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>LHign.toggle</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-toggle</command>
+            <property>controls/engines/engine[0]/ignition</property>
+        </binding>
+        <binding>
+            <command>property-toggle</command>
+            <property>sim/sound/click</property>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>RHign.toggle</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-toggle</command>
+            <property>controls/engines/engine[1]/ignition</property>
+        </binding>
+        <binding>
+            <command>property-toggle</command>
+            <property>sim/sound/click</property>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>LHstarter</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-toggle</command>
+            <property>sim/sound/click</property>
+        </binding>
+     <binding>
+       <command>property-assign</command>
+       <property>controls/engines/engine[0]/starter</property>
+       <value>1</value>
+     </binding>
+     <mod-up>
+       <binding>
+         <command>property-assign</command>
+         <property>controls/engines/engine[0]/starter</property>
+         <value>0</value>
+       </binding>
+     </mod-up>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>RHstarter</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-toggle</command>
+            <property>sim/sound/click</property>
+        </binding>
+     <binding>
+       <command>property-assign</command>
+       <property>controls/engines/engine[1]/starter</property>
+       <value>1</value>
+     </binding>
+     <mod-up>
+       <binding>
+         <command>property-assign</command>
+         <property>controls/engines/engine[1]/starter</property>
+         <value>0</value>
+       </binding>
+     </mod-up>
+    </action>
+</animation>
+
+<!-- Lighting -->
+
+<animation>
+    <type>pick</type>
+    <object-name>recog.toggle</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-toggle</command>
+            <property>controls/lighting/recog-lights</property>
+        </binding>
+        <binding>
+            <command>property-toggle</command>
+            <property>sim/sound/click</property>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>strobe.toggle</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-toggle</command>
+            <property>controls/lighting/strobe</property>
+        </binding>
+        <binding>
+            <command>property-toggle</command>
+            <property>sim/sound/click</property>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>nav.toggle</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-toggle</command>
+            <property>controls/lighting/nav-lights</property>
+        </binding>
+        <binding>
+            <command>property-toggle</command>
+            <property>sim/sound/click</property>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>wing.toggle</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-toggle</command>
+            <property>controls/lighting/wing-lights</property>
+        </binding>
+        <binding>
+            <command>property-toggle</command>
+            <property>sim/sound/click</property>
+        </binding>
+    </action>
+</animation>
+
+</PropertyList>

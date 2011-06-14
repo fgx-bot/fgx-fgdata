@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>asi.ac</path>
+
+  <animation>
+    <object-name>ASI320</object-name>
+    <object-name>ASI320.knob</object-name>
+    <object-name>ASI320.face</object-name>
+    <object-name>ASI320.ovrspeed</object-name>
+    <object-name>mach.subdial</object-name>
+    <object-name>ASI320.needle</object-name>
+    <object-name>index.marker</object-name>
+
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>ASI320.face</object-name>
+    <object-name>ASI320.ovrspeed</object-name>
+    <object-name>mach.subdial</object-name>
+    <object-name>ASI320.needle</object-name>
+    <object-name>index.marker</object-name>
+     <emission>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>ASI320.needle</object-name>
+    <object-name>mach.subdial</object-name>
+    <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+    <interpolation>
+      <entry><ind>   0 </ind><dep>   0.0 </dep></entry>
+      <entry><ind>  30 </ind><dep>   0.0 </dep></entry>
+      <entry><ind>  40 </ind><dep>  15.0 </dep></entry>
+      <entry><ind> 100 </ind><dep>  82.5 </dep></entry>
+      <entry><ind> 160 </ind><dep> 150.0 </dep></entry>
+      <entry><ind> 240 </ind><dep> 240.0 </dep></entry>
+      <entry><ind> 320 </ind><dep> 330.0 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>mach.subdial</object-name>
+    <property>velocities/mach</property>
+    <interpolation>
+      <entry><ind> 0.00 </ind><dep>   0 </dep></entry>
+      <entry><ind> 0.40 </ind><dep> 264 </dep></entry>
+      <entry><ind> 0.75 </ind><dep> 474 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>index.marker</object-name>
+    <property>instrumentation/airspeed-indicator/index-marker</property>
+    <interpolation>
+      <entry><ind>   0 </ind><dep>   0 </dep></entry>
+      <entry><ind>  40 </ind><dep>  15 </dep></entry>
+      <entry><ind> 100 </ind><dep>  82 </dep></entry>
+      <entry><ind> 160 </ind><dep> 150 </dep></entry>
+      <entry><ind> 240 </ind><dep> 240 </dep></entry>
+      <entry><ind> 320 </ind><dep> 330 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <!--  Hotspots -->
+  <animation>
+    <type>pick</type>
+    <object-name>ASI320.knob</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+      <interval-sec>0.1</interval-sec>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/airspeed-indicator/index-marker</property>
+        <step>1</step>
+        <min>0</min>
+        <max>320</max>
+        <wrap>false</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>ASI320.knob</object-name>
+    <action>
+      <button>1</button>
+      <repeatable>true</repeatable>
+      <interval-sec>0.1</interval-sec>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/airspeed-indicator/index-marker</property>
+        <step>-1</step>
+        <min>0</min>
+        <max>320</max>
+        <wrap>false</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>ASI320.knob</object-name>
+    <action>
+      <button>3</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/airspeed-indicator/index-marker</property>
+        <step>1</step>
+        <min>0</min>
+        <max>320</max>
+        <wrap>false</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>ASI320.knob</object-name>
+    <action>
+      <button>4</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/airspeed-indicator/index-marker</property>
+        <step>-1</step>
+        <min>0</min>
+        <max>320</max>
+        <wrap>false</wrap>
+      </binding>
+    </action>
+  </animation>
+
+</PropertyList>

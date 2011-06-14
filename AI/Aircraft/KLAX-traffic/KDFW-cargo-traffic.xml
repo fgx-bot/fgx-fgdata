@@ -1,0 +1,180 @@
+<?xml version="1.0"?>
+<trafficlist>
+
+    <aircraft>
+        <model>AI/Aircraft/767/767-UPS.xml</model>
+        <livery>UPS</livery> 
+        <airline>UPS</airline>
+        <actype>767-400</actype>
+        <offset>2</offset>
+        <radius>33</radius>
+        <flighttype>cargo</flighttype>
+        <performance-class>jet_transport</performance-class>
+        <registration>N8889LX</registration>
+        <heavy>false</heavy>
+
+        <flight>
+            <callsign>UPS14559LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KLAX</port>
+               <time>09:37:00</time>
+            </departure>
+            <cruise-alt>310</cruise-alt>
+            <arrival>
+                <port>KDFW</port>
+                <time>12:47:00</time>
+            </arrival>
+        <repeat>12Hr</repeat>
+       </flight> 
+
+       <flight>
+            <callsign>UPS12249LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KDFW</port>
+               <time>15:37:00</time>
+            </departure>
+            <cruise-alt>312</cruise-alt>
+            <arrival>
+                <port>KLAX</port>
+                <time>18:47:00</time>
+            </arrival>
+        <repeat>12Hr</repeat>
+       </flight>  
+
+    </aircraft> 
+              
+    <aircraft>
+        <model>AI/Aircraft/767/767-UPS.xml</model>
+        <livery>UPS</livery> 
+        <airline>UPS</airline>
+        <actype>767-400</actype>
+        <offset>2</offset>
+        <radius>33</radius>
+        <flighttype>cargo</flighttype>
+        <performance-class>jet_transport</performance-class>
+        <registration>N8888LX</registration>
+        <heavy>false</heavy>
+
+        <flight>
+            <callsign>UPS14558LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KLAX</port>
+               <time>11:37:00</time>
+            </departure>
+            <cruise-alt>310</cruise-alt>
+            <arrival>
+                <port>KDFW</port>
+                <time>14:47:00</time>
+            </arrival>
+        <repeat>12Hr</repeat>
+       </flight> 
+
+       <flight>
+            <callsign>UPS12248LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KDFW</port>
+               <time>17:37:00</time>
+            </departure>
+            <cruise-alt>312</cruise-alt>
+            <arrival>
+                <port>KLAX</port>
+                <time>20:47:00</time>
+            </arrival>
+        <repeat>12Hr</repeat>
+       </flight>  
+
+    </aircraft> 
+                             
+    <aircraft>
+        <model>AI/Aircraft/767/767-UPS.xml</model>
+        <livery>UPS</livery> 
+        <airline>UPS</airline>
+        <actype>767-400</actype>
+        <offset>2</offset>
+        <radius>33</radius>
+        <flighttype>cargo</flighttype>
+        <performance-class>jet_transport</performance-class>
+        <registration>N8887LX</registration>
+        <heavy>false</heavy>
+
+        <flight>
+            <callsign>UPS14557LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KLAX</port>
+               <time>14:37:00</time>
+            </departure>
+            <cruise-alt>310</cruise-alt>
+            <arrival>
+                <port>KDFW</port>
+                <time>16:47:00</time>
+            </arrival>
+        <repeat>12Hr</repeat>
+       </flight> 
+
+       <flight>
+            <callsign>UPS12247LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KDFW</port>
+               <time>19:37:00</time>
+            </departure>
+            <cruise-alt>312</cruise-alt>
+            <arrival>
+                <port>KLAX</port>
+                <time>22:47:00</time>
+            </arrival>
+        <repeat>12Hr</repeat>
+       </flight>  
+
+    </aircraft> 
+                                         
+    <aircraft>
+        <model>AI/Aircraft/767/767-UPS.xml</model>
+        <livery>UPS</livery> 
+        <airline>UPS</airline>
+        <actype>767-400</actype>
+        <offset>2</offset>
+        <radius>33</radius>
+        <flighttype>cargo</flighttype>
+        <performance-class>jet_transport</performance-class>
+        <registration>N8886LX</registration>
+        <heavy>false</heavy>
+
+        <flight>
+            <callsign>UPS14556LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KLAX</port>
+               <time>15:37:00</time>
+            </departure>
+            <cruise-alt>310</cruise-alt>
+            <arrival>
+                <port>KDFW</port>
+                <time>18:47:00</time>
+            </arrival>
+        <repeat>12Hr</repeat>
+       </flight> 
+
+       <flight>
+            <callsign>UPS12246LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KDFW</port>
+               <time>21:37:00</time>
+            </departure>
+            <cruise-alt>312</cruise-alt>
+            <arrival>
+                <port>KLAX</port>
+                <time>24:47:00</time>
+            </arrival>
+        <repeat>12Hr</repeat>
+       </flight>  
+
+    </aircraft> 
+                                                                                                                                                                    
+</trafficlist>

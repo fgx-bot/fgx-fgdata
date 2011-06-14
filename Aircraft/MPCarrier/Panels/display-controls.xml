@@ -1,0 +1,474 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<name>Display Controls</name>
+	<w-base>512</w-base>
+	<h-base>368</h-base>
+
+	<layers>
+		<!--<layer>
+			<name>tint</name>
+			<condition>
+				<property>instrumentation/radar/display-controls/background</property>
+			</condition>
+			<texture>
+				<path>Aircraft/ATC/Ver2/tint.png</path>
+				<x1>0</x1>
+				<y1>0</y1>
+				<x2>0.5</x2>
+				<y2>1</y2>
+			</texture>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>0</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>0</offset>
+				</transformation>
+			</transformations>
+		</layer>-->
+
+		<layer>
+			<name>label1</name>
+			<type>text</type>
+			<font>helvetica_bold</font>
+			<point-size>14</point-size>
+			<color>
+				<red>0</red>
+				<green>1</green>
+				<blue>0</blue>
+			</color>
+			<chunks>
+				<chunk>
+					<type>literal</type>
+					<text>DISPLAY CONTROLS</text>
+				</chunk>
+			</chunks>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>0</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>0</offset>
+				</transformation>
+			</transformations>
+		</layer>
+
+		<layer>
+			<name>radar range</name>
+			<type>text</type>
+			<font>helvetica_bold</font>
+			<point-size>14</point-size>
+			<color>
+				<red>0</red>
+				<green>1</green>
+				<blue>0</blue>
+			</color>
+			<chunks>
+				<chunk>
+					<type>number-value</type>
+					<property>instrumentation/radar/range</property>
+					<format>Range: &lt; %3.0f nm &gt; </format>
+				</chunk>
+			</chunks>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>0</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>-20</offset>
+				</transformation>
+			</transformations>
+		</layer>
+
+		<layer>
+			<name>heading type</name>
+
+			<condition>
+				<not>
+					<property>instrumentation/radar/display-controls/rotate</property>
+				</not>
+			</condition>
+
+			<type>text</type>
+			<font>helvetica_bold</font>
+			<point-size>14</point-size>
+			<color>
+				<red>0</red>
+				<green>1</green>
+				<blue>0</blue>
+			</color>
+			<chunks>
+				<chunk>
+					<type>literal</type>
+					<text>Heading: TRUE</text>
+				</chunk>
+			</chunks>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>0</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>-40</offset>
+				</transformation>
+			</transformations>
+		</layer>
+
+		<layer>
+			<name>heading type</name>
+
+			<condition>
+				<!--<not>-->
+				<property>instrumentation/radar/display-controls/rotate</property>
+				<!--</not>-->
+			</condition>
+
+			<type>text</type>
+			<font>helvetica_bold</font>
+			<point-size>14</point-size>
+			<color>
+				<red>0</red>
+				<green>1</green>
+				<blue>0</blue>
+			</color>
+			<chunks>
+				<chunk>
+					<type>literal</type>
+					<text>Heading: REL</text>
+				</chunk>
+			</chunks>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>0</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>-40</offset>
+				</transformation>
+			</transformations>
+		</layer>
+
+		<layer>
+			<name>data on</name>
+
+			<condition>
+				<!--<not>-->
+				<property>instrumentation/radar/display-controls/data</property>
+				<!--</not>-->
+			</condition>
+
+			<type>text</type>
+			<font>helvetica_bold</font>
+			<point-size>14</point-size>
+			<color>
+				<red>0</red>
+				<green>1</green>
+				<blue>0</blue>
+			</color>
+			<chunks>
+				<chunk>
+					<type>literal</type>
+					<text>Data: ON</text>
+				</chunk>
+			</chunks>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>0</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>-60</offset>
+				</transformation>
+			</transformations>
+		</layer>
+
+		<layer>
+			<name>data off</name>
+
+			<condition>
+				<not>
+					<property>instrumentation/radar/display-controls/data</property>
+				</not>
+			</condition>
+
+			<type>text</type>
+			<font>helvetica_bold</font>
+			<point-size>14</point-size>
+			<color>
+				<red>0</red>
+				<green>1</green>
+				<blue>0</blue>
+			</color>
+			<chunks>
+				<chunk>
+					<type>literal</type>
+					<text>Data: OFF</text>
+				</chunk>
+			</chunks>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>0</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>-60</offset>
+				</transformation>
+			</transformations>
+		</layer>
+
+		<layer>
+			<name>radar echo on</name>
+
+			<condition>
+				<!--<not>-->
+				<property>instrumentation/radar/display-controls/pos</property>
+				<!--</not>-->
+			</condition>
+
+			<type>text</type>
+			<font>helvetica_bold</font>
+			<point-size>14</point-size>
+			<color>
+				<red>0</red>
+				<green>1</green>
+				<blue>0</blue>
+			</color>
+			<chunks>
+				<chunk>
+					<type>literal</type>
+					<text>Echo: ON</text>
+				</chunk>
+			</chunks>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>0</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>-80</offset>
+				</transformation>
+			</transformations>
+		</layer>
+
+		<layer>
+			<name>radar echo off</name>
+
+			<condition>
+				<not>
+					<property>instrumentation/radar/display-controls/pos</property>
+				</not>
+			</condition>
+
+			<type>text</type>
+			<font>helvetica_bold</font>
+			<point-size>14</point-size>
+			<color>
+				<red>0</red>
+				<green>1</green>
+				<blue>0</blue>
+			</color>
+			<chunks>
+				<chunk>
+					<type>literal</type>
+					<text>Echo: OFF</text>
+				</chunk>
+			</chunks>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>0</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>-80</offset>
+				</transformation>
+			</transformations>
+		</layer>
+
+		<layer>
+			<name>symbols on</name>
+
+			<condition>
+				<!--<not>-->
+				<property>instrumentation/radar/display-controls/symbol</property>
+				<!--</not>-->
+			</condition>
+
+			<type>text</type>
+			<font>helvetica_bold</font>
+			<point-size>14</point-size>
+			<color>
+				<red>0</red>
+				<green>1</green>
+				<blue>0</blue>
+			</color>
+			<chunks>
+				<chunk>
+					<type>literal</type>
+					<text>Symbols: ON</text>
+				</chunk>
+			</chunks>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>0</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>-100</offset>
+				</transformation>
+			</transformations>
+		</layer>
+
+		<layer>
+			<name>symbol off</name>
+
+			<condition>
+				<not>
+					<property>instrumentation/radar/display-controls/symbol</property>
+				</not>
+			</condition>
+
+			<type>text</type>
+			<font>helvetica_bold</font>
+			<point-size>14</point-size>
+			<color>
+				<red>0</red>
+				<green>1</green>
+				<blue>0</blue>
+			</color>
+			<chunks>
+				<chunk>
+					<type>literal</type>
+					<text>Symbols: OFF</text>
+				</chunk>
+			</chunks>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>0</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>-100</offset>
+				</transformation>
+			</transformations>
+		</layer>
+
+	</layers>
+
+	<actions>
+
+		<action>
+			<name>set heading type true</name>
+			<button>0</button>
+			<x>78</x>
+			<y>-43</y>
+			<w>45</w>
+			<h>15</h>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>instrumentation/radar/display-controls/rotate</property>
+			</binding>
+		</action>
+
+		<action>
+			<name>set data</name>
+			<button>0</button>
+			<x>46</x>
+			<y>-62</y>
+			<w>40</w>
+			<h>15</h>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>instrumentation/radar/display-controls/data</property>
+			</binding>
+		</action>
+
+		<action>
+			<name>set data</name>
+			<button>0</button>
+			<x>46</x>
+			<y>-82</y>
+			<w>40</w>
+			<h>15</h>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>instrumentation/radar/display-controls/pos</property>
+			</binding>
+		</action>
+
+		<action>
+			<name>set symbol</name>
+			<button>0</button>
+			<x>80</x>
+			<y>-102</y>
+			<w>40</w>
+			<h>15</h>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>instrumentation/radar/display-controls/symbol</property>
+			</binding>
+		</action>
+
+		<!--<action>
+			<name>set background</name>
+			<button>0</button>
+			<x>80</x>
+			<y>-122</y>
+			<w>40</w>
+			<h>15</h>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>instrumentation/radar/display-controls/background</property>
+			</binding>
+		</action>-->
+
+		<action>
+			<name>decrease range</name>
+			<button>0</button>
+			<x>50</x>
+			<y>-25</y>
+			<w>60</w>
+			<h>15</h>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>Radar.radar.step_radar_range(-1);</script>
+			</binding>
+		</action>
+
+		<action>
+			<name>increase range</name>
+			<button>0</button>
+			<x>110</x>
+			<y>-25</y>
+			<w>60</w>
+			<h>15</h>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>Radar.radar.step_radar_range(1);</script>
+			</binding>
+		</action>
+
+	</actions>
+
+</PropertyList>

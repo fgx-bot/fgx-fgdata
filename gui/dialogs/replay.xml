@@ -1,0 +1,205 @@
+<?xml version="1.0"?>
+<PropertyList>
+  <name>replay</name>
+  <modal>false</modal>
+  <layout>vbox</layout>
+
+  <group>
+    <layout>hbox</layout>
+	  <empty><stretch>1</stretch></empty>
+
+    <text>
+      <label>Instant Replay</label>
+    </text>
+
+	  <empty><stretch>1</stretch></empty>
+
+    <button>
+      <pref-width>16</pref-width>
+      <pref-height>16</pref-height>
+      <legend></legend>
+      <keynum>27</keynum>
+      <border>2</border>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+    </button>
+  </group>
+
+  <hrule/>
+
+  <nasal>
+    <open>
+      # Populate the view combo box with a list of the available views
+      var combo = cmdarg().getChildren("group")[1].getNode("combo");
+      combo.removeChildren("value");
+
+      var current_view = getprop("/sim/current-view/view-number");
+      var i = 0;
+      foreach (var v; view.views) {
+
+        var name = "Unnamed view " ~ v.getIndex();
+
+        if (v.getNode("name") != nil) {
+          name = v.getNode("name").getValue();
+        }
+
+        # Pre-populate the combo box selected value
+        if (v.getIndex() == current_view) {
+          setprop("/sim/replay/view-name", name);
+        }
+
+        combo.getNode("value[" ~ i ~ "]", 1).setValue(name);
+        i = i + 1;
+      }
+    </open>
+  </nasal>
+
+  <group>
+    <layout>table</layout>
+
+    <text>
+      <row>0</row><col>0</col>
+      <halign>right</halign>
+      <label>Duration:</label>
+    </text>
+
+    <input>
+      <row>0</row><col>1</col>
+      <pref-width>40</pref-width>
+      <halign>left</halign>
+      <property>/sim/replay/duration</property>
+    </input>
+
+    <text>
+      <row>1</row><col>0</col>
+      <halign>right</halign>
+      <label>View:</label>
+    </text>
+
+    <combo>
+      <row>1</row><col>1</col>
+      <halign>left</halign>
+      <pref-width>200</pref-width>
+      <property>/sim/replay/view-name</property>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+    </combo>
+
+    <checkbox>
+      <row>2</row><col>1</col>
+      <halign>left</halign>
+      <property>/sim/replay/looped</property>
+      <label>Looped replay</label>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+    </checkbox>
+  </group>
+
+  <hrule/>
+
+  <text>
+    <halign>left</halign>
+    <label>During replay:</label>
+  </text>
+
+  <group>
+    <layout>table</layout>
+
+    <text>
+      <row>1</row><col>0</col>
+      <halign>center</halign>
+      <label>v/V</label>
+    </text>
+
+    <text>
+      <row>1</row><col>1</col>
+      <halign>left</halign>
+      <label>Change view</label>
+    </text>
+
+    <text>
+      <row>2</row><col>0</col>
+      <halign>center</halign>
+      <label>Ctrl-v</label>
+    </text>
+
+    <text>
+      <row>2</row><col>1</col>
+      <halign>left</halign>
+      <label>Reset view</label>
+    </text>
+
+    <text>
+      <row>3</row><col>0</col>
+      <halign>center</halign>
+      <label>p p</label>
+    </text>
+
+    <text>
+      <row>3</row><col>1</col>
+      <halign>left</halign>
+      <label>End replay</label>
+    </text>
+  </group>
+
+  <hrule/>
+
+  <group>
+    <layout>hbox</layout>
+    <empty><stretch>true</stretch></empty>
+    <button>
+      <legend>Start</legend>
+      <default>true</default>
+      <equal>true</equal>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>
+          var index = view.indexof(getprop("/sim/replay/view-name"));
+          setprop("/sim/current-view/view-number", index);
+        </script>
+      </binding>
+      <binding>
+        <command>replay</command>
+      </binding>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+    </button>
+    <empty><stretch>true</stretch></empty>
+    <button>
+      <legend>Stop</legend>
+      <equal>true</equal>
+      <enable>
+         <greater-than>
+           <property>/sim/freeze/replay-state</property>
+           <value>0</value>
+         </greater-than>
+      </enable>
+      <binding>
+        <property>/sim/replay/disable</property>
+        <command>property-assign</command>
+        <value type="bool">true</value>
+      </binding>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+    </button>
+    <empty><stretch>true</stretch></empty>
+    <button>
+      <legend>Cancel</legend>
+      <equal>true</equal>
+      <key>Esc</key>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+    </button>
+    <empty><stretch>true</stretch></empty>
+  </group>
+
+</PropertyList>

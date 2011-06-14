@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+************************************************************************
+Common configuration for all JSBSim C310 models.
+************************************************************************
+-->
+
+<PropertyList include="c310-base.xml">
+
+ <sim>
+
+  <flight-model>jsb</flight-model>
+  <aero>c310</aero>
+
+ </sim>
+
+ <controls>
+  <flight>
+   <aileron-trim>-0.026</aileron-trim>
+  </flight>
+ </controls>
+
+</PropertyList>

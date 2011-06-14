@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PropertyList>
+  <name>Effects/cloud</name>
+  <parameters>
+    <texture n ="0">
+    </texture>
+  </parameters>
+  <technique n="10">
+    <predicate>
+      <and>
+        <property>/sim/rendering/shader-effects</property>
+        <less-equal>
+          <value type="float">1.0</value>
+          <shader-language/>
+        </less-equal>
+      </and>
+    </predicate>
+    <pass n="0">
+      <!-- This is apparently not used, so maybe we'll blow it way soon. -->
+      <lighting>true</lighting>
+      <material>
+        <ambient type="vec4d">0.5 0.5 0.5 1.0</ambient>
+        <diffuse type="vec4d">0.5 0.5 0.5 1.0</diffuse>
+        <color-mode>off</color-mode>
+      </material>
+      <alpha-test>
+        <comparison>greater</comparison>
+        <reference type="float">0.01</reference>
+      </alpha-test>
+      <shade-model>smooth</shade-model>
+      <blend>
+        <source>src-alpha</source>
+        <destination>one-minus-src-alpha</destination>
+      </blend>
+      <depth>
+        <write-mask>false</write-mask>
+      </depth>
+      <render-bin>
+        <bin-number>10</bin-number>
+        <bin-name>DepthSortedBin</bin-name>
+      </render-bin>
+      <texture-unit>
+        <unit>0</unit>
+        <type>2d</type>
+        <image><use>texture[0]/image</use></image>
+        <wrap-s>clamp</wrap-s>
+        <wrap-t>clamp</wrap-t>
+      </texture-unit>
+      <program>
+        <vertex-shader>Shaders/3dcloud.vert</vertex-shader>
+        <fragment-shader>Shaders/3dcloud.frag</fragment-shader>
+        <attribute>
+          <name>usrAttr1</name>
+          <index>10</index>
+        </attribute>
+        <attribute>
+          <name>usrAttr2</name>
+          <index>11</index>
+        </attribute>
+      </program>
+      <uniform>
+        <name>baseTexture</name>
+        <type>sampler-2d</type>
+        <value type="int">0</value>
+      </uniform>
+      <vertex-program-two-side>true</vertex-program-two-side>
+    </pass>
+  </technique>
+</PropertyList>

@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!--RDR 160 WxRadar hotspots-->
+
+<PropertyList>
+
+    <name>radar display</name>
+    <w-base>256</w-base>
+    <h-base>256</h-base>
+    <w>256</w>
+    <h>256</h>
+
+    <layers>
+
+        <layer>
+            <name>background</name>
+            <w>256</w>
+            <h>256</h>
+            <condition>
+                <not-equals>
+                    <property>instrumentation/radar/switch</property>
+                    <value>off</value>
+                </not-equals>
+            </condition>
+            <texture>
+                <path>Aircraft/Sikorsky-76C/Models/Instruments/bkgrd.png</path>
+                <x1>0.132</x1>
+                <y1>0.113</y1>
+                <x2>0.868</x2>
+                <y2>0.849</y2>
+            </texture>
+            <emissive>true</emissive>
+        </layer>
+
+        <layer>
+            <name>radar data</name>
+            <emissive>true</emissive>
+            <w>256</w>
+            <h>256</h>
+            <condition>
+                <equals>
+                    <property>instrumentation/radar/switch</property>
+                    <value>on</value>
+                </equals>
+            </condition>
+            <texture>
+                <path>Aircraft/Sikorsky-76C/Models/Instruments/od_wxradar.png</path>
+                <x1>0.0</x1>
+                <y1>0.0</y1>
+                <x2>1.0</x2>
+                <y2>1.0</y2>
+            </texture>
+        </layer>
+
+</layers>
+
+    <actions>
+<!--
+        <action>
+            <name>outline</name>
+            <button>0</button>
+            <x>-128</x>
+            <y>-128</y>
+            <w>256</w>
+            <h>256</h>
+        </action>
+-->
+    </actions>
+
+</PropertyList>

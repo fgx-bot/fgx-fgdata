@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<name>Radar</name>
+	<w-base>1024</w-base>
+	<h-base>768</h-base>
+
+	<layers>
+
+		<layer>
+			<name>wxradar</name>
+			<texture>
+				<path>Aircraft/Instruments/Textures/od_wxradar.rgb</path>
+				<x1>0</x1>
+				<y1>0</y1>
+				<x2>1</x2>
+				<y2>1</y2>
+			</texture>
+			<emissive>true</emissive>
+			<w>600</w>
+			<h>600</h>
+		</layer>
+
+		<layer>
+			<name>radar az ring1</name>
+			<texture>
+				<path>Aircraft/MPCarrier/Panels/radar-brg.png</path>
+				<x1>0</x1>
+				<y1>0</y1>
+				<x2>1</x2>
+				<y2>1</y2>
+			</texture>
+			<emissive>true</emissive>
+			<w>600</w>
+			<h>600</h>
+		</layer>
+
+		<layer>
+			<name>radar hdg true</name>
+			<condition>
+				<not>
+					<property>instrumentation/radar/display-controls/rotate</property>
+				</not>
+			</condition>
+			<texture>
+				<path>Aircraft/MPCarrier/Panels/radar-hdg.png</path>
+				<x1>0</x1>
+				<y1>0</y1>
+				<x2>1</x2>
+				<y2>1</y2>
+			</texture>
+			<emissive>true</emissive>
+			<w>600</w>
+			<h>600</h>
+			<transformations>
+				<transformation>
+					<type>rotation</type>
+					<property>/orientation/heading-deg</property>
+					<scale>1</scale>
+				</transformation>
+			</transformations>
+		</layer>
+
+		<layer>
+			<name>radar hdg rel</name>
+			<condition>
+				<property>instrumentation/radar/display-controls/rotate</property>
+			</condition>
+			<texture>
+				<path>Aircraft/MPCarrier/Panels/radar-hdg.png</path>
+				<x1>0</x1>
+				<y1>0</y1>
+				<x2>1</x2>
+				<y2>1</y2>
+			</texture>
+			<emissive>true</emissive>
+			<w>600</w>
+			<h>600</h>
+		</layer>
+
+		<layer>
+			<name>radar approach</name>
+			<condition>
+				<not>
+					<property>instrumentation/radar/display-controls/rotate</property>
+				</not>
+			</condition>
+			<texture>
+				<path>Aircraft/MPCarrier/Panels/radar-app.png</path>
+				<x1>0</x1>
+				<y1>0</y1>
+				<x2>1</x2>
+				<y2>1</y2>
+			</texture>
+			<emissive>true</emissive>
+			<w>600</w>
+			<h>600</h>
+			<transformations>
+				<transformation>
+					<type>rotation</type>
+					<property>/orientation/heading-deg</property>
+					<offset>-8</offset>
+					<scale>1</scale>
+				</transformation>
+			</transformations>
+		</layer>
+		
+		<layer>
+			<name>radar approach</name>
+			<condition>
+				<!--<not>-->
+					<property>instrumentation/radar/display-controls/rotate</property>
+				<!--</not>-->
+			</condition>
+			<texture>
+				<path>Aircraft/MPCarrier/Panels/radar-app.png</path>
+				<x1>0</x1>
+				<y1>0</y1>
+				<x2>1</x2>
+				<y2>1</y2>
+			</texture>
+			<emissive>true</emissive>
+			<w>600</w>
+			<h>600</h>
+			<transformations>
+				<transformation>
+					<type>rotation</type>
+					<!--<property>/orientation/heading-deg</property>-->
+					<offset>-8</offset>
+					<scale>1</scale>
+				</transformation>
+			</transformations>
+		</layer>
+
+	</layers>
+
+	<actions>
+
+
+				<!--<action>
+					<name>set symbol</name>
+					<button>0</button>
+					<x>0</x>
+					<y>0</y>
+					<w>40</w>
+					<h>15</h>
+					<repeatable>false</repeatable>
+					<binding>
+						<command>property-toggle</command>
+						<property>instrumentation/radar/display-controls/symbol</property>
+					</binding>
+				</action>-->
+
+
+
+	</actions>
+
+</PropertyList>

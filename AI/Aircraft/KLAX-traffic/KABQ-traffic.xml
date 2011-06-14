@@ -1,0 +1,267 @@
+<?xml version="1.0"?>
+<trafficlist>
+    <aircraft>
+        <model>AI/Aircraft/737/737-SouthWestAirlinesbl.xml</model>
+        <livery>SWA</livery> 
+        <airline>SWA</airline>
+        <actype>737-300</actype>
+        <offset>10</offset>
+        <radius>23</radius>
+        <flighttype>gate</flighttype>
+        <performance-class>jet_transport</performance-class>
+        <registration>N30857LX</registration>
+        <heavy>false</heavy>
+
+        <flight>
+            <callsign>SOUTHWEST3097LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KLAX</port>
+               <time>06:47:00</time>
+            </departure>
+            <cruise-alt>296</cruise-alt>
+            <arrival>
+                <port>KABQ</port>
+                <time>08:47:00</time>
+            </arrival>
+        <repeat>6Hr</repeat>
+       </flight> 
+
+       <flight>
+            <callsign>SOUTHWEST3057LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KABQ</port>
+               <time>09:47:00</time>
+            </departure>
+            <cruise-alt>335</cruise-alt>
+            <arrival>
+                <port>KLAX</port>
+                <time>11:47:00</time>
+            </arrival>
+        <repeat>6Hr</repeat>
+       </flight>  
+
+    </aircraft>   
+
+    <aircraft>
+        <model>AI/Aircraft/737/737-SouthWestAirlinesbl.xml</model>
+        <livery>SWA</livery> 
+        <airline>SWA</airline>
+        <actype>737-300</actype>
+        <offset>10</offset>
+        <radius>23</radius>
+        <flighttype>gate</flighttype>
+        <performance-class>jet_transport</performance-class>
+        <registration>N30856LX</registration>
+        <heavy>false</heavy>
+
+        <flight>
+            <callsign>SOUTHWEST3096LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KLAX</port>
+               <time>07:47:00</time>
+            </departure>
+            <cruise-alt>299</cruise-alt>
+            <arrival>
+                <port>KABQ</port>
+                <time>09:47:00</time>
+            </arrival>
+        <repeat>6Hr</repeat>
+       </flight> 
+
+       <flight>
+            <callsign>SOUTHWEST3056LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KABQ</port>
+               <time>10:47:00</time>
+            </departure>
+            <cruise-alt>328</cruise-alt>
+            <arrival>
+                <port>KLAX</port>
+                <time>12:47:00</time>
+            </arrival>
+        <repeat>6Hr</repeat>
+       </flight>  
+
+    </aircraft>   
+
+    <aircraft>
+        <model>AI/Aircraft/737/737-SouthWestAirlinesbl.xml</model>
+        <livery>SWA</livery> 
+        <airline>SWA</airline>
+        <actype>737-300</actype>
+        <offset>10</offset>
+        <radius>23</radius>
+        <flighttype>gate</flighttype>
+        <performance-class>jet_transport</performance-class>
+        <registration>N30855LX</registration>
+        <heavy>false</heavy>
+
+        <flight>
+            <callsign>SOUTHWEST3095LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KLAX</port>
+               <time>08:47:00</time>
+            </departure>
+            <cruise-alt>266</cruise-alt>
+            <arrival>
+                <port>KABQ</port>
+                <time>10:47:00</time>
+            </arrival>
+        <repeat>6Hr</repeat>
+       </flight> 
+
+       <flight>
+            <callsign>SOUTHWEST3055LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KABQ</port>
+               <time>11:47:00</time>
+            </departure>
+            <cruise-alt>324</cruise-alt>
+            <arrival>
+                <port>KLAX</port>
+                <time>13:47:00</time>
+            </arrival>
+        <repeat>6Hr</repeat>
+       </flight>  
+
+    </aircraft>   
+
+    <aircraft>
+        <model>AI/Aircraft/737/737-SouthWestAirlinesbl.xml</model>
+        <livery>SWA</livery> 
+        <airline>SWA</airline>
+        <actype>737-300</actype>
+        <offset>10</offset>
+        <radius>23</radius>
+        <flighttype>gate</flighttype>
+        <performance-class>jet_transport</performance-class>
+        <registration>N30854LX</registration>
+        <heavy>false</heavy>
+
+        <flight>
+            <callsign>SOUTHWEST3094LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KLAX</port>
+               <time>09:47:00</time>
+            </departure>
+            <cruise-alt>295</cruise-alt>
+            <arrival>
+                <port>KABQ</port>
+                <time>11:47:00</time>
+            </arrival>
+        <repeat>6Hr</repeat>
+       </flight> 
+
+       <flight>
+            <callsign>SOUTHWEST3054LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KABQ</port>
+               <time>12:47:00</time>
+            </departure>
+            <cruise-alt>327</cruise-alt>
+            <arrival>
+                <port>KLAX</port>
+                <time>14:47:00</time>
+            </arrival>
+        <repeat>6Hr</repeat>
+       </flight>  
+
+    </aircraft>   
+
+    <aircraft>
+        <model>AI/Aircraft/737/737-SouthWestAirlinesbl.xml</model>
+        <livery>SWA</livery> 
+        <airline>SWA</airline>
+        <actype>737-300</actype>
+        <offset>10</offset>
+        <radius>23</radius>
+        <flighttype>gate</flighttype>
+        <performance-class>jet_transport</performance-class>
+        <registration>N30853LX</registration>
+        <heavy>false</heavy>
+
+        <flight>
+            <callsign>SOUTHWEST3093LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KLAX</port>
+               <time>10:47:00</time>
+            </departure>
+            <cruise-alt>296</cruise-alt>
+            <arrival>
+                <port>KABQ</port>
+                <time>12:47:00</time>
+            </arrival>
+        <repeat>6Hr</repeat>
+       </flight> 
+
+       <flight>
+            <callsign>SOUTHWEST3053LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KABQ</port>
+               <time>13:47:00</time>
+            </departure>
+            <cruise-alt>325</cruise-alt>
+            <arrival>
+                <port>KLAX</port>
+                <time>15:47:00</time>
+            </arrival>
+        <repeat>6Hr</repeat>
+       </flight>  
+
+    </aircraft>   
+
+    <aircraft>
+        <model>AI/Aircraft/737/737-SouthWestAirlinesbl.xml</model>
+        <livery>SWA</livery> 
+        <airline>SWA</airline>
+        <actype>737-300</actype>
+        <offset>10</offset>
+        <radius>23</radius>
+        <flighttype>gate</flighttype>
+        <performance-class>jet_transport</performance-class>
+        <registration>N30852LX</registration>
+        <heavy>false</heavy>
+
+        <flight>
+            <callsign>SOUTHWEST3092LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KLAX</port>
+               <time>11:47:00</time>
+            </departure>
+            <cruise-alt>292</cruise-alt>
+            <arrival>
+                <port>KABQ</port>
+                <time>13:47:00</time>
+            </arrival>
+        <repeat>6Hr</repeat>
+       </flight> 
+
+       <flight>
+            <callsign>SOUTHWEST3052LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KABQ</port>
+               <time>14:47:00</time>
+            </departure>
+            <cruise-alt>322</cruise-alt>
+            <arrival>
+                <port>KLAX</port>
+                <time>16:47:00</time>
+            </arrival>
+        <repeat>6Hr</repeat>
+       </flight>  
+
+    </aircraft>   
+
+</trafficlist>

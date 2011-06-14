@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Source :  http://users.skynet.be/jcordon/ -->
+
+<PropertyList>
+
+  <path>throttle.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>throttle</object-name>
+  </animation>
+
+</PropertyList>
+

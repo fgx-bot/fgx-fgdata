@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+
+<!-- FlightGear menu and options translations for German -->
+
+<PropertyList>
+  <!-- Fall back -->
+  <null>No translation available for this text</null>
+
+  <!-- File menu -->
+  <file>Datei</file>
+  <save-flight>Flug speichern</save-flight>
+  <load-flight>Flug laden</load-flight>
+  <reset>Flug zurücksetzen</reset>
+  <hi-res-snap-shot>Hochauflösender Screenshot</hi-res-snap-shot>
+  <snap-shot>Screenshot</snap-shot>
+  <print>Drucken</print>
+  <exit>Beenden</exit>
+
+  <!-- View menu -->
+  <view>Ansicht</view>
+  <toggle-panel>Instrumentenbrett umschalten</toggle-panel>
+  <pilot-offset>Betrachtungspunkt</pilot-offset>
+  <hud-alpha>HUD-Antialiasing an/aus</hud-alpha>
+  <properties>Eigenschaften</properties>
+
+  <!-- Environment menu -->
+  <environment>Umgebung</environment>
+  <goto-airport>Flughafenauswahl</goto-airport>
+
+  <!-- Autopilot menu -->
+  <autopilot>Autopilot</autopilot>
+  <set-heading>Richtungseinstellung</set-heading>
+  <set-altitude>Höheneinstellung</set-altitude>
+  <add-waypoint>Wegpunkt hinzufügen</add-waypoint>
+  <skip-current-waypoint>Momentanen Wegpunkt auslassen</skip-current-waypoint>
+  <clear-route>Route löschen</clear-route>
+  <adjust-ap-settings>AP einstellen</adjust-ap-settings>
+  <toggle-hud-format>HUD-Format umschalten</toggle-hud-format>
+
+  <!-- Help menu -->
+  <help>Hilfe</help>
+
+</PropertyList>

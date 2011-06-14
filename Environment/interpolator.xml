@@ -1,0 +1,183 @@
+<?xml version="1.0" ?>
+<!--
+ This file is part of FlightGear, the free flight simulator
+ http://www.flightgear.org/
+
+ Copyright (C) 2009 Torsten Dreyer, Torsten (at) t3r _dot_ de
+
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License as
+ published by the Free Software Foundation; either version 2 of the
+ License, or (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+-->
+<!--
+  Interpolate the values of /environment/interpolated/* over time
+  and write the results to /environment/*, the environment of our
+  aircraft
+  All filters are enabled on /environment/config/enabled=true
+-->
+<PropertyList>
+
+  <filter>
+    <name>EnvironmentInterpolator:temperature-sea-level-degc</name>
+    <enable>
+      <condition>
+        <property>/environment/config/enabled</property>
+      </condition>
+    </enable>
+    <input>/environment/config/interpolated/temperature-sea-level-degc</input>
+    <output>/environment/temperature-sea-level-degc</output>
+    <type>noise-spike</type>
+    <max-rate-of-change>0.1667</max-rate-of-change>
+  </filter>
+
+  <filter>
+    <name>EnvironmentInterpolator:dewpoint-sea-level-degc</name>
+    <enable>
+      <condition>
+        <property>/environment/config/enabled</property>
+      </condition>
+    </enable>
+    <input>/environment/config/interpolated/dewpoint-sea-level-degc</input>
+    <output>/environment/dewpoint-sea-level-degc</output>
+    <type>noise-spike</type>
+    <max-rate-of-change>0.1667</max-rate-of-change>
+  </filter>
+
+  <filter>
+    <!--
+      transfer the interpolated QNH to the global environment
+      limit the rate of change to approx 1hpa/sec
+    -->
+    <name>EnvironmentInterpolator:pressure-sea-level-inhg</name>
+    <type>noise-spike</type>
+    <max-rate-of-change>0.03</max-rate-of-change>
+    <enable>
+      <condition>
+        <property>/environment/config/enabled</property>
+      </condition>
+    </enable>
+    <input>/environment/config/interpolated/pressure-sea-level-inhg</input>
+    <output>/environment/pressure-sea-level-inhg</output>
+  </filter>
+
+  <filter>
+    <name>EnvironmentInterpolator:visibility-m</name>
+    <enable>
+      <condition>
+        <property>/environment/config/enabled</property>
+      </condition>
+    </enable>
+    <input>
+      <condition>
+        <property>/environment/config/presets/visibility-m-override</property>
+      </condition>
+      <property>/environment/config/presets/visibility-m</property>
+    </input>
+    <input>/environment/config/interpolated/visibility-m</input>
+    <output>/environment/visibility-m</output>
+    <type>exponential</type>
+    <filter-time>2</filter-time>
+  </filter>
+
+  <!-- 
+    filter the wind vector by filtering the cartesian representation
+  -->
+  <filter>
+    <name>EnvironmentInterpolator:wind-from-north</name>
+    <enable>
+      <condition>
+        <property>/environment/config/enabled</property>
+      </condition>
+    </enable>
+    <input>
+      <condition>
+        <property>/environment/config/presets/wind-override</property>
+      </condition>
+      <property>/environment/config/presets/wind-from-north-fps</property>
+    </input>
+    <input>/environment/config/interpolated/wind-from-north-fps</input>
+    <output>/environment/wind-from-north-fps</output>
+    <type>exponential</type>
+    <filter-time>5</filter-time>
+  </filter>
+
+  <filter>
+    <name>EnvironmentInterpolator:wind-from-east</name>
+    <enable>
+      <condition>
+        <property>/environment/config/enabled</property>
+      </condition>
+    </enable>
+    <input>
+      <condition>
+        <property>/environment/config/presets/wind-override</property>
+      </condition>
+      <property>/environment/config/presets/wind-from-east-fps</property>
+    </input>
+    <input>/environment/config/interpolated/wind-from-east-fps</input>
+    <output>/environment/wind-from-east-fps</output>
+    <type>exponential</type>
+    <filter-time>5</filter-time>
+  </filter>
+
+  <filter>
+    <name>EnvironmentInterpolator:turbulence-raw-magnitude</name>
+    <enable>
+      <condition>
+        <property>/environment/config/enabled</property>
+      </condition>
+    </enable>
+    <input>
+      <condition>
+        <property>/environment/config/presets/turbulence-magnitude-norm-override</property>
+      </condition>
+      <property>/environment/config/presets/turbulence-magnitude-norm</property>
+    </input>
+    <input>
+      <property>/environment/config/interpolated/turbulence/magnitude-norm</property>
+    </input>
+    <output>/environment/turbulence/raw-magnitude-norm</output>
+    <type>exponential</type>
+    <filter-time>1</filter-time>
+  </filter>
+
+  <filter>
+    <name>EnvironmentInterpolator:turbulence-magnitude</name>
+    <enable>
+      <condition>
+        <property>/environment/config/enabled</property>
+      </condition>
+    </enable>
+    <input>
+      <expression>
+        <pow>
+          <property>/environment/turbulence/raw-magnitude-norm</property>
+          <property>/environment/turbulence/sensitivity</property>
+        </pow>
+      </expression>
+    </input>
+    <output>/environment/turbulence/magnitude-norm</output>
+    <type>gain</type>
+    <gain>1</gain>
+  </filter>
+
+  <filter>
+    <name>EnvironmentInterpolator:turbulence-rate</name>
+    <enable>
+      <condition>
+        <property>/environment/config/enabled</property>
+      </condition>
+    </enable>
+    <input>/environment/config/interpolated/turbulence/rate-hz</input>
+    <output>/environment/turbulence/rate-hz</output>
+    <type>exponential</type>
+    <filter-time>1</filter-time>
+  </filter>
+
+</PropertyList>

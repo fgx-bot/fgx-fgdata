@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+ <path>MPFuel.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>Face</object-name>
+    <object-name>Bezel</object-name>
+    <object-name>ptrCtr</object-name>
+
+    <!-- Objets transparents -->
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>Face</object-name>
+    <object-name>ptrCtr</object-name>
+    <emission>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>ptrCtr</object-name>
+    <property>/engines/engine/mp-inhg</property>
+    <interpolation>
+     <entry><ind>  8.86 </ind><dep> -175 </dep></entry>
+     <entry><ind> 44.30 </ind><dep>  150 </dep></entry>
+    </interpolation>
+    <min> -175 </min>
+    <max>  150 </max>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+    <center>
+      <x-m> 0 </x-m>
+      <y-m> 0 </y-m>
+      <z-m> 0 </z-m>
+    </center>
+  </animation>
+
+</PropertyList>

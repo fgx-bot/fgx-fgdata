@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Effects files for trees, which are placed by a shader. -->
+
+<!-- Trees are drawn in two passes. The first draws the opaque parts
+     with z writes enabled. The second draws the the transparent bits
+     with z testing enabled and z writes disabled. The transparent
+     tree silhouettes will blend correctly against the opaque
+     geometry. They may cause artifacts when blending against other
+     edges, but the overall "forest" is supposed to be nice and
+     fuzzy. There might also be artifacts when blending over other
+     transparent objects, but that's mostly unavoidable.
+
+     Note: no sorting needed! -->
+<PropertyList>
+  <name>Effects/tree</name>
+  <parameters>
+    <texture n ="0">
+    </texture>
+  </parameters>
+  <technique n="10">
+    <predicate>
+      <and>
+        <property>/sim/rendering/shader-effects</property>
+		<property>/sim/rendering/random-vegetation</property>
+        <less-equal>
+          <value type="float">1.0</value>
+          <shader-language/>
+        </less-equal>
+      </and>
+    </predicate>
+    <pass n="0">
+      <lighting>true</lighting>
+      <material>
+        <ambient type="vec4d">1.0 1.0 1.0 1.0</ambient>
+        <diffuse type="vec4d">1.0 1.0 1.0 1.0</diffuse>
+        <color-mode>off</color-mode>
+      </material>
+      <alpha-test>
+        <comparison>gequal</comparison>
+        <reference type="float">0.33</reference>
+      </alpha-test>
+      <texture-unit>
+        <unit>0</unit>
+        <type>2d</type>
+        <image><use>texture[0]/image</use></image>
+        <wrap-s>clamp</wrap-s>
+        <wrap-t>clamp</wrap-t>
+      </texture-unit>
+      <program>
+        <vertex-shader>Shaders/tree.vert</vertex-shader>
+        <fragment-shader>Shaders/tree.frag</fragment-shader>
+      </program>
+      <uniform>
+        <name>baseTexture</name>
+        <type>sampler-2d</type>
+        <value type="int">0</value>
+      </uniform>
+    </pass>
+    <pass n="1">
+      <lighting>true</lighting>
+      <material>
+        <ambient type="vec4d">1.0 1.0 1.0 1.0</ambient>
+        <diffuse type="vec4d">1.0 1.0 1.0 1.0</diffuse>
+        <color-mode>off</color-mode>
+      </material>
+      <render-bin>
+        <bin-number>2</bin-number> <!-- RANDOM_OBJECTS_BIN -->
+        <bin-name>RenderBin</bin-name>
+      </render-bin>
+      <alpha-test>
+        <comparison>less</comparison>
+        <reference type="float">0.33</reference>
+      </alpha-test>
+      <blend>
+        <source>src-alpha</source>
+        <destination>one-minus-src-alpha</destination>
+      </blend>
+      <depth>
+        <write-mask>false</write-mask>
+      </depth>
+      <texture-unit>
+        <unit>0</unit>
+        <type>2d</type>
+        <image><use>texture[0]/image</use></image>
+        <wrap-s>clamp</wrap-s>
+        <wrap-t>clamp</wrap-t>
+      </texture-unit>
+      <program>
+        <vertex-shader>Shaders/tree.vert</vertex-shader>
+        <fragment-shader>Shaders/tree.frag</fragment-shader>
+      </program>
+      <uniform>
+        <name>baseTexture</name>
+        <type>sampler-2d</type>
+        <value type="int">0</value>
+      </uniform>
+    </pass>
+  </technique>
+</PropertyList>

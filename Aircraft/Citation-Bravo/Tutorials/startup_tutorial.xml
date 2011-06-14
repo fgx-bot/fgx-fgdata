@@ -1,0 +1,238 @@
+<PropertyList>
+    <name>Start Up</name>
+    <description>Cessna 550B start procedure</description>
+
+    <init>
+        <set>
+            <property>/sim/current-view/view-number</property>
+            <value>0</value>
+        </set>
+        <set>
+            <property>/controls/gear/brake-parking</property>
+            <value>1</value>
+        </set>
+        <set>
+            <property>/controls/flight/flaps</property>
+            <value>0.0</value>
+        </set>
+        <set>
+            <property>/controls/electric/external-power</property>
+            <value>0</value>
+        </set>
+        <set>
+            <property>/controls/electric/battery-switch</property>
+            <value>0</value>
+        </set>
+        <set>
+            <property>/controls/electric/inverter-switch</property>
+            <value>0</value>
+        </set>
+        <set>
+            <property>/controls/electric/engine[0]/generator</property>
+            <value>0</value>
+        </set>
+        <set>
+            <property>/controls/electric/engine[1]/generator</property>
+            <value>0</value>
+        </set>
+        <set>
+            <property>/controls/engines/engine[0]/cutoff</property>
+            <value>1</value>
+        </set>
+        <set>
+            <property>/controls/engines/engine[1]/cutoff</property>
+            <value>1</value>
+        </set>
+        <set>
+            <property>/controls/engines/engine[0]/ignition</property>
+            <value>0</value>
+        </set>
+        <set>
+            <property>/controls/engines/engine[1]/ignition</property>
+            <value>0</value>
+        </set>
+        <set>
+            <property>/controls/engines/engine[0]/throttle</property>
+            <value>0.0</value>
+        </set>
+        <set>
+            <property>/controls/engines/engine[1]/throttle</property>
+            <value>0.0</value>
+        </set>
+    </init>
+
+    <step>
+        <message>
+            Switch on right and left generators.{|.}
+            Switch on battery.{|.}
+        </message>
+        <view>
+            <heading-offset-deg>24</heading-offset-deg>
+            <pitch-offset-deg>-34</pitch-offset-deg>
+            <field-of-view>20</field-of-view>
+        </view>
+        <error>
+            <message>Battery and Generator switches {|.}should be in the "up" position{|.}
+            Press "y" to hide yokes{|.}
+            </message>
+            <condition>
+                <and>
+                    <not>
+                        <property>/controls/electric/battery-switch</property>
+                        <property>/controls/electric/engine[0]/generator</property>
+                        <property>/controls/electric/engine[1]/generator</property>
+                    </not>
+                </and>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <and>
+                        <property>/controls/electric/battery-switch</property>
+                        <property>/controls/electric/engine[0]/generator</property>
+                        <property>/controls/electric/engine[1]/generator</property>
+                </and>
+            </condition>
+        </exit>
+    </step>
+
+   <step>
+        <message>
+            Set right and left ignition switches{|.}
+            to the "NORM" positions.{|.}
+        </message>
+        <view>
+            <heading-offset-deg>18.6</heading-offset-deg>
+            <pitch-offset-deg>-37</pitch-offset-deg>
+            <field-of-view>20</field-of-view>
+        </view>
+        <error>
+            <message>Ignition switches {|.}
+            should be in the "NORM" position{|.}
+            </message>
+            <condition>
+                <or>
+                    <equals>
+                        <property>/controls/engines/engine[0]/ignition</property>
+                        <value>0</value>
+                    </equals>
+                    <equals>
+                        <property>/controls/engines/engine[1]/ignition</property>
+                        <value>0</value>
+                    </equals>
+                </or>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <and>
+                    <equals>
+                        <property>/controls/engines/engine[0]/ignition</property>
+                        <value>1</value>
+                    </equals>
+                    <equals>
+                        <property>/controls/engines/engine[1]/ignition</property>
+                        <value>1</value>
+                    </equals>
+                </and>
+            </condition>
+        </exit>
+    </step>
+
+
+    <step>
+        <message>
+            Starting is a semi-automatic process.{|.}
+            Press left starter button.{|.}
+        </message>
+        <view>
+            <heading-offset-deg>27</heading-offset-deg>
+            <pitch-offset-deg>-36</pitch-offset-deg>
+            <field-of-view>20</field-of-view>
+        </view>
+        <error>
+            <message>Ignition light should illuminate{|.}
+            until engine fires{|.}
+            </message>
+            <condition>
+                <equals>
+                        <property>/controls/engines/engine/cutoff</property>
+                        <value>1</value>
+                    </equals>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                        <equals>
+                        <property>/controls/engines/engine/cutoff</property>
+                        <value>0</value>
+                    </equals>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>
+            Repeat the start procedure for the right engine{|.}
+        </message>
+        <view>
+            <heading-offset-deg>21.6</heading-offset-deg>
+            <pitch-offset-deg>-37</pitch-offset-deg>
+            <field-of-view>20</field-of-view>
+        </view>
+        <error>
+            <message>Press right engine starter{|.}</message>
+            <condition>
+                <equals>
+                        <property>/controls/engines/engine[1]/cutoff</property>
+                        <value>1</value>
+                    </equals>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <equals>
+                        <property>/controls/engines/engine[1]/cutoff</property>
+                        <value>0</value>
+                    </equals>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>
+            Switch on Inverter " avionics power ".{|.}
+        </message>
+        <view>
+            <heading-offset-deg>17.2</heading-offset-deg>
+            <pitch-offset-deg>-35</pitch-offset-deg>
+            <field-of-view>20</field-of-view>
+        </view>
+        <error>
+            <message>Switch on Inverter{|.}
+            This supplies the avionics AC power{|.}
+            </message>
+            <condition>
+                <not>
+                    <property>/controls/electric/inverter-switch</property>
+                </not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <property>/controls/electric/inverter-switch</property>
+            </condition>
+        </exit>
+    </step>
+
+    <end>
+        <message>Set flaps to 15 degrees .... press  "]" once  {|.}
+        and release the park brake ---"  shift b " {|.}
+        </message>
+        <view>
+            <heading-offset-deg>0</heading-offset-deg>
+            <pitch-offset-deg>-12</pitch-offset-deg>
+            <field-of-view>60</field-of-view>
+        </view>
+    </end>
+</PropertyList>

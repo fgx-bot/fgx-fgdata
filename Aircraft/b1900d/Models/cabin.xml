@@ -1,0 +1,23 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+
+    <path>cabin.ac</path>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Door.inner</object-name>
+        <property>sim/multiplay/generic/float</property>
+        <factor>145.0</factor>
+        <center>
+            <x-m>-3.438</x-m>
+            <y-m>-0.620</y-m>
+            <z-m>-0.768</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+</PropertyList>

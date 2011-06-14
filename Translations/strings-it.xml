@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!-- FlightGear menu and options translations for Italian -->
+
+<PropertyList>
+
+    <!-- Fall back -->
+    <null>Nessuna traduzione</null>
+
+    <!-- Menu -->
+	<!-- File menu -->
+	<file>File</file>
+	<save-flight>Salva volo</save-flight>
+	<load-flight>Carica volo</load-flight>
+	<reset>Reset</reset>
+	<hi-res-snap-shot>Fotografia Hi-res</hi-res-snap-shot>
+	<snap-shot>Fotografia</snap-shot>
+	<print>Stampa</print>
+	<exit>Uscita</exit>
+
+	<!-- View menu -->
+	<view>Visualizza</view>
+	<toggle-panel>Pannello strumenti ON/OFF</toggle-panel>
+	<pilot-offset>Posizione pilota</pilot-offset>
+	<hud-alpha>Alpha HUD</hud-alpha>
+	<properties>Proprieta'</properties>
+
+	<!-- Environment menu -->
+	<presets>Mondo</presets>
+	<preset-airport>Nuovo aeroporto</preset-airport>
+	<preset-runway>Nuova pista</preset-runway>
+	<preset-offset-distance>Nuova distanza</preset-offset-distance>
+	<preset-altitude>Nuova altitudine</preset-altitude>
+	<preset-glideslope>Nuova direzione (gradi)</preset-glideslope>
+	<preset-airspeed>Nuova velocita' (nodi)</preset-airspeed>
+	<preset-commit>Attiva modifiche</preset-commit>
+
+	<!-- Autopilot menu -->
+	<autopilot>Autopilota</autopilot>
+	<set-heading>Nuova direzione</set-heading>
+	<set-altitude>Nuova altitudine</set-altitude>
+	<add-waypoint>Aggiungi waypoint</add-waypoint>
+	<skip-current-waypoint>Salta waypoint</skip-current-waypoint>
+	<clear-route>Cancella rotta</clear-route>
+	<adjust-ap-settings>Cambia impostazioni AP</adjust-ap-settings>
+	<toggle-hud-format>Cambia formato HUD</toggle-hud-format>
+
+	<!-- Help menu -->
+	<help>Aiuto</help>
+
+</PropertyList>

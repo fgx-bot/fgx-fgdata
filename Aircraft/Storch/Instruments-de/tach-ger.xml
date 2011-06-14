@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+ <path>tach-ger.ac</path>
+
+ <animation>
+  <type>material</type>
+  <object-name>Face</object-name>
+  <object-name>needle</object-name>
+  <emission>
+    <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+    <red>0.5</red>
+    <green>0.25</green>
+    <blue>0.25</blue>
+  </emission>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>needle</object-name>
+  <property>engines/engine/rpm</property>
+  <min>0</min>
+  <max>3600</max>
+  <interpolation>
+   <entry>
+    <ind>0</ind>
+    <dep>0</dep>
+   </entry>
+   <entry>
+    <ind>600</ind>
+    <dep>15</dep>
+   </entry>
+   <entry>
+    <ind>1000</ind>
+    <dep>55</dep>
+   </entry>
+   <entry>
+    <ind>1500</ind>
+    <dep>111</dep>
+   </entry>
+   <entry>
+    <ind>2000</ind>
+    <dep>169</dep>
+   </entry>
+   <entry>
+    <ind>2500</ind>
+    <dep>228</dep>
+   </entry>
+   <entry>
+    <ind>3600</ind>
+    <dep>345</dep>
+   </entry>
+  </interpolation>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+</PropertyList>
+
+

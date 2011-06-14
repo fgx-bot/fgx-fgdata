@@ -1,0 +1,608 @@
+<?xml version="1.0"?>
+<!--
+************************************************************************
+Hawker Sea Hawk simulation config.
+
+2002-12-26 Lee Elliott  leee-fgfs@spatial.freeserve.co.uk
+
+2004-03-12 additions by Vivian Meazza vivian.meazza at lineone.net
+           to include keyboard bindings for carrier operations
+************************************************************************
+-->
+<PropertyList>
+
+	<!-- *************** set properties **********************-->
+	<!--parking brake ON -->
+	<!-- nosewheel lock OFF -->
+	<controls>
+		<armament>
+			<trigger type="bool">0</trigger>
+		</armament>
+		<engines>
+			<engine n="0">
+				<fuel-cock>
+					<lever type="double">1</lever>
+				</fuel-cock>
+				<throttle>0</throttle>
+			</engine>
+		</engines>
+		<gear>
+			<brake-parking>1</brake-parking>
+			<tailwheel-lock>true</tailwheel-lock>
+			<launchbar>
+				<acceleration-norm type="float">0.4</acceleration-norm>
+			</launchbar>
+			<lashings type ="bool">false</lashings>
+		</gear>
+		<flight>
+			<flaps-alternate-extension type="double">1</flaps-alternate-extension>
+			<speedbrake-lever type="bool">false</speedbrake-lever>
+			<flaps-lever type="double">0</flaps-lever>
+		</flight>
+		<lighting>
+			<nav-lights type="bool">false</nav-lights>
+		</lighting>
+		<armament>
+			<station>
+				<jettison-all type="bool">false</jettison-all>
+			</station>
+			<station>
+				<jettison-all type="bool">false</jettison-all>
+			</station>
+		</armament>
+	</controls>
+
+	<gear>
+		<gear n="0">
+			<tyre-smoke type="int">0</tyre-smoke>
+			<sprayspeed-ms type="double">0</sprayspeed-ms>
+			<spray-density type="double">0</spray-density>
+			<caster-angle-deg-damped type="double">0</caster-angle-deg-damped>
+		</gear>
+		<gear n="1">
+			<tyre-smoke type="int">0</tyre-smoke>
+			<sprayspeed-ms type="double">0</sprayspeed-ms>
+			<spray-density type="double">0</spray-density>
+		</gear>
+		<gear n="2">
+			<tyre-smoke type="int">0</tyre-smoke>
+			<sprayspeed-ms type="double">0</sprayspeed-ms>
+			<spray-density type="double">0</spray-density>
+		</gear>
+		<tailhook>
+			<position-norm type="double">0</position-norm>
+		</tailhook>
+	</gear>
+
+	<engines>
+		<engine n="0">
+			<running type="bool">0</running>
+		</engine>
+	</engines>
+
+	<position>
+		<altitude-agl-ft type="double">0</altitude-agl-ft>
+	</position>
+
+	<sim>
+		<author type="string">Lee Elliott, Vivian Meazza</author>
+		<description type="string">Hawker Seahawk FGA6</description>
+		<status type="string">early-production</status>
+		<flight-model>yasim</flight-model>
+		<aero>seahawk-3d-yasim</aero>
+		<systems>
+			<electrical>
+				<path>Aircraft/seahawk/Systems/seahawk-electrical.xml</path>
+			</electrical>
+		</systems>
+
+		<stores>
+			<load-tanks type="bool">false</load-tanks>
+			<load-tanks type="bool">false</load-tanks>
+		</stores>
+
+		<instrumentation>
+			<path>Aircraft/seahawk/Systems/seahawk-instrumentation.xml</path>
+		</instrumentation>
+
+		<hud>
+			<path n="1">Aircraft/seahawk/Systems/seahawk-sight.xml</path>
+			<visibility n="1">true</visibility>
+			<font>
+				<size type="float">10.0</size>
+			</font>
+		</hud>
+
+		<ai>
+			<aircraft>
+				<exhaust type="bool">false</exhaust>
+			</aircraft>
+			<submodels>
+				<contrails type="bool">false</contrails>
+			</submodels>
+			<!--<ballistic>
+				<force-lb type="double">3000</force-lb>
+				<force-azimuth-deg>0</force-azimuth-deg>
+				<force-elevation-deg>45</force-elevation-deg>
+			</ballistic>-->
+		</ai>
+
+		<submodels>
+			<serviceable type="bool">true</serviceable>
+			<path type="string">Aircraft/seahawk/Models/seahawk-submodels.xml</path>
+		</submodels>
+
+		<sound>
+			<path>Aircraft/seahawk/Sounds/seahawk-sound.xml</path>
+		</sound>
+
+		<!-- hide the 2D panel -->
+		<panel>
+			<visibility archive="n">false</visibility>
+		</panel>
+
+		<!-- no HUD -->
+		<!--<hud>
+			<path>Huds/Default/default.xml</path>
+			<visibility>false</visibility>
+		</hud>-->
+
+		<model>
+			<path>Aircraft/seahawk/Models/seahawk-3d-model.xml</path>
+		</model>
+
+		<view n="0">
+			<internal archive="y">true</internal>
+			<config>
+				<x-offset-m archive="y">0</x-offset-m>
+				<y-offset-m archive="y">0.6579</y-offset-m>
+				<z-offset-m archive="y">-3.1675</z-offset-m>
+				<pitch-offset-deg>-15</pitch-offset-deg>
+				<default-field-of-view-deg>60</default-field-of-view-deg>
+				<limits>
+					<enabled type="bool">true</enabled>
+				</limits>
+			</config>
+		</view>
+		<view n="1">
+			<config>
+				<target-z-offset-m archive="y"
+													 type="double">0</target-z-offset-m>
+			</config>
+		</view>
+		<view n="2">
+			<config>
+				<target-z-offset-m archive="y"
+													 type="double">0</target-z-offset-m>
+			</config>
+		</view>
+		<view n="3">
+			<config>
+				<target-z-offset-m archive="y"
+													 type="double">0</target-z-offset-m>
+			</config>
+		</view>
+		<view n="4">
+			<config>
+				<target-z-offset-m archive="y"
+													 type="double">0</target-z-offset-m>
+			</config>
+		</view>
+		<view n="5">
+			<config>
+				<target-z-offset-m archive="y"
+													 type="double">0</target-z-offset-m>
+			</config>
+		</view>
+		<view n="6">
+			<config>
+				<target-z-offset-m archive="y"
+													 type="double">0</target-z-offset-m>
+			</config>
+		</view>
+		<help>
+			<key>
+				<name>Ctrl-B</name>
+				<desc>toggle speedbrake</desc>
+			</key>
+			<key>
+				<name>C</name>
+				<desc>catapult launch command</desc>
+			</key>
+			<key>
+				<name>f/F</name>
+				<desc>wing fold up/down</desc>
+			</key>
+			<key>
+				<name>Ctrl-F</name>
+				<desc>emergency flap lowering</desc>
+			</key>
+			<key>
+				<name>Ctrl-J</name>
+				<desc>jettison droptanks</desc>
+			</key>
+			<key>
+				<name>L</name>
+				<desc>launch-bar engage</desc>
+			</key>
+			<key>
+				<name>o/O</name>
+				<desc>hook up/down</desc>
+			</key>
+			<key>
+				<name>u/U</name>
+				<desc>seat up/down</desc>
+			</key>
+			<key>
+				<name>Ctrl-U</name>
+				<desc>seat default</desc>
+			</key>
+		</help>
+
+		<flaps>
+			<setting>0.00</setting>
+			<setting>0.36</setting>
+			<setting>1.00</setting>
+		</flaps>
+
+		<multiplay>
+			<generic>
+				<string n="0"
+								alias="/sim/submodels/path"/>
+				<int n="0"
+						 alias="/engines/engine[0]/running"/>
+				<int n="1"
+						 alias="/gear/gear[0]/tyre-smoke"/>
+				<int n="2"
+						 alias="/gear/gear[1]/tyre-smoke"/>
+				<int n="3"
+						 alias="/gear/gear[2]/tyre-smoke"/>
+				<int n="4"
+						 alias="/controls/lighting/nav-lights"/>
+				<int n="5"
+						 alias="/controls/armament/trigger"/>
+				<float n="0"
+							 alias="/gear/gear[0]/sprayspeed-ms"/>
+				<float n="1"
+							 alias="/gear/gear[1]/sprayspeed-ms"/>
+				<float n="2"
+							 alias="/gear/gear[2]/sprayspeed-ms"/>
+				<float n="3"
+							 alias="/gear/gear[0]/spray-density"/>
+				<float n="4"
+							 alias="/gear/gear[1]/spray-density"/>
+				<float n="5"
+							 alias="/gear/gear[2]/spray-density"/>
+				<float n="6"
+							 alias="/position/altitude-agl-ft"/>
+				<float n="7"
+							 alias="/gear/gear/caster-angle-deg-damped"/>
+				<float n="8"
+							 alias="/controls/engines/engine[0]/throttle"/>
+			</generic>
+		</multiplay>
+
+		<menubar>
+			<default>
+				<menu n="10">
+					<label>Seahawk</label>
+					<enabled type="bool">true</enabled>
+					<item>
+						<label>Toggle pilot model</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>sim/model/seahawk/show-pilot</property>
+						</binding>
+					</item>
+				</menu>
+			</default>
+		</menubar>
+		<seahawk>
+			<show-pilot archive="y"
+									type="bool">true</show-pilot>
+		</seahawk>
+
+		<aim>
+			<active type="bool">false</active>
+			<tachy type="bool">true</tachy>
+			<align type="bool">false</align>
+			<radius type="float">1</radius>
+			<speed-fps type="float">2755.9</speed-fps>
+			<range-yds type="float">550</range-yds>
+			<arc>
+				<start-deg type="float">10</start-deg>
+				<stop-deg type="float">270</stop-deg>
+			</arc>
+			<offsets>
+				<x type="float">0</x>
+				<y type="float">0</y>
+			</offsets>
+			<compression type ="float">2</compression>
+		</aim>
+
+	</sim>
+
+	<consumables>
+		<fuel>
+			<tank n="0">
+				<name type="string">Fwd</name>
+				<level-gal_us>300</level-gal_us>
+				<selected type="bool">1</selected>
+			</tank>
+			<tank n="1">
+				<name type="string">Aft</name>
+				<level-gal_us>300</level-gal_us>
+				<selected type="bool">1</selected>
+			</tank>
+			<tank n="2">
+				<name type="string">Saddle</name>
+				<level-gal_us>180</level-gal_us>
+				<selected type="bool">0</selected>
+			</tank>
+			<!--<tank n="3">
+				<name type="string">Droptank Stbd</name>
+				<level-gal_us>0</level-gal_us>
+				<selected type="bool">0</selected>
+			</tank>
+			<tank n="4">
+				<name type="string">Droptank Port</name>
+				<level-gal_us>0</level-gal_us>
+				<selected type="bool">0</selected>
+			</tank>-->
+		</fuel>
+	</consumables>
+
+	<!-- ************Instrumentation ************************* -->
+	<instrumentation>
+		<path>Aircraft/seahawk/Systems/seahawk-instrumentation.xml</path>
+		<tacan n="0">
+			<serviceable type="bool"
+									 archive="y">true</serviceable>
+			<switch-position type="int"
+											 archive="y">1</switch-position>
+		</tacan>
+		<!-- hsi heading bug and source select-->
+		<heading-indicator>
+			<heading-bug-deg type="double">95</heading-bug-deg>
+			<heading-source type="bool">true</heading-source>
+		</heading-indicator>
+	</instrumentation>
+
+	<!-- **************** map keyboard input ********************** -->
+	<input>
+		<keyboard include="../../Input/Keyboard/carrier-bindings.xml">
+			<key n="2">
+				<name>Ctrl-B</name>
+				<desc>Toggle speedbrake.</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+						seahawk.toggleAirbrakeLever();
+					</script>
+				</binding>
+			</key>
+
+			<!-- map keys for emergency flap lowering -->
+			<key n="6">
+				<name>Ctrl-F</name>
+				<desc>Emergency Flap Lowering.</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>controls/flight/flaps-alternate-extension</property>
+					<value type="double">0</value>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>controls/flight/flaps</property>
+					<value type="double">1</value>
+				</binding>
+			</key>
+
+			<!-- map keys for no action -->
+			<key n="72">
+				<name>H</name>
+				<desc>Null.</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>null</property>
+					<value type="double">0</value>
+				</binding>
+			</key>
+			<key n="104">
+				<name>h</name>
+				<desc>Null.</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>null</property>
+					<value type="double">0</value>
+				</binding>
+			</key>
+			<key n="107">
+				<name>k</name>
+				<desc>Null.</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>null</property>
+					<value type="double">0</value>
+				</binding>
+			</key>
+			<key n="108">
+				<name>l</name>
+				<desc>Null.</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>null</property>
+					<value type="double">0</value>
+				</binding>
+			</key>
+
+			<!-- map keys for seat vertical adjust -->
+			<key n="21">
+				<name>CTRL-U</name>
+				<desc>Seat Default.</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>controls/seat/vertical-adjust</property>
+					<value type="double">0</value>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>sim/aim/offsets/y</property>
+					<value type="double">0</value>
+				</binding>
+				<binding>
+					<condition>
+						<equals>
+							<property>sim/current-view/view-number</property>
+							<value>0</value>
+						</equals>
+					</condition>
+					<command>property-assign</command>
+					<property>sim/current-view/y-offset-m</property>
+					<value type="double">0.6579</value>
+				</binding>
+			</key>
+			<key n="85">
+				<name>U</name>
+				<desc>Seat Down.</desc>
+				<binding>
+					<command>property-adjust</command>
+					<property>controls/seat/vertical-adjust</property>
+					<step type="double">-0.01</step>
+					<min type="double">-0.1</min>
+					<max type="double">0.1</max>
+				</binding>
+				<binding>
+					<condition>
+						<equals>
+							<property>sim/current-view/view-number</property>
+							<value>0</value>
+						</equals>
+					</condition>
+					<command>property-adjust</command>
+					<property>sim/current-view/y-offset-m</property>
+					<step type="double">-0.01</step>
+					<min type="double">0.5579</min>
+					<max type="double">0.7579</max>
+				</binding>
+			</key>
+			<key n="117">
+				<name>u</name>
+				<desc>Seat Up.</desc>
+				<binding>
+					<command>property-adjust</command>
+					<property>controls/seat/vertical-adjust</property>
+					<step type="double">0.01</step>
+					<min type="double">-0.1</min>
+					<max type="double">0.1</max>
+				</binding>
+				<binding>
+					<condition>
+						<equals>
+							<property>sim/current-view/view-number</property>
+							<value>0</value>
+						</equals>
+					</condition>
+					<command>property-adjust</command>
+					<property>sim/current-view/y-offset-m</property>
+					<step type="double">0.01</step>
+					<min type="double">0.6576</min>
+					<max type="double">0.7579</max>
+				</binding>
+			</key>
+
+			<!-- map keys for flap lever -->
+			<key n="91">
+				<name>[</name>
+				<desc>Decrease flap lever.</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+						<!--seahawk.adjustFlaps(0);-->
+						controls.flapsDown(-1)
+					</script>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>nasal</command>
+						<script>controls.flapsDown(0)</script>
+					</binding>
+				</mod-up>
+			</key>
+			<key n="93">
+				<name>]</name>
+				<desc>Increase flap lever.</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+						<!--seahawk.adjustFlaps(1);-->
+						controls.flapsDown(1)
+					</script>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>nasal</command>
+						<script>controls.flapsDown(0)</script>
+					</binding>
+				</mod-up>
+			</key>
+			<key n="10">
+				<name>Ctrl-J</name>
+				<desc>Jettison Inner and Outer Pylon Stores.</desc>
+				<!-- port inner -->
+				<binding>
+					<command>property-assign</command>
+					<property>controls/armament/station[0]/jettison-all</property>
+					<value type="bool">1</value>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>yasim/weights/tank-100gal-lbs[0]</property>
+					<value type="double">0.0</value>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>controls/armament/station[1]/jettison-all</property>
+					<value type="bool">1</value>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>yasim/weights/tank-100gal-lbs[1]</property>
+					<value type="double">0.0</value>
+				</binding>
+			</key>
+		</keyboard>
+	</input>
+
+	<!-- weights -->
+	<yasim>
+		<weights>
+			<pilot-lb type="double">200</pilot-lb>
+			<tank-100gal-lbs type="double">0</tank-100gal-lbs>
+			<tank-100gal-lbs type="double">0</tank-100gal-lbs>
+		</weights>
+	</yasim>
+
+	<nasal>
+		<seahawk>
+			<file>Aircraft/seahawk/Nasal/seahawk.nas</file>
+		</seahawk>
+		<seahawk-fuel>
+			<module>fuel</module>
+			<file>Aircraft/seahawk/Nasal/fuel-cocks.nas</file>
+		</seahawk-fuel>
+		<recoil>
+			<file>Aircraft/seahawk/Nasal/recoil.nas</file>
+		</recoil>
+		<!--<rain>
+			<file>Aircraft/seahawk/Nasal/rain.nas</file>
+		</rain>-->
+	</nasal>
+
+	<environment>
+		<params>
+			<contrail-altitude>50000</contrail-altitude>
+		</params>
+	</environment>
+
+</PropertyList>

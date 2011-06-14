@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<path>testpilot.ac</path>
+
+    <animation>
+        <type>select</type>
+        <object-name>pilot</object-name>
+        <condition>
+            <not-equals>
+                <property>/sim/current-view/view-number</property>
+                <value>0</value>
+            </not-equals>
+        </condition>
+    </animation>
+
+</PropertyList>

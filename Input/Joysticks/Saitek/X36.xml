@@ -1,0 +1,467 @@
+<?xml version="1.0" ?>
+<!-- $Id$ -->
+<!-- Saitek X36F + X35T binding.
+
+  Copyright (C) 2005-2007  Anders Gidenstam  (anders(at)gidenstam.org)
+  This file is released under the GPL license.
+-->
+<!--
+  Remember to tell the joystick driver that it is a full CHF stick:
+  On GNU/Linux this can be done in this way:
+
+  % modprobe analog js=0x7ff,0x7ff
+
+-->
+<PropertyList>
+
+ <!-- NOTE: The X36 is a game port device so it may get a generic name. -->
+ <name>Saitek X36</name>
+ <name>Analog 4-axis 6-button 2-hat CHF joystick</name>
+
+ <data>
+  <view-mode type="int">0</view-mode>
+  <old-heading-offset type="double">0</old-heading-offset>
+  <old-pitch-offset type="double">0</old-pitch-offset>
+  <old-field-of-view type="double">0</old-field-of-view>
+  <quick-view-active type="int">0</quick-view-active>
+ </data>
+
+ <nasal>
+  <script>
+   <![CDATA[
+     self = cmdarg().getParent();
+     data = self.getNode("data");
+     view_mode           = data.getNode("view-mode");
+     old_heading_offset  = data.getNode("old-heading-offset");
+     old_pitch_offset    = data.getNode("old-pitch-offset");
+     old_field_of_view   = data.getNode("old-field-of-view");
+     quick_view_active   = data.getNode("quick-view-active");
+
+     heading_offset      =
+       props.globals.getNode("/sim/current-view/heading-offset-deg", 1);
+     pitch_offset        =
+       props.globals.getNode("/sim/current-view/pitch-offset-deg", 1);
+     goal_heading_offset =
+       props.globals.getNode("/sim/current-view/goal-heading-offset-deg", 1);
+     goal_pitch_offset   =
+       props.globals.getNode("/sim/current-view/goal-pitch-offset-deg", 1);
+
+     kbdshift = props.globals.getNode("/devices/status/keyboard/shift", 1);
+     kbdctrl  = props.globals.getNode("/devices/status/keyboard/ctrl", 1);
+     kbdalt   = props.globals.getNode("/devices/status/keyboard/alt", 1);
+
+     quick_view = func {
+       dir = arg[0];
+       if (dir == 0) {
+         quick_view_active.setIntValue(0);
+         goal_heading_offset.setDoubleValue
+           (old_heading_offset.getValue());
+         goal_pitch_offset.setDoubleValue(old_pitch_offset.getValue());
+         view.fovProp.setDoubleValue(old_field_of_view.getValue());
+       } else {
+         if (quick_view_active.getValue() == 0) {
+           quick_view_active.setIntValue(1);
+           old_heading_offset.setDoubleValue(heading_offset.getValue());
+           old_pitch_offset.setDoubleValue(pitch_offset.getValue());
+           old_field_of_view.setDoubleValue(view.fovProp.getValue());
+
+           if (dir == 1) {
+             goal_heading_offset.setDoubleValue
+               (getprop("/sim/view/config/left-direction-deg"));
+             goal_pitch_offset.setDoubleValue
+               (getprop("/sim/view/config/pitch-offset-deg"));
+             view.fovProp.setDoubleValue
+               (getprop("/sim/view/config/default-field-of-view-deg"));
+           } if (dir == 2) {
+             goal_heading_offset.setDoubleValue
+               (getprop("/sim/view/config/right-direction-deg"));
+             goal_pitch_offset.setDoubleValue
+               (getprop("/sim/view/config/pitch-offset-deg"));
+             view.fovProp.setDoubleValue
+               (getprop("/sim/view/config/default-field-of-view-deg"));
+           } if (dir == 3) {
+             goal_heading_offset.setDoubleValue
+               (getprop("/sim/view/config/front-direction-deg"));
+             goal_pitch_offset.setDoubleValue
+               (getprop("/sim/view/config/pitch-offset-deg"));
+             view.fovProp.setDoubleValue
+               (getprop("/sim/view/config/default-field-of-view-deg"));
+           } if (dir == 4) {
+             goal_heading_offset.setDoubleValue
+               (getprop("/sim/view/config/back-direction-deg"));
+             goal_pitch_offset.setDoubleValue
+               (getprop("/sim/view/config/pitch-offset-deg"));
+             view.fovProp.setDoubleValue
+               (getprop("/sim/view/config/default-field-of-view-deg"));
+           }
+         }
+       }
+     }
+   ]]>
+  </script>
+ </nasal>
+
+ <!-- Analog axis 0. Aileron -->
+ <axis n="0">
+  <desc>aileron</desc>
+  <binding>
+   <command>property-scale</command>
+   <property>/controls/flight/aileron</property>
+   <dead-band type="double">0.0</dead-band>
+   <offset type="double">0.0</offset>
+   <squared type="bool">true</squared>
+  </binding>
+ </axis>
+
+ <!-- Analog axis 1. Elevator -->
+ <axis n="1">
+  <desc>elevator</desc>
+  <binding>
+   <command>property-scale</command>
+   <property>/controls/flight/elevator</property>
+   <dead-band type="double">0.0</dead-band>
+   <offset type="double">0.0</offset>
+   <factor type="double">-1.0</factor>
+   <squared type="bool">true</squared>
+  </binding>
+ </axis>
+
+ <!-- Analog axis 3. Rudder -->
+ <!-- NOTE: This axis is tweaked due to faulty hardware.
+            The standard case should be offset=0, factor=1.
+ -->
+ <axis n="3">
+  <desc>rudder</desc>
+  <binding>
+   <command>property-scale</command>
+   <property>/controls/flight/rudder</property>
+   <dead-band type="double">0.030</dead-band>
+   <offset type="double">0.1</offset>
+   <factor type="double">0.9</factor>
+  </binding>
+ </axis>
+
+ <!-- Analog axis 2. Throttle -->
+ <axis n="2">
+  <desc>throttle</desc>
+  <binding>
+   <command>nasal</command>
+   <script>controls.throttleAxis()</script>
+  </binding>
+ </axis>
+
+ <!-- Axis 4. Hat 1 -->
+ <axis n="4">
+  <name>Right hat left/right</name>
+  <desc>
+   view-mode 0: horizontal view pan, view-mode 1: quick view left/right
+  </desc>
+  <low>
+   <repeatable type="bool">true</repeatable>
+   <binding>
+    <command>nasal</command>
+    <script>
+     <![CDATA[
+       #print("X36.xml: Axis 4, Hat 1: low!");
+       m = view_mode.getValue();
+       if (m == 0) {
+         view.panViewDir(0.5);
+       } if (m == 1) {
+         quick_view(1);
+       }
+     ]]>
+    </script>
+   </binding>
+   <mod-up>
+    <binding>
+     <command>nasal</command>
+     <script>
+        #print("X36.xml: Axis 4, Hat 1: low released!");
+        m = view_mode.getValue();
+        if (m == 1) {
+          quick_view(0);
+        }
+     </script>
+    </binding>
+   </mod-up>
+  </low>
+  <high>
+   <repeatable type="bool">true</repeatable>
+   <binding>
+    <command>nasal</command>
+    <script>
+     <![CDATA[
+       #print("X36.xml: Axis 4, Hat 1: high!");
+       m = view_mode.getValue();
+       if (m == 0) {
+         view.panViewDir(-0.5);
+       } if (m == 1) {
+         quick_view(2);
+       }
+     ]]>
+    </script>
+   </binding>
+   <mod-up>
+    <binding>
+     <command>nasal</command>
+     <script>
+        #print("X36.xml: Axis 4, Hat 1: low released!");
+        m = view_mode.getValue();
+        if (m == 1) {
+          quick_view(0);
+        }
+     </script>
+    </binding>
+   </mod-up>
+  </high>
+ </axis>
+
+ <!-- Axis 5. Hat 1 -->
+ <axis n="5">
+  <name>Right hat up/down</name>
+  <desc>
+   view-mode 0: vertical view pan, view-mode 1: quick view front/view reset
+  </desc>
+  <low>
+   <repeatable type="bool">true</repeatable>
+   <binding>
+    <command>nasal</command>
+    <script>
+     <![CDATA[
+       #print("X36.xml: Axis 5, Hat 1: low!");
+       m = view_mode.getValue();
+       if (m == 0) {
+         view.panViewPitch(0.5);
+       } if (m == 1) {
+         quick_view(3);
+       }
+     ]]>
+    </script>
+   </binding>
+   <mod-up>
+    <binding>
+     <command>nasal</command>
+     <script>
+        #print("X36.xml: Axis 4, Hat 1: low released!");
+        m = view_mode.getValue();
+        if (m == 1) {
+          quick_view(0);
+        }
+     </script>
+    </binding>
+   </mod-up>
+  </low>
+  <high>
+   <repeatable type="bool">true</repeatable>
+   <binding>
+    <command>nasal</command>
+    <script>
+     <![CDATA[
+       #print("X36.xml: Axis 5, Hat 1: low!");
+       m = view_mode.getValue();
+       if (m == 0) {
+         view.panViewPitch(-0.5);
+       } if (m == 1) {
+         view.resetView();
+         #quick_view(4);
+       }
+     ]]>
+    </script>
+   </binding>
+   <mod-up>
+    <binding>
+     <command>nasal</command>
+     <script>
+        #print("X36.xml: Axis 4, Hat 1: low released!");
+        m = view_mode.getValue();
+        if (m == 1) {
+          #quick_view(0);
+        }
+     </script>
+    </binding>
+   </mod-up>
+  </high>
+ </axis>
+
+ <!-- Axis 6. Hat 2.
+     NOTE: The axes of hat 2 are messed up on the X36.
+           Up - Down    := Axis 6.low  - Axis 7.high
+           Left - Right := Axis 6.high - Axis 7.low
+ -->
+ <axis n="6">
+  <name>Left hat up/down</name>
+  <desc>elevator trim (hat up/down)</desc>
+  <low>
+   <repeatable type="bool">true</repeatable>
+   <binding>
+    <command>nasal</command>
+    <script>
+       #print("X36.xml: Axis 6, Hat 1: low!");
+       controls.elevatorTrim(-1)
+    </script>
+   </binding>
+  </low>
+  <high>
+   <repeatable type="bool">true</repeatable>
+   <binding>
+    <command>nasal</command>
+    <script>
+       #print("X36.xml: Axis 6, Hat 1: high!");
+       view.increase()
+    </script>
+   </binding>
+  </high>
+ </axis>
+
+ <!-- Axis 7. Hat 2.  -->
+ <axis n="7">
+  <name>Left hat left/right</name>
+  <desc>Zoom out/in (hat left/right)</desc>
+  <low>
+   <repeatable type="bool">true</repeatable>
+   <binding>
+    <command>nasal</command>
+    <script>
+       #print("X36.xml: Axis 7, Hat 1: low!");
+       view.decrease()
+    </script>
+   </binding>
+  </low>
+  <high>
+   <repeatable type="bool">true</repeatable>
+   <binding>
+    <command>nasal</command>
+    <script>
+       #print("X36.xml: Axis 7, Hat 1: high!");
+       controls.elevatorTrim(1)
+    </script>
+   </binding>
+  </high>
+ </axis>
+
+ <!-- Button: Trigger -->
+ <button n="0">
+  <name>Trigger</name>
+  <desc>brakes, +Shift: Toggle parking brake</desc>
+  <binding>
+   <command>nasal</command>
+   <script>
+      #print("X36.xml: Button 0 pressed!");
+      if (kbdshift.getBoolValue()) {
+        controls.applyParkingBrake(1);
+      } else {
+       controls.applyBrakes(1);
+      }
+   </script>
+  </binding>
+  <mod-up>
+   <binding>
+    <command>nasal</command>
+    <script>
+       controls.applyBrakes(0);
+    </script>
+   </binding>
+  </mod-up>
+ </button>
+
+ <!-- Button: Fire C -->
+ <button n="1">
+  <name>Fire C</name>
+  <desc>cycle views</desc>
+  <repeatable>false</repeatable>
+  <binding>
+   <command>nasal</command>
+   <script>
+      #print("X36.xml: Button 1 pressed!");
+      view.stepView(1)
+   </script>
+  </binding>
+ </button>
+
+ <!-- Button: A -->
+ <button n="2">
+  <name>A</name>
+  <desc>left brake</desc>
+  <binding>
+   <command>nasal</command>
+   <script>
+      #print("X36.xml: Button 2 pressed!");
+      controls.applyBrakes(1, -1);
+   </script>
+  </binding>
+  <mod-up>
+   <binding>
+    <command>nasal</command>
+    <script>
+       controls.applyBrakes(0, -1);
+    </script>
+   </binding>
+  </mod-up>
+ </button>
+
+ <!-- Button: B -->
+ <button n="3">
+  <name>B</name>
+  <desc>right brake</desc>
+  <binding>
+   <command>nasal</command>
+   <script>
+      #print("X36.xml: Button 3 pressed!");
+      controls.applyBrakes(1, 1);
+   </script>
+  </binding>
+  <mod-up>
+   <binding>
+    <command>nasal</command>
+    <script>
+       controls.applyBrakes(0, 1);
+    </script>
+   </binding>
+  </mod-up>
+ </button>
+
+ <!-- Button: Launch -->
+ <button n="4">
+  <name>Launch</name>
+  <desc>toggle view mode</desc>
+  <binding>
+   <command>nasal</command>
+   <script>
+      #print("X36.xml: Button 4 pressed!");
+      if (view_mode.getValue() == 0) {
+        view_mode.setIntValue(1);
+      } else {
+        view_mode.setIntValue(0);
+      }
+   </script>
+  </binding>
+ </button>
+
+ <!-- Button: F.lock -->
+ <button n="5">
+  <name>F.lock</name>
+  <desc>disarm speed brakes, +Shift: deploy speed brakes</desc>
+  <binding>
+   <command>nasal</command>
+   <script>
+      #print("X36.xml: Button 5 pressed!");
+      var p = "/controls/flight/speedbrake";
+      if (kbdshift.getBoolValue()) {
+        setprop(p, 1.0);
+      } else {
+        setprop(p, 0.0);
+      }
+   </script>
+  </binding>
+ </button>
+
+</PropertyList>
+<!--
+ * Overrides tab width for this buffer in Emacs so the tab width is reasonable.
+ * This must remain at the end of the file.
+ * ===========================================================================
+ * Local variables:
+ * tab-width: 1
+ * indent-tabs-mode: nil
+ * End:
+-->

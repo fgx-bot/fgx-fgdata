@@ -1,0 +1,274 @@
+<!--  Hawker Sea Hawk yasim config.  This is a hack and not an
+      authentic representation of the aircraft.  Having said
+      that, the numbers, where I could find them, roughly match
+      those of the original aircraft.
+      Lee Elliott. leee-fgfs@spatial.freeserve.co.uk
+-->
+
+<airplane mass="9720">
+
+	<!-- Approach configuration.
+     I couldn't find any approach data but I think that the way
+     the aircraft sits tail down on it's u/c indicates that it
+     must land at a fairly shallow AoA to avoid hitting tail
+     first.  The speed is a guess.
+
+     I could see no sign or mention of spoilers or airbrakes in any
+     of the docs or pictures I found.
+-->
+	<approach speed="110"
+						aoa="7">
+		<control-setting axis="/controls/engines/engine[0]/throttle"
+										 value="0.5"/>
+		<control-setting axis="/controls/flight/flaps"
+										 value="1.0"/>
+		<control-setting axis="/controls/gear/gear-down"
+										 value="1"/>
+	</approach>
+
+	<!-- Cruise configuration.
+     Max speed at sea level is 599 mph = 521 knots.  The same source
+     also quoted 587 mph at 'altitude'.
+-->
+	<cruise speed="521"
+					alt="0">
+		<control-setting axis="/controls/engines/engine[0]/throttle"
+										 value="1.0"/>
+		<control-setting axis="/controls/flight/flaps"
+										 value="0.0"/>
+		<control-setting axis="/controls/gear/gear-down"
+										 value="0"/>
+	</cruise>
+
+	<cockpit x="3.0"
+					 y="0.0"
+					 z="0.7"/>
+
+	<fuselage ax="5.10"
+						ay="0"
+						az="0"
+						bx="5.88"
+						by="0"
+						bz="0"
+						width="1.3"/>
+
+	<!-- The wing length is from tips to fuselage, including intakes.
+     The aileron figures are probably too low but the roll rate seemed
+     too high otherwise.
+-->
+	<wing x="0.1"
+				y="0.65"
+				z="0.0"
+				taper="0.5"
+				incidence="0.0"
+				length="5.3"
+				chord="3.0"
+				sweep="-3.0"
+				dihedral="3.0"
+				camber="0.006">
+		<stall aoa="17"
+					 width="3"
+					 peak="1.3"/>
+		<flap0 start="0.1"
+					 end="0.4"
+					 lift="1.4"
+					 drag="1.6"/>
+		<flap1 start="0.4"
+					 end="0.95"
+					 lift="1.05"
+					 drag="1.2"/>
+
+		<control-input axis="/controls/flight/flaps"
+									 control="FLAP0"/>
+		<control-input axis="/controls/flight/aileron"
+									 control="FLAP1"
+									 split="true"
+									 src0="-1"
+									 src1="1"
+									 dst0="-1"
+									 dst1="0.5"/>
+		<control-input axis="/controls/flight/aileron-trim"
+									 control="FLAP1"
+									 split="true"/>
+
+		<control-output control="FLAP0"
+										prop="/surface-positions/flap-pos-norm"/>
+		<control-output control="FLAP1"
+										side="left"
+										prop="/surface-positions/left-aileron-pos-norm"/>
+		<control-output control="FLAP1"
+										side="right"
+										prop="/surface-positions/right-aileron-pos-norm"/>
+		<control-output control="SPOILER"
+										side="right"
+										prop="/surface-positions/right-spoiler-pos-norm"/> -->
+
+		<control-speed control="FLAP0"
+									 transition-time="5"/>
+
+	</wing>
+
+	<hstab x="-5.2"
+				 y="0.10"
+				 z="0.76"
+				 taper="0.3"
+				 effectiveness="1.6"
+				 length="1.7"
+				 chord="1.2"
+				 sweep="0.0"
+				 dihedral="0.0"
+				 camber="0.0">
+		<stall aoa="17"
+					 width="5"
+					 peak="1.5"/>
+		<flap0 start="0"
+					 end="1"
+					 lift="1.5"
+					 drag="1.2"/>
+		<control-input axis="/controls/flight/elevator"
+									 control="FLAP0"/>
+		<control-input axis="/controls/flight/elevator-trim"
+									 control="FLAP0"/>
+		<control-output control="FLAP0"
+										prop="/surface-positions/elevator-pos-norm"/>
+	</hstab>
+
+	<vstab x="-5.2"
+				 y="0.0"
+				 z="0.2"
+				 taper="0.8"
+				 length="1.4"
+				 chord="1.8"
+				 sweep="10.0">
+		<stall aoa="16"
+					 width="5"
+					 peak="1.5"/>
+		<flap0 start="0"
+					 end="1"
+					 lift="1.15"
+					 drag="1.3"/>
+		<control-input axis="/controls/flight/rudder"
+									 control="FLAP0"
+									 invert="true"/>
+		<control-output control="FLAP0"
+										prop="/surface-positions/rudder-pos-norm"/>
+	</vstab>
+
+	<!-- Engines and tanks.
+     1 x Roll-Royce Nene 103.  I've no idea how much it actually
+     weighs.
+-->
+	<jet x="0.3"
+			 y="0.0"
+			 z="0.0"
+			 mass="1000"
+			 thrust="5200">
+		<control-input axis="/controls/engines/engine[0]/throttle"
+									 control="THROTTLE"/>
+	</jet>
+	<!-- Fuel tanks in front, behind and above (saddle tank - actually feeds into
+     tank two in real life) the engine. -->
+	<tank x="1.4"
+				y="0.0"
+				z="0.0"
+				jet="true"
+				capacity="2000"/>
+	<tank x="-1.3"
+				y="0.0"
+				z="0.0"
+				jet="true"
+				capacity="2000"/>
+	<tank x="0.5"
+				y="0.0"
+				z="0.5"
+				jet="true"
+				capacity="1200"/>
+
+	<!-- Undercarriage -->
+	<!-- nose -->
+	<gear x="4.0"
+				y="0.0"
+				z="-1.39"
+				retract-time="7"
+				compression="0.6">
+		<control-input axis="/controls/flight/rudder"
+									 control="STEER"
+									 square="true"/>
+		<control-input axis="/controls/gear/gear-down"
+									 control="EXTEND"/>
+		<control-speed control="EXTEND"
+									 transition-time="7"/>
+		<control-output control="EXTEND"
+										prop="/gear/gear/position-norm"/>
+	</gear>
+
+	<!-- left main -->
+	<gear x="0.08"
+				y="1.4"
+				z="-1.3"
+				retract-time="7"
+				compression="0.3"
+				damp="3">
+		<control-input axis="/controls/gear/brake-left"
+									 control="BRAKE"/>
+		<control-input axis="/controls/gear/brake-parking"
+									 control="BRAKE"/>
+		<control-input axis="/controls/gear/gear-down"
+									 control="EXTEND"/>
+		<control-speed control="EXTEND"
+									 transition-time="7"/>
+		<control-output control="EXTEND"
+										prop="/gear/gear[0]/position-norm"/>
+	</gear>
+
+	<!-- right main -->
+	<gear x="0.08"
+				y="-1.4"
+				z="-1.3"
+				retract-time="7"
+				compression="0.3"
+				damp="3">
+		<control-input axis="/controls/gear/brake-right"
+									 control="BRAKE"/>
+		<control-input axis="/controls/gear/brake-parking"
+									 control="BRAKE"/>
+		<control-input axis="/controls/gear/gear-down"
+									 control="EXTEND"/>
+		<control-speed control="EXTEND"
+									 transition-time="7"/>
+		<control-output control="EXTEND"
+										prop="/gear/gear[1]/position-norm"/>
+	</gear>
+
+	<!-- Canopy -->
+	<gear x="3.0"
+				y="0.0"
+				z="0.6"
+				retract-time="7"
+				compression="0.6">
+		<control-input axis="/controls/gear/brake-parking"
+									 control="EXTEND"/>
+		<control-speed control="EXTEND"
+									 transition-time="10"/>
+		<control-output control="EXTEND"
+										prop="/canopy/position-norm"/>
+	</gear>
+
+	<!-- Ballast -->
+	<ballast x="3.0"
+					 y="0"
+					 z="1.0"
+					 mass="1200"/>
+	<!-- C/pit + Pilot -->
+	<ballast x="3.5"
+					 y="0"
+					 z="-0.5"
+					 mass="1000"/>
+	<!-- Gun -->
+	<ballast x="2.0"
+					 y="0"
+					 z="0.0"
+					 mass="1000"/>
+	<!-- trim ballast -->
+
+</airplane>

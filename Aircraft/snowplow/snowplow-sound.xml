@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <fx>
+
+    <engine>
+        <name>left engine</name>
+        <condition>
+            <not>
+                <property>/controls/engines/engine[0]/cutoff</property>
+            </not>
+        </condition>
+        <path>Sounds/jet.wav</path>
+        <mode>looped</mode>
+        <volume>
+            <property>/engines/engine[0]/thrust-lbs</property>
+            <factor>0.00030</factor>
+        </volume>
+        <volume>
+        <property>/sim/sound/Ovolume</property>
+        </volume>
+        <position>
+        <x>-1.3</x>
+        <y>0.3</y>
+        <z>10.0</z>
+      </position>
+    </engine>
+
+    <engine>
+      <name>left n1</name>
+        <condition>
+            <greater-than>
+                <property>/engines/engine[0]/n1</property>
+                <value>0.1</value>
+            </greater-than>
+        </condition>
+      <path>Sounds/whine.wav</path>
+      <mode>looped</mode>
+      <volume>
+          <property>/engines/engine[0]/thrust-lbs</property>
+          <factor>0.0004</factor>
+      </volume>
+      <pitch>
+        <property>/engines/engine[0]/n1</property>
+        <offset>0</offset>
+        <factor>0.02</factor>
+      </pitch>
+      <position>
+        <x>-1.3</x>
+        <y>0.3</y>
+        <z>10.0</z>
+      </position>
+    </engine>
+    
+  <gear>
+   <name>dixie</name>
+   <mode>once</mode>
+   <condition>
+    <not>
+     <property>/gear/gear[0]/wow</property>
+    </not>
+   </condition>
+   <path>Aircraft/snowplow/Sounds/dixie.wav</path>
+  </gear>
+
+    </fx>
+
+</PropertyList>

@@ -1,0 +1,311 @@
+<PropertyList >
+<!--
+TO DO:
+display ILS for runways
+
+
+
+-->
+    <sim>
+        <description>Air Traffic Control Ver.2</description>
+        <author>Syd Adams, Csaba Halasz</author>
+        <status>development</status>
+        <flight-model>null</flight-model>
+        <aero></aero>
+        <fuel-fraction>0</fuel-fraction>
+
+        <model>
+            <path>Aircraft/ATC/Ver2/atc-tower2.xml</path>
+        </model>
+        <startup>
+            <splash-texture>Aircraft/ATC/Ver2/range.png</splash-texture>
+        </startup>
+        <panel>
+            <path>Aircraft/ATC/Ver2/MP-ATC-panel2.xml</path>
+            <visibility>true</visibility>
+        </panel>
+        <instrumentation>
+            <path>Aircraft/ATC/instrumentation.xml</path>
+        </instrumentation>
+
+        <chase-distance-m>20</chase-distance-m>
+
+        <view n="0">
+            <config>
+                <limits>
+                    <enabled type="bool">false</enabled>
+                </limits>
+            </config>
+        </view>
+
+        <atc>
+            <target-id type="string"></target-id>
+            <target-alt type="double">0</target-alt>
+            <target-number type="int">-1</target-number>
+            <target-range type="double">0</target-range>
+            <min-height type="double" userarchive="y">100</min-height>
+            <screen-tint type="bool">0</screen-tint>
+        </atc>
+
+        <menubar>
+            <default>
+                <menu n="10">
+                    <label>ATC-2</label>
+                    <enabled type="bool">true</enabled>
+                    <item>
+                        <label>Select Font</label>
+                        <binding>
+                            <command>nasal</command>
+                            <script>globals.ATC.select_atc_font();</script>
+                        </binding>
+                    </item>
+                    <item>
+                        <label>Nimitz</label>
+                        <binding>
+                            <command>nasal</command>
+                            <script>ATC.atc.goto_carrier(0);</script>
+                        </binding>
+                    </item>
+                    <item>
+                        <label>Eisenhower</label>
+                        <binding>
+                            <command>nasal</command>
+                            <script>ATC.atc.goto_carrier(1);</script>
+                        </binding>
+                    </item>
+                    <item>
+                        <label>Raise tower</label>
+                        <binding>
+                            <command>nasal</command>
+                            <script>ATC.atc.adjust_alt(10);</script>
+                        </binding>
+                    </item>
+                    <item>
+                        <label>Lower tower</label>
+                        <binding>
+                            <command>nasal</command>
+                            <script>ATC.atc.adjust_alt(-10);</script>
+                        </binding>
+                    </item>
+                    <item>
+                        <label>Screen tint</label>
+                        <binding>
+                            <command>property-toggle</command>
+                            <property>sim/atc/screen-tint</property>
+                        </binding>
+                    </item>
+                </menu>
+            </default>
+        </menubar>
+
+        <help>
+            <title>ATC Operations</title>
+            <key>
+                <name>Left</name>
+                <desc>Prev target</desc>
+            </key>
+            <key>
+                <name>Right</name>
+                <desc>Next target</desc>
+            </key>
+            <key>
+                <name>Up</name>
+                <desc>Radar range increase</desc>
+            </key>
+            <key>
+                <name>Down</name>
+                <desc>Radar range decrease</desc>
+            </key>
+            <key>
+                <name>c</name>
+                <desc>Toggle compass on/off</desc>
+            </key>
+            <key>
+                <name>m</name>
+                <desc>Select Mag/True heading</desc>
+            </key>
+            <key>
+                <name>R</name>
+                <desc>Toggle runways on/off</desc>
+            </key>
+            <key>
+                <name>Ctrl-T</name>
+                <desc>Toggle target tracking</desc>
+            </key>
+            <key>
+                <name>Ctrl-A</name>
+                <desc>Raise tower view</desc>
+            </key>
+            <key>
+                <name>Ctrl-Z</name>
+                <desc>Lower tower view</desc>
+            </key>
+            <key>
+                <name>t</name>
+                <desc>Send message to current target</desc>
+            </key>
+            <key>
+                <name>Ctrl-F</name>
+                <desc>Select Font</desc>
+            </key>
+            <key>
+                <name>d</name>
+                <desc>Toggle radar data</desc>
+            </key>
+<line>To move to new airport, use the menu "Location/Tower Position".</line>
+            <line>To adjust view position, modify /sim/tower properties in the property browser.</line>
+            <line>Note: Runway usability is calculated solely on the basis of reported winds. </line>
+            <line>And last but not least, have fun...</line>
+        </help>
+
+    </sim>
+
+    <instrumentation>
+        <radar>
+            <switch type="string">ON</switch>
+            <mode-control type="int">1</mode-control>
+            <display-controls>
+                <WX type="bool">false</WX>
+                <pos type="bool">true</pos>
+                <data type="bool">true</data>
+                <symbol type="bool">true</symbol>
+            </display-controls>
+            <serviceable type="bool">true</serviceable>
+            <range type="int">8</range>
+            <mode type="string">WX</mode>
+            <lightning type="bool">true</lightning>
+            <display-mode type="string">plan</display-mode>
+            <echo-texture-path type="string" archive="y">Aircraft/ATC/Ver2/atcecho.png</echo-texture-path>
+            <minimized type="bool">false</minimized>
+            <heading-marker type="bool">false</heading-marker>
+            <limit-deg type="int">180</limit-deg>
+            <font>
+                <name type="string">helvetica_bold.txf</name>
+                <size type="float">3</size>
+                <line-spacing type="float">0.25</line-spacing>
+                <color>
+                    <red type="float">0</red>
+                    <green type="float">0.8</green>
+                    <blue type="float">0</blue>
+                    <alpha type="float">1</alpha>
+                </color>
+            </font>
+        </radar>
+    </instrumentation>
+
+    <nasal>
+        <ATC>
+            <file>Aircraft/ATC/Ver2/atc2.nas</file>
+        </ATC>
+    </nasal>
+
+    <input>
+        <keyboard>
+            <key n="356">
+                <name>Left</name>
+                <desc>Prev target</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>ATC.atc.step_target(-1);</script>
+                </binding>
+            </key>
+            <key n="358">
+                <name>Right</name>
+                <desc>Next target</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>ATC.atc.step_target(1);</script>
+                </binding>
+            </key>
+            <key n="357">
+                <name>Up</name>
+                <desc>Radar range increase</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>ATC.atc.step_radar_range(1);</script>
+                </binding>
+            </key>
+            <key n="359">
+                <name>Down</name>
+                <desc>Radar range decrease</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>ATC.atc.step_radar_range(-1);</script>
+                </binding>
+            </key>
+            <key n="99">
+                <name>c</name>
+                <desc>Toggle compass</desc>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>sim/atc/compass</property>
+                </binding>
+            </key>
+             <key n="109">
+                <name>m</name>
+                <desc>toggle mag/true</desc>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>sim/atc/mag-compass</property>
+                </binding>
+            </key>
+            <key n="82">
+                <name>R</name>
+                <desc>Toggle runways</desc>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>sim/atc/runways-enabled</property>
+                </binding>
+            </key>
+            <key n="100">
+                <name>d</name>
+                <desc>Toggle radar data</desc>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>instrumentation/radar/display-controls/data</property>
+                </binding>
+            </key>
+            <key n="6">
+                <name>Ctrl-F</name>
+                <desc>Font selector</desc>
+                <binding>
+                            <command>nasal</command>
+                            <script>globals.ATC.select_atc_font();</script>
+                </binding>
+            </key>
+            <key n="20">
+                <name>Ctrl-T</name>
+                <desc>Toggle visual target tracking</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>ATC.atc.toggle_tracking();</script>
+                </binding>
+            </key>
+             <key n="1">
+                <name>Ctrl-A</name>
+                <desc>Raise tower view</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>ATC.atc.adjust_alt(10);</script>
+                </binding>
+            </key>
+             <key n="26">
+                <name>Ctrl-Z</name>
+                <desc>Lower tower view</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>ATC.atc.adjust_alt(-10);</script>
+                </binding>
+            </key> 
+             <key n="116">
+                <name>t</name>
+                <desc>Send Message to Target</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>multiplayer.compose_message(ATC.atc.get_target_chat_prefix());</script>
+                </binding>
+            </key> 
+</keyboard>
+    </input>
+
+</PropertyList>

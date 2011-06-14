@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+<!-- $Id$ -->
+<!--
+  Foch views for FlightGear.
+
+  Copyright (C) 2008  Alex ?? (D-HUND)
+  This file is released under the GPL license version 2 or later.
+-->
+<PropertyList>
+
+  <chase-distance-m type="double" archive="y">-300.0</chase-distance-m>
+
+  <!-- Views section -->
+  <view n="0">
+   <name>Bridge view</name>
+   <type>lookfrom</type>
+   <config>
+    <internal type="bool">true</internal>
+    <from-model type="bool">false</from-model>
+    <from-model-idx type="int">0</from-model-idx>
+    <eye-lat-deg-path>/position/latitude-deg</eye-lat-deg-path>
+    <eye-lon-deg-path>/position/longitude-deg</eye-lon-deg-path>
+    <eye-alt-ft-path>/position/altitude-ft</eye-alt-ft-path>
+    <eye-heading-deg-path>/orientation/heading-deg</eye-heading-deg-path>
+    <eye-pitch-deg-path>/orientation/pitch-deg</eye-pitch-deg-path>
+    <eye-roll-deg-path>/orientation/roll-deg</eye-roll-deg-path>
+    <at-model type="bool">false</at-model>
+    <at-model-idx type="int">0</at-model-idx>
+    <ground-level-nearplane-m type="double">0.1f</ground-level-nearplane-m>
+    <x-offset-m>10.2</x-offset-m>		<!-- right -->
+    <y-offset-m>26</y-offset-m>		<!-- up -->
+    <z-offset-m>-32.6</z-offset-m>		<!-- back -->
+    <pitch-offset-deg>-5</pitch-offset-deg>
+    <default-field-of-view-deg>60</default-field-of-view-deg>
+   </config>
+  </view>
+
+  <view n="1">
+   <name>Helicopter view</name>
+   <enabled type="bool" userarchive="y">true</enabled>
+   <type>lookat</type>
+   <config>
+    <from-model type="bool">false</from-model>
+    <from-model-idx type="int">0</from-model-idx>
+    <eye-lat-deg-path>/position/latitude-deg</eye-lat-deg-path>
+    <eye-lon-deg-path>/position/longitude-deg</eye-lon-deg-path>
+    <eye-alt-ft-path>/position/altitude-ft</eye-alt-ft-path>
+    <eye-heading-deg-path>/orientation/heading-deg</eye-heading-deg-path>
+    <eye-pitch-deg-path>/orientation/pitch-deg</eye-pitch-deg-path>
+    <eye-roll-deg-path>/orientation/roll-deg</eye-roll-deg-path>
+    <at-model type="bool">true</at-model>
+    <at-model-idx type="int">0</at-model-idx>
+    <at-model-heading-damping type="double">0.0</at-model-heading-damping>
+    <target-z-offset-m type="double">0</target-z-offset-m>
+    <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+    <x-offset-m>0</x-offset-m>			<!-- right -->
+    <y-offset-m>50</y-offset-m>			<!-- up -->
+    <z-offset-m alias="/sim/chase-distance-m"/>
+    <pitch-offset-deg>-5</pitch-offset-deg>
+    <default-field-of-view-deg>60</default-field-of-view-deg>
+   </config>
+  </view>
+
+  <view n="2">
+   <name>Chase View</name>
+   <enabled type="bool" userarchive="y">true</enabled>
+   <type>lookat</type>
+   <config>
+    <from-model type="bool">false</from-model>
+    <from-model-idx type="int">0</from-model-idx>
+    <eye-lat-deg-path>/position/latitude-deg</eye-lat-deg-path>
+    <eye-lon-deg-path>/position/longitude-deg</eye-lon-deg-path>
+    <eye-alt-ft-path>/position/altitude-ft</eye-alt-ft-path>
+    <eye-pitch-deg-path>/orientation/pitch-deg</eye-pitch-deg-path>
+    <eye-roll-deg-path>/orientation/roll-deg</eye-roll-deg-path>
+    <eye-heading-deg-path>/orientation/heading-deg</eye-heading-deg-path>
+    <at-model type="bool">true</at-model>
+    <at-model-idx type="int">0</at-model-idx>
+    <at-model-roll-damping type="double">1.8</at-model-roll-damping>
+    <at-model-pitch-damping type="double">1.8</at-model-pitch-damping>
+    <at-model-heading-damping type="double">1.8</at-model-heading-damping>
+    <target-z-offset-m type="double">0</target-z-offset-m>
+    <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+    <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+    <x-offset-m>0</x-offset-m>			<!-- right -->
+    <y-offset-m>55</y-offset-m>			<!-- up -->
+    <z-offset-m alias="/sim/chase-distance-m"/>
+   </config>
+  </view>
+
+  <view n="100">
+   <name>Landing officer view</name>
+  <type>lookfrom</type>
+   <config>
+    <internal type="bool">false</internal>
+    <from-model type="bool">false</from-model>
+    <from-model-idx type="int">0</from-model-idx>
+    <eye-lat-deg-path>/position/latitude-deg</eye-lat-deg-path>
+    <eye-lon-deg-path>/position/longitude-deg</eye-lon-deg-path>
+    <eye-alt-ft-path>/position/altitude-ft</eye-alt-ft-path>
+    <eye-heading-deg-path>/orientation/heading-deg</eye-heading-deg-path>
+    <eye-pitch-deg-path>/orientation/pitch-deg</eye-pitch-deg-path>
+    <eye-roll-deg-path>/orientation/roll-deg</eye-roll-deg-path>
+    <at-model type="bool">false</at-model>
+    <at-model-idx type="int">0</at-model-idx>
+    <ground-level-nearplane-m type="double">0.1f</ground-level-nearplane-m>
+    <heading-offset-deg>180</heading-offset-deg>
+    <x-offset-m>12</x-offset-m>			<!-- right -->
+    <y-offset-m>18.3</y-offset-m>		<!-- up -->
+    <z-offset-m>1</z-offset-m>			<!-- back -->
+    <pitch-offset-deg>10</pitch-offset-deg>
+    <default-field-of-view-deg>60</default-field-of-view-deg>
+   </config>
+  </view>
+
+  <view n="101">
+   <name>Crow's nest view</name>
+   <type>lookfrom</type>
+   <config>
+    <internal type="bool">true</internal>
+    <from-model type="bool">false</from-model>
+    <from-model-idx type="int">0</from-model-idx>
+    <eye-lat-deg-path>/position/latitude-deg</eye-lat-deg-path>
+    <eye-lon-deg-path>/position/longitude-deg</eye-lon-deg-path>
+    <eye-alt-ft-path>/position/altitude-ft</eye-alt-ft-path>
+    <eye-heading-deg-path>/orientation/heading-deg</eye-heading-deg-path>
+    <eye-pitch-deg-path>/orientation/pitch-deg</eye-pitch-deg-path>
+    <eye-roll-deg-path>/orientation/roll-deg</eye-roll-deg-path>
+    <at-model type="bool">false</at-model>
+    <at-model-idx type="int">0</at-model-idx>
+    <ground-level-nearplane-m type="double">0.1f</ground-level-nearplane-m>
+    <heading-offset-deg>0</heading-offset-deg>
+    <x-offset-m>14.5</x-offset-m>		<!-- right -->
+    <y-offset-m>60.8</y-offset-m>		<!-- up -->
+    <z-offset-m>-25.7</z-offset-m>		<!-- back -->
+    <pitch-offset-deg>0</pitch-offset-deg>
+    <default-field-of-view-deg>40</default-field-of-view-deg>
+   </config>
+  </view>
+
+  <view n="102">
+   <name>Hangar view</name>
+   <type>lookfrom</type>
+   <config>
+    <internal type="bool">true</internal>
+    <from-model type="bool">false</from-model>
+    <from-model-idx type="int">0</from-model-idx>
+    <eye-lat-deg-path>/position/latitude-deg</eye-lat-deg-path>
+    <eye-lon-deg-path>/position/longitude-deg</eye-lon-deg-path>
+    <eye-alt-ft-path>/position/altitude-ft</eye-alt-ft-path>
+    <eye-heading-deg-path>/orientation/heading-deg</eye-heading-deg-path>
+    <eye-pitch-deg-path>/orientation/pitch-deg</eye-pitch-deg-path>
+    <eye-roll-deg-path>/orientation/roll-deg</eye-roll-deg-path>
+    <at-model type="bool">false</at-model>
+    <at-model-idx type="int">0</at-model-idx>
+    <ground-level-nearplane-m type="double">0.1f</ground-level-nearplane-m>
+    <heading-offset-deg>0</heading-offset-deg>
+    <x-offset-m>0</x-offset-m>			<!-- right -2 -->
+    <y-offset-m>11</y-offset-m>			<!-- up -->
+    <z-offset-m>103</z-offset-m>			<!-- back -->
+    <pitch-offset-deg>-10</pitch-offset-deg>
+    <default-field-of-view-deg>60</default-field-of-view-deg>
+   </config>
+  </view>
+
+  <view n="103">
+   <name>Approach view</name>
+   <type>lookfrom</type>
+   <config>
+    <internal type="bool">true</internal>
+    <from-model type="bool">false</from-model>
+    <from-model-idx type="int">0</from-model-idx>
+    <eye-lat-deg-path>/position/latitude-deg</eye-lat-deg-path>
+    <eye-lon-deg-path>/position/longitude-deg</eye-lon-deg-path>
+    <eye-alt-ft-path>/position/altitude-ft</eye-alt-ft-path>
+    <eye-heading-deg-path>/orientation/heading-deg</eye-heading-deg-path>
+    <eye-pitch-deg-path>/orientation/pitch-deg</eye-pitch-deg-path>
+    <eye-roll-deg-path>/orientation/roll-deg</eye-roll-deg-path>
+    <at-model type="bool">false</at-model>
+    <at-model-idx type="int">0</at-model-idx>
+    <ground-level-nearplane-m type="double">0.1f</ground-level-nearplane-m>
+    <heading-offset-deg>190</heading-offset-deg>
+    <x-offset-m>-5.25</x-offset-m>		<!-- right -->
+    <y-offset-m>15</y-offset-m>			<!-- up -->
+    <z-offset-m>48</z-offset-m>			<!-- back -->
+    <pitch-offset-deg>10</pitch-offset-deg>
+    <default-field-of-view-deg>27</default-field-of-view-deg>
+   </config>
+  </view>
+
+</PropertyList>

@@ -1,0 +1,210 @@
+<?xml version="1.0"?>
+<!-- $Id$ -->
+<!--
+  Vinson -set file for FlightGear.
+
+  Copyright (C) 2007 - 2009  Anders Gidenstam  (anders(at)gidenstam.org)
+  This file is released under the GPL license version 2 or later.
+-->
+<PropertyList include="common.xml">
+
+	<!--<ai>
+		<submodels>
+			<launch-master type="bool">0</launch-master>
+		</submodels>
+	</ai>-->
+
+	<instrumentation>
+		<radar>
+			<switch type="string">ON</switch>
+			<mode-control type="int">1</mode-control>
+			<display-controls>
+				<WX type="bool">false</WX>
+				<pos type="bool">true</pos>
+				<data type="bool">true</data>
+				<symbol type="bool">true</symbol>
+				<rotate type="bool">false</rotate>
+			</display-controls>
+			<serviceable type="bool">true</serviceable>
+			<range type="int">8</range>
+			<mode type="string">WX</mode>
+			<lightning type="bool">true</lightning>
+			<display-mode type="string">plan</display-mode>
+			<!--<echo-texture-path type="string"
+												 archive="y">Aircraft/ATC/Ver2/atcecho.png</echo-texture-path>-->
+			<minimized type="bool">false</minimized>
+			<heading-marker type="bool">false</heading-marker>
+			<reference-range-nm type="double">100</reference-range-nm>
+			<limit-deg type="int">180</limit-deg>
+			<antenna-ht-ft type="double">150</antenna-ht-ft>
+			<update-interval-sec>10</update-interval-sec>
+			<font>
+				<name type="string">typewriter.txf</name>
+				<size type="float">5</size>
+				<line-spacing type="float">0.25</line-spacing>
+				<color>
+					<red type="float">0</red>
+					<green type="float">0.8</green>
+					<blue type="float">0</blue>
+					<alpha type="float">1</alpha>
+				</color>
+			</font>
+			<target-brg type="double">0</target-brg>
+			<target-lat type="double">0</target-lat>
+			<target-lon type="double">0</target-lon>
+			<target-alt type="double">0</target-alt>
+		</radar>
+		<comm n="0">
+			<frequencies>
+				<selected-mhz type="double">112.700</selected-mhz>
+				<standby-mhz type="double">120.500</standby-mhz>
+			</frequencies>
+			<volume type="double">0.6</volume>
+			<serviceable>true</serviceable>
+			<ptt type="int">0</ptt>
+		</comm>
+	</instrumentation>
+
+	<controls>
+		<rudder-pos-deg type="float"> 0.0 </rudder-pos-deg>
+		<speed-kts type="float"> 0.0 </speed-kts>
+		<armament>
+			<station>
+				<jettison-all type="bool">1</jettison-all>
+			</station>
+		</armament>
+	</controls>
+
+	<sim include="Systems/nimitz-views.xml">
+
+		<description>Multiplayer carrier Carl Vinson - Other pilots can land on it.</description>
+		<author>Anders Gidenstam, Vivian Meazza</author>
+		<status>alpha</status>
+		<aircraft-version>0.1</aircraft-version>
+
+		<flight-model>null</flight-model>
+
+		<presets>
+			<onground>true</onground>
+		</presets>
+
+		<startup>
+			<splash-texture>Aircraft/MPCarrier/vinson-splash.png</splash-texture>
+		</startup>
+
+		<sound>
+			<audible>false</audible>
+			<path/>
+		</sound>
+
+		<model>
+			<path>Aircraft/MPCarrier/Models/mp-vinson.xml</path>
+		</model>
+
+		<systems>
+
+			<electrical>
+
+			</electrical>
+
+			<static>
+			</static>
+
+		</systems>
+
+		<panel>
+			<path>Aircraft/MPCarrier/Panels/MP-radar-panel.xml</path>
+			<visibility>true</visibility>
+		</panel>
+
+		<instrumentation>
+			<path>Aircraft/MPCarrier/Systems/instrumentation.xml</path>
+		</instrumentation>
+
+		<!-- This "aircraft" is pointless without the vinson_demo scenario. -->
+		<ai>
+			<enabled type="bool">true</enabled>
+			<scenario n="100">vinson_demo</scenario>
+			<!--<ballistic>
+				<force-lb type="double">3000</force-lb>
+				<force-azimuth-deg>0</force-azimuth-deg>
+				<force-elevation-deg>45</force-elevation-deg>
+			</ballistic>-->
+		</ai>
+
+		<mp-carriers>
+			<vinson-callsign type="string"></vinson-callsign>
+		</mp-carriers>
+
+		<submodels>
+			<serviceable type="bool">true</serviceable>
+			<!--<path>Aircraft/seahawk/Models/seahawk-submodels.xml</path>-->
+		</submodels>
+
+		<current-view>
+			<deck-park type="bool">1</deck-park>
+		</current-view>
+
+		<multiplay>
+			<chat_display>1</chat_display>
+			<generic>
+				<string n="2"
+								alias="/sim/messages/approach"/>
+				<float n="3"
+							 alias="/instrumentation/radar/target-brg"/>
+				<float n="4"
+							 alias="/instrumentation/radar/target-lat"/>
+				<float n="5"
+							 alias="/instrumentation/radar/target-lon"/>
+				<float n="6"
+							 alias="/instrumentation/radar/target-alt"/>
+				<int n="0"
+						 alias="/ai/submodels/launch-master"/>
+			</generic>
+		</multiplay>
+
+		<atc>
+			<target-id type="int"></target-id>
+			<target-callsign type="string"></target-callsign>
+			<target-alt type="double">0</target-alt>
+			<target-number type="int">-1</target-number>
+			<target-range type="double">0</target-range>
+		</atc>
+
+	</sim>
+
+	<surface-positions>
+		<!-- These will be (ab)used for transmitting rudder-deg and speed-kts. -->
+		<rudder-pos-norm type="float"> 0.0 </rudder-pos-norm>
+		<flap-pos-norm type="float"> 0.0 </flap-pos-norm>
+	</surface-positions>
+
+	<nasal>
+		<!-- Nasal Carrier View -->
+		<CarrierControl>
+			<file>Aircraft/MPCarrier/Systems/commander.nas</file>
+			<script>
+				var carrier_name = "Vinson";
+			</script>
+		</CarrierControl>
+		<approachview>
+			<file>Aircraft/MPCarrier/Systems/approachview.nas</file>
+		</approachview>
+		<lsoview>
+			<file>Aircraft/MPCarrier/Systems/lsoview.nas</file>
+		</lsoview>
+		<Radar>
+			<file>Aircraft/MPCarrier/Panels/MP-radar.nas</file>
+		</Radar>
+		<LSOComms>
+			<file>Aircraft/MPCarrier/Systems/lsocomms.nas</file>
+		</LSOComms>
+		<walkview>
+			<file>Aircraft/Generic/WalkView/walkview.nas</file>
+		</walkview>
+		<walkviews>
+			<file>Aircraft/MPCarrier/Systems/vinson-walk-views.nas</file>
+		</walkviews>
+	</nasal>
+
+</PropertyList>

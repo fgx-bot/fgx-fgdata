@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>markers.ac</path>
+
+  <animation>
+    <object-name>Marker.pnl</object-name>
+    <object-name>Omrkr</object-name>
+    <object-name>Mmrkr</object-name>
+    <object-name>Imrkr</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>Omrkr</object-name>
+    <object-name>Mmrkr</object-name>
+    <object-name>Imrkr</object-name>
+    <emission>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Omrkr</object-name>
+    <condition>
+      <property>instrumentation/marker-beacon/outer</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Mmrkr</object-name>
+    <condition>
+      <property>instrumentation/marker-beacon/middle</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Imrkr</object-name>
+    <condition>
+      <property>instrumentation/marker-beacon/inner</property>
+    </condition>
+  </animation>
+
+</PropertyList>
+

@@ -1,0 +1,405 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<name>Status Display</name>
+	<w-base>512</w-base>
+	<h-base>368</h-base>
+
+	<layers>
+
+		<!--<layer>
+			<name>tint</name>
+			<condition>
+				<property>instrumentation/radar/display-controls/background</property>
+			</condition>
+			<texture>
+				<path>Aircraft/ATC/Ver2/tint.png</path>
+				<x1>0</x1>
+				<y1>0</y1>
+				<x2>0.5</x2>
+				<y2>1</y2>
+			</texture>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>0</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>0</offset>
+				</transformation>
+			</transformations>
+		</layer>-->
+
+
+		<layer>
+			<name>status header</name>
+			<type>text</type>
+			<font>helvetica_bold</font>
+			<point-size>14</point-size>
+			<color>
+				<red>0</red>
+				<green>1</green>
+				<blue>0</blue>
+			</color>
+			<chunks>
+				<chunk>
+					<type>literal</type>
+					<text>STATUS</text>
+				</chunk>
+			</chunks>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>0</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>0</offset>
+				</transformation>
+			</transformations>
+		</layer>
+		<layer>
+			<name>launch course ON</name>
+
+			<condition>
+				<!--<not>-->
+				<property>ai/models/carrier/controls/turn-to-launch-hdg</property>
+				<!--</not>-->
+			</condition>
+
+			<type>text</type>
+			<font>helvetica_bold</font>
+			<point-size>14</point-size>
+			<color>
+				<red>0</red>
+				<green>1</green>
+				<blue>0</blue>
+			</color>
+			<chunks>
+				<chunk>
+					<type>number-value</type>
+					<property>ai/models/carrier/controls/turn-to-launch-hdg</property>
+					<format>Turn to Launch Course: ON</format>
+				</chunk>
+			</chunks>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>0</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>-20</offset>
+				</transformation>
+			</transformations>
+		</layer>
+
+		<layer>
+			<name>launch course OFF</name>
+
+			<condition>
+				<not>
+					<property>ai/models/carrier/controls/turn-to-launch-hdg</property>
+				</not>
+			</condition>
+
+			<type>text</type>
+			<font>helvetica_bold</font>
+			<point-size>14</point-size>
+			<color>
+				<red>0</red>
+				<green>1</green>
+				<blue>0</blue>
+			</color>
+			<chunks>
+				<chunk>
+					<type>number-value</type>
+					<property>ai/models/carrier/controls/turn-to-launch-hdg</property>
+					<format>Turn to launch Course: OFF</format>
+				</chunk>
+			</chunks>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>0</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>-20</offset>
+				</transformation>
+			</transformations>
+		</layer>
+		
+		<layer>
+			<name>recovery course ON</name>
+
+			<condition>
+				<!--<not>-->
+				<property>ai/models/carrier/controls/turn-to-recovery-hdg</property>
+				<!--</not>-->
+			</condition>
+
+			<type>text</type>
+			<font>helvetica_bold</font>
+			<point-size>14</point-size>
+			<color>
+				<red>0</red>
+				<green>1</green>
+				<blue>0</blue>
+			</color>
+			<chunks>
+				<chunk>
+					<type>number-value</type>
+					<property>ai/models/carrier/controls/turn-to-recovery-hdg</property>
+					<format>Turn to Recovery Couse: ON</format>
+				</chunk>
+			</chunks>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>0</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>-40</offset>
+				</transformation>
+			</transformations>
+		</layer>
+
+		<layer>
+			<name>recovery course OFF</name>
+
+			<condition>
+				<not>
+					<property>ai/models/carrier/controls/turn-to-recovery-hdg</property>
+				</not>
+			</condition>
+
+			<type>text</type>
+			<font>helvetica_bold</font>
+			<point-size>14</point-size>
+			<color>
+				<red>0</red>
+				<green>1</green>
+				<blue>0</blue>
+			</color>
+			<chunks>
+				<chunk>
+					<type>number-value</type>
+					<property>ai/models/carrier/controls/turn-to-recovery-hdg</property>
+					<format>Turn to Recovery Course: OFF</format>
+				</chunk>
+			</chunks>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>0</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>-40</offset>
+				</transformation>
+			</transformations>
+		</layer>
+
+		<layer>
+			<name>base course ON</name>
+
+			<condition>
+				<!--<not>-->
+					<property>ai/models/carrier/controls/turn-to-base-course</property>
+				<!--</not>-->
+			</condition>
+
+			<type>text</type>
+			<font>helvetica_bold</font>
+			<point-size>14</point-size>
+			<color>
+				<red>0</red>
+				<green>1</green>
+				<blue>0</blue>
+			</color>
+			<chunks>
+				<chunk>
+					<type>number-value</type>
+					<property>ai/models/carrier/controls/turn-to-base-course</property>
+					<format>Turn to Base Couse: ON</format>
+				</chunk>
+			</chunks>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>0</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>-60</offset>
+				</transformation>
+			</transformations>
+		</layer>
+
+		<layer>
+			<name>base course OFF</name>
+
+			<condition>
+				<not>
+					<property>ai/models/carrier/controls/turn-to-base-course</property>
+				</not>
+			</condition>
+
+			<type>text</type>
+			<font>helvetica_bold</font>
+			<point-size>14</point-size>
+			<color>
+				<red>0</red>
+				<green>1</green>
+				<blue>0</blue>
+			</color>
+			<chunks>
+				<chunk>
+					<type>number-value</type>
+					<property>ai/models/carrier/controls/turn-to-base-course</property>
+					<format>Turn to Base Couse: OFF</format>
+				</chunk>
+			</chunks>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>0</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>-60</offset>
+				</transformation>
+			</transformations>
+		</layer>
+
+		<layer>
+			<name>wind from</name>
+			<type>text</type>
+			<font>helvetica_bold</font>
+			<point-size>14</point-size>
+			<color>
+				<red>0</red>
+				<green>1</green>
+				<blue>0</blue>
+			</color>
+			<chunks>
+				<chunk>
+					<type>number-value</type>
+					<property>environment/wind-from-heading-deg</property>
+					<format>From: %3.0f *</format>
+				</chunk>
+			</chunks>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>0</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>210</offset>
+				</transformation>
+			</transformations>
+		</layer>
+
+		<layer>
+			<name>wind arrow</name>
+			<condition>
+				<property>sim/atc/compass</property>
+			</condition>
+			<texture>
+				<path>Aircraft/ATC/Ver2/arrow.png</path>
+				<x1>0</x1>
+				<y1>0</y1>
+				<x2>1</x2>
+				<y2>1</y2>
+			</texture>
+			<emissive>true</emissive>
+			<w>40</w>
+			<h>40</h>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>150</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>240</offset>
+				</transformation>
+				<!--<transformation>
+					<type>rotation</type>
+					<property>orientation/heading-deg</property>
+					<scale>-1</scale>
+				</transformation>-->
+				<transformation>
+					<type>rotation</type>
+					<property>environment/wind-from-heading-deg</property>
+					<!--<offset>90</offset>-->
+					<scale>1</scale>
+				</transformation>
+			</transformations>
+		</layer>
+
+		<layer>
+			<name>barometer</name>
+			<type>text</type>
+			<font>helvetica_bold</font>
+			<point-size>14</point-size>
+			<color>
+				<red>0</red>
+				<green>1</green>
+				<blue>0</blue>
+			</color>
+			<chunks>
+				<chunk>
+					<type>number-value</type>
+					<property>environment/pressure-sea-level-inhg</property>
+					<format>inHG: %2.2f</format>
+				</chunk>
+			</chunks>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>0</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>190</offset>
+				</transformation>
+			</transformations>
+		</layer>
+
+		<layer>
+			<name>visibility</name>
+			<type>text</type>
+			<font>helvetica_bold</font>
+			<point-size>14</point-size>
+			<color>
+				<red>0</red>
+				<green>1</green>
+				<blue>0</blue>
+			</color>
+			<chunks>
+				<chunk>
+					<type>number-value</type>
+					<property>environment/metar/min-visibility-m</property>
+					<scale>0.00053995</scale>
+					<format>Visibility: %3.1f nm</format>
+				</chunk>
+			</chunks>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>0</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>170</offset>
+				</transformation>
+			</transformations>
+		</layer>
+	</layers>
+
+</PropertyList>

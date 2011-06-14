@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+************************************************************************
+Common configuration for all YASim C310 models.
+************************************************************************
+-->
+
+<PropertyList include="c310-base.xml">
+
+ <sim>
+
+  <flight-model>yasim</flight-model>
+  <aero>../c310/c310-yasim</aero>
+  <fuel-fraction>1.0</fuel-fraction>
+
+ </sim>
+
+</PropertyList>

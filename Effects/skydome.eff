@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PropertyList>
+  <name>Effects/skydome</name>
+  <parameters>
+    <mie><use>/sim/rendering/mie</use></mie>
+    <rayleigh><use>/sim/rendering/rayleigh</use></rayleigh>
+    <density><use>/sim/rendering/dome-density</use></density>
+  </parameters>
+  <technique n="8">
+    <predicate>
+      <and>
+        <property>/sim/rendering/shader-effects</property>
+        <property>/sim/rendering/scattering-shader</property>
+        <or>
+          <less-equal>
+            <value type="float">2.0</value>
+            <glversion/>
+          </less-equal>
+          <and>
+            <extension-supported>GL_ARB_shader_objects</extension-supported>
+            <extension-supported>GL_ARB_shading_language_100</extension-supported>
+            <extension-supported>GL_ARB_vertex_shader</extension-supported>
+            <extension-supported>GL_ARB_fragment_shader</extension-supported>
+          </and>
+        </or>
+      </and>
+    </predicate>
+
+    <pass>
+      <lighting>true</lighting>
+      <shade-model>smooth</shade-model>
+      <cull-face>back</cull-face>
+      <program>
+        <vertex-shader>Shaders/skydome.vert</vertex-shader>
+        <fragment-shader>Shaders/skydome.frag</fragment-shader>
+      </program>
+      <uniform>
+        <name>mK</name>
+        <type>float</type>
+        <value><use>mie</use></value>
+      </uniform>
+      <uniform>
+        <name>rK</name>
+        <type>float</type>
+        <value><use>rayleigh</use></value>
+      </uniform>
+      <uniform>
+        <name>density</name>
+        <type>float</type>
+        <value><use>density</use></value>
+      </uniform>
+    </pass>
+  </technique>
+
+  <!-- fall back without shaders -->
+  <technique n="11">
+    <pass>
+      <lighting>false</lighting>
+      <shade-model>smooth</shade-model>
+      <cull-face>back</cull-face>
+    </pass>
+  </technique>
+
+</PropertyList>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList include="z50lx-IFR-base.xml">
+
+  <sim>
+
+    <description>Zlin 50 lx (YASim)</description>
+    <flight-model archive="y">yasim</flight-model>
+    <aero archive="y">z50lx-yasim</aero>
+
+  </sim>
+
+</PropertyList>

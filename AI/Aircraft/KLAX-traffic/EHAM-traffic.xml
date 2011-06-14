@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<trafficlist>
+    <aircraft>
+        <model>AI/Aircraft/747-400/747-400-KLM.xml</model>
+        <livery>KLM</livery> 
+        <airline>KLM</airline>
+        <actype>747-400</actype>
+        <offset>20</offset>
+        <radius>42</radius>
+        <flighttype>gate</flighttype>
+        <performance-class>jet_transport</performance-class>
+        <registration>PH-PALX</registration>
+        <heavy>false</heavy>
+
+        <flight>
+            <callsign>KLM9986LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KLAX</port>
+               <time>09:04:00</time>
+            </departure>
+            <cruise-alt>300</cruise-alt>
+            <arrival>
+                <port>EHAM</port>
+                <time>19:29:00</time>
+            </arrival>
+        <repeat>24Hr</repeat>
+       </flight> 
+
+       <flight>
+            <callsign>KLM9887LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>EHAM</port>
+               <time>21:04:00</time>
+            </departure>
+            <cruise-alt>310</cruise-alt>
+            <arrival>
+                <port>KLAX</port>
+                <time>07:29:00</time>
+            </arrival>
+        <repeat>24Hr</repeat>
+       </flight>  
+    </aircraft> 
+
+    <aircraft>
+        <model>AI/Aircraft/747-400/747-400-KLM.xml</model>
+        <livery>KLM</livery> 
+        <airline>KLM</airline>
+        <actype>747-400</actype>
+        <offset>20</offset>
+        <radius>42</radius>
+        <flighttype>gate</flighttype>
+        <performance-class>jet_transport</performance-class>
+        <registration>PH-PBLX</registration>
+        <heavy>false</heavy>
+
+        <flight>
+            <callsign>KLM8986LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KLAX</port>
+               <time>13:04:00</time>
+            </departure>
+            <cruise-alt>300</cruise-alt>
+            <arrival>
+                <port>EHAM</port>
+                <time>23:29:00</time>
+            </arrival>
+        <repeat>24Hr</repeat>
+       </flight> 
+
+       <flight>
+            <callsign>KLM8887LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>EHAM</port>
+               <time>01:04:00</time>
+            </departure>
+            <cruise-alt>310</cruise-alt>
+            <arrival>
+                <port>KLAX</port>
+                <time>11:29:00</time>
+            </arrival>
+        <repeat>24Hr</repeat>
+       </flight>       
+     
+    </aircraft> 
+
+    <aircraft>
+        <model>AI/Aircraft/747-400/747-400-KLM.xml</model>
+        <livery>KLM</livery> 
+        <airline>KLM</airline>
+        <actype>747-400</actype>
+        <offset>20</offset>
+        <radius>42</radius>
+        <flighttype>gate</flighttype>
+        <performance-class>jet_transport</performance-class>
+        <registration>PH-PCLX</registration>
+        <heavy>false</heavy>
+
+        <flight>
+            <callsign>KLM7986LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KLAX</port>
+               <time>17:04:00</time>
+            </departure>
+            <cruise-alt>300</cruise-alt>
+            <arrival>
+                <port>EHAM</port>
+                <time>03:29:00</time>
+            </arrival>
+        <repeat>24Hr</repeat>
+       </flight> 
+
+       <flight>
+            <callsign>KLM7887LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>EHAM</port>
+               <time>05:04:00</time>
+            </departure>
+            <cruise-alt>310</cruise-alt>
+            <arrival>
+                <port>KLAX</port>
+                <time>15:29:00</time>
+            </arrival>
+        <repeat>24Hr</repeat>
+       </flight>       
+     
+    </aircraft> 
+
+    <aircraft>
+        <model>AI/Aircraft/747-400/747-400-KLM.xml</model>
+        <livery>KLM</livery> 
+        <airline>KLM</airline>
+        <actype>747-400</actype>
+        <offset>20</offset>
+        <radius>42</radius>
+        <flighttype>gate</flighttype>
+        <performance-class>jet_transport</performance-class>
+        <registration>PH-PDLX</registration>
+        <heavy>false</heavy>
+
+        <flight>
+            <callsign>KLM6986LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KLAX</port>
+               <time>21:04:00</time>
+            </departure>
+            <cruise-alt>300</cruise-alt>
+            <arrival>
+                <port>EHAM</port>
+                <time>07:29:00</time>
+            </arrival>
+        <repeat>24Hr</repeat>
+       </flight> 
+
+       <flight>
+            <callsign>KLM6887LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>EHAM</port>
+               <time>09:04:00</time>
+            </departure>
+            <cruise-alt>310</cruise-alt>
+            <arrival>
+                <port>KLAX</port>
+                <time>19:29:00</time>
+            </arrival>
+        <repeat>24Hr</repeat>
+       </flight>       
+     
+    </aircraft> 
+
+</trafficlist> 

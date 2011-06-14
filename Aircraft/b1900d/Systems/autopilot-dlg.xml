@@ -1,0 +1,782 @@
+<?xml version="1.0"?>
+<PropertyList>
+    <name>autopilot-dlg</name>
+    <layout>vbox</layout>
+
+    <group>
+        <layout>hbox</layout>
+
+        <text><label>Flight Director / Autopilot Control</label></text>
+
+        <button>
+            <halign>right</halign>
+            <pref-width>30</pref-width>
+            <legend>X</legend>
+            <default>true</default>
+            <key>Esc</key>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+    </group>
+
+<!-- Autopilot Locks Display-->
+
+    <group>
+        <layout>hbox</layout>
+
+        <hrule><stretch>true</stretch></hrule>
+        <text>
+            <halign>left</halign>
+            <label>Lateral Mode</label>
+        </text>
+        <hrule><stretch>true</stretch></hrule>
+        <text>
+            <halign>center</halign>
+            <label>Vertical Mode</label>
+        </text>
+        <hrule><stretch>true</stretch></hrule>
+        <text>
+            <halign>right</halign>
+            <label>Speed Mode</label>
+        </text>
+        <hrule><stretch>true</stretch></hrule>
+    </group>
+
+<!--   Mode Annunciators  -->
+    <group>
+        <layout>hbox</layout>
+
+        <input>
+            <pref-width>100</pref-width>
+            <property>autopilot/locks/heading</property>
+            <live>true</live>
+        </input>
+
+        <input>
+            <pref-width>100</pref-width>
+            <property>autopilot/locks/altitude</property>
+            <live>true</live>
+        </input>
+
+        <input>
+            <pref-width>100</pref-width>
+            <height>25</height>
+            <property>autopilot/locks/speed</property>
+            <live>true</live>
+        </input>
+    </group>
+
+    <hrule/>
+
+    <group>
+        <layout>hbox</layout>
+
+        <checkbox>
+            <label>GS armed</label>
+            <property>instrumentation/flightdirector/gs-arm</property>
+            <live>true</live>
+        </checkbox>
+
+        <checkbox>
+            <label>Back Course</label>
+            <property>instrumentation/nav/back-course-btn</property>
+            <live>true</live>
+        </checkbox>
+
+        <checkbox>
+            <label>GPS slaved</label>
+            <property>instrumentation/nav/slaved-to-gps</property>
+            <live>true</live>
+        </checkbox>
+
+    </group>
+
+    <group>
+        <layout>hbox</layout>
+        <hrule><stretch>true</stretch></hrule>
+
+        <text>
+            <label>Flight Director Buttons</label>
+        </text>
+
+        <hrule><stretch>true</stretch></hrule>
+    </group>
+
+
+
+  <!-- Flight Director Push Buttons-->
+
+    <group>
+        <layout>hbox</layout>
+
+        <button>
+            <legend>HDG</legend>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.set_mode("hdg");</script>
+            </binding>
+        </button>
+
+        <button>
+            <legend>NAV</legend>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.set_mode("nav");</script>
+            </binding>
+        </button>
+
+        <button>
+            <legend>APPR</legend>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.set_mode("apr");</script>
+            </binding>
+        </button>
+
+        <button>
+            <legend>B/C</legend>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.set_mode("bc");</script>
+            </binding>
+        </button>
+
+        <button>
+            <legend>CLIMB</legend>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.set_mode("climb");</script>
+            </binding>
+        </button>
+
+    </group>
+
+    <group>
+        <layout>hbox</layout>
+
+        <button>
+            <legend>ALT</legend>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.set_mode("asel");</script>
+            </binding>
+        </button>
+
+        <button>
+            <legend>ALTS</legend>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.set_mode("alt");</script>
+            </binding>
+        </button>
+
+        <button>
+            <legend>VS</legend>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.set_mode("vs");</script>
+            </binding>
+        </button>
+
+        <button>
+            <legend>IAS</legend>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.set_mode("ias");</script>
+            </binding>
+        </button>
+
+        <button>
+            <legend>DCS</legend>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.set_mode("dcs");</script>
+            </binding>
+        </button>
+    </group>
+
+     <group>
+        <layout>hbox</layout>
+        <hrule><stretch>true</stretch></hrule>
+
+        <text>
+            <label>Instrument Settings</label>
+        </text>
+
+        <hrule><stretch>true</stretch></hrule>
+    </group>
+
+    <group>
+        <layout>hbox</layout>
+
+        <text>
+            <label>HDG BUG</label>
+        </text>
+
+        <button>
+            <halign>right</halign>
+            <pref-width>40</pref-width>
+            <legend>&lt;&lt;</legend>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.set_hdg_bug(-10)</script>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
+
+        <button>
+            <halign>right</halign>
+            <pref-width>30</pref-width>
+            <legend>&lt;</legend>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.set_hdg_bug(-1)</script>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
+
+        <input>
+            <property>autopilot/settings/heading-bug-deg</property>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </input>
+
+        <button>
+            <halign>left</halign>
+            <pref-width>30</pref-width>
+            <legend>&gt;</legend>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.set_hdg_bug(1)</script>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
+
+        <button>
+            <halign>left</halign>
+            <pref-width>40</pref-width>
+            <legend>&gt;&gt;</legend>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.set_hdg_bug(10)</script>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
+
+        <button>
+            <legend>CTR</legend>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.set_hdg_bug(0)</script>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
+    </group>
+
+<!-- Course Set -->
+
+    <group>
+        <layout>hbox</layout>
+
+        <text>
+            <label>COURSE </label>
+        </text>
+
+        <button>
+            <halign>right</halign>
+            <pref-width>40</pref-width>
+            <legend>&lt;&lt;</legend>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/nav/radials/selected-deg</property>
+                <step>-10</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
+
+        <button>
+            <halign>right</halign>
+            <pref-width>30</pref-width>
+            <legend>&lt;</legend>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/nav/radials/selected-deg</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
+
+        <input>
+            <property>instrumentation/nav/radials/selected-deg</property>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </input>
+
+        <button>
+            <halign>left</halign>
+            <pref-width>30</pref-width>
+            <legend>&gt;</legend>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/nav/radials/selected-deg</property>
+                <step>1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
+
+        <button>
+            <halign>left</halign>
+            <pref-width>40</pref-width>
+            <legend>&gt;&gt;</legend>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/nav/radials/selected-deg</property>
+                <step>10</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
+
+        <button>
+            <width>40</width>
+            <height>20</height>
+            <legend>CTR</legend>
+            <binding>
+                <command>property-assign</command>
+                <property>instrumentation/nav/radials/selected-deg</property>
+                <property>orientation/heading-magnetic-deg</property>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
+    </group>
+<!-- ALT set -->
+
+    <group>
+        <layout>hbox</layout>
+
+        <text>
+            <label>ALT SET</label>
+        </text>
+  
+        <button>
+            <halign>right</halign>
+            <pref-width>40</pref-width>
+            <legend>&lt;&lt;</legend>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/flightdirector/Asel</property>
+                <step>-1000</step>
+                <min>0</min>
+                <max>30000</max>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
+
+        <button>
+            <halign>right</halign>
+            <pref-width>30</pref-width>
+            <legend>&lt;</legend>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/flightdirector/Asel</property>
+                <step>-100</step>
+                <min>0</min>
+                <max>30000</max>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
+
+        <input>
+            <property>/instrumentation/flightdirector/Asel</property>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </input>
+
+        <button>
+            <halign>left</halign>
+            <pref-width>30</pref-width>
+            <legend>&gt;</legend>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/flightdirector/Asel</property>
+                <step>100</step>
+                <min>0</min>
+                <max>30000</max>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
+
+        <button>
+            <halign>left</halign>
+            <pref-width>40</pref-width>
+            <legend>&gt;&gt;</legend>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/flightdirector/Asel</property>
+                <step>1000</step>
+                <min>0</min>
+                <max>30000</max>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
+
+        <button>
+            <legend>RST</legend>
+            <binding>
+                <command>property-assign</command>
+                <property>/instrumentation/flightdirector/Asel</property>
+                <value>10000</value>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
+
+    </group>
+<!-- IAS set -->
+
+    <group>
+        <layout>hbox</layout>
+
+        <text>
+            <label>IAS BUG</label>
+        </text>
+  
+        <button>
+            <halign>right</halign>
+            <pref-width>40</pref-width>
+            <legend>&lt;&lt;</legend>
+            <binding>
+                <command>property-adjust</command>
+                <property>autopilot/settings/target-speed-kt</property>
+                <step>-10</step>
+                <min>100</min>
+                <max>270</max>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
+
+        <button>
+            <halign>right</halign>
+            <pref-width>30</pref-width>
+            <legend>&lt;</legend>
+            <binding>
+                <command>property-adjust</command>
+                <property>autopilot/settings/target-speed-kt</property>
+                <step>-1</step>
+                <min>100</min>
+                <max>270</max>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
+
+        <input>
+            <property>autopilot/settings/target-speed-kt</property>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </input>
+
+        <button>
+            <halign>left</halign>
+            <pref-width>30</pref-width>
+            <legend>&gt;</legend>
+            <binding>
+                <command>property-adjust</command>
+                <property>autopilot/settings/target-speed-kt</property>
+                <step>1</step>
+                <min>100</min>
+                <max>270</max>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
+
+        <button>
+            <halign>left</halign>
+            <pref-width>40</pref-width>
+            <legend>&gt;&gt;</legend>
+            <binding>
+                <command>property-adjust</command>
+                <property>autopilot/settings/target-speed-kt</property>
+                <step>10</step>
+                <min>100</min>
+                <max>270</max>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
+
+        <button>
+            <legend>RST</legend>
+            <binding>
+                <command>property-assign</command>
+                <property>autopilot/settings/target-speed-kt</property>
+                <value>100</value>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
+
+    </group>
+
+     <group>
+        <layout>hbox</layout>
+        <hrule><stretch>true</stretch></hrule>
+
+        <text>
+            <label>Autopilot Control</label>
+        </text>
+
+        <hrule><stretch>true</stretch></hrule>
+    </group>
+
+<!--  AP controller  -->
+
+    <group>
+        <layout>hbox</layout>
+
+
+        <group>
+            <layout>vbox</layout>
+
+            <button>
+                <legend>DN</legend>
+                <binding>
+                    <condition>
+                        <equals>
+                            <property>autopilot/locks/altitude</property>
+                            <value>VS</value>
+                        </equals>
+                    </condition>
+                    <command>property-adjust</command>
+                    <property>autopilot/settings/target-vs-fpm</property>
+                    <step>-100</step>
+                    <min>-6000</min>
+                    <max>6000</max>
+                </binding>
+                <binding>
+                    <condition>
+                        <equals>
+                            <property>autopilot/locks/altitude</property>
+                            <value>PITCH</value>
+                        </equals>
+                    </condition>
+                    <command>property-adjust</command>
+                    <property>autopilot/settings/target-pitch-deg</property>
+                    <step>-0.10</step>
+                    <min>-15</min>
+                    <max>15</max>
+                </binding>
+                <binding>
+                    <command>dialog-update</command>
+                </binding>
+            </button>
+
+            <input>
+                <label>V/S</label>
+                <property>autopilot/settings/target-vs-fpm</property>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+                <binding>
+                    <command>dialog-update</command>
+                </binding>
+            </input>
+
+            <input>
+                <label>PITCH</label>
+                <property>autopilot/settings/target-pitch-deg</property>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+                <binding>
+                    <command>dialog-update</command>
+                </binding>
+            </input>
+
+            <button>
+                <legend>UP</legend>
+                <binding>
+                    <condition>
+                        <equals>
+                            <property>autopilot/locks/altitude</property>
+                            <value>VS</value>
+                        </equals>
+                    </condition>
+                    <command>property-adjust</command>
+                    <property>autopilot/settings/target-vs-fpm</property>
+                    <step>100</step>
+                    <min>-6000</min>
+                    <max>6000</max>
+                </binding>
+                <binding>
+                    <condition>
+                        <equals>
+                            <property>autopilot/locks/altitude</property>
+                            <value>PITCH</value>
+                        </equals>
+                    </condition>
+                    <command>property-adjust</command>
+                    <property>autopilot/settings/target-pitch-deg</property>
+                    <step>0.10</step>
+                    <min>-15</min>
+                    <max>15</max>
+                </binding>
+                <binding>
+                    <command>dialog-update</command>
+                </binding>
+            </button>
+
+        </group>
+
+        <group>
+            <layout>vbox</layout>
+
+            <button>
+                <legend>Low Bank</legend>
+                <binding>
+                    <command>nasal</command>
+                    <script>systems.FlDr.toggle_autopilot("bank")</script>
+                </binding>
+            </button>
+
+            <text>
+                <label>99.99</label> <!-- placeholder for width -->
+                <format>% 2.0f *</format>
+                <property>instrumentation/flightdirector/roll-max</property>
+                <live>true</live>
+            </text>
+
+            <button>
+                <legend>A / P</legend>
+                <binding>
+                    <command>nasal</command>
+                    <script>systems.FlDr.toggle_autopilot("ap")</script>
+                </binding>
+            </button>
+
+            <checkbox>
+                <label>OFF</label>
+                <property>autopilot/locks/passive-mode</property>
+                <live>true</live>
+                <binding>
+                    <command>dialog-update</command>
+                </binding>
+            </checkbox>
+
+            <checkbox>
+                <label>ON</label>
+                <property>autopilot/locks/yaw-damper</property>
+                <live>true</live>
+                <binding>
+                    <command>dialog-update</command>
+                </binding>
+            </checkbox>
+
+            <button>
+                <legend>Y / D</legend>
+                <binding>
+                    <command>nasal</command>
+                    <script>systems.FlDr.toggle_autopilot("yd")</script>
+                </binding>
+            </button>
+
+        </group>
+
+        <group>
+            <layout>vbox</layout>
+
+            <text>
+                <label>Roll Knob</label>
+            </text>
+
+            <dial>
+                <width>60</width>
+                <property>autopilot/settings/target-roll-deg</property>
+                <min>-30</min>
+                <max>30</max>
+                <wrap>false</wrap>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+                <binding>
+                    <command>dialog-update</command>
+                </binding>
+            </dial>
+
+            <text>
+                <label>-99.99</label>
+                <format>% 2.1f</format>
+                <property>autopilot/settings/target-roll-deg</property>
+                <live>true</live>
+            </text>
+
+    </group>
+
+</PropertyList>

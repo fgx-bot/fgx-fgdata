@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>interior.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>interieur</object-name>
+    <object-name>inttour</object-name>
+    <object-name>planchet</object-name>
+    <object-name>cloison</object-name>
+    <object-name>intporteAG</object-name>
+    <object-name>intporteAD</object-name>
+    <object-name>intporteCG</object-name>
+    <object-name>intporteCD</object-name>
+    <object-name>intporteBG</object-name>
+    <object-name>intporteBD</object-name>
+
+    <!-- Objets transparents -->
+    <object-name>intvitres</object-name>
+    <object-name>intvitreAG</object-name>
+    <object-name>intvitreAD</object-name>
+    <object-name>intvitreBG</object-name>
+    <object-name>intvitreBD</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>intvitres</object-name>
+    <object-name>intvitreAG</object-name>
+    <object-name>intvitreAD</object-name>
+    <object-name>intvitreBG</object-name>
+    <object-name>intvitreBD</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>intvitres</object-name>
+    <object-name>intvitreAG</object-name>
+    <object-name>intvitreAD</object-name>
+    <object-name>intvitreBG</object-name>
+    <object-name>intvitreBD</object-name>
+  </animation>
+
+  <!-- les fauteuils -->
+  <model>
+    <path>Aircraft/737-100/Models/Interior/seats/all-seats.xml</path>
+    <offsets>
+      <x-m> 0 </x-m>
+      <y-m> 0 </y-m>
+      <z-m> 0 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Tableau de bord -->
+  <model>
+    <path>Aircraft/737-100/Models/Interior/Panel/panel.xml</path>
+    <offsets>
+      <x-m> -12.346 </x-m>
+      <y-m>   0.000 </y-m>
+      <z-m>  -2.269 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Pilote -->
+  <model>
+    <path>Aircraft/737-100/Models/Pilot/pilot.xml</path>
+    <offsets>
+      <x-m> -11.837 </x-m>
+      <y-m>  -0.485 </y-m>
+      <z-m>  -2.228 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Porte -->
+  <animation>
+    <name>IntPorteAvantGauche</name>
+    <object-name>intporteAG</object-name>
+    <object-name>intvitreAG</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>IntPorteAvantGauche</object-name>
+    <property>/instrumentation/doors/crew/position-norm</property>
+    <interpolation>
+      <entry><ind> 0.0 </ind><dep>    0 </dep></entry>
+      <entry><ind> 0.2 </ind><dep>    0 </dep></entry>
+      <entry><ind> 1.0 </ind><dep> -185 </dep></entry>
+    </interpolation>
+    <axis>
+      <x1-m> -9.791 </x1-m>
+      <y1-m> -1.640 </y1-m>
+      <z1-m> -2.137 </z1-m>
+      <x2-m> -9.791 </x2-m>
+      <y2-m> -1.545 </y2-m>
+      <z2-m> -1.791 </z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>IntPorteAvantGauche</object-name>
+    <property>/instrumentation/doors/crew/position-norm</property>
+    <interpolation>
+      <entry><ind> 0.0 </ind><dep> 0.00 </dep></entry>
+      <entry><ind> 0.2 </ind><dep> 0.08 </dep></entry>
+      <entry><ind> 1.0 </ind><dep> 0.08 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <name>IntPorteAvantDroite</name>
+    <object-name>intporteAD</object-name>
+    <object-name>intvitreAD</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>IntPorteAvantDroite</object-name>
+    <property>/instrumentation/doors/crew/position-norm</property>
+    <interpolation>
+      <entry><ind> 0.0 </ind><dep>   0 </dep></entry>
+      <entry><ind> 0.2 </ind><dep>   0 </dep></entry>
+      <entry><ind> 1.0 </ind><dep> 185 </dep></entry>
+    </interpolation>
+    <axis>
+      <x1-m> -9.791 </x1-m>
+      <y1-m>  1.640 </y1-m>
+      <z1-m> -2.137 </z1-m>
+      <x2-m> -9.791 </x2-m>
+      <y2-m>  1.545 </y2-m>
+      <z2-m> -1.791 </z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>IntPorteAvantDroite</object-name>
+    <property>/instrumentation/doors/crew/position-norm</property>
+    <interpolation>
+      <entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+      <entry><ind> 0.2 </ind><dep> -0.08 </dep></entry>
+      <entry><ind> 1.0 </ind><dep> -0.08 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <name>IntPorteArriereGauche</name>
+    <object-name>intporteBG</object-name>
+    <object-name>intvitreBG</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>IntPorteArriereGauche</object-name>
+    <property>/instrumentation/doors/passenger/position-norm</property>
+    <interpolation>
+      <entry><ind> 0.0 </ind><dep>    0 </dep></entry>
+      <entry><ind> 0.2 </ind><dep>    0 </dep></entry>
+      <entry><ind> 1.0 </ind><dep> -185 </dep></entry>
+    </interpolation>
+    <axis>
+      <x1-m>  6.740 </x1-m>
+      <y1-m> -1.721 </y1-m>
+      <z1-m> -2.046 </z1-m>
+      <x2-m>  6.740 </x2-m>
+      <y2-m> -1.688 </y2-m>
+      <z2-m> -1.732 </z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>IntPorteArriereGauche</object-name>
+    <property>/instrumentation/doors/passenger/position-norm</property>
+    <interpolation>
+      <entry><ind> 0.0 </ind><dep> 0.00 </dep></entry>
+      <entry><ind> 0.2 </ind><dep> 0.08 </dep></entry>
+      <entry><ind> 1.0 </ind><dep> 0.08 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <name>IntPorteArriereDroite</name>
+    <object-name>intporteBD</object-name>
+    <object-name>intvitreBD</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>IntPorteArriereDroite</object-name>
+    <property>/instrumentation/doors/passenger/position-norm</property>
+    <interpolation>
+      <entry><ind> 0.0 </ind><dep>   0 </dep></entry>
+      <entry><ind> 0.2 </ind><dep>   0 </dep></entry>
+      <entry><ind> 1.0 </ind><dep> 185 </dep></entry>
+    </interpolation>
+    <axis>
+      <x1-m>  6.740 </x1-m>
+      <y1-m>  1.721 </y1-m>
+      <z1-m> -2.046 </z1-m>
+      <x2-m>  6.740 </x2-m>
+      <y2-m>  1.688 </y2-m>
+      <z2-m> -1.732 </z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>IntPorteArriereDroite</object-name>
+    <property>/instrumentation/doors/passenger/position-norm</property>
+    <interpolation>
+      <entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+      <entry><ind> 0.2 </ind><dep> -0.08 </dep></entry>
+      <entry><ind> 1.0 </ind><dep> -0.08 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>range</type>
+    <min-m>0</min-m>
+    <max-property>sim/rendering/static-lod/bare</max-property>
+  </animation>
+
+</PropertyList>
+

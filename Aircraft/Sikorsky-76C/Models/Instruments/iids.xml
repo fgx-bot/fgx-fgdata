@@ -1,0 +1,276 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+    <path>iids.ac</path>
+
+    <animation>
+        <type>select</type>
+        <object-name>tempsign</object-name>
+        <condition>
+            <less-than>
+                <property>environment/temperature-degc</property>
+                <value>0.0</value>
+            </less-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>temp10</object-name>
+        <property>environment/temperature-degc</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>temp1</object-name>
+        <property>environment/temperature-degc</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+<!--  T5  -->
+
+    <animation>
+        <type>translate</type>
+        <object-name>T5.needle</object-name>
+        <property>engines/engine/T5</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0</dep></entry>
+            <entry><ind>100</ind><dep>0.0580</dep></entry>
+        </interpolation>
+        <axis>
+            <x>0</x>
+            <y>0</y>
+            <z>1</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>T5R.001</object-name>
+        <object-name>T5L.001</object-name>
+        <property>engines/engine/T5</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>T5R.002</object-name>
+        <object-name>T5L.002</object-name>
+        <property>engines/engine/T5</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>T5R.003</object-name>
+        <object-name>T5L.003</object-name>
+        <property>engines/engine/T5</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+<!--  N1  -->
+
+    <animation>
+        <type>translate</type>
+        <object-name>N1.needle</object-name>
+        <property>engines/engine/n1</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0</dep></entry>
+            <entry><ind>100</ind><dep>0.054</dep></entry>
+        </interpolation>
+        <axis>
+            <x>0</x>
+            <y>0</y>
+            <z>1</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>N1R.001</object-name>
+        <object-name>N1L.001</object-name>
+        <property>engines/engine/n1</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>N1R.002</object-name>
+        <object-name>N1L.002</object-name>
+        <property>engines/engine/n1</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>N1R.003</object-name>
+        <object-name>N1L.003</object-name>
+        <property>engines/engine/n1</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+<!--    Torque    -->
+
+    <animation>
+        <type>translate</type>
+        <object-name>TQ.needle</object-name>
+        <property>engines/engine/TQ</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0</dep></entry>
+            <entry><ind>100</ind><dep>0.05580</dep></entry>
+        </interpolation>
+        <axis>
+            <x>0</x>
+            <y>0</y>
+            <z>1</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>TQR.001</object-name>
+        <object-name>TQL.001</object-name>
+        <property>engines/engine/TQ</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>TQR.002</object-name>
+        <object-name>TQL.002</object-name>
+        <property>engines/engine/TQ</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>TQR.003</object-name>
+        <object-name>TQL.003</object-name>
+        <property>engines/engine/TQ</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+<!--  N2  -->
+
+    <animation>
+        <type>translate</type>
+        <object-name>N2.needle</object-name>
+        <property>engines/engine/n2</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0</dep></entry>
+            <entry><ind>115</ind><dep>0.054</dep></entry>
+        </interpolation>
+        <axis>
+            <x>0</x>
+            <y>0</y>
+            <z>1</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>N2.001</object-name>
+        <property>engines/engine/n2</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>N2.002</object-name>
+        <property>engines/engine/n2</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>N2.003</object-name>
+        <property>engines/engine/n2</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+</PropertyList>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+ <description>A330-300</description>
+ <author>Camil Valiquette</author>  
+ <path>Models/A330-300.ac</path>
+ <texture-path>Textures/Philippines</texture-path>
+ <offsets>
+   <z-m>5.0</z-m>
+   <pitch-deg>0.2</pitch-deg>
+ </offsets>   
+  
+</PropertyList>

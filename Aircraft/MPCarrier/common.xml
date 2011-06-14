@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<!--
+  Common part of MP carriers for FlightGear.
+
+  Copyright (C) 2007 - 2010  Anders Gidenstam  (anders(at)gidenstam.org)
+  Copyright (C) 2009  Vivian Meazza
+  This file is released under the GPL license version 2 or later.
+-->
+<PropertyList>
+
+  <sim>
+
+    <!-- Aircraft specific help. -->
+    <help include="help.xml"/>
+
+    <multiplay>
+      <generic>
+        <string n="0" type="string"></string><!-- MP events -->
+        <float n="0" alias="controls/tgt-heading-degs"/>
+        <float n="1" alias="controls/tgt-speed-kts"/>
+        <float n="2" alias="controls/turn-radius-ft"/>
+      </generic>
+    </multiplay>
+
+    <hud>
+      <path n="1">Aircraft/MPCarrier/Systems/LSO.xml</path>
+      <visibility n="1">true</visibility>
+      <font>
+        <size type="float">10.0</size>
+      </font>
+    </hud>
+
+  </sim>
+
+
+  <input>
+    <keyboard include="../Generic/WalkView/walk-view-keys.xml">
+      <key n="22">
+        <name>Ctrl-V</name>
+        <desc>Select initial view (view 0).</desc>
+        <binding>
+          <command>nasal</command>
+          <script>
+            setprop("/sim/current-view/view-number", view.indexof("Bridge View"));
+          </script>
+        </binding>
+      </key>
+      <key n="1">
+        <name>Ctrl-A</name>
+        <desc>Toggle AI/Manual control</desc>
+        <binding>
+          <command>nasal</command>
+          <script>CarrierControl.toggleAIControl()</script>
+        </binding>
+      </key>
+
+      <!-- Throttle -->
+      <key n="361">
+        <name>PageDown</name>
+        <desc>Decrease base speed.</desc>
+        <repeatable type="bool">true</repeatable>
+        <binding>
+          <command>nasal</command>
+          <script>CarrierControl.incSpeed(-0.5)</script>
+        </binding>
+        <mod-shift>
+          <desc>Look back right.</desc>
+          <binding>
+            <command>property-assign</command>
+            <property>/sim/current-view/goal-heading-offset-deg</property>
+            <property>/sim/view/config/back-right-direction-deg</property>
+          </binding>
+        </mod-shift>
+      </key>
+      <key n="360">
+        <name>PageUp</name>
+        <desc>Increase base speed.</desc>
+        <repeatable type="bool">true</repeatable>
+        <binding>
+          <command>nasal</command>
+          <script>CarrierControl.incSpeed(0.5)</script>
+        </binding>
+        <mod-shift>
+          <desc>Look front right.</desc>
+          <binding>
+            <command>property-assign</command>
+            <property>/sim/current-view/goal-heading-offset-deg</property>
+            <property>/sim/view/config/front-right-direction-deg</property>
+          </binding>
+        </mod-shift>
+      </key>
+
+      <!-- Rudder -->
+      <key n="356">
+        <name>Left</name>
+        <desc>Rudder to port.</desc>
+        <repeatable type="bool">true</repeatable>
+        <binding>
+          <command>nasal</command>
+          <script>CarrierControl.incRudder(-0.5)</script>
+        </binding>
+        <mod-shift>
+          <desc>Look left.</desc>
+          <binding>
+            <command>property-assign</command>
+            <property>/sim/current-view/goal-heading-offset-deg</property>
+            <property>/sim/view/config/left-direction-deg</property>
+          </binding>
+        </mod-shift>
+      </key>
+      <key n="358">
+        <name>Right</name>
+        <desc>Rudder to starboard.</desc>
+        <repeatable type="bool">true</repeatable>
+        <binding>
+          <command>nasal</command>
+          <script>CarrierControl.incRudder(0.5)</script>
+        </binding>
+        <mod-shift>
+          <desc>Look right.</desc>
+          <binding>
+            <command>property-assign</command>
+            <property>/sim/current-view/goal-heading-offset-deg</property>
+            <property>/sim/view/config/right-direction-deg</property>
+          </binding>
+        </mod-shift>
+      </key>
+
+    </keyboard>
+  </input>
+
+</PropertyList>

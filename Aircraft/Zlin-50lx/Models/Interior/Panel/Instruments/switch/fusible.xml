@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <path>fusible.ac</path>
+
+ <animation>
+  <type>material</type>
+  <object-name>tour</object-name>
+  <object-name>capot</object-name>
+  <emission>
+   <red>1.0</red>
+   <green>0.2</green>
+   <blue>0.0</blue>
+   <factor-prop>/controls/lighting/panel-norm</factor-prop>
+  </emission>
+ </animation>
+
+</PropertyList>

@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+
+<!-- auto direction finder -->
+
+<PropertyList>
+
+	<path>adf.ac</path>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>adf-Needle1</object-name>
+		<property>/instrumentation/tacan/indicated-bearing-true-deg</property>
+
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>90</ind>
+				<dep>90</dep>
+			</entry>
+			<entry>
+				<ind>180</ind>
+				<dep>180</dep>
+			</entry>
+			<entry>
+				<ind>270</ind>
+				<dep>270</dep>
+			</entry>
+			<entry>
+				<ind>360</ind>
+				<dep>360</dep>
+			</entry>
+		</interpolation>
+
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<!-- Panel Lighting -->
+	<animation>
+		<type>material</type>
+		<emission>
+			<factor-prop>/controls/lighting/panel-norm</factor-prop>
+			<red>0.75</red>
+			<green>0.25</green>
+			<blue>0.25</blue>
+		</emission>
+	</animation>
+
+
+	<!-- *** LoD for the whole model *** -->
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
+	</animation>
+
+</PropertyList>

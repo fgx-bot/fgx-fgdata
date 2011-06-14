@@ -1,0 +1,25 @@
+AC3Db
+MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 64  trans 0
+OBJECT world
+kids 1
+OBJECT poly
+name "page1"
+data 5
+Plane
+texture "page1.png"
+texrep 1 1
+crease 30.000000
+numvert 4
+0 -0.067139 -0.03806
+0 -0.067139 0.03806
+0 0.067139 0.03806
+0 0.067139 -0.03806
+numsurf 1
+SURF 0x10
+mat 0
+refs 4
+0 0.999641656876 0.00344679318368
+3 0.999641656876 0.999879598618
+2 -0.00230547646061 0.999879598618
+1 -0.00230547646061 0.00344679318368
+kids 0

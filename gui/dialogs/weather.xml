@@ -1,0 +1,1973 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <!-- Control the weather -->
+  <name>weather</name>
+  <modal>false</modal>
+  <resizable>false</resizable>
+  <layout>vbox</layout>
+  <default-padding>3</default-padding>
+
+  <!-- Title bar with close button -->
+  <group>
+    <layout>hbox</layout>
+    <default-padding>1</default-padding>
+
+    <empty>
+      <stretch>true</stretch>
+    </empty>
+
+    <text>
+      <label>Global Troposphere Weather Conditions</label>
+    </text>
+
+    <empty>
+      <stretch>true</stretch>
+    </empty>
+
+    <button>
+      <legend/>
+      <key>Esc</key>
+      <pref-width>16</pref-width>
+      <pref-height>16</pref-height>
+      <border>2</border>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+    </button>
+  </group>
+
+  <hrule/>
+
+  <group>
+    <layout>hbox</layout>
+    <default-padding>0</default-padding>
+
+    <!-- Left Column -->
+    <group>
+      <layout>vbox</layout>
+      <group>
+        <layout>vbox</layout>
+        <default-padding>1</default-padding>
+
+        <!-- Cloud Layers -->
+        <group>
+          <layout>hbox</layout>
+          <text>
+            <label>Cloud Layers (All Altitudes ft-AMSL)</label>
+            <enable>
+              <property>/sim/gui/dialogs/weather-scenario/state</property>
+            </enable>
+          </text>
+          <hrule>
+            <stretch>true</stretch>
+          </hrule>
+        </group>
+
+        <group>
+          <layout>hbox</layout>
+          <group>
+            <layout>table</layout>
+
+            <text>
+              <label>Altitude (ft)</label>
+              <row>0</row>
+              <col>1</col>
+              <enable>
+                <property>/sim/gui/dialogs/weather-scenario/state</property>
+              </enable>
+            </text>
+
+            <text>
+              <label>Coverage</label>
+              <row>0</row>
+              <col>2</col>
+              <width>80</width>
+              <enable>
+                <property>/sim/gui/dialogs/weather-scenario/state</property>
+              </enable>
+            </text>
+
+            <text>
+              <label>Thickness (ft)</label>
+              <row>0</row>
+              <col>3</col>
+              <enable>
+                <property>/sim/gui/dialogs/weather-scenario/state</property>
+              </enable>
+            </text>
+
+
+            <!-- Layer 4 -->
+
+            <input>
+              <row>1</row>
+              <col>1</col>
+              <live>true</live>
+              <property>/environment/clouds/layer[4]/elevation-ft</property>
+              <binding>
+                <command>dialog-apply</command>
+              </binding>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+            </input>
+
+            <combo>
+              <row>1</row>
+              <col>2</col>
+              <pref-width>100</pref-width>
+              <live>true</live>
+              <property>/environment/clouds/layer[4]/coverage</property>
+              <value>clear</value>
+              <value>few</value>
+              <value>scattered</value>
+              <value>broken</value>
+              <value>overcast</value>
+              <value>cirrus</value>
+              <binding>
+                <command>dialog-apply</command>
+              </binding>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+            </combo>
+
+            <input>
+              <row>1</row>
+              <col>3</col>
+              <live>true</live>
+              <property>/environment/clouds/layer[4]/thickness-ft</property>
+              <binding>
+                <command>dialog-apply</command>
+              </binding>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+            </input>
+
+
+            <!-- Layer 3 -->
+
+            <input>
+              <row>2</row>
+              <col>1</col>
+              <live>true</live>
+              <property>/environment/clouds/layer[3]/elevation-ft</property>
+              <binding>
+                <command>dialog-apply</command>
+              </binding>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+            </input>
+
+            <combo>
+              <row>2</row>
+              <col>2</col>
+              <pref-width>100</pref-width>
+              <live>true</live>
+              <property>/environment/clouds/layer[3]/coverage</property>
+              <value>clear</value>
+              <value>few</value>
+              <value>scattered</value>
+              <value>broken</value>
+              <value>overcast</value>
+              <value>cirrus</value>
+              <binding>
+                <command>dialog-apply</command>
+              </binding>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+            </combo>
+
+            <input>
+              <row>2</row>
+              <col>3</col>
+              <live>true</live>
+              <property>/environment/clouds/layer[3]/thickness-ft</property>
+              <binding>
+                <command>dialog-apply</command>
+              </binding>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+            </input>
+
+
+            <!-- Layer 2 -->
+
+            <input>
+              <row>3</row>
+              <col>1</col>
+              <live>true</live>
+              <property>/environment/clouds/layer[2]/elevation-ft</property>
+              <binding>
+                <command>dialog-apply</command>
+              </binding>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+            </input>
+
+            <combo>
+              <row>3</row>
+              <col>2</col>
+              <pref-width>100</pref-width>
+              <live>true</live>
+              <property>/environment/clouds/layer[2]/coverage</property>
+              <value>clear</value>
+              <value>few</value>
+              <value>scattered</value>
+              <value>broken</value>
+              <value>overcast</value>
+              <value>cirrus</value>
+              <binding>
+                <command>dialog-apply</command>
+              </binding>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+            </combo>
+
+            <input>
+              <row>3</row>
+              <col>3</col>
+              <live>true</live>
+              <property>/environment/clouds/layer[2]/thickness-ft</property>
+              <binding>
+                <command>dialog-apply</command>
+              </binding>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+            </input>
+
+
+            <!-- Layer 1 -->
+
+            <input>
+              <row>4</row>
+              <col>1</col>
+              <live>true</live>
+              <property>/environment/clouds/layer[1]/elevation-ft</property>
+              <binding>
+                <command>dialog-apply</command>
+              </binding>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+            </input>
+
+            <combo>
+              <row>4</row>
+              <col>2</col>
+              <pref-width>100</pref-width>
+              <live>true</live>
+              <property>/environment/clouds/layer[1]/coverage</property>
+              <value>clear</value>
+              <value>few</value>
+              <value>scattered</value>
+              <value>broken</value>
+              <value>overcast</value>
+              <value>cirrus</value>
+              <binding>
+                <command>dialog-apply</command>
+              </binding>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+            </combo>
+
+            <input>
+              <row>4</row>
+              <col>3</col>
+              <live>true</live>
+              <property>/environment/clouds/layer[1]/thickness-ft</property>
+              <binding>
+                <command>dialog-apply</command>
+              </binding>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+            </input>
+
+
+            <!-- Layer 0 -->
+
+            <input>
+              <row>5</row>
+              <col>1</col>
+              <live>true</live>
+              <property>/environment/clouds/layer[0]/elevation-ft</property>
+              <binding>
+                <command>dialog-apply</command>
+              </binding>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+            </input>
+
+            <combo>
+              <row>5</row>
+              <col>2</col>
+              <pref-width>100</pref-width>
+              <live>true</live>
+              <editable>false</editable>
+              <property>/environment/clouds/layer[0]/coverage</property>
+              <value>clear</value>
+              <value>few</value>
+              <value>scattered</value>
+              <value>broken</value>
+              <value>overcast</value>
+              <value>cirrus</value>
+              <binding>
+                <command>dialog-apply</command>
+              </binding>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+            </combo>
+
+            <input>
+              <row>5</row>
+              <col>3</col>
+              <live>true</live>
+              <property>/environment/clouds/layer[0]/thickness-ft</property>
+              <binding>
+                <command>dialog-apply</command>
+              </binding>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+            </input>
+
+          </group>
+          <empty>
+            <stretch>true</stretch>
+          </empty>
+        </group>
+      </group>
+      <!-- Cloud Layers End -->
+
+      <!-- Precipitation -->
+      <group>
+        <layout>vbox</layout>
+        <default-padding>1</default-padding>
+
+        <group>
+          <layout>hbox</layout>
+          <text>
+            <label>Precipitation</label>
+        <enable>
+              <property>/sim/gui/dialogs/weather-scenario/state</property>
+            </enable>
+          </text>
+          <hrule>
+            <stretch>true</stretch>
+          </hrule>
+        </group>
+
+        <group>
+          <layout>hbox</layout>
+          <halign>fill</halign>
+          <group>
+            <layout>table</layout>
+            <text>
+              <row>0</row>
+              <col>0</col>
+              <label>Rain</label>
+          <enable>
+                <property>/sim/gui/dialogs/weather-scenario/state</property>
+              </enable>
+            </text>
+
+            <text>
+              <row>0</row>
+              <col>1</col>
+              <label>Snow</label>
+          <enable>
+                <property>/sim/gui/dialogs/weather-scenario/state</property>
+              </enable>
+            </text>
+
+            <slider>
+              <row>1</row>
+              <col>0</col>
+              <live>true</live>
+              <halign>fill</halign>
+              <property>/environment/rain-norm</property>
+              <binding>
+                <command>dialog-apply</command>
+              </binding>
+              <stretch>true</stretch>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+            </slider>
+
+            <slider>
+              <row>1</row>
+              <col>1</col>
+              <halign>fill</halign>
+              <property>/environment/snow-norm</property>
+              <live>true</live>
+              <pref-height>30</pref-height>
+              <binding>
+                <command>dialog-apply</command>
+              </binding>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+            </slider>
+
+            <text>
+              <row>0</row>
+              <col>3</col>
+              <label>QNH (inHg)</label>
+          <enable>
+                <property>/sim/gui/dialogs/weather-scenario/state</property>
+              </enable>
+            </text>
+
+            <input>
+              <name>pressure-sea-level-inhg</name>
+              <row>1</row>
+              <col>3</col>
+              <pref-width>50</pref-width>
+              <property>/environment/config/boundary/entry[0]/pressure-sea-level-inhg</property>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>pressure-sea-level-inhg</object-name>
+              </binding>
+            </input>
+
+            <empty>
+              <row>2</row>
+              <col>0</col>
+              <colspan>3</colspan>
+              <pref-height>30</pref-height>
+            </empty>
+
+          </group>
+
+          <empty>
+            <stretch>true</stretch>
+          </empty>
+        </group>
+      </group>
+      <!-- Precipitation End  -->
+    </group>
+    <!-- Left Column End -->
+
+    <vrule>
+      <stretch>true</stretch>
+    </vrule>
+
+    <!-- Right Column -->
+    <group>
+      <layout>vbox</layout>
+
+      <!-- Aloft -->
+      <group>
+        <layout>vbox</layout>
+        <default-padding>1</default-padding>
+
+        <group>
+          <layout>hbox</layout>
+          <text>
+            <label>Aloft (All Altitudes ft-AMSL)</label>
+          </text>
+          <hrule>
+            <stretch>true</stretch>
+          </hrule>
+        </group>
+
+        <group>
+          <layout>hbox</layout>
+          <group>
+            <layout>table</layout>
+            <text>
+              <row>0</row>
+              <col>0</col>
+              <label>Altitude</label>
+            </text>
+
+            <text>
+              <row>0</row>
+              <col>1</col>
+              <colspan>2</colspan>
+              <label>Wind (dir/kt)</label>
+            </text>
+
+            <text>
+              <row>0</row>
+              <col>3</col>
+              <label>Vis (m)</label>
+            </text>
+
+            <text>
+              <row>0</row>
+              <col>4</col>
+              <label>Temp (C)</label>
+            </text>
+
+            <text>
+              <row>0</row>
+              <col>5</col>
+              <label>Dewpt (C)</label>
+            </text>
+
+            <text>
+              <row>0</row>
+              <col>6</col>
+              <label>Turbulence</label>
+            </text>
+
+            <input>
+              <name>aloft-4-elevation-ft</name>
+              <row>1</row>
+              <col>0</col>
+              <pref-width>52</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/aloft/entry[4]/elevation-ft</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>aloft-4-elevation-ft</object-name>
+              </binding>
+            </input>
+
+            <input>
+              <name>aloft-4-wind-from-heading-deg</name>
+              <row>1</row>
+              <col>1</col>
+              <pref-width>40</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/aloft/entry[4]/wind-from-heading-deg</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>aloft-4-wind-from-heading-deg</object-name>
+              </binding>
+            </input>
+
+            <input>
+              <name>aloft-4-wind-speed-kt</name>
+              <row>1</row>
+              <col>2</col>
+              <pref-width>35</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/aloft/entry[4]/wind-speed-kt</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>aloft-4-wind-speed-kt</object-name>
+              </binding>
+            </input>
+
+            <input>
+              <name>aloft-4-visibility-m</name>
+              <row>1</row>
+              <col>3</col>
+              <pref-width>55</pref-width>
+              <property>/environment/config/aloft/entry[4]/visibility-m</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>aloft-4-visibility-m</object-name>
+              </binding>
+            </input>
+
+            <input>
+              <name>aloft-4-temperature-degc</name>
+              <row>1</row>
+              <col>4</col>
+              <pref-width>60</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/aloft/entry[4]/temperature-degc</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>aloft-4-temperature-degc</object-name>
+              </binding>
+            </input>
+
+            <input>
+              <name>aloft-4-dewpoint-degc</name>
+              <row>1</row>
+              <col>5</col>
+              <pref-width>60</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/aloft/entry[4]/dewpoint-degc</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>aloft-4-dewpoint-degc</object-name>
+              </binding>
+            </input>
+
+            <combo>
+              <name>aloft-4-turbulence</name>
+              <row>1</row>
+              <col>6</col>
+              <pref-width>90</pref-width>
+              <live>true</live>
+              <property>/environment/config/aloft/entry[4]/turbulence-name</property>
+              <value>none</value>
+              <value>light</value>
+              <value>moderate</value>
+              <value>severe</value>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>aloft-4-turbulence</object-name>
+              </binding>
+              <binding>
+                <command>nasal</command>
+                <script>controller.setTurbulence("aloft",4);</script>
+              </binding>
+              <!--enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable-->
+            </combo>
+
+            <input>
+              <name>aloft-3-elevation-ft</name>
+              <row>2</row>
+              <col>0</col>
+              <pref-width>52</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/aloft/entry[3]/elevation-ft</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>aloft-3-elevation-ft</object-name>
+              </binding>
+            </input>
+
+            <input>
+              <name>aloft-3-wind-from-heading-deg</name>
+              <row>2</row>
+              <col>1</col>
+              <pref-width>40</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/aloft/entry[3]/wind-from-heading-deg</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>aloft-3-wind-from-heading-deg</object-name>
+              </binding>
+            </input>
+
+            <input>
+              <name>aloft-3-wind-speed-kt</name>
+              <row>2</row>
+              <col>2</col>
+              <pref-width>35</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/aloft/entry[3]/wind-speed-kt</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>aloft-3-wind-speed-kt</object-name>
+              </binding>
+            </input>
+
+            <input>
+              <name>aloft-3-visibility-m</name>
+              <row>2</row>
+              <col>3</col>
+              <pref-width>55</pref-width>
+              <property>/environment/config/aloft/entry[3]/visibility-m</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>aloft-3-visibility-m</object-name>
+              </binding>
+            </input>
+
+            <input>
+              <name>aloft-3-temperature-degc</name>
+              <row>2</row>
+              <col>4</col>
+              <pref-width>60</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/aloft/entry[3]/temperature-degc</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>aloft-3-temperature-degc</object-name>
+              </binding>
+            </input>
+
+            <input>
+              <name>aloft-3-dewpoint-degc</name>
+              <row>2</row>
+              <col>5</col>
+              <pref-width>60</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/aloft/entry[3]/dewpoint-degc</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>aloft-3-dewpoint-degc</object-name>
+              </binding>
+            </input>
+
+            <combo>
+              <name>aloft-3-turbulence</name>
+              <row>2</row>
+              <col>6</col>
+              <pref-width>90</pref-width>
+              <live>true</live>
+              <property>/environment/config/aloft/entry[3]/turbulence-name</property>
+              <value>none</value>
+              <value>light</value>
+              <value>moderate</value>
+              <value>severe</value>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>aloft-3-turbulence</object-name>
+              </binding>
+              <binding>
+                <command>nasal</command>
+                <script>controller.setTurbulence("aloft",3);</script>
+              </binding>
+              <!--enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable-->
+            </combo>
+
+            <input>
+              <name>aloft-2-elevation-ft</name>
+              <row>3</row>
+              <col>0</col>
+              <pref-width>52</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/aloft/entry[2]/elevation-ft</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>aloft-2-elevation-ft</object-name>
+              </binding>
+            </input>
+
+            <input>
+              <name>aloft-2-wind-from-heading-deg</name>
+              <row>3</row>
+              <col>1</col>
+              <pref-width>40</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/aloft/entry[2]/wind-from-heading-deg</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>aloft-2-wind-from-heading-deg</object-name>
+              </binding>
+            </input>
+
+            <input>
+              <name>aloft-2-wind-speed-kt</name>
+              <row>3</row>
+              <col>2</col>
+              <pref-width>35</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/aloft/entry[2]/wind-speed-kt</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>aloft-2-wind-speed-kt</object-name>
+              </binding>
+            </input>
+
+            <input>
+              <name>aloft-2-visibility-m</name>
+              <row>3</row>
+              <col>3</col>
+              <pref-width>55</pref-width>
+              <property>/environment/config/aloft/entry[2]/visibility-m</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>aloft-2-visibility-m</object-name>
+              </binding>
+            </input>
+
+            <input>
+              <name>aloft-2-temperature-degc</name>
+              <row>3</row>
+              <col>4</col>
+              <pref-width>60</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/aloft/entry[2]/temperature-degc</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>aloft-2-temperature-degc</object-name>
+              </binding>
+            </input>
+
+            <input>
+              <name>aloft-2-dewpoint-degc</name>
+              <row>3</row>
+              <col>5</col>
+              <pref-width>60</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/aloft/entry[2]/dewpoint-degc</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>aloft-2-dewpoint-degc</object-name>
+              </binding>
+            </input>
+
+            <combo>
+              <name>aloft-2-turbulence</name>
+              <row>3</row>
+              <col>6</col>
+              <pref-width>90</pref-width>
+              <live>true</live>
+              <property>/environment/config/aloft/entry[2]/turbulence-name</property>
+              <value>none</value>
+              <value>light</value>
+              <value>moderate</value>
+              <value>severe</value>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>aloft-2-turbulence</object-name>
+              </binding>
+              <binding>
+                <command>nasal</command>
+                <script>controller.setTurbulence("aloft",2);</script>
+              </binding>
+              <!--enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable-->
+            </combo>
+
+
+            <input>
+              <name>aloft-1-elevation-ft</name>
+              <row>4</row>
+              <col>0</col>
+              <pref-width>52</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/aloft/entry[1]/elevation-ft</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>aloft-1-elevation-ft</object-name>
+              </binding>
+            </input>
+
+            <input>
+              <name>aloft-1-wind-from-heading-deg</name>
+              <row>4</row>
+              <col>1</col>
+              <pref-width>40</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/aloft/entry[1]/wind-from-heading-deg</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>aloft-1-wind-from-heading-deg</object-name>
+              </binding>
+            </input>
+
+            <input>
+              <name>aloft-1-wind-speed-kt</name>
+              <row>4</row>
+              <col>2</col>
+              <pref-width>35</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/aloft/entry[1]/wind-speed-kt</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>aloft-1-wind-speed-kt</object-name>
+              </binding>
+            </input>
+
+            <input>
+              <name>aloft-1-visibility-m</name>
+              <row>4</row>
+              <col>3</col>
+              <pref-width>55</pref-width>
+              <property>/environment/config/aloft/entry[1]/visibility-m</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>aloft-1-visibility-m</object-name>
+              </binding>
+            </input>
+
+            <input>
+              <name>aloft-1-temperature-degc</name>
+              <row>4</row>
+              <col>4</col>
+              <pref-width>60</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/aloft/entry[1]/temperature-degc</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>aloft-1-temperature-degc</object-name>
+              </binding>
+            </input>
+
+            <input>
+              <name>aloft-1-dewpoint-degc</name>
+              <row>4</row>
+              <col>5</col>
+              <pref-width>60</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/aloft/entry[1]/dewpoint-degc</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>aloft-1-dewpoint-degc</object-name>
+              </binding>
+            </input>
+
+            <combo>
+              <name>aloft-1-turbulence</name>
+              <row>4</row>
+              <col>6</col>
+              <pref-width>90</pref-width>
+              <live>true</live>
+              <property>/environment/config/aloft/entry[1]/turbulence-name</property>
+              <value>none</value>
+              <value>light</value>
+              <value>moderate</value>
+              <value>severe</value>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>aloft-1-turbulence</object-name>
+              </binding>
+              <binding>
+                <command>nasal</command>
+                <script>controller.setTurbulence("aloft",1);</script>
+              </binding>
+              <!--enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable-->
+            </combo>
+
+            <input>
+              <name>aloft-0-elevation-ft</name>
+              <row>5</row>
+              <col>0</col>
+              <pref-width>52</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/aloft/entry[0]/elevation-ft</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>aloft-0-elevation-ft</object-name>
+              </binding>
+            </input>
+
+            <input>
+              <name>aloft-0-wind-from-heading-deg</name>
+              <row>5</row>
+              <col>1</col>
+              <pref-width>40</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/aloft/entry[0]/wind-from-heading-deg</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>aloft-0-wind-from-heading-deg</object-name>
+              </binding>
+            </input>
+
+            <input>
+              <name>aloft-0-wind-speed-kt</name>
+              <row>5</row>
+              <col>2</col>
+              <pref-width>35</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/aloft/entry[0]/wind-speed-kt</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>aloft-0-wind-speed-kt</object-name>
+              </binding>
+            </input>
+
+            <input>
+              <name>aloft-0-visibility-m</name>
+              <row>5</row>
+              <col>3</col>
+              <pref-width>55</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/aloft/entry[0]/visibility-m</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>aloft-0-visibility-m</object-name>
+              </binding>
+            </input>
+
+            <input>
+              <name>aloft-0-temperature-degc</name>
+              <row>5</row>
+              <col>4</col>
+              <pref-width>60</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/aloft/entry[0]/temperature-degc</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>aloft-0-temperature-degc</object-name>
+              </binding>
+            </input>
+
+            <input>
+              <name>aloft-0-dewpoint-degc</name>
+              <row>5</row>
+              <col>5</col>
+              <pref-width>60</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/aloft/entry[0]/dewpoint-degc</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>aloft-0-dewpoint-degc</object-name>
+              </binding>
+            </input>
+
+            <combo>
+              <name>aloft-0-turbulence</name>
+              <row>5</row>
+              <col>6</col>
+              <pref-width>90</pref-width>
+              <live>true</live>
+              <property>/environment/config/aloft/entry[0]/turbulence-name</property>
+              <value>none</value>
+              <value>light</value>
+              <value>moderate</value>
+              <value>severe</value>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>aloft-0-turbulence</object-name>
+              </binding>
+              <binding>
+                <command>nasal</command>
+                <script>controller.setTurbulence("aloft",0);</script>
+              </binding>
+              <!--enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable-->
+            </combo>
+
+          </group>
+          <empty>
+            <stretch>true</stretch>
+          </empty>
+        </group>
+
+      </group>
+      <!-- Aloft End -->
+
+      <!-- Boundary  -->
+      <group>
+        <layout>vbox</layout>
+        <default-padding>1</default-padding>
+
+        <group>
+          <layout>hbox</layout>
+          <text>
+            <label>Boundary (All Elevations ft-AGL)</label>
+        <enable>
+              <property>/sim/gui/dialogs/weather-scenario/state</property>
+            </enable>
+          </text>
+          <hrule>
+            <stretch>true</stretch>
+          </hrule>
+        </group>
+
+        <group>
+          <layout>hbox</layout>
+          <group>
+
+            <layout>table</layout>
+
+            <text>
+              <row>0</row>
+              <col>0</col>
+              <label>Elevation</label>
+          <enable>
+                <property>/sim/gui/dialogs/weather-scenario/state</property>
+              </enable>
+            </text>
+
+            <text>
+              <row>0</row>
+              <col>1</col>
+              <colspan>2</colspan>
+              <label>Wind (dir/kt)</label>
+          <enable>
+                <property>/sim/gui/dialogs/weather-scenario/state</property>
+              </enable>
+            </text>
+
+            <text>
+              <row>0</row>
+              <col>3</col>
+              <label>Vis (m)</label>
+          <enable>
+                <property>/sim/gui/dialogs/weather-scenario/state</property>
+              </enable>
+            </text>
+
+            <text>
+              <row>0</row>
+              <col>4</col>
+              <label>Temp (C)</label>
+          <enable>
+                <property>/sim/gui/dialogs/weather-scenario/state</property>
+              </enable>
+            </text>
+
+            <text>
+              <row>0</row>
+              <col>5</col>
+              <label>Dewpt (C)</label>
+              <enable>
+                <property>/sim/gui/dialogs/weather-scenario/state</property>
+              </enable>
+            </text>
+
+            <input>
+              <name>boundary-1-elevation-ft</name>
+              <row>1</row>
+              <col>0</col>
+              <pref-width>52</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/boundary/entry[1]/elevation-ft</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>boundary-1-elevation-ft</object-name>
+              </binding>
+            </input>
+
+            <input>
+              <name>boundary-1-wind-from-heading-deg</name>
+              <row>1</row>
+              <col>1</col>
+              <pref-width>40</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/boundary/entry[1]/wind-from-heading-deg</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>boundary-1-wind-from-heading-deg</object-name>
+              </binding>
+            </input>
+
+            <input>
+              <name>boundary-1-wind-speed-kt</name>
+              <row>1</row>
+              <col>2</col>
+              <pref-width>35</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/boundary/entry[1]/wind-speed-kt</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>boundary-1-wind-speed-kt</object-name>
+              </binding>
+            </input>
+
+            <input>
+              <name>boundary-1-visibility-m</name>
+              <row>1</row>
+              <col>3</col>
+              <pref-width>55</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/boundary/entry[1]/visibility-m</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>boundary-1-visibility-m</object-name>
+              </binding>
+            </input>
+
+            <input>
+              <name>boundary-1-temperature-degc</name>
+              <row>1</row>
+              <col>4</col>
+              <pref-width>60</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/boundary/entry[1]/temperature-degc</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>boundary-1-temperature-degc</object-name>
+              </binding>
+            </input>
+
+            <input>
+              <name>boundary-1-dewpoint-degc</name>
+              <row>1</row>
+              <col>5</col>
+              <pref-width>60</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/boundary/entry[1]/dewpoint-degc</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>boundary-1-dewpoint-degc</object-name>
+              </binding>
+            </input>
+
+            <combo>
+              <name>boundary-1-turbulence</name>
+              <row>1</row>
+              <col>6</col>
+              <pref-width>90</pref-width>
+              <live>true</live>
+              <property>/environment/config/boundary/entry[1]/turbulence-name</property>
+              <value>none</value>
+              <value>light</value>
+              <value>moderate</value>
+              <value>severe</value>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>boundary-1-turbulence</object-name>
+              </binding>
+              <binding>
+                <command>nasal</command>
+                <script>controller.setTurbulence("boundary",1);</script>
+              </binding>
+              <!--enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable-->
+            </combo>
+
+            <input>
+              <name>boundary-0-elevation-ft</name>
+              <row>2</row>
+              <col>0</col>
+              <pref-width>52</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/boundary/entry[0]/elevation-ft</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>boundary-0-elevation-ft</object-name>
+              </binding>
+            </input>
+
+            <input>
+              <name>boundary-0-wind-from-heading-deg</name>
+              <row>2</row>
+              <col>1</col>
+              <pref-width>40</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/boundary/entry[0]/wind-from-heading-deg</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>boundary-0-wind-from-heading-deg</object-name>
+              </binding>
+            </input>
+
+            <input>
+              <name>boundary-0-wind-speed-kt</name>
+              <row>2</row>
+              <col>2</col>
+              <pref-width>35</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/boundary/entry[0]/wind-speed-kt</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>boundary-0-wind-speed-kt</object-name>
+              </binding>
+            </input>
+
+            <input>
+              <name>boundary-0-visibility-m</name>
+              <row>2</row>
+              <col>3</col>
+              <pref-width>55</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/boundary/entry[0]/visibility-m</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>boundary-0-visibility-m</object-name>
+              </binding>
+            </input>
+
+            <input>
+              <name>boundary-0-temperature-degc</name>
+              <row>2</row>
+              <col>4</col>
+              <pref-width>60</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/boundary/entry[0]/temperature-degc</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>boundary-0-temperature-degc</object-name>
+              </binding>
+            </input>
+
+            <input>
+              <name>boundary-0-dewpoint-degc</name>
+              <row>2</row>
+              <col>5</col>
+              <pref-width>60</pref-width>
+              <enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable>
+              <property>/environment/config/boundary/entry[0]/dewpoint-degc</property>
+              <live>true</live>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>boundary-0-dewpoint-degc</object-name>
+              </binding>
+            </input>
+
+            <combo>
+              <name>boundary-0-turbulence</name>
+              <row>2</row>
+              <col>6</col>
+              <pref-width>90</pref-width>
+              <live>true</live>
+              <property>/environment/config/boundary/entry[0]/turbulence-name</property>
+              <value>none</value>
+              <value>light</value>
+              <value>moderate</value>
+              <value>severe</value>
+              <binding>
+                <command>dialog-apply</command>
+                <object-name>boundary-0-turbulence</object-name>
+              </binding>
+              <binding>
+                <command>nasal</command>
+                <script>controller.setTurbulence("boundary",0);</script>
+              </binding>
+              <!--enable>
+                <equals>
+                  <property>/sim/gui/dialogs/weather-scenario/state</property>
+                  <value type="int">1</value>
+                </equals>
+              </enable-->
+            </combo>
+
+          </group>
+          <empty>
+            <stretch>true</stretch>
+          </empty>
+        </group>
+
+      </group>
+      <!-- Boundary  End -->
+
+    </group>
+    <!-- Right Column -->
+
+  </group>
+
+  <group>
+    <layout>vbox</layout>
+
+    <!-- Automatic Weather -->
+    <group>
+      <layout>hbox</layout>
+      <text>
+        <label>Automatic Weather Generation</label>
+      </text>
+      <hrule>
+        <stretch>true</stretch>
+      </hrule>
+    </group>
+
+    <group>
+      <layout>hbox</layout>
+      <text>
+        <label>METAR Source</label>
+      </text>
+      <combo>
+        <name>source-selection</name>
+        <halign>fill</halign>
+        <stretch>true</stretch>
+        <property>sim/gui/dialogs/weather-scenario/source-selection</property>
+        <binding>
+          <command>dialog-apply</command>
+          <object-name>source-selection</object-name>
+        </binding>
+        <binding>
+          <command>dialog-update</command>
+          <object-name>metar</object-name>
+        </binding>
+      </combo>
+
+      <checkbox>
+        <name>metar-updates-winds-aloft</name>
+        <property>/environment/params/metar-updates-winds-aloft</property>
+        <label>Update winds aloft</label>
+        <live>true</live>
+        <binding>
+          <command>dialog-apply</command>
+          <object-name>metar-updates-winds-aloft</object-name>
+        </binding>
+      </checkbox>
+
+    </group>
+
+    <textbox>
+      <name>description</name>
+      <halign>fill</halign>
+      <stretch>true</stretch>
+      <pref-width>180</pref-width>
+      <pref-height>60</pref-height>
+      <slider>20</slider>
+      <editable>false</editable>
+      <wrap>true</wrap>
+      <live>true</live>
+      <property>sim/gui/dialogs/weather-scenario/description</property>
+    </textbox>
+
+    <group>
+      <layout>hbox</layout>
+      <text>
+        <label>METAR Data</label>
+      </text>
+      <empty>
+        <stretch>true</stretch>
+      </empty>
+      <text>
+        <label>Data is valid</label>
+      </text>
+      <checkbox>
+        <property>/environment/metar/valid</property>
+        <label/>
+        <live>true</live>
+        <enable><false/></enable>
+      </checkbox>
+    </group>
+
+    <group>
+      <layout>hbox</layout>
+      <textbox>
+        <name>metar</name>
+        <halign>fill</halign>
+        <stretch>true</stretch>
+        <pref-width>180</pref-width>
+        <pref-height>50</pref-height>
+        <slider>20</slider>
+        <editable>true</editable>
+        <wrap>true</wrap>
+        <live>false</live>
+        <property>sim/gui/dialogs/weather-scenario/metar</property>
+        <enable>
+          <greater-than>
+            <property>/sim/gui/dialogs/weather-scenario/state</property>
+            <value type="int">1</value>
+          </greater-than>>
+        </enable>
+        <binding>
+          <command>dialog-apply</command>
+          <object-name>metar</object-name>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>
+            setprop( "/environment/metar/data", getprop( "sim/gui/dialogs/weather-scenario/metar") );
+          </script>
+        </binding>
+      </textbox>
+      <button>
+        <legend>Apply</legend>
+        <key>Esc</key>
+        <pref-width>50</pref-width>
+        <pref-height>50</pref-height>
+        <border>2</border>
+        <binding>
+          <command>dialog-apply</command>
+          <object-name>metar</object-name>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>
+            setprop( "/environment/metar/data", getprop( "sim/gui/dialogs/weather-scenario/metar") );
+          </script>
+        </binding>
+      </button>
+    </group>
+
+    <!-- Automatic Weather -->
+
+  </group>
+
+  <hrule/>
+
+  <button>
+    <legend>Close</legend>
+    <default>true</default>
+    <key>Esc</key>
+    <binding>
+      <command>dialog-close</command>
+    </binding>
+  </button>
+
+  <nasal>
+    <open><![CDATA[
+        var normalize_string = func(src) {
+          if( src == nil ) src = "";
+          var dst = "";
+          for( var i = 0; i < size(src); i+=1 ) {
+            if( src[i] == `\n` or src[i] == `\r` )
+              src[i] = ` `;
+
+            if( i != 0 and src[i] == ` ` and src[i-1] == ` ` )
+              continue;
+
+            dst = dst ~ " ";
+            dst[size(dst)-1] = src[i];
+          }
+          return dst;
+        }
+
+      var GlobalWeatherDialogController = {
+
+        new : func( dlgRoot ) {
+          var obj = { parents: [GlobalWeatherDialogController] };
+          obj.dlgRoot = dlgRoot;
+          obj.base = "sim/gui/dialogs/weather-scenario";
+          obj.baseN = props.globals.getNode( obj.base, 1 );
+
+          return obj;
+        },
+
+        open : func {
+          for( var i = 0; i < 5; i+=1 )
+            me.initTurbulence("aloft", i );
+
+          for( var i = 0; i < 2; i+=1 )
+            me.initTurbulence("boundary", i );
+           
+          #initialize the METAR source selection
+          if( getprop( "environment/params/metar-updates-environment" ) == 0 ) {
+            setprop( me.base ~ "/source-selection", "Disabled" );
+          } else if( getprop( "environment/realwx/enabled" ) ) {
+            setprop( me.base ~ "/source-selection", "Live data" );
+          } else {
+            # preset configured scenario
+            var wsn = props.globals.getNode( "/environment/weather-scenarios" );
+            var found = 0;
+            if( wsn != nil ) {
+              var scenarios = wsn.getChildren("scenario");
+              forindex (var i; scenarios ) {
+                var metarN = scenarios[i].getNode("metar");
+                metarN == nil and continue;
+                if( metarN.getValue() == getprop("/environment/metar/data","") ) {
+                  setprop( me.base ~ "/source-selection", scenarios[i].getNode("name").getValue() );
+                  found = 1;
+                  break;
+                }
+              }
+            }
+            if( found == 0 )
+              setprop( me.base ~ "/source-selection", "Manual input" );
+          }
+          setprop( me.base ~ "/metar", normalize_string(getprop("environment/metar/data")) );
+
+
+          # fill the METAR source combo box
+          var combo = me.findElementByName( me.dlgRoot, "source-selection" );
+          var wsn = props.globals.getNode( "/environment/weather-scenarios" );
+          if( wsn != nil ) {
+            var scenarios = wsn.getChildren("scenario");
+            forindex (var i; scenarios )
+              combo.getChild("value", i, 1).setValue(scenarios[i].getNode("name").getValue());
+          }
+
+          me.scenarioListenerId = setlistener( me.base ~ "/source-selection", func(n) { me.scenarioListener(n); }, 1, 1 );
+          me.metarListenerId = setlistener( "environment/metar/valid", func(n) { me.metarListener(n); }, 1, 1 );
+        },
+
+        close : func {
+          removelistener( me.scenarioListenerId );
+          removelistener( me.metarListenerId );
+        },
+
+        stateChange : func {
+          var scenarioName = getprop( me.base ~ "/source-selection");
+          var metar = getprop( "environment/metar/data" );
+          if( scenarioName == "Disabled" ) {
+            setprop( "/environment/params/metar-updates-environment", 0 );
+            setprop( "/environment/realwx/enabled", 0 );
+            setprop( "/environment/config/enabled", 0 );
+            me.baseN.getNode("state",1).setIntValue( 1 );
+            metar = "";
+          } else if( scenarioName == "Live data" ) {
+            setprop( "/environment/params/metar-updates-environment", 1 );
+            setprop( "/environment/realwx/enabled", 1 );
+            setprop( "/environment/config/enabled", 1 );
+            me.baseN.getNode("state",1).setIntValue( 0 );
+          } else if( scenarioName == "Manual input" ) {
+            setprop( "/environment/params/metar-updates-environment", 1 );
+            setprop( "/environment/realwx/enabled", 0 );
+            setprop( "/environment/config/enabled", 1 );
+            me.baseN.getNode("state",1).setIntValue( 2 );
+          } else {
+            setprop( "/environment/params/metar-updates-environment", 1 );
+            setprop( "/environment/realwx/enabled", 0 );
+            setprop( "/environment/config/enabled", 1 );
+            metar = getprop( me.base ~ "/metar" );
+            me.baseN.getNode("state",1).setIntValue( 0 );
+          }
+          if( metar != nil )
+            setprop( "environment/metar/data", normalize_string(metar) );
+        },
+
+        findScenarioByName : func(name) {
+          var wsn = props.globals.getNode( "/environment/weather-scenarios" );
+          if( wsn != nil ) {
+            var scenarios = wsn.getChildren("scenario");
+            foreach (var scenario; scenarios ) {
+              if( scenario.getNode("name").getValue() == name )
+                return scenario;
+            }
+          }
+          return nil;
+        },
+
+        findElementByName : func(base,name) {
+          foreach( var child; base.getChildren() ) {
+            var n = child.getNode( "name" );
+            if( n != nil and n.getValue() == name )
+              return child;
+            var f = me.findElementByName(child,name);
+            if( f != nil ) return f;
+          }
+          return nil;
+        },
+
+        scenarioListener : func( n ) {
+          description = "";
+          metar = "nil";
+          var scenario = me.findScenarioByName( n.getValue() );
+          if( scenario != nil ) {
+            description = normalize_string(scenario.getNode("description", 1 ).getValue());
+            metar = normalize_string(scenario.getNode("metar", 1 ).getValue());
+          }
+          setprop(me.base ~ "/description", description );
+          setprop(me.base ~ "/metar", metar );
+          me.stateChange();
+        },
+
+        metarListener : func( n ) {
+          var metar = getprop("environment/metar/data");
+          if( metar == nil or metar == "" ) metar = "NIL";
+          metar = normalize_string(metar);
+          printlog( "info", "new METAR: " ~ metar );
+          setprop( me.base ~ "/metar", metar );
+          gui.dialog_update( "weather", "metar" );
+        },
+
+        setTurbulence : func( where, idx ) {
+          var propPath = "/environment/config/" ~ where ~ "/entry[" ~ idx ~ "]/";
+          setprop( propPath ~ "turbulence/magnitude-norm", 
+            me.turbulenceNames[getprop(propPath ~ "turbulence-name")]/(size(me.turbulenceNames)-1) );
+        },
+
+        initTurbulence : func( where, idx ) {
+          var propPath = "/environment/config/" ~ where ~ "/entry[" ~ idx ~ "]/";
+          var turb = getprop( propPath ~ "turbulence/magnitude-norm" ) * (size(me.turbulenceNames)-1);
+          turb = int(int(10*turb+5)/10); # round to nearest integer
+          foreach( var t; keys(me.turbulenceNames) ) {
+            if( me.turbulenceNames[t] == turb ) {
+              setprop( propPath ~ "turbulence-name", t );
+              break;
+            }
+          }
+        },
+
+        turbulenceNames : { "none" : 0, "light" : 1, "moderate" : 2, "severe" : 3 },
+
+      };
+
+      var controller = GlobalWeatherDialogController.new( cmdarg() );
+      controller.open();
+    ]]></open>
+
+    <close><![CDATA[
+      controller.close();
+    ]]></close>
+  </nasal>
+</PropertyList>

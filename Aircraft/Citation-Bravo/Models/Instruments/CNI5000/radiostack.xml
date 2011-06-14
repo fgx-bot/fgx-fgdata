@@ -1,0 +1,384 @@
+<?xml version="1.0"?>
+<!--
+Allied Signal CNI-5000 radio stack
+-->
+<PropertyList>
+
+    <name>Allied Signal Radio</name>
+    <w-base>400</w-base>
+    <h-base>600</h-base>
+    <w>400</w>
+    <h>600</h>
+
+    <layers>
+
+<!-- Comm 1-->
+
+        <layer>
+            <name>comm1 used</name>
+            <condition>
+                <greater-than>
+                    <property>systems/electrical/outputs/comm</property>
+                    <value>5</value>
+                </greater-than>
+            </condition>
+            <type>text</type>
+            <font>led</font>
+            <point-size>9</point-size>
+            <color>
+                <red>0.75</red>
+                <green>0.24</green>
+                <blue>0.05</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>number-value</type>
+                    <property>instrumentation/comm[0]/frequencies/selected-mhz</property>
+                    <scale>0.999992</scale>
+                    <format>%04.2f</format>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-142</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>252</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <name>comm1 channel</name>
+            <condition>
+                <greater-than>
+                    <property>systems/electrical/outputs/comm</property>
+                    <value>5</value>
+                </greater-than>
+            </condition>
+            <type>text</type>
+            <font>led</font>
+            <point-size>9</point-size>
+            <color>
+                <red>0.75</red>
+                <green>0.24</green>
+                <blue>0.05</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>number-value</type>
+                    <property>instrumentation/comm[0]/frequencies/standby-mhz</property>
+                    <scale>0.999992</scale>
+                    <format>%04.2f</format>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-30</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>252</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+<!-- Comm 2-->
+
+        <layer>
+            <name>comm2 used</name>
+            <condition>
+                <greater-than>
+                    <property>systems/electrical/outputs/comm[1]</property>
+                    <value>5</value>
+                </greater-than>
+            </condition>
+            <type>text</type>
+            <font>led</font>
+            <point-size>9</point-size>
+            <color>
+                <red>0.75</red>
+                <green>0.24</green>
+                <blue>0.05</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>number-value</type>
+                    <property>instrumentation/comm[1]/frequencies/selected-mhz</property>
+                    <scale>0.999992</scale>
+                    <format>%04.2f</format>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-142</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>170</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <name>comm2 channel</name>
+            <condition>
+                <greater-than>
+                    <property>systems/electrical/outputs/comm[1]</property>
+                    <value>5</value>
+                </greater-than>
+            </condition>
+            <type>text</type>
+            <font>led</font>
+            <point-size>9</point-size>
+            <color>
+                <red>0.75</red>
+                <green>0.24</green>
+                <blue>0.05</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>number-value</type>
+                    <property>instrumentation/comm[1]/frequencies/standby-mhz</property>
+                    <scale>0.999992</scale>
+                    <format>%04.2f</format>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-30</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>170</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+<!-- NAV 1-->
+
+        <layer>
+            <name>nav1 used</name>
+            <condition>
+                <greater-than>
+                    <property>systems/electrical/outputs/nav[0]</property>
+                    <value>5</value>
+                </greater-than>
+            </condition>
+            <type>text</type>
+            <font>led</font>
+            <point-size>9</point-size>
+            <color>
+                <red>0.75</red>
+                <green>0.24</green>
+                <blue>0.05</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>number-value</type>
+                    <property>instrumentation/nav[0]/frequencies/selected-mhz</property>
+                    <scale>0.999992</scale>
+                    <format>%04.2f</format>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-142</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>88</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <name>nav1 channel</name>
+            <condition>
+                <greater-than>
+                    <property>systems/electrical/outputs/nav[0]</property>
+                    <value>5</value>
+                </greater-than>
+            </condition>
+            <type>text</type>
+            <font>led</font>
+            <point-size>9</point-size>
+            <color>
+                <red>0.75</red>
+                <green>0.24</green>
+                <blue>0.05</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>number-value</type>
+                    <property>instrumentation/nav[0]/frequencies/standby-mhz</property>
+                    <scale>0.999992</scale>
+                    <format>%04.2f</format>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-30</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>88</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+<!-- NAV 2-->
+
+        <layer>
+            <name>nav2 used</name>
+            <condition>
+                <greater-than>
+                    <property>systems/electrical/outputs/nav[1]</property>
+                    <value>5</value>
+                </greater-than>
+            </condition>
+            <type>text</type>
+            <font>led</font>
+            <point-size>9</point-size>
+            <color>
+                <red>0.75</red>
+                <green>0.24</green>
+                <blue>0.05</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>number-value</type>
+                    <property>instrumentation/nav[1]/frequencies/selected-mhz</property>
+                    <scale>0.999992</scale>
+                    <format>%04.2f</format>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-142</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>6</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <name>nav1 channel</name>
+            <condition>
+                <greater-than>
+                    <property>systems/electrical/outputs/nav[1]</property>
+                    <value>5</value>
+                </greater-than>
+            </condition>
+            <type>text</type>
+            <font>led</font>
+            <point-size>9</point-size>
+            <color>
+                <red>0.75</red>
+                <green>0.24</green>
+                <blue>0.05</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>number-value</type>
+                    <property>instrumentation/nav[1]/frequencies/standby-mhz</property>
+                    <scale>0.999992</scale>
+                    <format>%04.2f</format>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-30</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>6</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+<!-- ADF -->
+
+        <layer>
+            <name>adf frq</name>
+            <condition>
+                <greater-than>
+                    <property>systems/electrical/outputs/adf</property>
+                    <value>5</value>
+                </greater-than>
+            </condition>
+            <type>text</type>
+            <font>led</font>
+            <point-size>9</point-size>
+            <color>
+                <red>0.75</red>
+                <green>0.24</green>
+                <blue>0.05</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>number-value</type>
+                    <property>instrumentation/kr-87/outputs/selected-khz</property>
+                    <format>%03.0f</format>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-105</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>-78</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <name>adf stby</name>
+            <condition>
+                <greater-than>
+                    <property>systems/electrical/outputs/adf</property>
+                    <value>5</value>
+                </greater-than>
+            </condition>
+            <type>text</type>
+            <font>led</font>
+            <point-size>9</point-size>
+            <color>
+                <red>0.75</red>
+                <green>0.24</green>
+                <blue>0.05</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>number-value</type>
+                    <property>instrumentation/kr-87/outputs/standby-khz</property>
+                    <format>%03.0f</format>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>0</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>-78</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+    </layers>
+</PropertyList>

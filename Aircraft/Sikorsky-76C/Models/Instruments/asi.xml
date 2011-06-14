@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+    <path>asi.ac</path>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>ASI.needle</object-name>
+        <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>20.0</ind><dep>15.0</dep></entry>
+            <entry><ind>40.0</ind><dep>75.0</dep></entry>
+            <entry><ind>80.0</ind><dep>180.0</dep></entry>
+            <entry><ind>120.0</ind><dep>243.0</dep></entry>
+            <entry><ind>160.0</ind><dep>305.0</dep></entry>
+            <entry><ind>200.0</ind><dep>345.0</dep></entry>
+        </interpolation>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>-0</z>
+        </axis>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+        </center>
+    </animation>
+</PropertyList>

@@ -1,0 +1,80 @@
+AC3Db
+MATERIAL "ac3dmat1" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 1 1 1  shi 0  trans 0
+OBJECT world
+kids 4
+OBJECT poly
+name "rect"
+loc 95.3708 352.306 -7.56131
+texture "cumulus_textures.rgb"
+crease 45.000000
+numvert 4
+-3.05176e-05 -418.25 -567.41
+3.05176e-05 -418.25 567.41
+3.05176e-05 418.25 567.41
+-3.05176e-05 418.25 -567.41
+numsurf 1
+SURF 0x30
+mat 0
+refs 4
+3 0 0.666016
+2 0.621094 0.666016
+1 0.621094 0.246094
+0 0 0.246094
+kids 0
+OBJECT poly
+name "rect"
+loc 6.57669 254.034 -10.5386
+texture "cumulus_textures1.rgb"
+crease 45.000000
+numvert 4
+-2.67029e-05 -290.666 -442.459
+2.67029e-05 -290.666 442.459
+2.67029e-05 290.666 442.459
+-2.67029e-05 290.666 -442.459
+numsurf 1
+SURF 0x30
+mat 0
+refs 4
+3 0.0351562 0.601563
+2 0.386719 0.601563
+1 0.386719 0.38086
+0 0.0351562 0.38086
+kids 0
+OBJECT poly
+name "rect"
+loc -48.8187 168.041 122.288
+texture "cumulus_textures.rgb"
+crease 45.000000
+numvert 4
+-3.8147e-05 -174.4 -549.036
+3.05176e-05 -174.4 549.037
+3.05176e-05 174.4 549.037
+-3.8147e-05 174.4 -549.036
+numsurf 1
+SURF 0x30
+mat 0
+refs 4
+3 0.613281 0.599609
+2 0.976562 0.599609
+1 0.976562 0.449219
+0 0.613281 0.449219
+kids 0
+OBJECT poly
+name "rect"
+loc -137.797 201.952 -275.706
+texture "cumulus_textures.rgb"
+crease 45.000000
+numvert 4
+-3.05176e-05 -176.015 -195.392
+0 -176.015 195.392
+0 176.015 195.392
+-3.05176e-05 176.015 -195.392
+numsurf 1
+SURF 0x30
+mat 0
+refs 4
+3 0.658203 0.988281
+2 0.974609 0.988281
+1 0.974609 0.695312
+0 0.658203 0.695312
+kids 0

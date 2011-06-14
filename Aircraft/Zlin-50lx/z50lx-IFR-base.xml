@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <sim include="Nasal/views.xml">
+
+    <author>Emmanuel BARANGER (3D), Pierre GEOFFROY (FDM), Sebastien MARQUE (Panel), Laurent HAYVEL (Texture), Victhor (IRF Mod)</author>
+    <aircraft-version>0.1</aircraft-version>
+    <status>Alpha</status>
+
+    <fuel-fraction>0.75</fuel-fraction>
+
+    <startup>
+      <splash-texture>Aircraft/Zlin-50lx/z50lx-splash.png</splash-texture>
+    </startup>
+
+    <instrumentation>
+      <encoder>
+        <name>encoder</name>
+        <number>0</number>
+      </encoder>
+      <dme>
+        <name>dme</name>
+        <number>0</number>
+      </dme>     
+      <nav-radio>
+        <name>nav</name>
+        <number>0</number>
+      </nav-radio>
+    </instrumentation>
+
+    <systems>
+      <autopilot>
+        <path>Aircraft/Zlin-50lx/Models/Interior/Panel/Instruments/kap140/KAP140.xml</path>
+      </autopilot>
+    </systems>
+
+    <sound>
+      <path archive="y">Aircraft/Zlin-50lx/Sounds/z50lx-sound.xml</path>
+    </sound>
+
+    <model>
+      <path archive="y">Aircraft/Zlin-50lx/Models/z50lx-IFR.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+      <instrument-lighting>
+        <emission>
+          <red>   1.0 </red>
+          <green> 0.2 </green>
+          <blue>  0.0 </blue>
+        </emission>
+      </instrument-lighting>
+      <hide-fiche type="bool"> 0 </hide-fiche>
+    </model>
+
+    <panel>
+      <visibility archive="y">false</visibility>
+    </panel>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic> 
+        <int type="int">0</int>  <!-- 0 immat -->
+        <int type="int">0</int>  <!-- 1 immat -->
+        <int type="int">0</int>  <!-- 2 immat -->
+        <int type="int">0</int>  <!-- 3 immat -->
+        <int type="int">0</int>  <!-- 4 immat -->
+        <int type="int">0</int>  <!-- 5 immat -->
+        <int type="bool">0</int> <!-- 6 smoke -->
+        <int type="int">0</int>  <!-- 7 color -->
+        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
+        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
+      </generic>
+    </multiplay>
+
+    <help>
+      <title>Zlin z50 lx</title>
+      <key>
+        <name>d</name>
+        <desc>Open/Close canopy</desc>
+      </key>
+      <key>
+        <name>S</name>
+        <desc>Start smoke</desc>
+      </key>
+      <key>
+        <name>u</name>
+        <desc>Stop smoke</desc>
+      </key>
+    </help>
+
+    <weight n="0">
+      <name>Pilot</name>
+      <weight-lb>175</weight-lb>
+      <max-lb>200</max-lb>
+    </weight>
+
+    <menubar include="Dialogs/z50lx-menu.xml"/>
+
+  </sim>
+  
+  <controls>
+    <smoke alias="/sim/multiplay/generic/int[6]"/>
+    <lighting>
+     <instruments-norm>1</instruments-norm>
+     <panel-norm>1</panel-norm>
+    </lighting>
+  </controls>
+
+  <instrumentation>
+    <kcs55 include="Models/Interior/Panel/Instruments/kcs55/kcs55.xml"/>
+    <encoder>
+      <serviceable type="bool">1</serviceable>
+    </encoder>
+  </instrumentation>
+ 
+  <input>
+    <keyboard include="Nasal/z50lx-keyboard.xml"/>
+  </input>
+
+  <nasal>
+    <doors>
+      <file>Aircraft/Zlin-50lx/Nasal/doors.nas</file>
+    </doors>
+    <z50lx>
+      <file>Aircraft/Zlin-50lx/Nasal/fluids.nas</file>
+      <file>Aircraft/Zlin-50lx/Nasal/liveries.nas</file>
+      <file>Aircraft/Zlin-50lx/Nasal/immat.nas</file>
+      <file>Aircraft/Zlin-50lx/Nasal/light.nas</file>
+      <file>Aircraft/Zlin-50lx/Models/Interior/Panel/Instruments/kcs55/kcs55.nas</file>
+            <script><![CDATA[
+              KCS55.new();
+            ]]></script>
+    </z50lx>
+    <kap140>
+      <file>Aircraft/Generic/kap140.nas</file>
+      <!-- We can set some variables that might be
+           aircraft specific. We must do it after the file
+           to override the ones that are in the .nas file.-->
+      <script><![CDATA[
+                     headingNeedleDeflection = "/instrumentation/nav/heading-needle-deflection";
+                     gsNeedleDeflection = "/instrumentation/nav/gs-needle-deflection";
+                     staticPressure = "systems/static/pressure-inhg";
+        ]]>
+      </script>
+    </kap140>
+    <ki266>
+      <file>Aircraft/Instruments-3d/ki266/ki266.nas</file>
+      <script><![CDATA[
+        ki266.new(0);
+      ]]></script>
+    </ki266>
+  </nasal>
+
+</PropertyList>

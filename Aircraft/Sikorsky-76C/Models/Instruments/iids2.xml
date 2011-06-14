@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+    <path>iids2.ac</path>
+
+
+    <animation>
+        <type>select</type>
+        <object-name>Fltxt</object-name>
+        <condition>
+            <greater-than>
+                <property>consumables/fuel/total-fuel-lbs</property>
+                <value>999.999</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Fltxt.001</object-name>
+        <condition>
+            <greater-than>
+                <property>consumables/fuel/total-fuel-lbs</property>
+                <value>99.999</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Fltxt</object-name>
+        <property>consumables/fuel/total-fuel-lbs</property>
+        <factor>0.0001</factor>
+        <step>1000</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Fltxt.001</object-name>
+        <property>consumables/fuel/total-fuel-lbs</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Fltxt.002</object-name>
+        <property>consumables/fuel/total-fuel-lbs</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Fltxt.003</object-name>
+        <property>consumables/fuel/total-fuel-lbs</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Flbar1</object-name>
+        <property>consumables/fuel/tank[0]/level-lbs</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0</dep></entry>
+            <entry><ind>1000</ind><dep>0.22</dep></entry>
+        </interpolation>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Flbar2</object-name>
+        <property>consumables/fuel/tank[1]/level-lbs</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0</dep></entry>
+            <entry><ind>1000</ind><dep>0.22</dep></entry>
+        </interpolation>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+</PropertyList>

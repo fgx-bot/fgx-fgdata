@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<trafficlist>
+
+  <aircraft>
+    <model>AI/Aircraft/747-400/747-400-Lufthansa.xml</model>
+    <livery>DLH</livery>
+    <airline>DLH</airline>
+    <actype>B747-430</actype>
+    <offset>14</offset>
+    <radius>42</radius>
+    <flighttype>gate</flighttype>
+    <performance-class>jet_transport</performance-class>
+    <registration>D-ABLX</registration>
+    <heavy>true</heavy>
+
+  <flight>
+    <callsign>DLH4549LX</callsign>
+    <fltrules>IFR</fltrules>
+    <departure>
+      <port>KLAX</port>
+      <time>09:55:00</time>
+    </departure>
+    <cruise-alt>350</cruise-alt>
+    <arrival>
+      <port>EDDF</port>
+      <time>20:35:00</time>
+    </arrival>
+    <repeat>24Hr</repeat>
+  </flight>
+
+  <flight>
+    <callsign>DLH4559LX</callsign>
+    <fltrules>IFR</fltrules>
+    <departure>
+      <port>EDDF</port>
+      <time>21:55:00</time>
+    </departure>
+    <cruise-alt>370</cruise-alt>
+    <arrival>
+      <port>KLAX</port>
+      <time>08:35:00</time>
+    </arrival>
+    <repeat>24Hr</repeat>
+  </flight>
+
+  </aircraft>
+
+  <aircraft>
+    <model>AI/Aircraft/747-400/747-400-Lufthansa.xml</model>
+    <livery>DLH</livery>
+    <airline>DLH</airline>
+    <actype>B747-430</actype>
+    <offset>14</offset>
+    <radius>42</radius>
+    <flighttype>gate</flighttype>
+    <performance-class>jet_transport</performance-class>
+    <registration>D-ACLX</registration>
+    <heavy>true</heavy>
+
+  <flight>
+    <callsign>DLH4548LX</callsign>
+    <fltrules>IFR</fltrules>
+    <departure>
+      <port>KLAX</port>
+      <time>13:55:00</time>
+    </departure>
+    <cruise-alt>350</cruise-alt>
+    <arrival>
+      <port>EDDF</port>
+      <time>24:35:00</time>
+    </arrival>
+    <repeat>24Hr</repeat>
+  </flight>
+
+  <flight>
+    <callsign>DLH4558LX</callsign>
+    <fltrules>IFR</fltrules>
+    <departure>
+      <port>EDDF</port>
+      <time>01:55:00</time>
+    </departure>
+    <cruise-alt>370</cruise-alt>
+    <arrival>
+      <port>KLAX</port>
+      <time>12:35:00</time>
+    </arrival>
+    <repeat>24Hr</repeat>
+  </flight>
+
+  </aircraft>
+
+  <aircraft>
+    <model>AI/Aircraft/747-400/747-400-Lufthansa.xml</model>
+    <livery>DLH</livery>
+    <airline>DLH</airline>
+    <actype>B747-430</actype>
+    <offset>14</offset>
+    <radius>42</radius>
+    <flighttype>gate</flighttype>
+    <performance-class>jet_transport</performance-class>
+    <registration>D-ADLX</registration>
+    <heavy>true</heavy>
+
+  <flight>
+    <callsign>DLH4547LX</callsign>
+    <fltrules>IFR</fltrules>
+    <departure>
+      <port>KLAX</port>
+      <time>17:55:00</time>
+    </departure>
+    <cruise-alt>350</cruise-alt>
+    <arrival>
+      <port>EDDF</port>
+      <time>04:35:00</time>
+    </arrival>
+    <repeat>24Hr</repeat>
+  </flight>
+
+  <flight>
+    <callsign>DLH4557LX</callsign>
+    <fltrules>IFR</fltrules>
+    <departure>
+      <port>EDDF</port>
+      <time>05:55:00</time>
+    </departure>
+    <cruise-alt>370</cruise-alt>
+    <arrival>
+      <port>KLAX</port>
+      <time>16:35:00</time>
+    </arrival>
+    <repeat>24Hr</repeat>
+  </flight>
+
+  </aircraft>
+
+</trafficlist>

@@ -1,0 +1,296 @@
+<?xml version="1.0"?>
+
+<!-- Schleicher ASK 21 Glider by Heiko Schulz -->
+
+<PropertyList>
+
+ <path>ask21.ac</path>
+ <offsets>
+   <x-m>1.5</x-m>
+   <y-m>0</y-m>
+   <z-m>-0.35</z-m>
+   <pitch-deg>0.0</pitch-deg>
+ </offsets>
+
+
+<animation>
+  <type>rotate</type>
+  <object-name>leftaileron</object-name>      
+    <property>controls/flight/aileron</property>
+  <factor>-24</factor>
+ <axis>
+   <x1-m>-0.820</x1-m>
+   <y1-m>-5.116</y1-m>
+   <z1-m>1.076</z1-m>
+   <x2-m>-1.143</x2-m>
+   <y2-m>-7.886</y2-m>
+   <z2-m>1.275</z2-m>
+   </axis>
+ </animation>
+ 
+ <animation>
+  <type>rotate</type>
+  <object-name>rightaileron</object-name>      
+    <property>controls/flight/aileron</property>
+  <factor>-24</factor>
+ <axis>
+   <x1-m>-0.820</x1-m>
+   <y1-m>5.116</y1-m>
+   <z1-m>1.076</z1-m>
+   <x2-m>-1.143</x2-m>
+   <y2-m>7.886</y2-m>
+   <z2-m>1.275</z2-m>
+   </axis>
+ </animation>
+ 
+  <animation>
+  <type>rotate</type>
+  <object-name>rudder</object-name>      
+    <property>controls/flight/rudder</property>
+  <factor>24</factor>
+  <center>
+			<x-m>3.858</x-m>
+			<y-m>0.0</y-m>
+			<z-m>2.039</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+ </animation>
+ 
+ <animation>
+  <type>rotate</type>
+  <object-name>elevator</object-name>      
+    <property>controls/flight/elevator</property>
+  <factor>24</factor>  
+  <center>
+			<x-m>3.788</x-m>
+			<y-m>0.0</y-m>
+			<z-m>2.014</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis> </animation>
+    
+<!--FRONT INSTRUMENTS-->
+
+<!--ASI-->
+
+	<animation>
+		<type>rotate</type>
+		<object-name>asi.needle</object-name>
+		<property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>0</dep></entry>
+      <entry><ind>55</ind><dep>77</dep></entry>
+      <entry><ind>83</ind><dep>145</dep></entry>
+			<entry><ind>97</ind><dep>180</dep></entry>
+      <entry><ind>111</ind><dep>218</dep></entry>
+      <entry><ind>138</ind><dep>285</dep></entry>
+			<entry><ind>194</ind><dep>360</dep></entry>
+		</interpolation>
+ <axis>
+   <x1-m>-3.323</x1-m>
+   <y1-m>-0.111</y1-m>
+   <z1-m>0.748</z1-m>
+   <x2-m>-3.335</x2-m>
+   <y2-m>-0.111</y2-m>
+   <z2-m>0.746</z2-m>
+   </axis>
+	</animation>
+ 
+<!--Altimeter-->
+
+	<!-- Altimeter Needle -->
+	<animation>
+		<type>rotate</type>
+		<object-name>needle.large</object-name>
+		<property>instrumentation/altimeter/indicated-altitude-ft</property>
+		<factor>0.36</factor>
+ <axis>
+   <x1-m>-3.323</x1-m>
+   <y1-m>0.103</y1-m>
+   <z1-m>0.748</z1-m>
+   <x2-m>-3.335</x2-m>
+   <y2-m>0.103</y2-m>
+   <z2-m>0.746</z2-m>
+ </axis>
+	</animation>
+	<!-- Altimeter Needle -->
+	<animation>
+		<type>rotate</type>
+		<object-name>needle.small</object-name>
+		<property>instrumentation/altimeter/indicated-altitude-ft</property>
+		<factor>0.036</factor>
+ <axis>
+   <x1-m>-3.323</x1-m>
+   <y1-m>0.103</y1-m>
+   <z1-m>0.748</z1-m>
+   <x2-m>-3.335</x2-m>
+   <y2-m>0.103</y2-m>
+   <z2-m>0.746</z2-m>
+ </axis>
+	</animation>
+  
+  <!--variometer-->
+	<animation>
+		<type>rotate</type>
+		<object-name>needle</object-name>
+		<property>instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
+		<interpolation>
+			<entry><ind>-984</ind><dep>-130</dep></entry>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>984</ind><dep>130</dep></entry>
+		</interpolation>
+ <axis>
+   <x1-m>-3.315</x1-m>
+   <y1-m>0.169</y1-m>
+   <z1-m>0.643</z1-m>
+   <x2-m>-3.331</x2-m>
+   <y2-m>0.169</y2-m>
+   <z2-m>0.642</z2-m>
+ </axis>
+	</animation>
+  
+<!--airbrake grip-->
+<animation>
+  <type>translate</type>
+  <object-name>Cylinder.002</object-name>
+  <object-name>grip.airbrake</object-name>
+  <property>/controls/engines/engine/throttle</property>
+  <factor>1</factor>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>.1</ind>
+				<dep>.25</dep>
+      </entry>
+		</interpolation>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ 
+<animation>
+  <type>translate</type>
+  <object-name>Cylinder.002</object-name>
+  <object-name>grip.airbrake</object-name>
+  <property>/controls/engines/engine/throttle</property>
+  <factor>-1</factor>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>.1</ind>
+				<dep>-0.025</dep>
+        </entry>
+		</interpolation>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ 
+<animation>
+  <type>translate</type>
+  <object-name>Cylinder.002</object-name>
+  <object-name>grip.airbrake</object-name>
+  <property>/controls/engines/engine/throttle</property>
+  <factor>1</factor>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>.1</ind>
+				<dep>.045</dep>
+        </entry>
+		</interpolation>
+  <axis>
+   <x>0</x>
+   <y>0</y>
+   <z>1</z>
+  </axis>
+ </animation>
+ 
+ <!--airbrakes-->
+  <animation>
+  <type>translate</type>
+  <object-name>airbrake</object-name>
+  <property>/controls/engines/engine/throttle</property>
+  <factor>0.07</factor>
+  <axis>
+   <x>0</x>
+   <y>0</y>
+   <z>1</z>
+  </axis>
+ </animation> 
+ 
+<!--stick-->
+	<animation>
+		<type>rotate</type>
+		<object-name>stick</object-name>
+		<object-name>grip.stick</object-name>
+		<object-name>knob</object-name>
+		<property>/controls/flight/elevator</property>
+		<factor>10</factor>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>-3.155</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.372</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+  
+	<animation>
+		<type>rotate</type>
+		<object-name>stick</object-name>
+		<object-name>grip.stick</object-name>
+		<object-name>knob</object-name>
+		<property>/controls/flight/aileron</property>
+		<factor>10</factor>
+		<offset>0</offset>
+		<center>
+			<x-m>-3.155</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.372</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+
+
+ 
+<!--shader-->
+	<animation>
+		<type>shader</type>
+		<shader>fresnel</shader>
+		<texture>Aircraft/ASK21/Models/chrome.rgb</texture>
+		<object-name>canopy.front2</object-name>
+    <object-name>canopy.back2</object-name>
+       	</animation>
+ 
+ 
+ </PropertyList>

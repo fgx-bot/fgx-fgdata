@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<name>tanker</name>
+	<x>-10</x>
+	<layout>vbox</layout>
+
+	<group>
+		<layout>hbox</layout>
+		<empty><stretch>1</stretch></empty>
+
+		<text>
+			<label>Tanker</label>
+		</text>
+
+		<empty><stretch>1</stretch></empty>
+
+		<button>
+			<pref-width>16</pref-width>
+			<pref-height>16</pref-height>
+			<legend></legend>
+			<keynum>27</keynum>
+			<border>2</border>
+
+			<binding>
+				<command>dialog-close</command>
+			</binding>
+		</button>
+	</group>
+
+	<hrule/>
+
+	<button>
+		<legend>Request</legend>
+		<equal>true</equal>
+		<binding>
+			<command>nasal</command>
+			<script>tanker.request()</script>
+		</binding>
+	</button>
+
+	<button>
+		<legend>Get Position</legend>
+		<equal>true</equal>
+		<binding>
+			<command>nasal</command>
+			<script>tanker.report()</script>
+		</binding>
+	</button>
+</PropertyList>

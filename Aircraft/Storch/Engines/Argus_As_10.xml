@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!--
+  File:     Argus_As_10.xml
+  Author:   Ron Jensen
+
+Specifications (Argus As 10 C)
+General characteristics
+
+    * Type: 8-cylinder, air-cooled, 90 degree inverted Vee piston aircraft engine
+    * Bore: 120 mm (4.72 in)
+    * Stroke: 140 mm (5.5 in)
+    * Displacement: 12.667 l (773 in3)
+    * Length: 1,105 mm (43.51 in)
+    * Height: 936 mm (36.85 in)
+    * Dry weight: 213 kg (470 lb)
+
+Components
+
+    * Valvetrain: Two valves per cylinder.
+    * Fuel system: Two Sun carburetors adapted for aerobatics
+    * Fuel type: 80 octane
+    * Cooling system: Air
+
+Performance
+
+    * Power output:
+          o 179 kW (240 hp) at 2,000 rpm
+    * Specific power: 14.8 kW/L (0.31 hp/in3)
+    * Compression ratio: 5.9:1
+    * Specific fuel consumption: 235 gr/(hp*h); 0.518 lb/(hp*h)
+    * Power-to-weight ratio: 0.835 kW/kg (0.51 hp/lb)
+
+-->
+
+<piston_engine name="Argus_As_10">
+  <minmp unit="INHG">          6.0 </minmp>
+  <maxmp unit="INHG">         30.0 </maxmp>
+  <displacement unit="IN3"> 773.00 </displacement>
+  <maxhp unit="WATTS">      179000 </maxhp>
+  <cycles>         4.0 </cycles>
+  <idlerpm>      500.0 </idlerpm>
+  <maxrpm>      2000.0 </maxrpm>
+  <maxthrottle>    1.0 </maxthrottle>
+  <minthrottle>    0.05 </minthrottle>
+  <bsfc unit="LBS/HP*HR"> 0.518</bsfc>
+  <volumetric-efficiency> 0.7625 </volumetric-efficiency>
+</piston_engine>

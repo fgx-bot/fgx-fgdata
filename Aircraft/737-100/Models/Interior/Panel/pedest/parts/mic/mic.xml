@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Source :  http://users.skynet.be/jcordon/ -->
+
+<PropertyList>
+
+  <path>mic.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>mic</object-name>
+    <object-name>visses</object-name>
+  </animation>
+
+</PropertyList>
+

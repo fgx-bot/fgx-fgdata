@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+  <name>display</name>
+  <modal>false</modal>
+  <layout>vbox</layout>
+  <padding>20</padding>
+
+  <group>
+    <layout>hbox</layout>
+    <empty><stretch>1</stretch></empty>
+
+    <text>
+      <label>Display Options</label>
+    </text>
+
+    <empty><stretch>1</stretch></empty>
+
+    <button>
+      <pref-width>16</pref-width>
+      <pref-height>16</pref-height>
+      <legend></legend>
+      <keynum>27</keynum>
+      <border>2</border>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+    </button>
+  </group>
+
+  <hrule/>
+
+  <group>
+    <layout>vbox</layout>
+    <halign>center</halign>
+
+    <checkbox>
+      <halign>left</halign>
+      <label>Show frame rate</label>
+      <property>/sim/rendering/fps-display</property>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+    </checkbox>
+
+    <checkbox>
+      <halign>left</halign>
+      <label>Show worst-case frame latency</label>
+      <property>/sim/rendering/frame-latency-display</property>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+    </checkbox>
+
+    <checkbox>
+      <halign>left</halign>
+      <label>Show chat messages</label>
+      <property>/sim/multiplay/chat-display</property>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+    </checkbox>
+
+    <checkbox>
+      <halign>left</halign>
+      <label>Show view name popup</label>
+      <property>/sim/view-name-popup</property>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+    </checkbox>
+
+    <checkbox>
+      <halign>left</halign>
+      <label>Show 2D panel</label>
+      <property>/sim/panel/visibility</property>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+    </checkbox>
+
+    <checkbox>
+      <halign>left</halign>
+      <label>Autohide menubar</label>
+      <property>/sim/menubar/autovisibility/enabled</property>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+    </checkbox>
+
+    <group>
+      <layout>hbox</layout>
+
+      <checkbox>
+        <label>Autohide cursor in</label>
+        <property>/sim/mouse/hide-cursor</property>
+        <binding>
+          <command>dialog-apply</command>
+        </binding>
+      </checkbox>
+
+      <input>
+        <live>true</live>
+        <pref-width>40</pref-width>
+        <pref-height>10</pref-height>
+        <enable>
+          <property>/sim/mouse/hide-cursor</property>
+        </enable>
+        <property>/sim/mouse/cursor-timeout-sec</property>
+        <binding>
+          <command>dialog-apply</command>
+        </binding>
+      </input>
+
+      <text>
+        <label>sec.</label>
+      </text>
+    </group>
+
+  </group>
+
+  <hrule/>
+
+  <button>
+    <legend>Close</legend>
+    <default>true</default>
+    <key>Esc</key>
+    <binding>
+      <command>dialog-close</command>
+    </binding>
+  </button>
+
+</PropertyList>

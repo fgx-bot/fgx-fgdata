@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<trafficlist>
+
+<!-- ============================================================================================ -->
+                                        <!-- MONDAY 1st WAVE -->
+<!-- ============================================================================================ -->
+  <!-- 2-SHIP F-16 312sqn -->
+            
+    <aircraft>
+        <model>AI/Aircraft/f16/Models/rnlaf/EHVK/312sqn/J-058/F-16A-MLU.xml</model>
+        <airline>RNLAF</airline>
+        <home-port>EHVK</home-port>
+        <required-aircraft>RNLAF_312SQN_F-16A-MLU</required-aircraft>
+        <actype>F16A-MLU</actype>
+        <offset>6</offset>
+        <radius>10</radius>
+        <flighttype>mil-fighter</flighttype>
+        <performance-class>jet_fighter</performance-class>
+        <registration>J-058</registration>
+        <heavy>false</heavy>
+    </aircraft>
+
+    <aircraft>
+        <model>AI/Aircraft/f16/Models/rnlaf/EHVK/312sqn/J-001/F-16A-MLU.xml</model>
+        <airline>RNLAF</airline>
+        <home-port>EHVK</home-port>
+        <required-aircraft>RNLAF_312SQN_F-16A-MLU</required-aircraft>
+        <actype>F16A-MLU</actype>
+        <offset>6</offset> 
+        <radius>10</radius>
+        <flighttype>mil-fighter</flighttype>
+        <performance-class>jet_fighter</performance-class>
+        <registration>J-001</registration>
+        <heavy>false</heavy>
+    </aircraft>
+        
+        <flight>
+            <callsign>FIST11</callsign>
+            <required-aircraft>RNLAF_312SQN_F-16A-MLU</required-aircraft>
+            <fltrules>IFR</fltrules>
+            <departure>
+                <port>EHVK</port>
+                <time>1/09:35:00</time>
+            </departure>
+            <cruise-alt>20</cruise-alt>
+            <arrival>
+                <port>EHVK</port>
+                <time>1/10:35:00</time>
+            </arrival>
+            <repeat>WEEK</repeat>
+        </flight>
+        
+        <flight>
+            <callsign>FIST12</callsign>
+            <required-aircraft>RNLAF_312SQN_F-16A-MLU</required-aircraft>
+            <fltrules>IFR</fltrules>
+            <departure>
+                <port>EHVK</port>
+                <time>1/09:35:10</time>
+            </departure>
+            <cruise-alt>20</cruise-alt>
+            <arrival>
+                <port>EHVK</port>
+                <time>1/10:36:00</time>
+            </arrival>
+            <repeat>WEEK</repeat>
+        </flight>
+
+
+<!-- ============================================================================================ -->
+
+<!-- ============================================================================================ -->
+
+<!-- 2-SHIP F-16 311sqn -->      
+    
+    <aircraft>
+        <model>AI/Aircraft/f16/Models/rnlaf/EHVK/311sqn/J-005/F-16A-MLU.xml</model>
+        <airline>RNLAF</airline>
+        <home-port>EHVK</home-port>
+        <required-aircraft>RNLAF_311SQN_F-16A-MLU</required-aircraft>
+        <actype>F16A-MLU</actype>
+        <offset>6</offset>
+        <radius>10</radius>
+        <flighttype>mil-fighter</flighttype>
+        <performance-class>jet_fighter</performance-class>
+        <registration>J-005</registration>
+        <heavy>false</heavy>
+    </aircraft>
+
+    <aircraft>
+        <model>AI/Aircraft/f16/Models/rnlaf/EHVK/311sqn/J-515/F-16A-MLU.xml</model>
+        <airline>RNLAF</airline>
+        <home-port>EHVK</home-port>
+        <required-aircraft>RNLAF_311SQN_F-16A-MLU</required-aircraft>
+        <actype>F16A-MLU</actype>
+        <offset>6</offset> 
+        <radius>10</radius>
+        <flighttype>mil-fighter</flighttype>
+        <performance-class>jet_fighter</performance-class>
+        <registration>J-515</registration>
+        <heavy>false</heavy>
+    </aircraft>
+
+        <flight>
+            <callsign>JUDGE11</callsign>
+            <required-aircraft>RNLAF_311SQN_F-16A-MLU</required-aircraft>
+            <fltrules>IFR</fltrules>
+            <departure>
+                <port>EHVK</port>
+                <time>1/09:38:00</time>
+            </departure>
+            <cruise-alt>20</cruise-alt>
+            <arrival>
+                <port>EHVK</port>
+                <time>1/10:38:00</time>
+            </arrival>
+            <repeat>WEEK</repeat>
+        </flight>
+
+        <flight>
+            <callsign>JUDGE12</callsign>
+            <required-aircraft>RNLAF_311SQN_F-16A-MLU</required-aircraft>
+            <fltrules>IFR</fltrules>
+            <departure>
+                <port>EHVK</port>
+                <time>1/09:38:10</time>
+            </departure>
+            <cruise-alt>20</cruise-alt>
+            <arrival>
+                <port>EHVK</port>
+                <time>1/10:39:00</time>
+            </arrival>
+            <repeat>WEEK</repeat>
+        </flight>
+<!-- ============================================================================================ -->
+
+<!-- ============================================================================================ -->
+
+<!-- 2-SHIP F-16 313sqn -->
+
+    <aircraft>
+        <model>AI/Aircraft/f16/Models/rnlaf/EHVK/313sqn/J-508/F-16A-MLU.xml</model>
+        <airline>RNLAF</airline>
+        <home-port>EHVK</home-port>
+        <required-aircraft>RNLAF_313SQN_F-16A-MLU</required-aircraft>
+        <actype>F16A-MLU</actype>
+        <offset>6</offset>
+        <radius>10</radius>
+        <flighttype>mil-fighter</flighttype>
+        <performance-class>jet_fighter</performance-class>
+        <registration>J-508</registration>
+        <heavy>false</heavy>
+    </aircraft>
+
+    <aircraft>
+        <model>AI/Aircraft/f16/Models/rnlaf/EHVK/313sqn/J-055/F-16A-MLU.xml</model>
+        <airline>RNLAF</airline>
+        <home-port>EHVK</home-port>
+        <required-aircraft>RNLAF_313SQN_F-16A-MLU</required-aircraft>
+        <actype>F16A-MLU</actype>
+        <offset>6</offset> 
+        <radius>10</radius>
+        <flighttype>mil-fighter</flighttype>
+        <performance-class>jet_fighter</performance-class>
+        <registration>J-055</registration>
+        <heavy>false</heavy>
+    </aircraft>
+        
+        <flight>
+            <callsign>METAL11</callsign>
+            <required-aircraft>RNLAF_313SQN_F-16A-MLU</required-aircraft>
+            <fltrules>IFR</fltrules>
+            <departure>
+                <port>EHVK</port>
+                <time>1/09:41:00</time>
+            </departure>
+            <cruise-alt>20</cruise-alt>
+            <arrival>
+                <port>EHVK</port>
+                <time>1/10:41:00</time>
+            </arrival>
+            <repeat>WEEK</repeat>
+        </flight>
+
+        <flight>
+            <callsign>METAL12</callsign>
+            <required-aircraft>RNLAF_313SQN_F-16A-MLU</required-aircraft>
+            <fltrules>IFR</fltrules>
+            <departure>
+                <port>EHVK</port>
+                <time>1/09:41:10</time>
+            </departure>
+            <cruise-alt>20</cruise-alt>
+            <arrival>
+                <port>EHVK</port>
+                <time>1/10:42:00</time>
+            </arrival>
+            <repeat>WEEK</repeat>
+        </flight>
+<!-- ============================================================================================ -->
+
+<!-- ============================================================================================ -->
+
+<!-- 2-SHIP F-16 311sqn -->
+
+    <aircraft>
+        <model>AI/Aircraft/f16/Models/rnlaf/EHVK/311sqn/J-638/F-16A-MLU.xml</model>
+        <airline>RNLAF</airline>
+        <home-port>EHVK</home-port>
+        <required-aircraft>RNLAF_311SQN_F-16A-MLU</required-aircraft>
+        <actype>F16A-MLU</actype>
+        <offset>6</offset>
+        <radius>10</radius>
+        <flighttype>mil-fighter</flighttype>
+        <performance-class>jet_fighter</performance-class>
+        <registration>J-638</registration>
+        <heavy>false</heavy>
+    </aircraft>
+
+    <aircraft>
+        <model>AI/Aircraft/f16/Models/rnlaf/EHVK/311sqn/J-630/F-16A-MLU.xml</model>
+        <airline>RNLAF</airline>
+        <home-port>EHVK</home-port>
+        <required-aircraft>RNLAF_311SQN_F-16A-MLU</required-aircraft>
+        <actype>F16A-MLU</actype>
+        <offset>6</offset> 
+        <radius>10</radius>
+        <flighttype>mil-fighter</flighttype>
+        <performance-class>jet_fighter</performance-class>
+        <registration>J-630</registration>
+        <heavy>false</heavy>
+    </aircraft>
+
+        <flight>
+            <callsign>SNAKE11</callsign>
+            <required-aircraft>RNLAF_311SQN_F-16A-MLU</required-aircraft>
+            <fltrules>IFR</fltrules>
+            <departure>
+                <port>EHVK</port>
+                <time>1/09:44:00</time>
+            </departure>
+            <cruise-alt>20</cruise-alt>
+            <arrival>
+                <port>EHVK</port>
+                <time>1/10:44:00</time>
+            </arrival>
+            <repeat>WEEK</repeat>
+        </flight>
+        
+        <flight>
+            <callsign>SNAKE12</callsign>
+            <required-aircraft>RNLAF_311SQN_F-16A-MLU</required-aircraft>
+            <fltrules>IFR</fltrules>
+            <departure>
+                <port>EHVK</port>
+                <time>1/09:44:10</time>
+            </departure>
+            <cruise-alt>20</cruise-alt>
+            <arrival>
+                <port>EHVK</port>
+                <time>1/10:45:00</time>
+            </arrival>
+            <repeat>WEEK</repeat>
+        </flight>
+<!-- ============================================================================================ -->
+
+<!-- ============================================================================================ -->
+                                        <!-- MONDAY 2nd WAVE -->
+<!-- ============================================================================================ -->
+
+</trafficlist>

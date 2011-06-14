@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<trafficlist>
+    <aircraft>
+        <model>AI/Aircraft/747-400/747-400-Kalitta.xml</model>
+        <livery>KFS</livery> 
+        <airline>KFS</airline>
+        <actype>747-400</actype>
+        <offset>20</offset>
+        <radius>42</radius>
+        <flighttype>cargo</flighttype>
+        <performance-class>jet_transport</performance-class>
+        <registration>N2077LX</registration>
+        <heavy>false</heavy>
+
+        <flight>
+            <callsign>CONNIE877LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KLAX</port>
+               <time>07:18:00</time>
+            </departure>
+            <cruise-alt>310</cruise-alt>
+            <arrival>
+                <port>KBOS</port>
+                <time>12:53:00</time>
+            </arrival>
+        <repeat>24Hr</repeat>
+       </flight> 
+
+       <flight>
+            <callsign>CONNIE777LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KBOS</port>
+               <time>15:18:00</time>
+            </departure>
+            <cruise-alt>310</cruise-alt>
+            <arrival>
+                <port>KLAX</port>
+                <time>20:53:00</time>
+            </arrival>
+        <repeat>24Hr</repeat>
+       </flight>  
+         
+    </aircraft> 
+
+    <aircraft>
+        <model>AI/Aircraft/747-400/747-400-Kalitta.xml</model>
+        <livery>KFS</livery> 
+        <airline>KFS</airline>
+        <actype>747-400</actype>
+        <offset>20</offset>
+        <radius>42</radius>
+        <flighttype>cargo</flighttype>
+        <performance-class>jet_transport</performance-class>
+        <registration>N2076LX</registration>
+        <heavy>false</heavy>
+
+        <flight>
+            <callsign>CONNIE876LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KLAX</port>
+               <time>09:18:00</time>
+            </departure>
+            <cruise-alt>310</cruise-alt>
+            <arrival>
+                <port>KBOS</port>
+                <time>14:53:00</time>
+            </arrival>
+        <repeat>24Hr</repeat>
+       </flight> 
+
+       <flight>
+            <callsign>CONNIE776LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KBOS</port>
+               <time>17:18:00</time>
+            </departure>
+            <cruise-alt>310</cruise-alt>
+            <arrival>
+                <port>KLAX</port>
+                <time>22:53:00</time>
+            </arrival>
+        <repeat>24Hr</repeat>
+       </flight>  
+         
+    </aircraft> 
+
+    <aircraft>
+        <model>AI/Aircraft/747-400/747-400-Kalitta.xml</model>
+        <livery>KFS</livery> 
+        <airline>KFS</airline>
+        <actype>747-400</actype>
+        <offset>20</offset>
+        <radius>42</radius>
+        <flighttype>cargo</flighttype>
+        <performance-class>jet_transport</performance-class>
+        <registration>N2075LX</registration>
+        <heavy>false</heavy>
+
+        <flight>
+            <callsign>CONNIE875LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KLAX</port>
+               <time>13:18:00</time>
+            </departure>
+            <cruise-alt>310</cruise-alt>
+            <arrival>
+                <port>KBOS</port>
+                <time>18:53:00</time>
+            </arrival>
+        <repeat>24Hr</repeat>
+       </flight> 
+
+       <flight>
+            <callsign>CONNIE775LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KBOS</port>
+               <time>21:18:00</time>
+            </departure>
+            <cruise-alt>310</cruise-alt>
+            <arrival>
+                <port>KLAX</port>
+                <time>02:53:00</time>
+            </arrival>
+        <repeat>24Hr</repeat>
+       </flight>  
+         
+    </aircraft> 
+
+
+</trafficlist>

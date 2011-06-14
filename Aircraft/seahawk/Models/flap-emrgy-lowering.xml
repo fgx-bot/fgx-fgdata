@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+
+<!-- emergency flap loering -->
+
+<PropertyList>
+
+	<path>handle-flap-emergy.ac</path>
+
+	<!-- **************** handle **************** -->
+	<animation>
+		<type>translate</type>
+		<object-name>handle</object-name>
+		<object-name>cylinder</object-name>
+		<property>/controls/flight/flaps-alternate-extension</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0.01</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>0</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<!-- Panel Lighting -->
+	<animation>
+		<type>material</type>
+		<emission>
+			<factor-prop>/controls/lighting/panel-norm</factor-prop>
+			<red>0.75</red>
+			<green>0.25</green>
+			<blue>0.25</blue>
+		</emission>
+	</animation>
+
+	<!-- *** LoD *** -->
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
+	</animation>
+
+</PropertyList>
+
+
+

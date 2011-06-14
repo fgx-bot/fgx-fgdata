@@ -1,0 +1,418 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+    <path>rtu4200.ac</path>
+
+    <animation>
+        <type>select</type>
+        <object-name>RTU4200.screen</object-name>
+        <object-name>channel.indicator</object-name>
+        <object-name>mode.select</object-name>
+        <object-name>com.1</object-name>
+        <object-name>com.2</object-name>
+        <object-name>com.3</object-name>
+        <object-name>com.4</object-name>
+        <object-name>com.5</object-name>
+        <object-name>com.dec</object-name>
+        <object-name>coms.1</object-name>
+        <object-name>coms.2</object-name>
+        <object-name>coms.3</object-name>
+        <object-name>coms.4</object-name>
+        <object-name>coms.5</object-name>
+        <object-name>coms.dec</object-name>
+        <object-name>nav.1</object-name>
+        <object-name>nav.2</object-name>
+        <object-name>nav.3</object-name>
+        <object-name>nav.4</object-name>
+        <object-name>nav.5</object-name>
+        <object-name>nav.dec</object-name>
+        <object-name>navs.1</object-name>
+        <object-name>navs.2</object-name>
+        <object-name>navs.3</object-name>
+        <object-name>navs.4</object-name>
+        <object-name>navs.5</object-name>
+        <object-name>navs.dec</object-name>
+        <object-name>adf.1</object-name>
+        <object-name>adf.2</object-name>
+        <object-name>adf.3</object-name>
+        <object-name>adf.4</object-name>
+        <object-name>adf.dec</object-name>
+        <object-name>atc.1</object-name>
+        <object-name>atc.2</object-name>
+        <object-name>atc.3</object-name>
+        <object-name>atc.4</object-name>
+        <condition>
+            <property>instrumentation/RTU4200/unit[1]/serviceable</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>channel.indicator</object-name>
+        <property>instrumentation/RTU4200/unit[1]/mode</property>
+        <factor>0.1</factor>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>mode.select</object-name>
+        <property>instrumentation/RTU4200/unit[1]/selected</property>
+        <interpolation>
+        <entry><ind>0</ind><dep>0.0</dep></entry>
+        <entry><ind>1</ind><dep>-0.0152</dep></entry>
+        <entry><ind>2</ind><dep>0.0310</dep></entry>
+        </interpolation>
+        <axis>
+            <x>0</x>
+            <y>0</y>
+            <z>1</z>
+        </axis>
+    </animation>
+
+<!-- Comm Display -->
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>com.1</object-name>
+        <property>instrumentation/RTU4200/unit[1]/comm</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>com.2</object-name>
+        <property>instrumentation/RTU4200/unit[1]/comm</property>
+        <factor>0.01</factor>
+        <bias>0.005</bias>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>com.3</object-name>
+        <property>instrumentation/RTU4200/unit[1]/comm</property>
+        <factor>0.1</factor>
+        <bias>0.005</bias>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>com.4</object-name>
+        <property>instrumentation/RTU4200/unit[1]/comm</property>
+        <factor>1.0</factor>
+        <bias>0.005</bias>
+        <step>0.1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>com.5</object-name>
+        <property>instrumentation/RTU4200/unit[1]/comm</property>
+        <factor>10.0</factor>
+        <bias>0.005</bias>
+        <step>0.01</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+<!-- Comm Standby Display -->
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>coms.1</object-name>
+        <property>instrumentation/RTU4200/unit[1]/comm-stby</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>coms.2</object-name>
+        <property>instrumentation/RTU4200/unit[1]/comm-stby</property>
+        <factor>0.01</factor>
+        <bias>0.005</bias>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>coms.3</object-name>
+        <property>instrumentation/RTU4200/unit[1]/comm-stby</property>
+        <factor>0.1</factor>
+        <bias>0.005</bias>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>coms.4</object-name>
+        <property>instrumentation/RTU4200/unit[1]/comm-stby</property>
+        <factor>1.0</factor>
+        <bias>0.005</bias>
+        <step>0.1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>coms.5</object-name>
+        <property>instrumentation/RTU4200/unit[1]/comm-stby</property>
+        <factor>10.0</factor>
+        <bias>0.005</bias>
+        <step>0.01</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+<!-- Nav Display -->
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>nav.1</object-name>
+        <property>instrumentation/RTU4200/unit[1]/nav</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>nav.2</object-name>
+        <property>instrumentation/RTU4200/unit[1]/nav</property>
+        <factor>0.01</factor>
+        <bias>0.005</bias>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>nav.3</object-name>
+        <property>instrumentation/RTU4200/unit[1]/nav</property>
+        <factor>0.1</factor>
+        <bias>0.005</bias>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>nav.4</object-name>
+        <property>instrumentation/RTU4200/unit[1]/nav</property>
+        <factor>1.0</factor>
+        <bias>0.005</bias>
+        <step>0.1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>nav.5</object-name>
+        <property>instrumentation/RTU4200/unit[1]/nav</property>
+        <factor>10.0</factor>
+        <bias>0.005</bias>
+        <step>0.01</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+<!-- Nav Standby Display -->
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>navs.1</object-name>
+        <property>instrumentation/RTU4200/unit[1]/nav-stby</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>navs.2</object-name>
+        <property>instrumentation/RTU4200/unit[1]/nav-stby</property>
+        <factor>0.01</factor>
+        <bias>0.005</bias>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>navs.3</object-name>
+        <property>instrumentation/RTU4200/unit[1]/nav-stby</property>
+        <factor>0.1</factor>
+        <bias>0.005</bias>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>navs.4</object-name>
+        <property>instrumentation/RTU4200/unit[1]/nav-stby</property>
+        <factor>1.0</factor>
+        <bias>0.005</bias>
+        <step>0.1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>navs.5</object-name>
+        <property>instrumentation/RTU4200/unit[1]/nav-stby</property>
+        <factor>10.0</factor>
+        <bias>0.005</bias>
+        <step>0.01</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+<!-- ADF Display -->
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>adf.1</object-name>
+        <property>instrumentation/RTU4200/unit[1]/adf</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>adf.2</object-name>
+        <property>instrumentation/RTU4200/unit[1]/adf</property>
+        <factor>0.01</factor>
+        <bias>0.005</bias>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>adf.3</object-name>
+        <property>instrumentation/RTU4200/unit[1]/adf</property>
+        <factor>0.1</factor>
+        <bias>0.005</bias>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>adf.4</object-name>
+        <property>instrumentation/RTU4200/unit[1]/adf</property>
+        <factor>1.0</factor>
+        <bias>0.005</bias>
+        <step>0.1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+</PropertyList>

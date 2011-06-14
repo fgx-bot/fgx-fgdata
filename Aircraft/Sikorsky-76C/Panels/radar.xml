@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+<name>Radar Panel</name>
+<background>Aircraft/Sikorsky-76C/Panels/transparent-bg.png</background>
+<w>160</w>
+<h>120</h>
+
+<instruments>
+
+    <instrument include="radar-display.xml">
+        <name>radar screen</name>
+        <x>80</x>
+        <y>68</y>
+        <w>80</w>
+        <h>80</h>
+    </instrument>
+
+</instruments>
+
+</PropertyList>

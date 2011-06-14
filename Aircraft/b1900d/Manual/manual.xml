@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<!-- 
+Syd Adams 
+3D Flight Manual
+-->
+<PropertyList>
+
+    <path>manual.ac</path>
+
+    <animation>
+        <name>POH</name>
+        <object-name>Manual</object-name>
+        <object-name>Manual.page-nxt</object-name>
+        <object-name>Manual.page-bck</object-name>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>POH</object-name>
+        <condition>
+            <property>sim/model/manual/enabled</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>material</type>
+        <object-name>POH</object-name>
+        <property-base>sim/model/manual</property-base>
+        <texture-prop>page-texture</texture-prop>
+        <texture>page0.png</texture>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>POH</object-name>
+        <property>sim/model/manual/x-offset</property>
+        <factor>1</factor>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>POH</object-name>
+        <property>sim/model/manual/y-offset</property>
+        <factor>1</factor>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>POH</object-name>
+        <property>sim/model/manual/z-offset</property>
+        <factor>1</factor>
+        <axis>
+            <x>0</x>
+            <y>0</y>
+            <z>1</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>POH</object-name>
+        <property>sim/model/manual/pitch</property>
+        <factor>1</factor>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+<!-- Hotspots -->
+
+    <animation>
+        <type>pick</type>
+        <object-name>Manual.page-nxt</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>nasal</command>
+                <script>manual.flip_page(1);</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Manual.page-bck</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>nasal</command>
+                <script>manual.flip_page(-1);</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Manual</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-assign</command>
+                <property>sim/model/manual/move</property>
+                <value>1</value>
+            </binding>
+            <mod-up>
+                <binding>
+                    <command>property-assign</command>
+                    <property>sim/model/manual/move</property>
+                    <value>0</value>
+                </binding>
+            </mod-up>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Manual</object-name>
+        <action>
+            <button>1</button>
+            <binding>
+                <condition>
+                    <property>devices/status/keyboard/ctrl</property>
+                </condition>
+                <command>property-assign</command>
+                <property>sim/model/manual/enabled</property>
+                <value>0</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Manual</object-name>
+        <action>
+            <button>3</button>
+            <binding>
+                <command>property-adjust</command>
+                <property>sim/model/manual/pitch</property>
+                <step>1</step>
+                <min>-30</min>
+                <max>30</max>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Manual</object-name>
+        <action>
+            <button>4</button>
+            <binding>
+                <command>property-adjust</command>
+                <property>sim/model/manual/pitch</property>
+                <step>-1</step>
+                <min>-30</min>
+                <max>30</max>
+            </binding>
+        </action>
+    </animation>
+
+</PropertyList>

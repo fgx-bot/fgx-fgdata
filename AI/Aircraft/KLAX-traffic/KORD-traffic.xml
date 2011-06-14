@@ -1,0 +1,180 @@
+<?xml version="1.0"?>
+<trafficlist>
+    <aircraft>
+        <model>AI/Aircraft/737/737-American.xml</model>
+        <livery>AA</livery> 
+        <airline>AA</airline>
+        <actype>737-300</actype>
+        <offset>10</offset>
+        <radius>23</radius>
+        <flighttype>gate</flighttype>
+        <performance-class>jet_transport</performance-class>
+        <registration>N3439LX</registration>
+        <heavy>false</heavy>
+
+        <flight>
+            <callsign>AA349LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KLAX</port>
+               <time>08:16:00</time>
+            </departure>
+            <cruise-alt>300</cruise-alt>
+            <arrival>
+                <port>KORD</port>
+                <time>12:21:00</time>
+            </arrival>
+        <repeat>12Hr</repeat>
+       </flight> 
+
+       <flight>
+            <callsign>AA249LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KORD</port>
+               <time>14:16:00</time>
+            </departure>
+            <cruise-alt>310</cruise-alt>
+            <arrival>
+                <port>KLAX</port>
+                <time>18:21:00</time>
+            </arrival>
+        <repeat>12Hr</repeat>
+       </flight>  
+
+    </aircraft> 
+             
+    <aircraft>
+        <model>AI/Aircraft/737/737-American.xml</model>
+        <livery>AA</livery> 
+        <airline>AA</airline>
+        <actype>737-300</actype>
+        <offset>10</offset>
+        <radius>23</radius>
+        <flighttype>gate</flighttype>
+        <performance-class>jet_transport</performance-class>
+        <registration>N3438LX</registration>
+        <heavy>false</heavy>
+
+        <flight>
+            <callsign>AA348LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KLAX</port>
+               <time>10:16:00</time>
+            </departure>
+            <cruise-alt>300</cruise-alt>
+            <arrival>
+                <port>KORD</port>
+                <time>14:21:00</time>
+            </arrival>
+        <repeat>12Hr</repeat>
+       </flight> 
+
+       <flight>
+            <callsign>AA248LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KORD</port>
+               <time>16:16:00</time>
+            </departure>
+            <cruise-alt>310</cruise-alt>
+            <arrival>
+                <port>KLAX</port>
+                <time>20:21:00</time>
+            </arrival>
+        <repeat>12Hr</repeat>
+       </flight>  
+
+    </aircraft> 
+                        
+    <aircraft>
+        <model>AI/Aircraft/737/737-American.xml</model>
+        <livery>AA</livery> 
+        <airline>AA</airline>
+        <actype>737-300</actype>
+        <offset>10</offset>
+        <radius>23</radius>
+        <flighttype>gate</flighttype>
+        <performance-class>jet_transport</performance-class>
+        <registration>N3437LX</registration>
+        <heavy>false</heavy>
+
+        <flight>
+            <callsign>AA347LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KLAX</port>
+               <time>12:16:00</time>
+            </departure>
+            <cruise-alt>300</cruise-alt>
+            <arrival>
+                <port>KORD</port>
+                <time>16:21:00</time>
+            </arrival>
+        <repeat>12Hr</repeat>
+       </flight> 
+
+       <flight>
+            <callsign>AA247LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KORD</port>
+               <time>18:16:00</time>
+            </departure>
+            <cruise-alt>310</cruise-alt>
+            <arrival>
+                <port>KLAX</port>
+                <time>22:21:00</time>
+            </arrival>
+        <repeat>12Hr</repeat>
+       </flight>  
+
+    </aircraft> 
+                         
+    <aircraft>
+        <model>AI/Aircraft/737/737-American.xml</model>
+        <livery>AA</livery> 
+        <airline>AA</airline>
+        <actype>737-300</actype>
+        <offset>10</offset>
+        <radius>23</radius>
+        <flighttype>gate</flighttype>
+        <performance-class>jet_transport</performance-class>
+        <registration>N3436LX</registration>
+        <heavy>false</heavy>
+
+        <flight>
+            <callsign>AA346LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KLAX</port>
+               <time>14:16:00</time>
+            </departure>
+            <cruise-alt>300</cruise-alt>
+            <arrival>
+                <port>KORD</port>
+                <time>18:21:00</time>
+            </arrival>
+        <repeat>12Hr</repeat>
+       </flight> 
+
+       <flight>
+            <callsign>AA246LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KORD</port>
+               <time>20:16:00</time>
+            </departure>
+            <cruise-alt>310</cruise-alt>
+            <arrival>
+                <port>KLAX</port>
+                <time>24:21:00</time>
+            </arrival>
+        <repeat>12Hr</repeat>
+       </flight>  
+
+    </aircraft> 
+                          
+                                                                                   
+</trafficlist>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!-- Blue Deck Edge Light -->
+<PropertyList>
+	<path>light-blue.ac</path>
+
+	<animation>
+		<type>select</type>
+		<object-name>Light</object-name>
+		<condition>
+			<property>controls/lighting/deck-lights</property>
+		</condition>
+	</animation>
+
+	<!-- *** LoD *** -->
+	<animation>
+		<type>range</type>
+                <enable-hot type="bool">false</enable-hot>
+		<max-m>8000</max-m>
+	</animation>
+</PropertyList>

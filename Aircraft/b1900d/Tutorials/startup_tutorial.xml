@@ -1,0 +1,287 @@
+<PropertyList>
+    <name>Manual Startup</name>
+    <description>Manual Start</description>
+
+    <init>
+        <set>
+            <property>sim/current-view/view-number</property>
+            <value>0</value>
+        </set>
+        <set>
+            <property>controls/gear/brake-parking</property>
+            <value>1</value>
+        </set>
+        <set>
+            <property>controls/flight/flaps</property>
+            <value>0.0</value>
+        </set>
+        <set>
+            <property>controls/electric/external-power</property>
+            <value>0</value>
+        </set>
+        <set>
+            <property>controls/electric/battery-switch</property>
+            <value>0</value>
+        </set>
+        <set>
+            <property>controls/electric/engine[0]/generator</property>
+            <value>0</value>
+        </set>
+        <set>
+            <property>controls/electric/engine[1]/generator</property>
+            <value>0</value>
+        </set>
+        <set>
+            <property>controls/engines/engine[0]/condition</property>
+            <value>0</value>
+        </set>
+        <set>
+            <property>controls/engines/engine[1]/condition</property>
+            <value>0</value>
+        </set>
+        <set>
+            <property>controls/engines/engine[0]/propeller-pitch</property>
+            <value>0</value>
+        </set>
+        <set>
+            <property>controls/engines/engine[1]/propeller-pitch</property>
+            <value>0</value>
+        </set>
+        <set>
+            <property>controls/engines/engine[0]/throttle</property>
+            <value>0.0</value>
+        </set>
+        <set>
+            <property>controls/engines/engine[1]/throttle</property>
+            <value>0.0</value>
+        </set>
+        <set>
+            <property>engines/engine[0]/running</property>
+            <value>0</value>
+        </set>
+        <set>
+            <property>engines/engine[1]/running</property>
+            <value>0</value>
+        </set>
+    </init>
+
+    <step>
+        <message>
+            Switch on battery and generators.{|.}
+        </message>
+        <view>
+            <heading-offset-deg>18</heading-offset-deg>
+            <pitch-offset-deg>-40</pitch-offset-deg>
+            <field-of-view>30</field-of-view>
+        </view>
+        <error>
+            <message>Battery and Generator switches {|.}should be in the "up" position{|.}
+            Press "y" to hide yokes{|.}
+            </message>
+            <condition>
+                <and>
+                    <not>
+                        <property>controls/electric/battery-switch</property>
+                        <property>controls/electric/engine[0]/generator</property>
+                        <property>controls/electric/engine[1]/generator</property>
+                    </not>
+                </and>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <and>
+                        <property>controls/electric/battery-switch</property>
+                        <property>controls/electric/engine[0]/generator</property>
+                        <property>controls/electric/engine[1]/generator</property>
+                </and>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>
+            Switch on avionics.{|.}
+        </message>
+        <view>
+            <heading-offset-deg>22</heading-offset-deg>
+            <pitch-offset-deg>-44</pitch-offset-deg>
+            <field-of-view>35</field-of-view>
+        </view>
+        <error>
+            <message>Switch should be in the "up" position{|.}
+            Press "y" to hide yokes{|.}
+            </message>
+            <condition>
+                <not>
+                        <property>controls/electric/avionics-switch</property>
+                    </not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                        <property>controls/electric/avionics-switch</property>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>
+            Push Condition levers full forward to autostart engines{|.}
+        </message>
+        <view>
+            <heading-offset-deg>312</heading-offset-deg>
+            <pitch-offset-deg>-44</pitch-offset-deg>
+            <field-of-view>30</field-of-view>
+        </view>
+        <error>
+            <message>Mouse click at the top of the condition lever slots{|.}
+            to move levers{|.}</message>
+            <condition>
+                <or>
+                    <less-than>
+                    <property>controls/engines/engine[0]/condition</property>
+                    <value>1</value>
+                    </less-than>
+                    <less-than>
+                    <property>controls/engines/engine[1]/condition</property>
+                    <value>1</value>
+                    </less-than>
+                </or>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <and>
+                    <equals>
+                        <property>controls/engines/engine[0]/condition</property>
+                        <value>1</value>
+                    </equals>
+                    <equals>
+                        <property>controls/engines/engine[1]/condition</property>
+                        <value>1</value>
+                    </equals>
+                </and>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>
+            Push Propeller levers full forward{|.}
+        </message>
+        <view>
+            <heading-offset-deg>317</heading-offset-deg>
+            <pitch-offset-deg>-46</pitch-offset-deg>
+            <field-of-view>30</field-of-view>
+        </view>
+        <error>
+            <message>Mouse click at the top of the propeller lever slots{|.}
+            to move levers{|.}</message>
+            <condition>
+                <or>
+                    <less-than>
+                    <property>controls/engines/engine[0]/propeller-pitch</property>
+                    <value>1</value>
+                    </less-than>
+                    <less-than>
+                    <property>controls/engines/engine[1]/propeller-pitch</property>
+                    <value>1</value>
+                    </less-than>
+                </or>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <and>
+                    <equals>
+                        <property>controls/engines/engine[0]/propeller-pitch</property>
+                        <value>1</value>
+                    </equals>
+                    <equals>
+                        <property>controls/engines/engine[1]/propeller-pitch</property>
+                        <value>1</value>
+                    </equals>
+                </and>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>
+            Push Throttle levers to "IDLE" position{|.}
+        </message>
+        <view>
+            <heading-offset-deg>315</heading-offset-deg>
+            <pitch-offset-deg>-52</pitch-offset-deg>
+            <field-of-view>35</field-of-view>
+        </view>
+        <error>
+            <message>Mouse click at the top of the throttle lever slots{|.}
+            or use "PAGEUP" "PAGEDWN" if you dont have a throttle wheel{|.}</message>
+            <condition>
+                <or>
+                    <less-than>
+                    <property>controls/engines/engine[0]/throttle</property>
+                    <value>0.41</value>
+                    </less-than>
+                    <less-than>
+                    <property>controls/engines/engine[1]/throttle</property>
+                    <value>0.41</value>
+                    </less-than>
+                </or>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <and>
+                    <greater-than>
+                        <property>controls/engines/engine[0]/throttle</property>
+                        <value>0.35</value>
+                    </greater-than>
+                    <greater-than>
+                        <property>controls/engines/engine[1]/throttle</property>
+                        <value>0.35</value>
+                    </greater-than>
+                </and>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>
+            Switch on Master panel lights.{|.}
+        </message>
+        <view>
+            <heading-offset-deg>304</heading-offset-deg>
+            <pitch-offset-deg>42</pitch-offset-deg>
+            <field-of-view>40</field-of-view>
+        </view>
+        <error>
+            <message>Switch on Master Panel and any required{|.}
+            Exterior lights - {|.}
+            </message>
+            <condition>
+                <not>
+                    <property>controls/lighting/instrument-lights</property>
+                </not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <property>controls/lighting/instrument-lights</property>
+            </condition>
+        </exit>
+    </step>
+
+    <end>
+        <message>Ready for take off{|.}
+        Dont forget to set yor nav systems first ! {|.}
+        </message>
+        <view>
+            <heading-offset-deg>0</heading-offset-deg>
+            <pitch-offset-deg>-15</pitch-offset-deg>
+            <field-of-view>60</field-of-view>
+        </view>
+    </end>
+</PropertyList>

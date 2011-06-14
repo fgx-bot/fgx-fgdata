@@ -1,0 +1,338 @@
+<?xml version="1.0"?>
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+<!-- This part should be the same for any 3D panel.  Customize the actions section -->
+<PropertyList>
+
+	<name>Seahawk Panel Hotspots</name>
+	<background>Aircraft/seahawk/Models/transparent-bg.rgb</background>
+	<w>1024</w>
+	<h>768</h>
+	<y-offset>0</y-offset>
+
+	<instruments>
+		<instrument>
+
+			<name>Panel Hotspots</name>
+			<x>512</x>
+			<y>384</y>
+			<w>1024</w>
+			<h>768</h>
+			<w-base>1024</w-base>
+			<h-base>1024</h-base>
+
+			<layers>
+				<layer>
+					<name>background</name>
+					<texture>
+						<path>Aircraft/seahawk/Models/transparent-bg.rgb</path>
+						<x1>0.0</x1>
+						<y1>0.0</y1>
+						<x2>1.0</x2>
+						<y2>1.0</y2>
+					</texture>
+				</layer>
+
+				<!-- 	<layer>
+					<name>grid</name>
+					<texture>
+						<path>Aircraft/seahawk/Models/hotspotgrid.rgb</path>
+						<x1>0.0</x1>
+						<y1>0.0</y1>
+						<x2>1.0</x2>
+						<y2>1.0</y2>
+					</texture>
+				</layer>-->
+
+			</layers>
+
+			<!-- define hotspot actions below -->
+
+			<actions>
+
+				<!-- ************** hsi hotspots ************** -->
+
+				<!-- left knob heading-bug -->
+				<action>
+					<name>ccw-fine</name>
+					<button>0</button>
+					<x>-75</x>
+					<y>50</y>
+					<w>25</w>
+					<h>25</h>
+					<binding>
+						<command>property-adjust</command>
+						<property>instrumentation/heading-indicator/heading-bug-deg/</property>
+						<step>-1</step>
+						<min>0</min>
+						<max>360</max>
+						<wrap>true</wrap>
+					</binding>
+				</action>
+
+				<action>
+					<name>ccw-coarse</name>
+					<button>1</button>
+					<x>-75</x>
+					<y>50</y>
+					<w>25</w>
+					<h>25</h>
+					<binding>
+						<command>property-adjust</command>
+						<property>instrumentation/heading-indicator/heading-bug-deg</property>
+						<step>-10</step>
+						<min>0</min>
+						<max>360</max>
+						<wrap>1</wrap>
+					</binding>
+				</action>
+
+				<action>
+					<name>cw-fine</name>
+					<button>0</button>
+					<x>-40</x>
+					<y>50</y>
+					<w>25</w>
+					<h>25</h>
+					<binding>
+						<command>property-adjust</command>
+						<property>instrumentation/heading-indicator/heading-bug-deg/</property>
+						<step>1</step>
+						<min>0</min>
+						<max>360</max>
+						<wrap>true</wrap>
+					</binding>
+				</action>
+
+
+				<action>
+					<name>cw-coarse</name>
+					<button>1</button>
+					<x>-40</x>
+					<y>50</y>
+					<w>25</w>
+					<h>25</h>
+					<binding>
+						<command>property-adjust</command>
+						<property>instrumentation/heading-indicator/heading-bug-deg/</property>
+						<step>10</step>
+						<min>0</min>
+						<max>360</max>
+						<wrap>1</wrap>
+					</binding>
+				</action>
+
+				<!-- right knob source select -->
+				<action>
+					<name>source select</name>
+					<button>0</button>
+					<x>30</x>
+					<y>50</y>
+					<w>30</w>
+					<h>30</h>
+					<binding>
+						<command>property-toggle</command>
+						<property>instrumentation/heading-indicator/heading-source/</property>
+					</binding>
+				</action>
+
+				<!-- ************** altimeter hotspots ************** -->
+				<action>
+					<name>calibrate fine</name>
+					<button>0</button>
+					<x>-145</x>
+					<y>90</y>
+					<w>30</w>
+					<h>30</h>
+					<binding>
+						<command>property-adjust</command>
+						<property>instrumentation/altimeter/setting-inhg</property>
+						<step>-0.01</step>
+						<min>26.0</min>
+						<max>33.0</max>
+						<wrap>false</wrap>
+					</binding>
+				</action>
+
+				<action>
+					<name>calibrate coarse</name>
+					<button>1</button>
+					<x>-145</x>
+					<y>90</y>
+					<w>30</w>
+					<h>30</h>
+					<binding>
+						<command>property-adjust</command>
+						<property>instrumentation/altimeter/setting-inhg</property>
+						<step>-0.1</step>
+						<min>26.0</min>
+						<max>33.0</max>
+						<wrap>false</wrap>
+					</binding>
+				</action>
+
+				<action>
+					<name>calibrate fine</name>
+					<button>0</button>
+					<x>-115</x>
+					<y>90</y>
+					<w>30</w>
+					<h>30</h>
+					<binding>
+						<command>property-adjust</command>
+						<property>instrumentation/altimeter/setting-inhg</property>
+						<step>0.01</step>
+						<min>26.0</min>
+						<max>33.0</max>
+						<wrap>false</wrap>
+					</binding>
+				</action>
+
+				<action>
+					<name>calibrate coarse</name>
+					<button>1</button>
+					<x>-115</x>
+					<y>90</y>
+					<w>30</w>
+					<h>30</h>
+					<binding>
+						<command>property-adjust</command>
+						<property>instrumentation/altimeter/setting-inhg</property>
+						<step>0.1</step>
+						<min>26.0</min>
+						<max>33.0</max>
+						<wrap>false</wrap>
+					</binding>
+				</action>
+
+				<!-- gear control -->
+				<action>
+					<name>extend</name>
+					<button>0</button>
+					<x>-465</x>
+					<y>-62</y>
+					<w>40</w>
+					<h>40</h>
+					<binding>
+						<command>property-assign</command>
+						<property>/controls/gear/gear-down</property>
+						<value type="double">1.0</value>
+					</binding>
+				</action>
+
+				<action>
+					<name>retract</name>
+					<button>0</button>
+					<x>-465</x>
+					<y>-15</y>
+					<w>40</w>
+					<h>40</h>
+					<binding>
+						<command>property-assign</command>
+						<property>/controls/gear/gear-down</property>
+						<value type="double">0</value>
+					</binding>
+				</action>
+
+				<!-- hook control -->
+				<action>
+					<name>extend</name>
+					<button>0</button>
+					<x>-405</x>
+					<y>35</y>
+					<w>40</w>
+					<h>40</h>
+					<binding>
+						<command>property-assign</command>
+						<property>/controls/gear/tailhook</property>
+						<value type="double">1.0</value>
+					</binding>
+				</action>
+
+				<action>
+					<name>retract</name>
+					<button>0</button>
+					<x>-405</x>
+					<y>75</y>
+					<w>40</w>
+					<h>40</h>
+					<binding>
+						<command>property-assign</command>
+						<property>/controls/gear/tailhook</property>
+						<value type="double">0</value>
+					</binding>
+				</action>
+
+				<!--  cockpit light dimmer hotspots -->
+				<action>
+					<name>panel brighter</name>
+					<button>0</button>
+					<x>235</x>
+					<y>150</y>
+					<w>30</w>
+					<h>30</h>
+					<binding>
+						<command>property-adjust</command>
+						<property>/controls/lighting/panel-norm</property>
+						<step>-0.1</step>
+						<min>0</min>
+						<max>1</max>
+						<wrap>0</wrap>
+					</binding>
+				</action>
+				<action>
+					<name>panel dimmer</name>
+					<button>0</button>
+					<x>265</x>
+					<y>150</y>
+					<w>30</w>
+					<h>30</h>
+					<binding>
+						<command>property-adjust</command>
+						<property>/controls/lighting/panel-norm</property>
+						<step>0.1</step>
+						<min>0</min>
+						<max>1</max>
+						<wrap>0</wrap>
+					</binding>
+				</action>
+
+				<!-- navigation light switch -->
+				<action>
+					<name>nav light up</name>
+					<button>0</button>
+					<x>300</x>
+					<y>170</y>
+					<w>30</w>
+					<h>30</h>
+					<binding>
+						<command>property-assign</command>
+						<property>controls/lighting/nav-lights</property>
+						<value type="bool">1</value>
+					</binding>
+				</action>
+				<action>
+					<name>nav light down</name>
+					<button>0</button>
+					<x>300</x>
+					<y>140</y>
+					<w>30</w>
+					<h>30</h>
+					<binding>
+						<command>property-assign</command>
+						<property>controls/lighting/nav-lights</property>
+						<value type="bool">0</value>
+					</binding>
+				</action>
+
+
+			</actions>
+
+		</instrument>
+
+	</instruments>
+
+</PropertyList>
+
+
+

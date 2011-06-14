@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+ <description>A340-300</description>
+ <author>Camil Valiquette</author>  
+ <path>Models/A340-300.ac</path>
+ <texture-path>Textures/Sabena</texture-path>
+ <offsets>
+   <z-m>10.0</z-m>
+   <pitch-deg>0.2</pitch-deg>
+ </offsets>   
+  
+      	<animation>
+		<type>select</type>
+		<object-name>gear</object-name>
+		<condition>
+			<less-than>
+				<property>velocities/true-airspeed-kt</property>
+				<value>200</value>
+			</less-than>
+		</condition>
+	</animation>   
+  
+</PropertyList>

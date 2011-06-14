@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<!--
+  Eisenhower -set file for FlightGear.
+
+  Copyright (C) 2007 - 2010  Anders Gidenstam  (anders(at)gidenstam.org)
+  This file is released under the GPL license version 2 or later.
+-->
+<PropertyList include="common.xml">
+
+	<sim include="Systems/nimitz-views.xml">
+
+		<description>Multiplayer Eisenhower - Other pilots can land on it.</description>
+		<author>Anders Gidenstam</author>
+		<status>experimental</status>
+		<aircraft-version>0.1</aircraft-version>
+
+		<flight-model>null</flight-model>
+
+		<presets>
+			<onground>true</onground>
+		</presets>
+
+		<startup>
+			<splash-texture>Aircraft/MPCarrier/nimitz-splash.rgb</splash-texture>
+		</startup>
+
+		<sound>
+			<audible>false</audible>
+			<path/>
+		</sound>
+
+		<model>
+			<path>Aircraft/MPCarrier/Models/mp-eisenhower.xml</path>
+		</model>
+
+		<systems>
+
+			<electrical>
+				<path/>
+			</electrical>
+
+			<static>
+			</static>
+
+		</systems>
+
+		<instrumentation>
+			<path/>
+		</instrumentation>
+
+		<hud>
+			<path n="1">Aircraft/MPCarrier/Systems/LSO.xml</path>
+			<visibility n="1">true</visibility>
+			<font>
+				<size type="float">10.0</size>
+			</font>
+		</hud>
+
+
+		<!-- This aircraft is pointless without the nimitz_demo scenario. -->
+		<ai>
+			<enabled type="bool">true</enabled>
+			<scenario n="100">eisenhower_demo</scenario>
+		</ai>
+
+		<mp-carriers>
+			<eisenhower-callsign type="string"></eisenhower-callsign>
+		</mp-carriers>
+	</sim>
+
+	<controls>
+		<rudder-pos-deg type="float"> 0.0 </rudder-pos-deg>
+		<speed-kts type="float"> 0.0 </speed-kts>
+	</controls>
+
+	<surface-positions>
+		<!-- These will be (ab)used for transmitting rudder-deg and speed-kts. -->
+		<rudder-pos-norm type="float"> 0.0 </rudder-pos-norm>
+		<flap-pos-norm type="float"> 0.0 </flap-pos-norm>
+	</surface-positions>
+
+
+	<nasal>
+		<!-- Nasal Carrier View -->
+		<CarrierControl>
+			<file>Aircraft/MPCarrier/Systems/commander.nas</file>
+			<script>
+				var carrier_name = "Eisenhower";
+			</script>
+		</CarrierControl>
+		<approachview>
+			<file>Aircraft/MPCarrier/Systems/approachview.nas</file>
+		</approachview>
+		<lsoview>
+			<file>Aircraft/MPCarrier/Systems/lsoview.nas</file>
+		</lsoview>
+		<Radar>
+			<file>Aircraft/MPCarrier/Panels/MP-radar.nas</file>
+		</Radar>
+		<LSOComms>
+			<file>Aircraft/MPCarrier/Systems/lsocomms.nas</file>
+		</LSOComms>
+		<walkview>
+			<file>Aircraft/Generic/WalkView/walkview.nas</file>
+		</walkview>
+		<walkviews>
+			<file>Aircraft/MPCarrier/Systems/nimitz-walk-views.nas</file>
+		</walkviews>
+	</nasal>
+
+</PropertyList>

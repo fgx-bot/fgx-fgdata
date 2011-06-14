@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+
+<!--
+Legacy 2D instruments and actions for the 3D C310 cockpit.
+-->
+
+<!DOCTYPE PropertyList>
+
+<PropertyList>
+
+ <name>C310 2D instruments.</name>
+ <background>Aircraft/Generic/Panels/Textures/transparent-bg.rgb</background>
+ <w>1024</w>
+ <h>768</h>
+
+ <instruments>
+
+  <instrument include="../../Instruments/asi-260-knot.xml">
+   <name>Airspeed Indicator</name>
+   <x>300</x>
+   <y>300</y>
+   <w>72</w>
+   <h>72</h>
+  </instrument>
+
+  <instrument include="../../Instruments/attitude-indicator.xml">
+   <name>Attitude Gyro</name>
+   <x>380</x>
+   <y>300</y>
+   <w>72</w>
+   <h>72</h>
+  </instrument>
+
+  <instrument include="../../Instruments/altimeter.xml">
+   <name>Altimeter</name>
+   <x>460</x>
+   <y>300</y>
+   <w>72</w>
+   <h>72</h>
+  </instrument>
+
+  <instrument include="../../Instruments/turn.xml">
+   <name>Turn Coordinator</name>
+   <x>300</x>
+   <y>220</y>
+   <w>72</w>
+   <h>72</h>
+  </instrument>
+
+  <instrument include="../../Instruments/hsi.xml">
+   <name>Horizontal Situation Indicator</name>
+   <x>380</x>
+   <y>220</y>
+   <w>72</w>
+   <h>72</h>
+  </instrument>
+
+  <instrument include="../../Instruments/vertical.xml">
+   <name>Vertical Velocity Indicator</name>
+   <x>460</x>
+   <y>220</y>
+   <w>72</w>
+   <h>72</h>
+  </instrument>
+
+  <instrument include="../../Instruments/vertical.xml">
+   <name>Vertical Velocity Indicator</name>
+   <x>460</x>
+   <y>220</y>
+   <w>72</w>
+   <h>72</h>
+  </instrument>
+
+  <instrument include="../../Instruments/tach-2700-redline.xml">
+   <name>RPM Gauge</name>
+   <x>460</x>
+   <y>140</y>
+   <w>72</w>
+   <h>72</h>
+  </instrument>
+  
+ </instruments>
+
+
+</PropertyList>
+
+

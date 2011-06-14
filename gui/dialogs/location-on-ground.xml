@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+  <name>location-on-ground</name>
+  <layout>vbox</layout>
+
+  <group>
+    <layout>hbox</layout>
+	  <empty><stretch>1</stretch></empty>
+
+    <text>
+      <label>Position Aircraft On Ground</label>
+    </text>
+
+	  <empty><stretch>1</stretch></empty>
+
+    <button>
+      <pref-width>16</pref-width>
+      <pref-height>16</pref-height>
+      <legend></legend>
+      <keynum>27</keynum>
+      <border>2</border>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+    </button>
+  </group>
+
+  <hrule/>
+
+  <nasal>
+    <open>
+      var dlg = props.globals.getNode("/sim/gui/dialogs/location-on-ground", 1);
+      var apt = dlg.getNode("airport", 1);
+      apt.setValue("");
+      var rwy = dlg.getNode("runway", 1);
+      rwy.setValue("");
+      var parkpos = dlg.getNode("parkpos", 1);
+      parkpos.setValue("");
+
+      var mode = {
+        runway:  dlg.getNode("use_runway", 1),
+        parkpos: dlg.getNode("use_parkpos", 1)
+      };
+
+      var set_radio = func(m) {
+        foreach (k; keys(mode)) {
+          mode[k].setBoolValue(m == k);
+        }
+      }
+
+      var initialized = 0;
+      foreach (k; keys(mode)) {
+        if (mode[k].getType() == "NONE" or initialized) {
+          mode[k].setBoolValue(0);
+        } else {
+          initialized += mode[k].getBoolValue();
+        }
+      }
+      if (!initialized) {
+        set_radio("runway");
+      }
+
+      var runways = dlg.getNode("available-runways", 1);
+
+      var updateRunways = func {
+        var icao = dlg.getNode("airport").getValue();
+        runways.removeChildren("value");
+
+        var apt = airportinfo(icao);
+        if (apt != nil) {
+          var i=0;
+          foreach (var rwy; keys(apt.runways)) {
+            runways.getNode("value[" ~ i ~ "]", 1).setValue(rwy);
+            i += 1;
+          }
+        }
+
+        gui.dialog_update("location-on-ground");
+      }
+    </open>
+  </nasal>
+
+  <group>
+    <layout>table</layout>
+    <halign>center</halign>
+
+    <text>
+      <row>0</row><col>1</col>
+      <halign>right</halign>
+      <label>Airport:</label>
+    </text>
+
+    <input>
+      <row>0</row><col>2</col>
+	  <live>true</live>
+      <property>/sim/gui/dialogs/location-on-ground/airport</property>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>updateRunways();</script>
+      </binding>
+    </input>
+
+    <radio>
+      <row>1</row><col>0</col>
+      <property>/sim/gui/dialogs/location-on-ground/use_runway</property>
+      <live>true</live>
+      <binding>
+        <command>nasal</command>
+        <script>set_radio("runway")</script>
+      </binding>
+    </radio>
+
+    <text>
+      <row>1</row><col>1</col>
+      <halign>right</halign>
+      <label>Runway:</label>
+    </text>
+
+	<combo>
+      <name>runway</name>
+      <row>1</row><col>2</col>
+      <pref-width>85</pref-width>
+      <enable>
+        <property>/sim/gui/dialogs/location-on-ground/use_runway</property>
+      </enable>
+      <property>sim/gui/dialogs/location-on-ground/runway</property>
+      <editable>false</editable>
+      <properties>sim/gui/dialogs/location-on-ground/available-runways</properties>
+      <binding>
+        <command>dialog-apply</command>
+        <object-name>runway</object-name>
+      </binding>
+    </combo>
+
+    <radio>
+      <row>2</row><col>0</col>
+      <property>/sim/gui/dialogs/location-on-ground/use_parkpos</property>
+      <live>true</live>
+      <binding>
+        <command>nasal</command>
+        <script>set_radio("parkpos")</script>
+      </binding>
+    </radio>
+
+    <text>
+      <row>2</row><col>1</col>
+      <halign>right</halign>
+      <label>Parking:</label>
+    </text>
+
+    <input>
+      <row>2</row><col>2</col>
+      <enable>
+        <property>/sim/gui/dialogs/location-on-ground/use_parkpos</property>
+      </enable>
+      <property>/sim/gui/dialogs/location-on-ground/parkpos</property>
+    </input>
+  </group>
+
+  <hrule/>
+
+  <group>
+    <layout>hbox</layout>
+    <default-padding>10</default-padding>
+    <empty><stretch>true</stretch></empty>
+
+    <button>
+      <legend>OK</legend>
+      <default>true</default>
+      <equal>true</equal>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>
+          setprop("/sim/presets/airport-id", apt.getValue());
+          if (mode["runway"].getBoolValue()) {
+            setprop("/sim/presets/runway", rwy.getValue());
+            setprop("/sim/presets/parkpos", "");
+          } else {
+            setprop("/sim/presets/runway", "");
+            setprop("/sim/presets/parkpos", parkpos.getValue());
+          }
+          setprop("/sim/presets/longitude-deg", -9999);
+          setprop("/sim/presets/latitude-deg", -9999);
+          setprop("/sim/presets/altitude-ft", -9999);
+          setprop("/sim/presets/airspeed-kt", 0);
+          setprop("/sim/presets/offset-distance-nm", 0);
+          setprop("/sim/presets/offset-azimuth-nm", 0);
+          setprop("/sim/presets/glideslope-deg", 0);
+          setprop("/sim/presets/heading-deg", 9999);
+        </script>
+      </binding>
+      <binding>
+        <command>presets-commit</command>
+      </binding>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+    </button>
+
+    <empty><stretch>true</stretch></empty>
+
+    <button>
+      <legend>Cancel</legend>
+      <equal>true</equal>
+      <key>Esc</key>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+    </button>
+
+    <empty><stretch>true</stretch></empty>
+  </group>
+</PropertyList>

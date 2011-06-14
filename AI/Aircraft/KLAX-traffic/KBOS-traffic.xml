@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+<trafficlist>
+    <aircraft>
+        <model>AI/Aircraft/767/767-USAirways.xml</model>
+        <livery>USA</livery> 
+        <airline>USA</airline>
+        <actype>767-400</actype>
+        <offset>2</offset>
+        <radius>33</radius>
+        <flighttype>gate</flighttype>
+        <performance-class>jet_transport</performance-class>
+        <registration>N2277LX</registration>
+        <heavy>false</heavy>
+
+        <flight>
+            <callsign>US9877LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KLAX</port>
+               <time>10:12:00</time>
+            </departure>
+            <cruise-alt>310</cruise-alt>
+            <arrival>
+                <port>KBOS</port>
+                <time>15:47:00</time>
+            </arrival>
+        <repeat>24Hr</repeat>
+       </flight> 
+
+       <flight>
+            <callsign>US9777LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KBOS</port>
+               <time>18:12:00</time>
+            </departure>
+            <cruise-alt>310</cruise-alt>
+            <arrival>
+                <port>KLAX</port>
+                <time>23:47:00</time>
+            </arrival>
+        <repeat>24Hr</repeat>
+       </flight>  
+         
+    </aircraft> 
+
+    <aircraft>
+        <model>AI/Aircraft/767/767-USAirways.xml</model>
+        <livery>USA</livery> 
+        <airline>USA</airline>
+        <actype>767-400</actype>
+        <offset>2</offset>
+        <radius>33</radius>
+        <flighttype>gate</flighttype>
+        <performance-class>jet_transport</performance-class>
+        <registration>N2276LX</registration>
+        <heavy>false</heavy>
+
+        <flight>
+            <callsign>US9876LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KLAX</port>
+               <time>12:12:00</time>
+            </departure>
+            <cruise-alt>310</cruise-alt>
+            <arrival>
+                <port>KBOS</port>
+                <time>17:47:00</time>
+            </arrival>
+        <repeat>24Hr</repeat>
+       </flight> 
+
+       <flight>
+            <callsign>US9776LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KBOS</port>
+               <time>20:12:00</time>
+            </departure>
+            <cruise-alt>310</cruise-alt>
+            <arrival>
+                <port>KLAX</port>
+                <time>01:47:00</time>
+            </arrival>
+        <repeat>24Hr</repeat>
+       </flight>  
+         
+    </aircraft> 
+
+    <aircraft>
+        <model>AI/Aircraft/767/767-USAirways.xml</model>
+        <livery>USA</livery> 
+        <airline>USA</airline>
+        <actype>767-400</actype>
+        <offset>2</offset>
+        <radius>33</radius>
+        <flighttype>gate</flighttype>
+        <performance-class>jet_transport</performance-class>
+        <registration>N2275LX</registration>
+        <heavy>false</heavy>
+
+        <flight>
+            <callsign>US9875LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KLAX</port>
+               <time>14:12:00</time>
+            </departure>
+            <cruise-alt>310</cruise-alt>
+            <arrival>
+                <port>KBOS</port>
+                <time>19:47:00</time>
+            </arrival>
+        <repeat>24Hr</repeat>
+       </flight> 
+
+       <flight>
+            <callsign>US9775LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KBOS</port>
+               <time>22:12:00</time>
+            </departure>
+            <cruise-alt>310</cruise-alt>
+            <arrival>
+                <port>KLAX</port>
+                <time>03:47:00</time>
+            </arrival>
+        <repeat>24Hr</repeat>
+       </flight>  
+         
+    </aircraft> 
+
+    <aircraft>
+        <model>AI/Aircraft/767/767-USAirways.xml</model>
+        <livery>USA</livery> 
+        <airline>USA</airline>
+        <actype>767-400</actype>
+        <offset>2</offset>
+        <radius>33</radius>
+        <flighttype>gate</flighttype>
+        <performance-class>jet_transport</performance-class>
+        <registration>N2274LX</registration>
+        <heavy>false</heavy>
+
+        <flight>
+            <callsign>US9874LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KLAX</port>
+               <time>16:12:00</time>
+            </departure>
+            <cruise-alt>310</cruise-alt>
+            <arrival>
+                <port>KBOS</port>
+                <time>21:47:00</time>
+            </arrival>
+        <repeat>24Hr</repeat>
+       </flight> 
+
+       <flight>
+            <callsign>US9774LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KBOS</port>
+               <time>24:12:00</time>
+            </departure>
+            <cruise-alt>310</cruise-alt>
+            <arrival>
+                <port>KLAX</port>
+                <time>05:47:00</time>
+            </arrival>
+        <repeat>24Hr</repeat>
+       </flight>  
+         
+    </aircraft> 
+
+</trafficlist>

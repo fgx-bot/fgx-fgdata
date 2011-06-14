@@ -1,0 +1,3206 @@
+<?xml version="1.0"?>
+
+<!--
+************************************************************************
+FlightGear Materials File
+
+This property file configures the materials for FlightGear.  Each
+material describes a single visual appearance in the simulator, which
+can be represented by a colour, a texture, or both.  If a material has
+more than one name, all of the names will be used as aliases for the
+same material: this is often a good idea to save texture memory.
+
+Currently, colours will not be used unless the user disables textures;
+in the future, the program may use textures with an alpha component so
+that it will combine with the colour underneath.
+
+Properties currently used:
+
+  name: A name for the texture (you may provide more than one).  The
+   FlightGear scenery files look up their textures by name.
+
+  texture: A relative path to an SGI RGB file containing a texture for
+    the material.
+
+  wrapu: true if the texture should repeat horizontally over a
+    surface, false if it should not repeat (default: true).
+
+  wrapv: true if the texture should repeat vertically over a
+    surface, false if it should not repeat (default: true).
+
+  mipmap: true if the texture should be mipmapped, false otherwise
+    (default: true).
+
+  xsize: the horizontal size of a single texture repetition, in meters
+    (0, the default, means use the natural size [??]).
+
+  ysize: the vertical size of a single texture repetition, in meters
+    (0, the default, means use the natural size [??]).
+
+  light-coverage: a seed number for generating random night lighting
+    over an area.  A higher number means fewer lights, and 0 means
+    that lighting is disabled.
+
+  ambient: the ambient light colour for the material, specified as
+    separate red, green, blue, and alpha components (default: all
+    color components 0.2, alpha 1.0).
+
+  diffuse: the diffuse light colour for the material, specified as
+    separate red, green, blue, and alpha components (default: all
+    color components 0.8, alpha 1.0).
+
+  specular: the specular light colour for the material, specified as
+    separate red, green, blue, and alpha components (default: all
+    color components 0.0, alpha 1.0).
+
+  emissive: the emissive light colour for the material, specified as
+    separate red, green, blue, and alpha components (default: all
+    color components 0.0, alpha 1.0).
+
+  solid: bool value, if true the surface is solid for an FDM. If it is not
+    solid, it is assumed that the material models a fluid (water) surface
+    (default: true).
+
+  friction-factor: the friction factor for that material. The normalized
+    factor can be used by a FDM to post-multiply all contact friction forces
+    with that factor. That is the more slippery a material is the smaller this
+    value should be. (default: 1.0 for Dry concrete/Asphalt).
+
+  rolling-friction: the gear rolling rolling-friction coefficient for this
+    particular material. (default: 0.02 for Dry concrete/Asphalt).
+
+  bumpiness: normalized bumpiness factor for this particular terrain.
+    (default: 0.0 for a smooth surface).
+
+  load-resistance: a pressure value how much force per surface area this
+    surface can carry without deformation. The value should be in N/m^2
+    (default: FLT_MAX).
+
+  glyph: group that defines one letter/digit/symbol in a font texture
+    sub-entries: name, left (default: 0.0), right (default: 1.0)
+    (left and right describe the horizontal position in the texture.)
+
+  wood-coverage: The coverage of woods in m^2. A lower number means a
+    higher density of woods. A value of 0 indicates no woods.
+
+  wood-size: The average size of each wood in m^2. A lower number
+    means smaller individual woods. If not set, each wood is considered
+    to contain a single tree, causing even distribution.
+
+  tree-density: The area covered by each tree in the wood in m^2. A
+    lower number means denser individual woods. Ignored if wood-size
+    is not set.
+    
+  tree-range-m: The range at which trees become visible. Note that this
+    is not absolute, as trees are loaded in blocks. A lower number means
+    trees will not become visible until you are closer.
+
+  tree-texture: A texture to use for the trees. Typically this will be a
+    strip with multiple tree textures.
+
+  tree-varieties: The number of different trees defined in the tree-texture
+
+  tree-height-m: The average height of the trees cover. Actual tree height
+    will vary by +/- 50%.
+
+  tree-width-m: The average width of the tree cover. Actual tree width
+    will vary by +/- 50%.
+
+  effect - The name of an effect to inherit from. The default is
+    Effects/terrain-default.
+
+   ambient, diffuse, specular, emissive, and shininess are copied into the
+   parameter section of the effect created for this material.
+************************************************************************
+-->
+
+<PropertyList>
+
+ <!--
+Shared parameters for various materials.
+-->
+ <params>
+  <forest>
+   <!-- Maximum distance from which a tree is visible -->
+   <tree-range-m>8000</tree-range-m>
+  </forest>
+ </params>
+
+ <material>
+  <name>grass_rwy</name>
+  <texture>Runway/grass_rwy.png</texture>
+  <xsize>75</xsize>
+  <ysize>75</ysize>
+  <solid>1</solid>
+  <friction-factor>0.8</friction-factor>
+  <rolling-friction>0.05</rolling-friction>
+  <bumpiness>0.05</bumpiness>
+  <load-resistance>1e5</load-resistance>
+ </material>
+
+ <material>
+  <name>dirt_rwy</name>
+  <texture>Runway/dirt_rwy.png</texture>
+  <friction-factor>0.7</friction-factor>
+  <rolling-friction>0.04</rolling-friction>
+  <bumpiness>0.1</bumpiness>
+ </material>
+
+ <material>
+  <name>lakebed_taxiway</name>
+  <texture>Runway/lakebed_taxiway.png</texture>
+  <rolling-friction>0.04</rolling-friction>
+  <bumpiness>0.05</bumpiness>
+ </material>
+
+ <material>
+  <name>pa_taxiway</name>
+  <texture>Runway/pa_taxiway.png</texture>
+ </material>
+
+ <material>
+  <name>pa_tiedown</name>
+  <texture>Runway/pa_tiedown.png</texture>
+ </material>
+
+ <material>
+  <name>pa_dspl_thresh</name>
+  <texture>Runway/pa_dspl_thresh.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_dspl_arrows</name>
+  <texture>Runway/pa_dspl_arrows.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_threshold</name>
+  <texture>Runway/pa_threshold.png</texture>
+  <wrapu>false</wrapu>
+  <wrapv>false</wrapv>
+ </material>
+ 
+ <material>
+  <name>pa_stopway</name>
+  <texture>Runway/pa_stopway.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_L</name>
+  <texture>Runway/pa_L.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_R</name>
+  <texture>Runway/pa_R.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_C</name>
+  <texture>Runway/pa_C.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_0l</name>
+  <texture>Runway/pa_0l.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_0r</name>
+  <texture>Runway/pa_0r.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_1c</name>
+  <texture>Runway/pa_1c.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_1l</name>
+  <texture>Runway/pa_1l.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_1r</name>
+  <texture>Runway/pa_1r.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_11</name>
+  <texture>Runway/pa_11.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_2c</name>
+  <texture>Runway/pa_2c.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_2l</name>
+  <texture>Runway/pa_2l.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_2r</name>
+  <texture>Runway/pa_2r.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_3c</name>
+  <texture>Runway/pa_3c.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_3l</name>
+  <texture>Runway/pa_3l.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_3r</name>
+  <texture>Runway/pa_3r.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_4c</name>
+  <texture>Runway/pa_4c.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_4r</name>
+  <texture>Runway/pa_4r.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_5c</name>
+  <texture>Runway/pa_5c.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_5r</name>
+  <texture>Runway/pa_5r.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_6c</name>
+  <texture>Runway/pa_6c.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_6r</name>
+  <texture>Runway/pa_6r.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_7c</name>
+  <texture>Runway/pa_7c.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_7r</name>
+  <texture>Runway/pa_7r.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_8c</name>
+  <texture>Runway/pa_8c.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_8r</name>
+  <texture>Runway/pa_8r.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_9c</name>
+  <texture>Runway/pa_9c.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_9r</name>
+  <texture>Runway/pa_9r.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_tz_three</name>
+  <texture>Runway/pa_tz_three.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_aim</name>
+  <texture>Runway/pa_aim.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_tz_two_a</name>
+  <texture>Runway/pa_tz_two_a.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_tz_two_b</name>
+  <texture>Runway/pa_tz_two_b.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_tz_one_a</name>
+  <texture>Runway/pa_tz_one_a.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_tz_one_b</name>
+  <texture>Runway/pa_tz_one_b.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_centerline</name>
+  <texture>Runway/pa_centerline.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pa_rest</name>
+  <texture>Runway/pa_rest.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_taxiway</name>
+  <name>dirt_rwytaxiway</name>
+  <texture>Runway/pc_taxiway.png</texture>
+ </material>
+
+ <material>
+  <name>pc_tiedown</name>
+  <name>dirt_rwytiedown</name>
+  <texture>Runway/pc_tiedown.png</texture>
+ </material>
+
+ <material>
+  <name>pc_dspl_thresh</name>
+  <texture>Runway/pc_dspl_thresh.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_dspl_arrows</name>
+  <texture>Runway/pc_dspl_arrows.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_threshold</name>
+  <name>dirt_rwythreshold</name>
+  <texture>Runway/pc_threshold.png</texture>
+  <wrapu>false</wrapu>
+  <wrapv>false</wrapv>
+ </material>
+ 
+ <material>
+  <name>pc_stopway</name>
+  <texture>Runway/pc_stopway.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_L</name>
+  <name>dirt_rwyL</name>
+  <texture>Runway/pc_L.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_R</name>
+  <name>dirt_rwyR</name>
+  <texture>Runway/pc_R.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_C</name>
+  <name>dirt_rwyC</name>
+  <texture>Runway/pc_C.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_0l</name>
+  <name>dirt_rwy0l</name>
+  <texture>Runway/pc_0l.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_0r</name>
+  <name>dirt_rwy0r</name>
+  <texture>Runway/pc_0r.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_1c</name>
+  <name>dirt_rwy1c</name>
+  <texture>Runway/pc_1c.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_1l</name>
+  <name>dirt_rwy1l</name>
+  <texture>Runway/pc_1l.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_1r</name>
+  <name>dirt_rwy1r</name>
+  <texture>Runway/pc_1r.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_11</name>
+  <name>dirt_rwy11</name>
+  <texture>Runway/pc_11.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_2c</name>
+  <name>dirt_rwy2c</name>
+  <texture>Runway/pc_2c.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_2l</name>
+  <name>dirt_rwy2l</name>
+  <texture>Runway/pc_2l.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_2r</name>
+  <name>dirt_rwy2r</name>
+  <texture>Runway/pc_2r.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_3c</name>
+  <name>dirt_rwy3c</name>
+  <texture>Runway/pc_3c.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_3l</name>
+  <name>dirt_rwy3l</name>
+  <texture>Runway/pc_3l.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_3r</name>
+  <name>dirt_rwy3r</name>
+  <texture>Runway/pc_3r.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_4c</name>
+  <name>dirt_rwy4c</name>
+  <texture>Runway/pc_4c.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_4r</name>
+  <name>dirt_rwy4r</name>
+  <texture>Runway/pc_4r.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_5c</name>
+  <name>dirt_rwy5c</name>
+  <texture>Runway/pc_5c.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_5r</name>
+  <name>dirt_rwy5r</name>
+  <texture>Runway/pc_5r.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_6c</name>
+  <name>dirt_rwy6c</name>
+  <texture>Runway/pc_6c.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_6r</name>
+  <name>dirt_rwy6r</name>
+  <texture>Runway/pc_6r.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_7c</name>
+  <name>dirt_rwy7c</name>
+  <texture>Runway/pc_7c.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_7r</name>
+  <name>dirt_rwy7r</name>
+  <texture>Runway/pc_7r.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_8c</name>
+  <name>dirt_rwy8c</name>
+  <texture>Runway/pc_8c.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_8r</name>
+  <name>dirt_rwy8r</name>
+  <texture>Runway/pc_8r.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_9c</name>
+  <name>dirt_rwy9c</name>
+  <texture>Runway/pc_9c.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_9r</name>
+  <name>dirt_rwy9r</name>
+  <texture>Runway/pc_9r.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_tz_three</name>
+  <name>dirt_rwytz_three</name>
+  <texture>Runway/pc_tz_three.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_aim</name>
+  <name>dirt_rwyaim</name>
+  <texture>Runway/pc_aim.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_tz_two_a</name>
+  <name>dirt_rwytz_two_a</name>
+  <texture>Runway/pc_tz_two_a.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_tz_two_b</name>
+  <name>dirt_rwytz_two_b</name>
+  <texture>Runway/pc_tz_two_b.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_tz_one_a</name>
+  <name>dirt_rwytz_one_a</name>
+  <texture>Runway/pc_tz_one_a.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_tz_one_b</name>
+  <name>dirt_rwytz_one_b</name>
+  <texture>Runway/pc_tz_one_b.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_centerline</name>
+  <name>dirt_rwycenterline</name>
+  <texture>Runway/pc_centerline.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <material>
+  <name>pc_rest</name>
+  <name>dirt_rwyrest</name>
+  <texture>Runway/pc_rest.png</texture>
+  <wrapu>false</wrapu>
+ </material>
+
+ <!-- Default Summer -->
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>summer</value>
+   </equals>
+  </condition>
+  <name>Landmass</name>
+  <name>SomeSort</name>
+  <name>Island</name>
+  <name>Default</name>
+  <effect>Effects/landmass-nowood</effect>
+  <texture>Terrain/forest1a.png</texture>
+  <texture>Terrain/forest1b.png</texture>
+  <texture>Terrain/forest1c.png</texture>
+  <xsize>2000</xsize>
+  <ysize>2000</ysize>
+  <light-coverage>10000000.0</light-coverage>
+  <wood-coverage>4000.0</wood-coverage>
+  <tree-texture>Textures/Trees/coniferous-summer.png</tree-texture>
+  <tree-varieties>8</tree-varieties>
+  <tree-range-m alias="/params/forest/tree-range-m"/>
+  <tree-height-m>25.0</tree-height-m>
+  <tree-width-m>15.0</tree-width-m>
+  <rolling-friction>1</rolling-friction>
+  <bumpiness>1</bumpiness>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>summer</value>
+   </equals>
+  </condition>
+  <name>EvergreenBroadCover</name>
+  <name>EvergreenForest</name>
+  <effect>Effects/forest</effect>
+  <texture>Terrain/forest1a.png</texture>
+  <texture>Terrain/forest1b.png</texture>
+  <texture>Terrain/forest1c.png</texture>
+  <xsize>2000</xsize>
+  <ysize>2000</ysize>
+  <light-coverage>10000000.0</light-coverage>
+  <wood-coverage>4000.0</wood-coverage>
+  <tree-texture>Textures/Trees/coniferous-summer.png</tree-texture>
+  <tree-varieties>8</tree-varieties>
+  <tree-range-m alias="/params/forest/tree-range-m"/>
+  <tree-height-m>25.0</tree-height-m>
+  <tree-width-m>18.0</tree-width-m>
+  <rolling-friction>1</rolling-friction>
+  <bumpiness>1</bumpiness>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>summer</value>
+   </equals>
+  </condition>
+  <effect>Effects/forest</effect>
+  <name>DeciduousBroadCover</name>
+  <name>DeciduousForest</name>
+  <name>Bog</name>
+  <name>Heath</name>
+  <texture>Terrain/deciduous1.png</texture>
+  <texture>Terrain/deciduous2.png</texture>
+  <texture>Terrain/deciduous4.png</texture>
+  <xsize>2000</xsize>
+  <ysize>2000</ysize>
+  <light-coverage>10000000.0</light-coverage>
+  <wood-coverage>4000.0</wood-coverage>
+  <tree-texture>Textures/Trees/deciduous-summer.png</tree-texture>
+  <tree-varieties>8</tree-varieties>
+  <tree-range-m alias="/params/forest/tree-range-m"/>
+  <tree-height-m>25.0</tree-height-m>
+  <tree-width-m>15.0</tree-width-m>
+  <rolling-friction>1</rolling-friction>
+  <bumpiness>0.85</bumpiness>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>summer</value>
+   </equals>
+  </condition>
+  <effect>Effects/forest</effect>
+  <name>MixedForestCover</name>
+  <name>MixedForest</name>
+  <name>RainForest</name>
+  <texture>Terrain/mixedforest.png</texture>
+  <texture>Terrain/mixedforest2.png</texture>
+  <texture>Terrain/mixedforest3.png</texture>
+  <xsize>2000</xsize>
+  <ysize>2000</ysize>
+  <light-coverage>5000000.0</light-coverage>
+  <wood-coverage>4000.0</wood-coverage>
+  <tree-texture>Textures/Trees/mixed-summer.png</tree-texture>
+  <tree-varieties>8</tree-varieties>
+  <tree-range-m alias="/params/forest/tree-range-m"/>
+  <tree-height-m>25.0</tree-height-m>
+  <tree-width-m>15.0</tree-width-m>
+  <rolling-friction>1</rolling-friction>
+  <bumpiness>0.95</bumpiness>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>summer</value>
+   </equals>
+  </condition>
+  <effect>Effects/forest</effect>
+  <name>EvergreenNeedleCover</name>
+  <name>WoodedTundraCover</name>
+  <texture>Terrain/evergreen.png</texture>
+  <xsize>1000</xsize>
+  <ysize>1000</ysize>
+  <light-coverage>10000000.0</light-coverage>
+  <wood-coverage>4000.0</wood-coverage>
+  <tree-texture>Textures/Trees/coniferous-summer.png</tree-texture>
+  <tree-varieties>8</tree-varieties>
+  <tree-range-m alias="/params/forest/tree-range-m"/>
+  <tree-height-m>20.0</tree-height-m>
+  <tree-width-m>15.0</tree-width-m>
+  <rolling-friction>1</rolling-friction>
+  <bumpiness>1</bumpiness>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>summer</value>
+   </equals>
+  </condition>
+  <effect>Effects/forest</effect>
+  <name>DeciduousNeedleCover</name>
+  <texture>Terrain/dec_evergreen.png</texture>
+  <xsize>1000</xsize>
+  <ysize>1000</ysize>
+  <light-coverage>10000000.0</light-coverage>
+  <wood-coverage>4000.0</wood-coverage>
+  <tree-texture>Textures/Trees/coniferous-summer.png</tree-texture>
+  <tree-varieties>8</tree-varieties>
+  <tree-range-m alias="/params/forest/tree-range-m"/>
+  <tree-height-m>15.0</tree-height-m>
+  <tree-width-m>8.0</tree-width-m>
+  <rolling-friction>1</rolling-friction>
+  <bumpiness>1</bumpiness>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>summer</value>
+   </equals>
+  </condition>
+  <name>Sand</name>
+  <texture>Terrain/sand4.png</texture>
+  <texture>Terrain/sand5.png</texture>
+  <texture>Terrain/sand6.png</texture>
+  <xsize>2000</xsize>
+  <ysize>2000</ysize>
+  <light-coverage>10000000.0</light-coverage>
+  <shininess>2.5</shininess>
+  <rolling-friction>0.1</rolling-friction>
+  <friction-factor>0.7</friction-factor>
+  <bumpiness>0.1</bumpiness>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>summer</value>
+   </equals>
+  </condition>
+  <effect>Effects/landmass-scrub</effect>
+  <name>ShrubCover</name>
+  <name>ShrubGrassCover</name>
+  <name>ScrubCover</name>
+  <name>Sclerophyllous</name>
+  <texture>Terrain/shrub1.png</texture>
+<!--
+  <texture>Terrain/shrub.png</texture>
+  <texture>Terrain/shrub2.png</texture>
+  <texture>Terrain/shrub3.png</texture>
+-->
+  <xsize>2000</xsize>
+  <ysize>2000</ysize>
+  <diffuse>
+   <r>0.86</r>
+   <g>0.86</g>
+   <b>0.86</b>
+   <a>1.0</a>
+  </diffuse>
+  <specular>
+   <r>0.1</r>
+   <g>0.1</g>
+   <b>0.1</b>
+   <a>1.0</a>
+  </specular>
+  <shininess>1.2</shininess>
+  <light-coverage>20000000.0</light-coverage>
+  <wood-coverage>12000.0</wood-coverage>
+  <tree-texture>Textures/Trees/mixed-shrub.png</tree-texture>
+  <tree-varieties>8</tree-varieties>
+  <tree-range-m alias="/params/forest/tree-range-m"/>
+  <tree-height-m>2.0</tree-height-m>
+  <tree-width-m>2.0</tree-width-m>
+  <rolling-friction>0.6</rolling-friction>
+  <bumpiness>0.4</bumpiness>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>summer</value>
+   </equals>
+  </condition>
+  <name>BuiltUpCover</name>
+  <name>Urban</name>
+  <name>Construction</name>
+  <name>Industrial</name>
+  <name>Port</name>
+  <effect>Effects/urban</effect>
+  <texture-set>
+   <texture>Terrain/city1.png</texture>
+   <texture n="2">Terrain/city1-relief-light.png</texture>
+  </texture-set>
+  <texture-set>
+   <texture>Terrain/city2.png</texture>
+   <texture n="2">Terrain/city2-relief-light.png</texture>
+  </texture-set>
+<!-- 
+  <texture-set>
+   <texture>Terrain/city3.png</texture>
+   <texture n="2">Terrain/city3-relief-light.png</texture>
+  </texture-set>
+-->
+  <xsize>1000</xsize>
+  <ysize>1000</ysize>
+  <light-coverage>100000.0</light-coverage>
+  <emissive>
+   <r>0.05</r>
+   <g>0.05</g>
+   <b>0.02</b>
+   <a>1.0</a>
+  </emissive>
+  <object-group>
+   <range-m>10000</range-m>
+   <object>
+    <path>Models/Buildings/oil-tanks.ac</path>
+    <coverage-m2>10000000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+   <object>
+    <path>Models/Buildings/big-apartment.ac</path>
+    <coverage-m2>10000000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+   <object>
+    <path>Models/Buildings/factory.ac</path>
+    <coverage-m2>4000000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+  </object-group>
+  <object-group>
+   <range-m>5000</range-m>
+   <object>
+    <path>Models/Residential/cube-apartment.ac</path>
+    <path>Models/Residential/medium-apartment.ac</path>
+    <path>Models/Buildings/renovated-apartment.ac</path>
+    <coverage-m2>1000000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+   <object>
+    <path>Models/Commercial/small-glass-office-building.ac</path>
+    <path>Models/Buildings/medium-glass-office-building.ac</path>
+    <path>Models/Buildings/small-modern-office.ac</path>
+    <path>Models/Buildings/small-office.ac</path>
+    <coverage-m2>500000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+   <object>
+    <path>Models/Buildings/big-church.ac</path>
+    <coverage-m2>5000000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+   <object>
+    <path>Models/Buildings/brick-school.ac</path>
+    <path>Models/Buildings/bank-building.ac</path>
+    <coverage-m2>4000000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+   <object>
+    <path>Models/Buildings/water-tower.ac</path>
+    <coverage-m2>100000000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+  </object-group>
+  <wood-coverage>250000.0</wood-coverage>
+  <wood-size>5000.0</wood-size>
+  <tree-density>2000.0</tree-density>
+  <tree-texture>Textures/Trees/mixed-summer.png</tree-texture>
+  <tree-varieties>8</tree-varieties>
+  <tree-range-m alias="/params/forest/tree-range-m"/>
+  <tree-height-m>25.0</tree-height-m>
+  <tree-width-m>15.0</tree-width-m>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>summer</value>
+   </equals>
+  </condition>
+  <name>Town</name>
+  <name>SubUrban</name>
+  <texture>Terrain/Town1.png</texture>
+  <xsize>1024</xsize>
+  <ysize>1024</ysize>
+  <light-coverage>100000.0</light-coverage>
+  <emissive>
+   <r>0.05</r>
+   <g>0.05</g>
+   <b>0.02</b>
+   <a>1.0</a>
+  </emissive>
+  <object-group>
+   <range-m>10000</range-m>
+   <object>
+    <path>Models/Buildings/water-tower.ac</path>
+    <path>Models/Buildings/oil-tanks.ac</path>
+    <coverage-m2>20000000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+   <object>
+    <path>Models/Buildings/big-church.ac</path>
+    <path>Models/Buildings/brick-school.ac</path>
+    <coverage-m2>200000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+   <object>
+    <path>Models/Buildings/shop.ac</path>
+    <path>Models/Buildings/hosshop.ac</path>
+    <path>Models/Buildings/weapshop.ac</path>
+    <coverage-m2>400000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+   <object>
+    <path>Models/Residential/germanvillagehouse1.ac</path>
+    <path>Models/Residential/MontHse1Grey_White.ac</path>
+    <path>Models/Residential/MontHse1Red_Tile_Yellow.ac</path>
+    <coverage-m2>30000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+  </object-group>
+  <wood-coverage>250000.0</wood-coverage>
+  <wood-size>5000.0</wood-size>
+  <tree-density>2000.0</tree-density>
+  <tree-texture>Textures/Trees/mixed-summer.png</tree-texture>
+  <tree-varieties>8</tree-varieties>
+  <tree-range-m alias="/params/forest/tree-range-m"/>
+  <tree-height-m>25.0</tree-height-m>
+  <tree-width-m>15.0</tree-width-m>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>summer</value>
+   </equals>
+  </condition>
+  <effect>Effects/water</effect>
+  <name>Lake</name>
+  <name>Pond</name>
+  <name>Reservoir</name>
+  <name>Stream</name>
+  <name>Canal</name>
+  <name>Lagoon</name>
+  <name>Estuary</name>
+  <name>Watercourse</name>
+  <name>Saline</name>
+  <texture>Terrain/water-lake.png</texture>
+  <xsize>400</xsize>
+  <ysize>400</ysize>
+  <ambient>
+   <r>0.0</r>
+   <g>0.0</g>
+   <b>0.0</b>
+   <a>1.0</a>
+  </ambient>
+  <diffuse>
+   <r>0.5</r>
+   <g>0.5</g>
+   <b>0.5</b>
+   <a>1.0</a>
+  </diffuse>
+  <specular>
+   <r>0.3</r>
+   <g>0.3</g>
+   <b>0.3</b>
+   <a>1.0</a>
+  </specular>
+  <shininess>1.2</shininess>
+  <solid>0</solid>
+  <rolling-friction>1.5</rolling-friction>
+  <bumpiness>0.6</bumpiness>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>summer</value>
+   </equals>
+  </condition>
+  <name>DryLake</name>
+  <name>IntermittentReservoir</name>
+  <name>IntermittentLake</name>
+  <texture>Terrain/sand1.png</texture>
+  <texture>Terrain/sand2.png</texture>
+  <texture>Terrain/sand3.png</texture>
+  <xsize>2000</xsize>
+  <ysize>2000</ysize>
+  <solid>1</solid>
+  <friction-factor>0.9</friction-factor>
+  <rolling-friction>0.04</rolling-friction>
+  <bumpiness>0.1</bumpiness>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>summer</value>
+   </equals>
+  </condition>
+  <name>IntermittentStream</name>
+  <texture>Terrain/wash.png</texture>
+  <xsize>200</xsize>
+  <ysize>200</ysize>
+  <shininess>1.5</shininess>
+  <solid>0</solid>
+  <rolling-friction>2.5</rolling-friction>
+  <bumpiness>0.6</bumpiness>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>summer</value>
+   </equals>
+  </condition>
+  <name>Marsh</name>
+  <name>Littoral</name>
+  <name>FloodLand</name>
+  <name>SaltMarsh</name>
+  <name>HerbWetlandCover</name>
+  <name>WoodedWetlandCover</name>
+  <texture>Terrain/marsh2.png</texture>
+  <texture>Terrain/marsh3.png</texture>
+  <texture>Terrain/marsh4.png</texture>
+  <xsize>2000</xsize>
+  <ysize>2000</ysize>
+  <solid>1</solid>
+  <light-coverage>40000000.0</light-coverage>
+  <friction-factor>0.8</friction-factor>
+  <rolling-friction>0.3</rolling-friction>
+  <bumpiness>0.2</bumpiness>
+  <load-resistance>1e30</load-resistance>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>summer</value>
+   </equals>
+  </condition>
+  <name>GrassCover</name>
+  <name>BareTundraCover</name>
+  <name>MixedTundraCover</name>
+  <name>GolfCourse</name>
+  <name>Cemetery</name>
+  <effect>Effects/landmass</effect>
+  <texture>Terrain/tundra.png</texture>
+  <texture>Terrain/tundra2.png</texture>
+  <texture>Terrain/tundra3.png</texture>
+  <xsize>2000</xsize>
+  <ysize>2000</ysize>
+  <light-coverage>4000000.0</light-coverage>
+  <diffuse>
+   <r>0.93</r>
+   <g>0.95</g>
+   <b>0.93</b>
+   <a>1.0</a>
+  </diffuse>
+  <specular>
+   <r>0.1</r>
+   <g>0.12</g>
+   <b>0.1</b>
+   <a>1.0</a>
+  </specular>
+  <shininess>1.2</shininess>
+  <solid>1</solid>
+  <friction-factor>0.7</friction-factor>
+  <rolling-friction>0.1</rolling-friction>
+  <bumpiness>0.15</bumpiness>
+  <load-resistance>1e30</load-resistance>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>summer</value>
+   </equals>
+  </condition>
+  <name>HerbTundraCover</name>
+  <name>HerbTundra</name>
+  <effect>Effects/herbtundra</effect>
+  <texture>Terrain/herbtundra.png</texture>
+  <texture>Terrain/herbtundra2.png</texture>
+  <texture>Terrain/herbtundra3.png</texture>
+  <xsize>2000</xsize>
+  <ysize>2000</ysize>
+  <light-coverage>4000000.0</light-coverage>
+  <diffuse>
+   <r>0.93</r>
+   <g>0.95</g>
+   <b>0.93</b>
+   <a>1.0</a>
+  </diffuse>
+  <specular>
+   <r>0.1</r>
+   <g>0.12</g>
+   <b>0.1</b>
+   <a>1.0</a>
+  </specular>
+  <shininess>1.2</shininess>
+  <solid>1</solid>
+  <friction-factor>0.8</friction-factor>
+  <rolling-friction>0.1</rolling-friction>
+  <bumpiness>0.15</bumpiness>
+  <load-resistance>1e30</load-resistance>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>summer</value>
+   </equals>
+  </condition>
+  <name>SavannaCover</name>
+  <texture>Terrain/savanna.png</texture>
+  <xsize>1000</xsize>
+  <ysize>1000</ysize>
+  <light-coverage>4000000.0</light-coverage>
+  <solid>1</solid>
+  <friction-factor>0.8</friction-factor>
+  <rolling-friction>0.1</rolling-friction>
+  <bumpiness>0.2</bumpiness>
+  <load-resistance>1e30</load-resistance>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>summer</value>
+   </equals>
+  </condition>
+  <name>Grass</name>
+  <name>Airport</name>
+  <name>AirportKeep</name>
+  <name>Greenspace</name>
+  <texture>Terrain/airport.png</texture>
+  <xsize>125</xsize>
+  <ysize>125</ysize>
+  <light-coverage>4000000.0</light-coverage>
+  <diffuse>
+   <r>0.93</r>
+   <g>0.95</g>
+   <b>0.93</b>
+   <a>1.0</a>
+  </diffuse>
+  <specular>
+   <r>0.1</r>
+   <g>0.12</g>
+   <b>0.1</b>
+   <a>1.0</a>
+  </specular>
+  <shininess>1.2</shininess>
+  <solid>1</solid>
+  <friction-factor>0.7</friction-factor>
+  <rolling-friction>0.1</rolling-friction>
+  <bumpiness>0.1</bumpiness>
+  <load-resistance>1e30</load-resistance>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>summer</value>
+   </equals>
+  </condition>
+  <effect>Effects/crop</effect>
+  <name>MixedCropPastureCover</name>
+  <name>MixedCrop</name>
+  <name>ComplexCrop</name>
+  <texture>Terrain/mixedcrop1.png</texture>
+  <texture>Terrain/mixedcrop4.png</texture>
+  <texture>Terrain/mixedcrop3.png</texture>
+  <xsize>2000</xsize>
+  <ysize>2000</ysize>
+  <light-coverage>2000000.0</light-coverage>
+  <solid>1</solid>
+  <friction-factor>0.9</friction-factor>
+  <rolling-friction>0.1</rolling-friction>
+  <bumpiness>0.7</bumpiness>
+  <load-resistance>1e30</load-resistance>
+  <object-group>
+   <range-m>5000</range-m>
+   <object>
+    <path>Models/Buildings/silo.ac</path>
+    <coverage-m2>5000000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+   <object>
+    <path>Models/Buildings/red-barn.ac</path>
+    <path>Models/Buildings/horse-stable.ac</path>
+    <path>Models/Buildings/cow-stable.ac</path>
+    <path>Models/Agriculture/farmhouse1.ac</path>
+    <path>Models/Agriculture/farmhouse2.ac</path>
+    <path>Models/Agriculture/farmhouse3.ac</path>
+    <coverage-m2>750000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+  </object-group>
+  <!-- Disabled to avoid a tremendous osg performance penalty when
+       deleting scenery tiles, caused by tens of thousands of shared
+       horse/cow objects. Need a better implementation!
+  <object-group>
+   <range-m>1000</range-m>
+   <object>
+    <path>Models/Fauna/cow.ac</path>
+    <coverage-m2>100000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+   <object>
+    <path>Models/Fauna/horse.ac</path>
+    <coverage-m2>300000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+  </object-group> -->
+  <wood-coverage>1000000.0</wood-coverage>
+  <wood-size>20000.0</wood-size>
+  <tree-density>4000.0</tree-density>
+  <tree-texture>Textures/Trees/mixed-summer.png</tree-texture>
+  <tree-varieties>8</tree-varieties>
+  <tree-range-m alias="/params/forest/tree-range-m"/>
+  <tree-height-m>20.0</tree-height-m>
+  <tree-width-m>12.0</tree-width-m>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>summer</value>
+   </equals>
+  </condition>
+  <effect>Effects/crop</effect>
+  <name>IrrCropPastureCover</name>
+  <name>IrrCrop</name>
+  <name>Orchard</name>
+  <name>Olives</name>
+  <name>Vineyard</name>
+  <name>Rice</name>
+  <texture>Terrain/irrcrop1.png</texture>
+  <texture>Terrain/irrcrop2.png</texture>
+  <texture>Terrain/irrcrop3.png</texture>
+  <xsize>2000</xsize>
+  <ysize>2000</ysize>
+  <light-coverage>2000000.0</light-coverage>
+  <solid>1</solid>
+  <friction-factor>0.9</friction-factor>
+  <rolling-friction>0.3</rolling-friction>
+  <bumpiness>0.6</bumpiness>
+  <load-resistance>1e30</load-resistance>
+  <object-group>
+   <range-m>5000</range-m>
+   <object>
+    <path>Models/Buildings/silo.ac</path>
+    <coverage-m2>5000000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+   <object>
+    <path>Models/Buildings/red-barn.ac</path>
+    <path>Models/Buildings/horse-stable.ac</path>
+    <path>Models/Buildings/cow-stable.ac</path>
+    <path>Models/Agriculture/farmhouse1.ac</path>
+    <path>Models/Agriculture/farmhouse2.ac</path>
+    <path>Models/Agriculture/farmhouse3.ac</path>
+    <coverage-m2>750000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+  </object-group>
+  <!-- Disabled to avoid a tremendous osg performance penalty when
+       deleting scenery tiles, caused by tens of thousands of shared
+       horse/cow objects. Need a better implementation!
+  <object-group>
+   <range-m>1000</range-m>
+   <object>
+    <path>Models/Fauna/cow.ac</path>
+    <coverage-m2>100000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+   <object>
+    <path>Models/Fauna/horse.ac</path>
+    <coverage-m2>300000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+  </object-group> -->
+  <wood-coverage>500000.0</wood-coverage>
+  <tree-texture>Textures/Trees/mixed-summer.png</tree-texture>
+  <tree-varieties>8</tree-varieties>
+  <tree-range-m alias="/params/forest/tree-range-m"/>
+  <tree-height-m>20.0</tree-height-m>
+  <tree-width-m>12.0</tree-width-m>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>summer</value>
+   </equals>
+  </condition>
+  <effect>Effects/crop</effect>
+  <name>DryCropPastureCover</name>
+  <name>DryCrop</name>
+  <name>NaturalCrop</name>
+  <texture>Terrain/drycrop1.png</texture>
+  <texture>Terrain/drycrop2.png</texture>
+  <texture>Terrain/drycrop3.png</texture>
+  <texture>Terrain/drycrop4.png</texture>
+  <xsize>2000</xsize>
+  <ysize>2000</ysize>
+  <solid>1</solid>
+  <friction-factor>0.9</friction-factor>
+  <rolling-friction>0.1</rolling-friction>
+  <bumpiness>0.6</bumpiness>
+  <load-resistance>1e30</load-resistance>
+  <light-coverage>2000000.0</light-coverage>
+  <object-group>
+   <range-m>5000</range-m>
+   <object>
+    <path>Models/Buildings/silo.ac</path>
+    <coverage-m2>5000000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+   <object>
+    <path>Models/Buildings/red-barn.ac</path>
+    <path>Models/Buildings/horse-stable.ac</path>
+    <path>Models/Buildings/cow-stable.ac</path>
+    <path>Models/Agriculture/farmhouse1.ac</path>
+    <path>Models/Agriculture/farmhouse2.ac</path>
+    <path>Models/Agriculture/farmhouse3.ac</path>
+    <coverage-m2>750000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+  </object-group>
+  <!-- Disabled to avoid a tremendous osg performance penalty when
+       deleting scenery tiles, caused by tens of thousands of shared
+       horse/cow objects. Need a better implementation!
+  <object-group>
+   <range-m>1000</range-m>
+   <object>
+    <path>Models/Fauna/cow.ac</path>
+    <coverage-m2>100000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+   <object>
+    <path>Models/Fauna/horse.ac</path>
+    <coverage-m2>300000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+  </object-group> -->
+  <wood-coverage>500000.0</wood-coverage>
+  <wood-size>20000.0</wood-size>
+  <tree-density>5000.0</tree-density>
+  <tree-texture>Textures/Trees/mixed-summer.png</tree-texture>
+  <tree-varieties>8</tree-varieties>
+  <tree-range-m alias="/params/forest/tree-range-m"/>
+  <tree-height-m>20.0</tree-height-m>
+  <tree-width-m>12.0</tree-width-m>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>summer</value>
+   </equals>
+  </condition>
+  <effect>Effects/cropgrass</effect>
+  <name>CropGrassCover</name>
+  <name>CropGrass</name>
+  <name>Grassland</name>
+  <texture>Terrain/cropgrass1.png</texture>
+  <texture>Terrain/cropgrass2.png</texture>
+  <texture>Terrain/cropgrass3.png</texture>
+  <xsize>2000</xsize>
+  <ysize>2000</ysize>
+  <light-coverage>2000000.0</light-coverage>
+  <diffuse>
+   <r>0.93</r>
+   <g>0.95</g>
+   <b>0.93</b>
+   <a>1.0</a>
+  </diffuse>
+  <specular>
+   <r>0.1</r>
+   <g>0.12</g>
+   <b>0.1</b>
+   <a>1.0</a>
+  </specular>
+  <shininess>1.2</shininess>
+  <solid>1</solid>
+  <friction-factor>0.7</friction-factor>
+  <rolling-friction>0.1</rolling-friction>
+  <bumpiness>0.3</bumpiness>
+  <load-resistance>1e30</load-resistance>
+  <wood-coverage>500000.0</wood-coverage>
+  <tree-texture>Textures/Trees/mixed-summer.png</tree-texture>
+  <tree-varieties>8</tree-varieties>
+  <tree-range-m alias="/params/forest/tree-range-m"/>
+  <tree-height-m>20.0</tree-height-m>
+  <tree-width-m>12.0</tree-width-m>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>summer</value>
+   </equals>
+  </condition>
+  <name>CropWoodCover</name>
+  <name>CropWood</name>
+  <name>AgroForest</name>
+  <effect>Effects/landmass</effect>
+  <texture>Terrain/cropwood.png</texture>
+  <xsize>2000</xsize>
+  <ysize>2000</ysize>
+  <light-coverage>2000000.0</light-coverage>
+  <solid>1</solid>
+  <friction-factor>0.4</friction-factor>
+  <rolling-friction>0.6</rolling-friction>
+  <bumpiness>0.7</bumpiness>
+  <load-resistance>10</load-resistance>
+  <wood-coverage>4000.0</wood-coverage>
+  <tree-texture>Textures/Trees/mixed-summer.png</tree-texture>
+  <tree-varieties>8</tree-varieties>
+  <tree-range-m alias="/params/forest/tree-range-m"/>
+  <tree-height-m>20.0</tree-height-m>
+  <tree-width-m>12.0</tree-width-m>
+ </material>
+
+ <!-- end summer-->
+
+ <!-- Winter-->
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>winter</value>
+   </equals>
+  </condition>
+  <name>Landmass</name>
+  <name>SomeSort</name>
+  <name>EvergreenBroadCover</name>
+  <name>EvergreenForest</name>
+  <name>Island</name>
+  <name>Default</name>
+  <texture>Terrain.winter/forest1a.png</texture>
+  <texture>Terrain.winter/forest1b.png</texture>
+  <texture>Terrain.winter/forest1c.png</texture>
+  <xsize>2000</xsize>
+  <ysize>2000</ysize>
+  <light-coverage>10000000.0</light-coverage>
+  <wood-coverage>4000.0</wood-coverage>
+  <tree-texture>Textures/Trees/coniferous-winter.png</tree-texture>
+  <tree-varieties>8</tree-varieties>
+  <tree-range-m alias="/params/forest/tree-range-m"/>
+  <tree-height-m>25.0</tree-height-m>
+  <tree-width-m>15.0</tree-width-m>
+  <rolling-friction>1</rolling-friction>
+  <bumpiness>1</bumpiness>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>winter</value>
+   </equals>
+  </condition>
+  <name>DeciduousBroadCover</name>
+  <name>DeciduousForest</name>
+  <name>Bog</name>
+  <name>Heath</name>
+  <texture>Terrain.winter/deciduous1.png</texture>
+  <texture>Terrain.winter/deciduous2.png</texture>
+  <texture>Terrain.winter/deciduous4.png</texture>
+  <xsize>2000</xsize>
+  <ysize>2000</ysize>
+  <light-coverage>10000000.0</light-coverage>
+  <wood-coverage>4000.0</wood-coverage>
+  <tree-texture>Textures/Trees/deciduous-winter.png</tree-texture>
+  <tree-varieties>8</tree-varieties>
+  <tree-range-m alias="/params/forest/tree-range-m"/>
+  <tree-height-m>25.0</tree-height-m>
+  <tree-width-m>15.0</tree-width-m>
+  <rolling-friction>1</rolling-friction>
+  <bumpiness>0.85</bumpiness>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>winter</value>
+   </equals>
+  </condition>
+  <name>MixedForestCover</name>
+  <name>MixedForest</name>
+  <name>RainForest</name>
+  <texture>Terrain.winter/mixedforest.png</texture>
+  <texture>Terrain.winter/mixedforest2.png</texture>
+  <texture>Terrain.winter/mixedforest3.png</texture>
+  <xsize>2000</xsize>
+  <ysize>2000</ysize>
+  <light-coverage>5000000.0</light-coverage>
+  <wood-coverage>4000.0</wood-coverage>
+  <tree-texture>Textures/Trees/mixed-winter.png</tree-texture>
+  <tree-varieties>8</tree-varieties>
+  <tree-range-m alias="/params/forest/tree-range-m"/>
+  <tree-height-m>25.0</tree-height-m>
+  <tree-width-m>15.0</tree-width-m>
+  <rolling-friction>1</rolling-friction>
+  <bumpiness>0.95</bumpiness>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>winter</value>
+   </equals>
+  </condition>
+  <name>EvergreenNeedleCover</name>
+  <name>WoodedTundraCover</name>
+  <texture>Terrain.winter/evergreen.png</texture>
+  <xsize>1000</xsize>
+  <ysize>1000</ysize>
+  <light-coverage>10000000.0</light-coverage>
+  <wood-coverage>4000.0</wood-coverage>
+  <tree-texture>Textures/Trees/coniferous-winter.png</tree-texture>
+  <tree-varieties>8</tree-varieties>
+  <tree-range-m alias="/params/forest/tree-range-m"/>
+  <tree-height-m>20.0</tree-height-m>
+  <tree-width-m>15.0</tree-width-m>
+  <rolling-friction>1</rolling-friction>
+  <bumpiness>1</bumpiness>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>winter</value>
+   </equals>
+  </condition>
+  <name>DeciduousNeedleCover</name>
+  <texture>Terrain.winter/dec_evergreen.png</texture>
+  <xsize>1000</xsize>
+  <ysize>1000</ysize>
+  <light-coverage>10000000.0</light-coverage>
+  <wood-coverage>4000.0</wood-coverage>
+  <tree-texture>Textures/Trees/coniferous-winter.png</tree-texture>
+  <tree-varieties>8</tree-varieties>
+  <tree-range-m alias="/params/forest/tree-range-m"/>
+  <tree-height-m>15.0</tree-height-m>
+  <tree-width-m>8.0</tree-width-m>
+  <rolling-friction>1</rolling-friction>
+  <bumpiness>1</bumpiness>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>winter</value>
+   </equals>
+  </condition>
+  <name>Sand</name>
+  <texture>Terrain.winter/sand4.png</texture>
+  <texture>Terrain.winter/sand5.png</texture>
+  <texture>Terrain.winter/sand6.png</texture>
+  <xsize>2000</xsize>
+  <ysize>2000</ysize>
+  <light-coverage>10000000.0</light-coverage>
+  <shininess>2.5</shininess>
+  <rolling-friction>0.1</rolling-friction>
+  <friction-factor>0.7</friction-factor>
+  <bumpiness>0.1</bumpiness>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>winter</value>
+   </equals>
+  </condition>
+  <name>ShrubCover</name>
+  <name>ShrubGrassCover</name>
+  <name>ScrubCover</name>
+  <name>Sclerophyllous</name>
+  <texture>Terrain.winter/shrub.png</texture>
+  <texture>Terrain.winter/shrub2.png</texture>
+  <texture>Terrain.winter/shrub3.png</texture>
+  <xsize>2000</xsize>
+  <ysize>2000</ysize>
+  <diffuse>
+   <r>0.86</r>
+   <g>0.86</g>
+   <b>0.86</b>
+   <a>1.0</a>
+  </diffuse>
+  <specular>
+   <r>0.1</r>
+   <g>0.1</g>
+   <b>0.1</b>
+   <a>1.0</a>
+  </specular>
+  <shininess>1.2</shininess>
+  <light-coverage>20000000.0</light-coverage>
+  <wood-coverage>8000.0</wood-coverage>
+  <tree-texture>Textures/Trees/mixed-shrub-winter.png</tree-texture>
+  <tree-varieties>8</tree-varieties>
+  <tree-range-m alias="/params/forest/tree-range-m"/>
+  <tree-height-m>2.0</tree-height-m>
+  <tree-width-m>2.0</tree-width-m>
+  <rolling-friction>0.6</rolling-friction>
+  <bumpiness>0.4</bumpiness>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>winter</value>
+   </equals>
+  </condition>
+  <name>BuiltUpCover</name>
+  <name>Urban</name>
+  <name>Construction</name>
+  <name>Industrial</name>
+  <name>Port</name>
+  <effect>Effects/urban</effect>
+  <texture-set>
+   <texture>Terrain/city1.png</texture>
+   <texture n="2">Terrain/city1-relief-light.png</texture>
+  </texture-set>
+  <texture-set>
+   <texture>Terrain/city2.png</texture>
+   <texture n="2">Terrain/city2-relief-light.png</texture>
+  </texture-set>
+<!-- 
+  <texture-set>
+   <texture>Terrain/city3.png</texture>
+   <texture n="2">Terrain/city3-relief-light.png</texture>
+  </texture-set>
+-->
+  <xsize>1000</xsize>
+  <ysize>1000</ysize>
+  <light-coverage>100000.0</light-coverage>
+  <emissive>
+   <r>0.05</r>
+   <g>0.05</g>
+   <b>0.02</b>
+   <a>1.0</a>
+  </emissive>
+  <object-group>
+   <range-m>10000</range-m>
+   <object>
+    <path>Models/Buildings/oil-tanks.ac</path>
+    <coverage-m2>10000000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+   <object>
+    <path>Models/Buildings/big-apartment.ac</path>
+    <coverage-m2>10000000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+   <object>
+    <path>Models/Buildings/factory.ac</path>
+    <coverage-m2>4000000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+  </object-group>
+  <object-group>
+   <range-m>5000</range-m>
+   <object>
+    <path>Models/Residential/cube-apartment.ac</path>
+    <path>Models/Residential/medium-apartment.ac</path>
+    <path>Models/Buildings/renovated-apartment.ac</path>
+    <coverage-m2>1000000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+   <object>
+    <path>Models/Commercial/small-glass-office-building.ac</path>
+    <path>Models/Buildings/medium-glass-office-building.ac</path>
+    <path>Models/Buildings/small-modern-office.ac</path>
+    <path>Models/Buildings/small-office.ac</path>
+    <coverage-m2>500000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+   <object>
+    <path>Models/Buildings/big-church.ac</path>
+    <coverage-m2>5000000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+   <object>
+    <path>Models/Buildings/brick-school.ac</path>
+    <path>Models/Buildings/bank-building.ac</path>
+    <coverage-m2>4000000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+   <object>
+    <path>Models/Buildings/water-tower.ac</path>
+    <coverage-m2>100000000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+  </object-group>
+  <wood-coverage>250000.0</wood-coverage>
+  <wood-size>5000.0</wood-size>
+  <tree-density>2000.0</tree-density>
+  <tree-texture>Textures/Trees/mixed-winter.png</tree-texture>
+  <tree-varieties>8</tree-varieties>
+  <tree-range-m alias="/params/forest/tree-range-m"/>
+  <tree-height-m>25.0</tree-height-m>
+  <tree-width-m>15.0</tree-width-m>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>winter</value>
+   </equals>
+  </condition>
+  <name>Town</name>
+  <name>SubUrban</name>
+  <texture>Terrain.winter/Town1.png</texture>
+  <xsize>1024</xsize>
+  <ysize>1024</ysize>
+  <light-coverage>100000.0</light-coverage>
+  <emissive>
+   <r>0.05</r>
+   <g>0.05</g>
+   <b>0.02</b>
+   <a>1.0</a>
+  </emissive>
+  <object-group>
+   <range-m>10000</range-m>
+   <object>
+    <path>Models/Buildings/oil-tanks.ac</path>
+    <coverage-m2>20000000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+   <object>
+    <path>Models/Buildings/big-church.ac</path>
+    <coverage-m2>900000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+   <object>
+    <path>Models/Buildings/shop.ac</path>
+    <coverage-m2>400000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+   <object>
+    <path>Models/Buildings/hosshop.ac</path>
+    <coverage-m2>750000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+   <object>
+    <path>Models/Buildings/weapshop.ac</path>
+    <coverage-m2>400000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+   <object>
+    <path>Models/Buildings/brick-school.ac</path>
+    <coverage-m2>2850000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+   <object>
+    <path>Models/Buildings/water-tower.ac</path>
+    <coverage-m2>100000000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+  </object-group>
+  <wood-coverage>250000.0</wood-coverage>
+  <wood-size>5000.0</wood-size>
+  <tree-density>2000.0</tree-density>
+  <tree-texture>Textures/Trees/mixed-winter.png</tree-texture>
+  <tree-varieties>8</tree-varieties>
+  <tree-range-m alias="/params/forest/tree-range-m"/>
+  <tree-height-m>25.0</tree-height-m>
+  <tree-width-m>15.0</tree-width-m>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>winter</value>
+   </equals>
+  </condition>
+  <name>Lake</name>
+  <name>Pond</name>
+  <name>Reservoir</name>
+  <name>Stream</name>
+  <name>Canal</name>
+  <name>Lagoon</name>
+  <name>Estuary</name>
+  <name>Watercourse</name>
+  <name>Saline</name>
+  <texture>Terrain.winter/water-lake.png</texture>
+  <xsize>400</xsize>
+  <ysize>400</ysize>
+  <ambient>
+   <r>0.0</r>
+   <g>0.0</g>
+   <b>0.0</b>
+   <a>1.0</a>
+  </ambient>
+  <diffuse>
+   <r>0.5</r>
+   <g>0.5</g>
+   <b>0.5</b>
+   <a>1.0</a>
+  </diffuse>
+  <specular>
+   <r>0.3</r>
+   <g>0.3</g>
+   <b>0.3</b>
+   <a>1.0</a>
+  </specular>
+  <shininess>1.2</shininess>
+  <solid>1</solid>
+  <rolling-friction>0.5</rolling-friction>
+  <bumpiness>0.1</bumpiness>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>winter</value>
+   </equals>
+  </condition>
+  <name>DryLake</name>
+  <name>IntermittentReservoir</name>
+  <name>IntermittentLake</name>
+  <texture>Terrain.winter/sand1.png</texture>
+  <texture>Terrain.winter/sand2.png</texture>
+  <texture>Terrain.winter/sand3.png</texture>
+  <xsize>2000</xsize>
+  <ysize>2000</ysize>
+  <solid>1</solid>
+  <friction-factor>0.9</friction-factor>
+  <rolling-friction>0.04</rolling-friction>
+  <bumpiness>0.1</bumpiness>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>winter</value>
+   </equals>
+  </condition>
+  <name>IntermittentStream</name>
+  <texture>Terrain.winter/wash.png</texture>
+  <xsize>200</xsize>
+  <ysize>200</ysize>
+  <shininess>1.5</shininess>
+  <solid>0</solid>
+  <rolling-friction>2.5</rolling-friction>
+  <bumpiness>0.6</bumpiness>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>winter</value>
+   </equals>
+  </condition>
+  <name>Marsh</name>
+  <name>Littoral</name>
+  <name>FloodLand</name>
+  <name>SaltMarsh</name>
+  <name>HerbWetlandCover</name>
+  <name>WoodedWetlandCover</name>
+  <texture>Terrain.winter/marsh2.png</texture>
+  <texture>Terrain.winter/marsh3.png</texture>
+  <texture>Terrain.winter/marsh4.png</texture>
+  <xsize>2000</xsize>
+  <ysize>2000</ysize>
+  <solid>1</solid>
+  <light-coverage>40000000.0</light-coverage>
+  <friction-factor>0.8</friction-factor>
+  <rolling-friction>0.3</rolling-friction>
+  <bumpiness>0.2</bumpiness>
+  <load-resistance>1e30</load-resistance>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>winter</value>
+   </equals>
+  </condition>
+  <name>GrassCover</name>
+  <name>BareTundraCover</name>
+  <name>MixedTundraCover</name>
+  <texture>Terrain.winter/tundra.png</texture>
+  <texture>Terrain.winter/tundra2.png</texture>
+  <texture>Terrain.winter/tundra3.png</texture>
+  <xsize>2000</xsize>
+  <ysize>2000</ysize>
+  <light-coverage>4000000.0</light-coverage>
+  <diffuse>
+   <r>0.93</r>
+   <g>0.95</g>
+   <b>0.93</b>
+   <a>1.0</a>
+  </diffuse>
+  <specular>
+   <r>0.1</r>
+   <g>0.12</g>
+   <b>0.1</b>
+   <a>1.0</a>
+  </specular>
+  <shininess>1.2</shininess>
+  <solid>1</solid>
+  <friction-factor>0.7</friction-factor>
+  <rolling-friction>0.1</rolling-friction>
+  <bumpiness>0.15</bumpiness>
+  <load-resistance>1e30</load-resistance>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>winter</value>
+   </equals>
+  </condition>
+  <name>HerbTundraCover</name>
+  <name>HerbTundra</name>
+  <texture>Terrain.winter/herbtundra.png</texture>
+  <texture>Terrain.winter/herbtundra2.png</texture>
+  <texture>Terrain.winter/herbtundra3.png</texture>
+  <xsize>2000</xsize>
+  <ysize>2000</ysize>
+  <light-coverage>4000000.0</light-coverage>
+  <diffuse>
+   <r>0.93</r>
+   <g>0.95</g>
+   <b>0.93</b>
+   <a>1.0</a>
+  </diffuse>
+  <specular>
+   <r>0.1</r>
+   <g>0.12</g>
+   <b>0.1</b>
+   <a>1.0</a>
+  </specular>
+  <shininess>1.2</shininess>
+  <solid>1</solid>
+  <friction-factor>0.8</friction-factor>
+  <rolling-friction>0.1</rolling-friction>
+  <bumpiness>0.15</bumpiness>
+  <load-resistance>1e30</load-resistance>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>winter</value>
+   </equals>
+  </condition>
+  <name>SavannaCover</name>
+  <texture>Terrain.winter/savanna.png</texture>
+  <xsize>1000</xsize>
+  <ysize>1000</ysize>
+  <light-coverage>4000000.0</light-coverage>
+  <solid>1</solid>
+  <friction-factor>0.8</friction-factor>
+  <rolling-friction>0.1</rolling-friction>
+  <bumpiness>0.2</bumpiness>
+  <load-resistance>1e30</load-resistance>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>winter</value>
+   </equals>
+  </condition>
+  <name>Grass</name>
+  <name>Airport</name>
+  <name>AirportKeep</name>
+  <name>Greenspace</name>
+  <texture>Terrain.winter/airport.png</texture>
+  <xsize>125</xsize>
+  <ysize>125</ysize>
+  <light-coverage>4000000.0</light-coverage>
+  <diffuse>
+   <r>0.93</r>
+   <g>0.95</g>
+   <b>0.93</b>
+   <a>1.0</a>
+  </diffuse>
+  <specular>
+   <r>0.1</r>
+   <g>0.12</g>
+   <b>0.1</b>
+   <a>1.0</a>
+  </specular>
+  <shininess>1.2</shininess>
+  <solid>1</solid>
+  <friction-factor>0.7</friction-factor>
+  <rolling-friction>0.1</rolling-friction>
+  <bumpiness>0.1</bumpiness>
+  <load-resistance>1e30</load-resistance>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>winter</value>
+   </equals>
+  </condition>
+  <name>MixedCropPastureCover</name>
+  <name>MixedCrop</name>
+  <name>ComplexCrop</name>
+  <texture>Terrain.winter/mixedcrop1.png</texture>
+  <texture>Terrain.winter/mixedcrop4.png</texture>
+  <texture>Terrain.winter/mixedcrop3.png</texture>
+  <xsize>2000</xsize>
+  <ysize>2000</ysize>
+  <light-coverage>2000000.0</light-coverage>
+  <solid>1</solid>
+  <friction-factor>0.9</friction-factor>
+  <rolling-friction>0.1</rolling-friction>
+  <bumpiness>0.7</bumpiness>
+  <load-resistance>1e30</load-resistance>
+  <object-group>
+   <range-m>5000</range-m>
+   <object>
+    <path>Models/Buildings/silo.ac</path>
+    <coverage-m2>5000000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+   <object>
+    <path>Models/Buildings/red-barn.ac</path>
+    <path>Models/Buildings/horse-stable.ac</path>
+    <path>Models/Buildings/cow-stable.ac</path>
+    <path>Models/Agriculture/farmhouse1.ac</path>
+    <path>Models/Agriculture/farmhouse2.ac</path>
+    <path>Models/Agriculture/farmhouse3.ac</path>
+    <coverage-m2>750000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+  </object-group>
+  <!-- Disabled to avoid a tremendous osg performance penalty when
+       deleting scenery tiles, caused by tens of thousands of shared
+       horse/cow objects. Need a better implementation!
+  <object-group>
+   <range-m>1000</range-m>
+   <object>
+    <path>Models/Fauna/cow.ac</path>
+    <coverage-m2>100000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+   <object>
+    <path>Models/Fauna/horse.ac</path>
+    <coverage-m2>300000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+  </object-group> -->
+  <wood-coverage>1000000.0</wood-coverage>
+  <wood-size>20000.0</wood-size>
+  <tree-density>4000.0</tree-density>
+  <tree-texture>Textures/Trees/mixed-winter.png</tree-texture>
+  <tree-varieties>8</tree-varieties>
+  <tree-range-m alias="/params/forest/tree-range-m"/>
+  <tree-height-m>20.0</tree-height-m>
+  <tree-width-m>12.0</tree-width-m>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>winter</value>
+   </equals>
+  </condition>
+  <name>IrrCropPastureCover</name>
+  <name>IrrCrop</name>
+  <name>Orchard</name>
+  <name>Olives</name>
+  <name>Vineyard</name>
+  <name>Rice</name>
+  <texture>Terrain.winter/irrcrop1.png</texture>
+  <texture>Terrain.winter/irrcrop2.png</texture>
+  <texture>Terrain.winter/irrcrop3.png</texture>
+  <xsize>2000</xsize>
+  <ysize>2000</ysize>
+  <light-coverage>2000000.0</light-coverage>
+  <solid>1</solid>
+  <friction-factor>0.9</friction-factor>
+  <rolling-friction>0.3</rolling-friction>
+  <bumpiness>0.6</bumpiness>
+  <load-resistance>1e30</load-resistance>
+  <object-group>
+   <range-m>5000</range-m>
+   <object>
+    <path>Models/Buildings/silo.ac</path>
+    <coverage-m2>5000000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+   <object>
+    <path>Models/Buildings/red-barn.ac</path>
+    <path>Models/Buildings/horse-stable.ac</path>
+    <path>Models/Buildings/cow-stable.ac</path>
+    <path>Models/Agriculture/farmhouse1.ac</path>
+    <path>Models/Agriculture/farmhouse2.ac</path>
+    <path>Models/Agriculture/farmhouse3.ac</path>
+    <coverage-m2>750000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+  </object-group>
+  <!-- Disabled to avoid a tremendous osg performance penalty when
+       deleting scenery tiles, caused by tens of thousands of shared
+       horse/cow objects. Need a better implementation!
+  <object-group>
+   <range-m>1000</range-m>
+   <object>
+    <path>Models/Fauna/cow.ac</path>
+    <coverage-m2>100000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+   <object>
+    <path>Models/Fauna/horse.ac</path>
+    <coverage-m2>300000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+  </object-group> -->
+  <wood-coverage>150000.0</wood-coverage>
+  <wood-size>10000.0</wood-size>
+  <tree-density>5000.0</tree-density>
+  <tree-texture>Textures/Trees/mixed-winter.png</tree-texture>
+  <tree-varieties>8</tree-varieties>
+  <tree-range-m alias="/params/forest/tree-range-m"/>
+  <tree-height-m>20.0</tree-height-m>
+  <tree-width-m>12.0</tree-width-m>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>winter</value>
+   </equals>
+  </condition>
+  <name>DryCropPastureCover</name>
+  <name>DryCrop</name>
+  <name>NaturalCrop</name>
+  <texture>Terrain.winter/drycrop1.png</texture>
+  <texture>Terrain.winter/drycrop2.png</texture>
+  <texture>Terrain.winter/drycrop3.png</texture>
+  <texture>Terrain.winter/drycrop4.png</texture>
+  <xsize>2000</xsize>
+  <ysize>2000</ysize>
+  <solid>1</solid>
+  <friction-factor>0.9</friction-factor>
+  <rolling-friction>0.1</rolling-friction>
+  <bumpiness>0.6</bumpiness>
+  <load-resistance>1e30</load-resistance>
+  <light-coverage>2000000.0</light-coverage>
+  <object-group>
+   <range-m>5000</range-m>
+   <object>
+    <path>Models/Buildings/silo.ac</path>
+    <coverage-m2>5000000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+   <object>
+    <path>Models/Buildings/red-barn.ac</path>
+    <path>Models/Buildings/horse-stable.ac</path>
+    <path>Models/Buildings/cow-stable.ac</path>
+    <path>Models/Agriculture/farmhouse1.ac</path>
+    <path>Models/Agriculture/farmhouse2.ac</path>
+    <path>Models/Agriculture/farmhouse3.ac</path>
+    <coverage-m2>750000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+  </object-group>
+  <!-- Disabled to avoid a tremendous osg performance penalty when
+       deleting scenery tiles, caused by tens of thousands of shared
+       horse/cow objects. Need a better implementation!
+  <object-group>
+   <range-m>1000</range-m>
+   <object>
+    <path>Models/Fauna/cow.ac</path>
+    <coverage-m2>100000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+   <object>
+    <path>Models/Fauna/horse.ac</path>
+    <coverage-m2>300000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+  </object-group> -->
+  <wood-coverage>150000.0</wood-coverage>
+  <wood-size>10000.0</wood-size>
+  <tree-density>5000.0</tree-density>
+  <tree-texture>Textures/Trees/mixed-winter.png</tree-texture>
+  <tree-varieties>8</tree-varieties>
+  <tree-range-m alias="/params/forest/tree-range-m"/>
+  <tree-height-m>20.0</tree-height-m>
+  <tree-width-m>12.0</tree-width-m>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>winter</value>
+   </equals>
+  </condition>
+  <name>CropGrassCover</name>
+  <name>CropGrass</name>
+  <name>Grassland</name>
+  <texture>Terrain.winter/cropgrass1.png</texture>
+  <texture>Terrain.winter/cropgrass2.png</texture>
+  <texture>Terrain.winter/cropgrass3.png</texture>
+  <xsize>2000</xsize>
+  <ysize>2000</ysize>
+  <light-coverage>2000000.0</light-coverage>
+  <diffuse>
+   <r>0.93</r>
+   <g>0.95</g>
+   <b>0.93</b>
+   <a>1.0</a>
+  </diffuse>
+  <specular>
+   <r>0.1</r>
+   <g>0.12</g>
+   <b>0.1</b>
+   <a>1.0</a>
+  </specular>
+  <shininess>1.2</shininess>
+  <solid>1</solid>
+  <friction-factor>0.7</friction-factor>
+  <rolling-friction>0.1</rolling-friction>
+  <bumpiness>0.3</bumpiness>
+  <load-resistance>1e30</load-resistance>
+  <wood-coverage>150000.0</wood-coverage>
+  <wood-size>10000.0</wood-size>
+  <tree-density>5000.0</tree-density>
+  <tree-texture>Textures/Trees/mixed-winter.png</tree-texture>
+  <tree-varieties>8</tree-varieties>
+  <tree-range-m alias="/params/forest/tree-range-m"/>
+  <tree-height-m>20.0</tree-height-m>
+  <tree-width-m>12.0</tree-width-m>
+ </material>
+
+ <material>
+  <condition>
+   <equals>
+    <property>sim/startup/season</property>
+    <value>winter</value>
+   </equals>
+  </condition>
+  <name>CropWoodCover</name>
+  <name>AgroForest</name>
+  <texture>Terrain.winter/cropwood.png</texture>
+  <xsize>2000</xsize>
+  <ysize>2000</ysize>
+  <light-coverage>2000000.0</light-coverage>
+  <solid>1</solid>
+  <friction-factor>0.4</friction-factor>
+  <rolling-friction>0.6</rolling-friction>
+  <bumpiness>0.7</bumpiness>
+  <load-resistance>10</load-resistance>
+  <wood-coverage>4000.0</wood-coverage>
+  <tree-texture>Textures/Trees/mixed-winter.png</tree-texture>
+  <tree-varieties>8</tree-varieties>
+  <tree-range-m alias="/params/forest/tree-range-m"/>
+  <tree-height-m>20.0</tree-height-m>
+  <tree-width-m>12.0</tree-width-m>
+ </material>
+
+ <!-- end winter-->
+
+
+
+ <material>
+  <name>Unknown</name>
+  <texture>Terrain/unknown.png</texture>
+  <xsize>1000</xsize>
+  <ysize>1000</ysize>
+  <rolling-friction>0.1</rolling-friction>
+  <bumpiness>0.1</bumpiness>
+ </material>
+
+ <material>
+  <name>PackIce</name>
+  <texture>Terrain/packice1.png</texture>
+  <texture>Terrain/packice2.png</texture>
+  <xsize>2000</xsize>
+  <ysize>2000</ysize>
+  <shininess>1.5</shininess>
+  <rolling-friction>0.005</rolling-friction>
+  <friction-factor>0.2</friction-factor>
+  <bumpiness>0.3</bumpiness>
+ </material>
+
+ <material>
+  <name>Glacier</name>
+  <name>PolarIce</name>
+  <effect>Effects/glacier</effect>
+  <texture>Terrain/glacier1.png</texture>
+  <texture>Terrain/glacier2.png</texture>
+  <texture>Terrain/glacier3.png</texture>
+  <xsize>2000</xsize>
+  <ysize>2000</ysize>
+  <shininess>1.5</shininess>
+  <rolling-friction>0.1</rolling-friction>
+  <friction-factor>0.2</friction-factor>
+  <bumpiness>0.5</bumpiness>
+ </material>
+
+ <material>
+  <name>SnowCover</name>
+  <texture>Terrain/snow1.png</texture>
+  <texture>Terrain/snow2.png</texture>
+  <texture>Terrain/snow3.png</texture>
+  <texture>Terrain/snow4.png</texture>
+  <xsize>2000</xsize>
+  <ysize>2000</ysize>
+  <shininess>1.2</shininess>
+  <rolling-friction>0.15</rolling-friction>
+  <friction-factor>0.3</friction-factor>
+  <bumpiness>0.1</bumpiness>
+ </material>
+
+ <material>
+  <name>Ocean</name>
+  <effect>Effects/water</effect>
+  <texture>Terrain/water.png</texture>
+  <xsize>400</xsize>
+  <ysize>400</ysize>
+  <object-group>
+   <range-m>40000</range-m>
+   <object>
+    <path>Models/Geometry/container_carrier.ac</path>
+    <coverage-m2>500000000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+  </object-group>
+  <object-group>
+   <range-m>40000</range-m>
+   <object>
+    <path>Models/Maritime/Civilian/ContainerShip.xml</path>
+    <coverage-m2>500000000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+  </object-group>
+  <object-group>
+   <range-m>40000</range-m>
+   <object>
+    <path>Models/Maritime/Civilian/Trawler.xml</path>
+    <coverage-m2>500000000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+   <object>
+    <path>Models/Maritime/Civilian/Trawler.xml</path>
+    <coverage-m2>500000000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+   <object>
+    <path>Models/Maritime/Civilian/Trawler.xml</path>
+    <coverage-m2>500000000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+  </object-group>
+  <object-group>
+   <range-m>40000</range-m>
+   <object>
+    <path>Models/Maritime/Civilian/Freighter.xml</path>
+    <coverage-m2>500000000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+  </object-group>
+  <object-group>
+   <range-m>40000</range-m>
+   <object>
+    <path>Models/Maritime/Civilian/LargeTrawler.xml</path>
+    <coverage-m2>500000000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+  </object-group>
+  <object-group>
+   <range-m>40000</range-m>
+   <object>
+    <path>Models/Maritime/Civilian/SailBoatUnderSail.xml</path>
+    <coverage-m2>500000000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+  </object-group>
+  <object-group>
+   <range-m>40000</range-m>
+   <object>
+    <path>Models/Maritime/Civilian/CruiseShip.xml</path>
+    <coverage-m2>5000000000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+  </object-group>
+  <object-group>
+   <range-m>40000</range-m>
+   <object>
+    <path>Models/Maritime/Civilian/MPPShip.xml</path>
+    <coverage-m2>5000000000</coverage-m2>
+    <heading-type>random</heading-type>
+   </object>
+  </object-group>
+  <ambient>
+   <r>0.0</r>
+   <g>0.0</g>
+   <b>0.0</b>
+   <a>1.0</a>
+  </ambient>
+  <diffuse>
+   <r>0.4</r>
+   <g>0.4</g>
+   <b>0.4</b>
+   <a>1.0</a>
+  </diffuse>
+  <specular>
+   <r>0.0</r>
+   <g>0.0</g>
+   <b>0.2</b>
+   <a>1.0</a>
+  </specular>
+  <shininess>0</shininess>
+  <solid>0</solid>
+  <rolling-friction>2</rolling-friction>
+  <bumpiness>0.8</bumpiness>
+ </material>
+
+
+ <material>
+  <name>BarrenCover</name>
+  <name>Dirt</name>
+  <name>OpenMining</name>
+  <name>Rock</name>
+  <name>Dump</name>
+  <texture>Terrain/rock.png</texture>
+  <xsize>500</xsize>
+  <ysize>500</ysize>
+  <solid>1</solid>
+  <friction-factor>0.9</friction-factor>
+  <rolling-friction>0.1</rolling-friction>
+  <bumpiness>0.3</bumpiness>
+ </material>
+
+ <material>
+  <name>Lava</name>
+  <name>Burnt</name>
+  <texture>Terrain/lava.png</texture>
+  <xsize>500</xsize>
+  <ysize>500</ysize>
+  <solid>1</solid>
+  <friction-factor>0.9</friction-factor>
+  <rolling-friction>0.1</rolling-friction>
+  <bumpiness>0.3</bumpiness>
+ </material>
+
+ <material>
+  <name>Asphalt</name>
+  <texture>Terrain/asphalt.png</texture>
+  <xsize>400</xsize>
+  <ysize>400</ysize>
+  <solid>1</solid>
+  <friction-factor>1.0</friction-factor>
+  <rolling-friction>0.02</rolling-friction>
+  <bumpiness>0.01</bumpiness>
+  <load-resistance>1e10</load-resistance>
+ </material>
+
+ <material>
+  <name>Freeway</name>
+  <name>Road</name>
+  <texture>Terrain/asphalt.png</texture>
+  <xsize>400</xsize>
+  <ysize>400</ysize>
+  <light-coverage>10000.0</light-coverage>
+  <solid>1</solid>
+  <friction-factor>1.0</friction-factor>
+  <rolling-friction>0.02</rolling-friction>
+  <bumpiness>0.01</bumpiness>
+  <load-resistance>1e10</load-resistance>
+ </material>
+
+ <material>
+  <name>Railroad</name>
+  <name>Transport</name>
+  <texture>Terrain/gravel.png</texture>
+  <xsize>400</xsize>
+  <ysize>400</ysize>
+  <light-coverage>1000000.0</light-coverage>
+  <solid>1</solid>
+  <friction-factor>0.5</friction-factor>
+  <rolling-friction>0.04</rolling-friction>
+  <bumpiness>0.5</bumpiness>
+  <load-resistance>1e10</load-resistance>
+ </material>
+
+
+
+ <!-- runway and taxiway signs -->
+
+
+ <material>
+  <name>YellowSign.unlighted</name>
+  <texture>Signs/yellow.png</texture>
+  <emissive>
+   <r>0.4</r>
+   <g>0.4</g>
+   <b>0.4</b>
+  </emissive>
+ </material>
+
+ <material>
+  <name>YellowSign</name>
+  <name>YellowSign.lighted</name>
+  <texture>Signs/yellow.png</texture>
+  <emissive>
+   <r>0.9</r>
+   <g>0.9</g>
+   <b>0.9</b>
+  </emissive>
+  <xsize>4096</xsize>
+  <ysize>128</ysize>
+  <glyph> <name>*</name>          <left>0.00439</left> <right>0.01758</right> </glyph>
+  <glyph> <name>_</name>          <left>0.01392</left> <right>0.02148</right> </glyph>
+  <glyph> <name>-</name>          <left>0.01758</left> <right>0.03418</right> </glyph>
+  <glyph> <name>A</name>          <left>0.03418</left> <right>0.05469</right> </glyph>
+  <glyph> <name>B</name>          <left>0.05469</left> <right>0.07178</right> </glyph>
+  <glyph> <name>C</name>          <left>0.07178</left> <right>0.08789</right> </glyph>
+  <glyph> <name>D</name>          <left>0.08789</left> <right>0.10474</right> </glyph>
+  <glyph> <name>E</name>          <left>0.10474</left> <right>0.12085</right> </glyph>
+  <glyph> <name>F</name>          <left>0.12085</left> <right>0.13721</right> </glyph>
+  <glyph> <name>G</name>          <left>0.13721</left> <right>0.15308</right> </glyph>
+  <glyph> <name>H</name>          <left>0.15308</left> <right>0.17017</right> </glyph>
+  <glyph> <name>I</name>          <left>0.17017</left> <right>0.17700</right> </glyph>
+  <glyph> <name>J</name>          <left>0.17700</left> <right>0.19263</right> </glyph>
+  <glyph> <name>K</name>          <left>0.19263</left> <right>0.20997</right> </glyph>
+  <glyph> <name>L</name>          <left>0.20997</left> <right>0.22559</right> </glyph>
+  <glyph> <name>M</name>          <left>0.22559</left> <right>0.24488</right> </glyph>
+  <glyph> <name>N</name>          <left>0.24488</left> <right>0.26221</right> </glyph>
+  <glyph> <name>O</name>          <left>0.26221</left> <right>0.27930</right> </glyph>
+  <glyph> <name>P</name>          <left>0.27930</left> <right>0.29663</right> </glyph>
+  <glyph> <name>Q</name>          <left>0.29663</left> <right>0.31421</right> </glyph>
+  <glyph> <name>R</name>          <left>0.31421</left> <right>0.33130</right> </glyph>
+  <glyph> <name>S</name>          <left>0.33130</left> <right>0.34741</right> </glyph>
+  <glyph> <name>T</name>          <left>0.34741</left> <right>0.36304</right> </glyph>
+  <glyph> <name>U</name>          <left>0.36304</left> <right>0.38013</right> </glyph>
+  <glyph> <name>V</name>          <left>0.38013</left> <right>0.39893</right> </glyph>
+  <glyph> <name>W</name>          <left>0.39893</left> <right>0.41968</right> </glyph>
+  <glyph> <name>X</name>          <left>0.41968</left> <right>0.43628</right> </glyph>
+  <glyph> <name>Y</name>          <left>0.43628</left> <right>0.45752</right> </glyph>
+  <glyph> <name>Z</name>          <left>0.45752</left> <right>0.47412</right> </glyph>
+  <glyph> <name>0</name>          <left>0.47412</left> <right>0.49097</right> </glyph>
+  <glyph> <name>1</name>          <left>0.49097</left> <right>0.50024</right> </glyph>
+  <glyph> <name>2</name>          <left>0.50024</left> <right>0.51709</right> </glyph>
+  <glyph> <name>3</name>          <left>0.51709</left> <right>0.53370</right> </glyph>
+  <glyph> <name>4</name>          <left>0.53370</left> <right>0.55176</right> </glyph>
+  <glyph> <name>5</name>          <left>0.55176</left> <right>0.56860</right> </glyph>
+  <glyph> <name>6</name>          <left>0.56860</left> <right>0.58570</right> </glyph>
+  <glyph> <name>7</name>          <left>0.58570</left> <right>0.60254</right> </glyph>
+  <glyph> <name>8</name>          <left>0.60254</left> <right>0.61914</right> </glyph>
+  <glyph> <name>9</name>          <left>0.61914</left> <right>0.63672</right> </glyph>
+  <glyph> <name>t0</name>         <left>0.63672</left> <right>0.65137</right> </glyph>
+  <glyph> <name>t1</name>         <left>0.65137</left> <right>0.65918</right> </glyph>
+  <glyph> <name>t2</name>         <left>0.65918</left> <right>0.67334</right> </glyph>
+  <glyph> <name>t3</name>         <left>0.67334</left> <right>0.68726</right> </glyph>
+  <glyph> <name>t4</name>         <left>0.68726</left> <right>0.70288</right> </glyph>
+  <glyph> <name>t5</name>         <left>0.70288</left> <right>0.71680</right> </glyph>
+  <glyph> <name>t6</name>         <left>0.71680</left> <right>0.73120</right> </glyph>
+  <glyph> <name>t7</name>         <left>0.73120</left> <right>0.74634</right> </glyph>
+  <glyph> <name>t8</name>         <left>0.74634</left> <right>0.76001</right> </glyph>
+  <glyph> <name>t9</name>         <left>0.76001</left> <right>0.77441</right> </glyph>
+  <glyph> <name>^u</name>         <left>0.77441</left> <right>0.79200</right> </glyph>
+  <glyph> <name>^d</name>         <left>0.79200</left> <right>0.81006</right> </glyph>
+  <glyph> <name>^l</name>         <left>0.81006</left> <right>0.83276</right> </glyph>
+  <glyph> <name>^r</name>         <left>0.83276</left> <right>0.85571</right> </glyph>
+  <glyph> <name>^lu</name>        <left>0.85571</left> <right>0.87573</right> </glyph>
+  <glyph> <name>^ru</name>        <left>0.87573</left> <right>0.89527</right> </glyph>
+  <glyph> <name>^ld</name>        <left>0.89527</left> <right>0.91529</right> </glyph>
+  <glyph> <name>^rd</name>        <left>0.91529</left> <right>0.93457</right> </glyph>
+  <glyph> <name>|</name>          <left>0.97974</left> <right>0.98926</right> </glyph>
+  <glyph> <name>start-frame</name><left>0.98462</left> <right>0.98926</right> </glyph>
+  <glyph> <name>stop-frame</name> <left>0.99390</left> <right>0.99854</right> </glyph>
+ </material>
+
+ <material>
+  <name>RedSign.unlighted</name>
+  <texture>Signs/red.png</texture>
+  <emissive>
+   <r>0.4</r>
+   <g>0.4</g>
+   <b>0.4</b>
+  </emissive>
+ </material>
+
+ <material>
+  <name>RedSign</name>
+  <name>RedSign.lighted</name>
+  <texture>Signs/red.png</texture>
+  <emissive>
+   <r>0.9</r>
+   <g>0.9</g>
+   <b>0.9</b>
+  </emissive>
+  <xsize>4096</xsize>
+  <ysize>128</ysize>
+  <glyph> <name>|</name>          <left>0.00000</left> <right>0.00244</right> </glyph>
+  <glyph> <name>*</name>          <left>0.00439</left> <right>0.01758</right> </glyph>
+  <glyph> <name>_</name>          <left>0.01392</left> <right>0.02148</right> </glyph>
+  <glyph> <name>-</name>          <left>0.01758</left> <right>0.03418</right> </glyph>
+  <glyph> <name>A</name>          <left>0.03418</left> <right>0.05469</right> </glyph>
+  <glyph> <name>B</name>          <left>0.05469</left> <right>0.07178</right> </glyph>
+  <glyph> <name>C</name>          <left>0.07178</left> <right>0.08789</right> </glyph>
+  <glyph> <name>D</name>          <left>0.08789</left> <right>0.10474</right> </glyph>
+  <glyph> <name>E</name>          <left>0.10474</left> <right>0.12085</right> </glyph>
+  <glyph> <name>F</name>          <left>0.12085</left> <right>0.13721</right> </glyph>
+  <glyph> <name>G</name>          <left>0.13721</left> <right>0.15308</right> </glyph>
+  <glyph> <name>H</name>          <left>0.15308</left> <right>0.17017</right> </glyph>
+  <glyph> <name>I</name>          <left>0.17017</left> <right>0.17700</right> </glyph>
+  <glyph> <name>J</name>          <left>0.17700</left> <right>0.19263</right> </glyph>
+  <glyph> <name>K</name>          <left>0.19263</left> <right>0.20997</right> </glyph>
+  <glyph> <name>L</name>          <left>0.20997</left> <right>0.22559</right> </glyph>
+  <glyph> <name>M</name>          <left>0.22559</left> <right>0.24488</right> </glyph>
+  <glyph> <name>N</name>          <left>0.24488</left> <right>0.26221</right> </glyph>
+  <glyph> <name>O</name>          <left>0.26221</left> <right>0.27930</right> </glyph>
+  <glyph> <name>P</name>          <left>0.27930</left> <right>0.29663</right> </glyph>
+  <glyph> <name>Q</name>          <left>0.29663</left> <right>0.31421</right> </glyph>
+  <glyph> <name>R</name>          <left>0.31421</left> <right>0.33130</right> </glyph>
+  <glyph> <name>S</name>          <left>0.33130</left> <right>0.34741</right> </glyph>
+  <glyph> <name>T</name>          <left>0.34741</left> <right>0.36304</right> </glyph>
+  <glyph> <name>U</name>          <left>0.36304</left> <right>0.38013</right> </glyph>
+  <glyph> <name>V</name>          <left>0.38013</left> <right>0.39893</right> </glyph>
+  <glyph> <name>W</name>          <left>0.39893</left> <right>0.41968</right> </glyph>
+  <glyph> <name>X</name>          <left>0.41968</left> <right>0.43628</right> </glyph>
+  <glyph> <name>Y</name>          <left>0.43628</left> <right>0.45752</right> </glyph>
+  <glyph> <name>Z</name>          <left>0.45752</left> <right>0.47412</right> </glyph>
+  <glyph> <name>0</name>          <left>0.47412</left> <right>0.49097</right> </glyph>
+  <glyph> <name>1</name>          <left>0.49097</left> <right>0.50024</right> </glyph>
+  <glyph> <name>2</name>          <left>0.50024</left> <right>0.51709</right> </glyph>
+  <glyph> <name>3</name>          <left>0.51709</left> <right>0.53370</right> </glyph>
+  <glyph> <name>4</name>          <left>0.53370</left> <right>0.55176</right> </glyph>
+  <glyph> <name>5</name>          <left>0.55176</left> <right>0.56860</right> </glyph>
+  <glyph> <name>6</name>          <left>0.56860</left> <right>0.58570</right> </glyph>
+  <glyph> <name>7</name>          <left>0.58570</left> <right>0.60254</right> </glyph>
+  <glyph> <name>8</name>          <left>0.60254</left> <right>0.61914</right> </glyph>
+  <glyph> <name>9</name>          <left>0.61914</left> <right>0.63672</right> </glyph>
+  <glyph> <name>t0</name>         <left>0.63672</left> <right>0.65137</right> </glyph>
+  <glyph> <name>t1</name>         <left>0.65137</left> <right>0.65918</right> </glyph>
+  <glyph> <name>t2</name>         <left>0.65918</left> <right>0.67334</right> </glyph>
+  <glyph> <name>t3</name>         <left>0.67334</left> <right>0.68726</right> </glyph>
+  <glyph> <name>t4</name>         <left>0.68726</left> <right>0.70288</right> </glyph>
+  <glyph> <name>t5</name>         <left>0.70288</left> <right>0.71680</right> </glyph>
+  <glyph> <name>t6</name>         <left>0.71680</left> <right>0.73120</right> </glyph>
+  <glyph> <name>t7</name>         <left>0.73120</left> <right>0.74634</right> </glyph>
+  <glyph> <name>t8</name>         <left>0.74634</left> <right>0.76001</right> </glyph>
+  <glyph> <name>t9</name>         <left>0.76001</left> <right>0.77441</right> </glyph>
+  <glyph> <name>^u</name>         <left>0.77441</left> <right>0.79200</right> </glyph>
+  <glyph> <name>^d</name>         <left>0.79200</left> <right>0.81006</right> </glyph>
+  <glyph> <name>^l</name>         <left>0.81006</left> <right>0.83276</right> </glyph>
+  <glyph> <name>^r</name>         <left>0.83276</left> <right>0.85571</right> </glyph>
+  <glyph> <name>^lu</name>        <left>0.85571</left> <right>0.87573</right> </glyph>
+  <glyph> <name>^ru</name>        <left>0.87573</left> <right>0.89527</right> </glyph>
+  <glyph> <name>^ld</name>        <left>0.89527</left> <right>0.91529</right> </glyph>
+  <glyph> <name>^rd</name>        <left>0.91529</left> <right>0.93457</right> </glyph>
+  <glyph> <name>no-entry</name>   <left>0.93872</left> <right>0.96997</right> </glyph>
+  <glyph> <name>start-frame</name><left>0.98462</left> <right>0.98926</right> </glyph>
+  <glyph> <name>stop-frame</name> <left>0.99390</left> <right>0.99854</right> </glyph>
+ </material>
+
+ <material>
+  <name>BlackSign.unlighted</name>
+  <texture>Signs/black.png</texture>
+  <emissive>
+   <r>0.4</r>
+   <g>0.4</g>
+   <b>0.4</b>
+  </emissive>
+ </material>
+
+ <material>
+  <name>BlackSign</name>
+  <name>BlackSign.lighted</name>
+  <texture>Signs/black.png</texture>
+  <emissive>
+   <r>0.9</r>
+   <g>0.9</g>
+   <b>0.9</b>
+  </emissive>
+  <xsize>4096</xsize>
+  <ysize>128</ysize>
+  <glyph> <name>|</name>          <left>0.00000</left> <right>0.00244</right> </glyph>
+  <glyph> <name>*</name>          <left>0.00439</left> <right>0.01758</right> </glyph>
+  <glyph> <name>_</name>          <left>0.01392</left> <right>0.02148</right> </glyph>
+  <glyph> <name>-</name>          <left>0.01758</left> <right>0.03418</right> </glyph>
+  <glyph> <name>A</name>          <left>0.03418</left> <right>0.05469</right> </glyph>
+  <glyph> <name>B</name>          <left>0.05469</left> <right>0.07178</right> </glyph>
+  <glyph> <name>C</name>          <left>0.07178</left> <right>0.08789</right> </glyph>
+  <glyph> <name>D</name>          <left>0.08789</left> <right>0.10474</right> </glyph>
+  <glyph> <name>E</name>          <left>0.10474</left> <right>0.12085</right> </glyph>
+  <glyph> <name>F</name>          <left>0.12085</left> <right>0.13721</right> </glyph>
+  <glyph> <name>G</name>          <left>0.13721</left> <right>0.15308</right> </glyph>
+  <glyph> <name>H</name>          <left>0.15308</left> <right>0.17017</right> </glyph>
+  <glyph> <name>I</name>          <left>0.17017</left> <right>0.17700</right> </glyph>
+  <glyph> <name>J</name>          <left>0.17700</left> <right>0.19263</right> </glyph>
+  <glyph> <name>K</name>          <left>0.19263</left> <right>0.20997</right> </glyph>
+  <glyph> <name>L</name>          <left>0.20997</left> <right>0.22559</right> </glyph>
+  <glyph> <name>M</name>          <left>0.22559</left> <right>0.24488</right> </glyph>
+  <glyph> <name>N</name>          <left>0.24488</left> <right>0.26221</right> </glyph>
+  <glyph> <name>O</name>          <left>0.26221</left> <right>0.27930</right> </glyph>
+  <glyph> <name>P</name>          <left>0.27930</left> <right>0.29663</right> </glyph>
+  <glyph> <name>Q</name>          <left>0.29663</left> <right>0.31421</right> </glyph>
+  <glyph> <name>R</name>          <left>0.31421</left> <right>0.33130</right> </glyph>
+  <glyph> <name>S</name>          <left>0.33130</left> <right>0.34741</right> </glyph>
+  <glyph> <name>T</name>          <left>0.34741</left> <right>0.36304</right> </glyph>
+  <glyph> <name>U</name>          <left>0.36304</left> <right>0.38013</right> </glyph>
+  <glyph> <name>V</name>          <left>0.38013</left> <right>0.39893</right> </glyph>
+  <glyph> <name>W</name>          <left>0.39893</left> <right>0.41968</right> </glyph>
+  <glyph> <name>X</name>          <left>0.41968</left> <right>0.43628</right> </glyph>
+  <glyph> <name>Y</name>          <left>0.43628</left> <right>0.45752</right> </glyph>
+  <glyph> <name>Z</name>          <left>0.45752</left> <right>0.47412</right> </glyph>
+  <glyph> <name>n0</name>         <left>0.47412</left> <right>0.49097</right> </glyph>
+  <glyph> <name>n1</name>         <left>0.49097</left> <right>0.50024</right> </glyph>
+  <glyph> <name>n2</name>         <left>0.50024</left> <right>0.51709</right> </glyph>
+  <glyph> <name>n3</name>         <left>0.51709</left> <right>0.53370</right> </glyph>
+  <glyph> <name>n4</name>         <left>0.53370</left> <right>0.55176</right> </glyph>
+  <glyph> <name>n5</name>         <left>0.55176</left> <right>0.56860</right> </glyph>
+  <glyph> <name>n6</name>         <left>0.56860</left> <right>0.58570</right> </glyph>
+  <glyph> <name>n7</name>         <left>0.58570</left> <right>0.60254</right> </glyph>
+  <glyph> <name>n8</name>         <left>0.60254</left> <right>0.61914</right> </glyph>
+  <glyph> <name>n9</name>         <left>0.61914</left> <right>0.63672</right> </glyph>
+  <glyph> <name>0</name>          <left>0.63672</left> <right>0.65137</right> </glyph>
+  <glyph> <name>1</name>          <left>0.65137</left> <right>0.65918</right> </glyph>
+  <glyph> <name>2</name>          <left>0.65918</left> <right>0.67334</right> </glyph>
+  <glyph> <name>3</name>          <left>0.67334</left> <right>0.68726</right> </glyph>
+  <glyph> <name>4</name>          <left>0.68726</left> <right>0.70288</right> </glyph>
+  <glyph> <name>5</name>          <left>0.70288</left> <right>0.71680</right> </glyph>
+  <glyph> <name>6</name>          <left>0.71680</left> <right>0.73120</right> </glyph>
+  <glyph> <name>7</name>          <left>0.73120</left> <right>0.74634</right> </glyph>
+  <glyph> <name>8</name>          <left>0.74634</left> <right>0.76001</right> </glyph>
+  <glyph> <name>9</name>          <left>0.76001</left> <right>0.77441</right> </glyph>
+  <glyph> <name>^u</name>         <left>0.77441</left> <right>0.79200</right> </glyph>
+  <glyph> <name>^d</name>         <left>0.79200</left> <right>0.81006</right> </glyph>
+  <glyph> <name>^l</name>         <left>0.81006</left> <right>0.83276</right> </glyph>
+  <glyph> <name>^r</name>         <left>0.83276</left> <right>0.85571</right> </glyph>
+  <glyph> <name>^lu</name>        <left>0.85571</left> <right>0.87573</right> </glyph>
+  <glyph> <name>^ru</name>        <left>0.87573</left> <right>0.89527</right> </glyph>
+  <glyph> <name>^ld</name>        <left>0.89527</left> <right>0.91529</right> </glyph>
+  <glyph> <name>^rd</name>        <left>0.91529</left> <right>0.93457</right> </glyph>
+  <glyph> <name>start-frame</name><left>0.98462</left> <right>0.98926</right> </glyph>
+  <glyph> <name>stop-frame</name> <left>0.99390</left> <right>0.99854</right> </glyph>
+ </material>
+
+ <material>
+  <name>FramedSign.unlighted</name>
+  <texture>Signs/framed.png</texture>
+  <emissive>
+   <r>0.4</r>
+   <g>0.4</g>
+   <b>0.4</b>
+  </emissive>
+ </material>
+
+ <material>
+  <name>FramedSign</name>
+  <name>FramedSign.lighted</name>
+  <texture>Signs/framed.png</texture>
+  <emissive>
+   <r>0.9</r>
+   <g>0.9</g>
+   <b>0.9</b>
+  </emissive>
+  <xsize>4096</xsize>
+  <ysize>128</ysize>
+  <glyph> <name>|</name>          <left>0.00000</left> <right>0.00244</right> </glyph>
+  <glyph> <name>*</name>          <left>0.00439</left> <right>0.01758</right> </glyph>
+  <glyph> <name>_</name>          <left>0.01392</left> <right>0.02148</right> </glyph>
+  <glyph> <name>-</name>          <left>0.01758</left> <right>0.03418</right> </glyph>
+  <glyph> <name>A</name>          <left>0.03418</left> <right>0.05469</right> </glyph>
+  <glyph> <name>B</name>          <left>0.05469</left> <right>0.07178</right> </glyph>
+  <glyph> <name>C</name>          <left>0.07178</left> <right>0.08789</right> </glyph>
+  <glyph> <name>D</name>          <left>0.08789</left> <right>0.10474</right> </glyph>
+  <glyph> <name>E</name>          <left>0.10474</left> <right>0.12085</right> </glyph>
+  <glyph> <name>F</name>          <left>0.12085</left> <right>0.13721</right> </glyph>
+  <glyph> <name>G</name>          <left>0.13721</left> <right>0.15308</right> </glyph>
+  <glyph> <name>H</name>          <left>0.15308</left> <right>0.17017</right> </glyph>
+  <glyph> <name>I</name>          <left>0.17017</left> <right>0.17700</right> </glyph>
+  <glyph> <name>J</name>          <left>0.17700</left> <right>0.19263</right> </glyph>
+  <glyph> <name>K</name>          <left>0.19263</left> <right>0.20997</right> </glyph>
+  <glyph> <name>L</name>          <left>0.20997</left> <right>0.22559</right> </glyph>
+  <glyph> <name>M</name>          <left>0.22559</left> <right>0.24488</right> </glyph>
+  <glyph> <name>N</name>          <left>0.24488</left> <right>0.26221</right> </glyph>
+  <glyph> <name>O</name>          <left>0.26221</left> <right>0.27930</right> </glyph>
+  <glyph> <name>P</name>          <left>0.27930</left> <right>0.29663</right> </glyph>
+  <glyph> <name>Q</name>          <left>0.29663</left> <right>0.31421</right> </glyph>
+  <glyph> <name>R</name>          <left>0.31421</left> <right>0.33130</right> </glyph>
+  <glyph> <name>S</name>          <left>0.33130</left> <right>0.34741</right> </glyph>
+  <glyph> <name>T</name>          <left>0.34741</left> <right>0.36304</right> </glyph>
+  <glyph> <name>U</name>          <left>0.36304</left> <right>0.38013</right> </glyph>
+  <glyph> <name>V</name>          <left>0.38013</left> <right>0.39893</right> </glyph>
+  <glyph> <name>W</name>          <left>0.39893</left> <right>0.41968</right> </glyph>
+  <glyph> <name>X</name>          <left>0.41968</left> <right>0.43628</right> </glyph>
+  <glyph> <name>Y</name>          <left>0.43628</left> <right>0.45752</right> </glyph>
+  <glyph> <name>Z</name>          <left>0.45752</left> <right>0.47412</right> </glyph>
+  <glyph> <name>0</name>          <left>0.47412</left> <right>0.49097</right> </glyph>
+  <glyph> <name>1</name>          <left>0.49097</left> <right>0.50024</right> </glyph>
+  <glyph> <name>2</name>          <left>0.50024</left> <right>0.51709</right> </glyph>
+  <glyph> <name>3</name>          <left>0.51709</left> <right>0.53370</right> </glyph>
+  <glyph> <name>4</name>          <left>0.53370</left> <right>0.55176</right> </glyph>
+  <glyph> <name>5</name>          <left>0.55176</left> <right>0.56860</right> </glyph>
+  <glyph> <name>6</name>          <left>0.56860</left> <right>0.58570</right> </glyph>
+  <glyph> <name>7</name>          <left>0.58570</left> <right>0.60254</right> </glyph>
+  <glyph> <name>8</name>          <left>0.60254</left> <right>0.61914</right> </glyph>
+  <glyph> <name>9</name>          <left>0.61914</left> <right>0.63672</right> </glyph>
+  <glyph> <name>t0</name>         <left>0.63672</left> <right>0.65137</right> </glyph>
+  <glyph> <name>t1</name>         <left>0.65137</left> <right>0.65918</right> </glyph>
+  <glyph> <name>t2</name>         <left>0.65918</left> <right>0.67334</right> </glyph>
+  <glyph> <name>t3</name>         <left>0.67334</left> <right>0.68726</right> </glyph>
+  <glyph> <name>t4</name>         <left>0.68726</left> <right>0.70288</right> </glyph>
+  <glyph> <name>t5</name>         <left>0.70288</left> <right>0.71680</right> </glyph>
+  <glyph> <name>t6</name>         <left>0.71680</left> <right>0.73120</right> </glyph>
+  <glyph> <name>t7</name>         <left>0.73120</left> <right>0.74634</right> </glyph>
+  <glyph> <name>t8</name>         <left>0.74634</left> <right>0.76001</right> </glyph>
+  <glyph> <name>t9</name>         <left>0.76001</left> <right>0.77441</right> </glyph>
+  <glyph> <name>^u</name>         <left>0.77441</left> <right>0.79200</right> </glyph>
+  <glyph> <name>^d</name>         <left>0.79200</left> <right>0.81006</right> </glyph>
+  <glyph> <name>^l</name>         <left>0.81006</left> <right>0.83276</right> </glyph>
+  <glyph> <name>^r</name>         <left>0.83276</left> <right>0.85571</right> </glyph>
+  <glyph> <name>^lu</name>        <left>0.85571</left> <right>0.87573</right> </glyph>
+  <glyph> <name>^ru</name>        <left>0.87573</left> <right>0.89527</right> </glyph>
+  <glyph> <name>^ld</name>        <left>0.89527</left> <right>0.91529</right> </glyph>
+  <glyph> <name>^rd</name>        <left>0.91529</left> <right>0.93457</right> </glyph>
+  <glyph> <name>start-frame</name><left>0.98389</left> <right>0.98926</right> </glyph>
+  <glyph> <name>stop-frame</name> <left>0.99390</left> <right>0.99976</right> </glyph>
+ </material>
+
+ <material>
+  <name>RunwaySign.unlighted</name>
+  <texture>Signs/yellow_rwy.png</texture>
+  <emissive>
+   <r>0.4</r>
+   <g>0.4</g>
+   <b>0.4</b>
+  </emissive>
+ </material>
+
+ <material>
+  <name>RunwaySign</name>
+  <name>RunwaySign.lighted</name>
+  <texture>Signs/yellow_rwy.png</texture>
+  <emissive>
+   <r>0.9</r>
+   <g>0.9</g>
+   <b>0.9</b>
+  </emissive>
+  <xsize>1024</xsize>
+  <ysize>128</ysize>
+  <glyph> <name>critical</name>   <left>0.00000</left> <right>0.23633</right> </glyph>
+  <glyph> <name>safety</name>     <left>0.24512</left> <right>0.73340</right> </glyph>
+ </material>
+
+ <material>
+  <name>RUNWAY_LIGHTS</name>
+  <emissive>
+   <r>0.92157</r>
+   <g>0.92157</g>
+   <b>0.76471</b>
+   <a>1.0</a>
+  </emissive>
+ </material>
+
+ <material>
+  <name>RWY_LIGHTS</name>
+  <emissive>
+   <r>0.92157</r>
+   <g>0.92157</g>
+   <b>0.76471</b>
+   <a>1.0</a>
+  </emissive>
+ </material>
+
+ <material>
+  <name>RWY_WHITE_LIGHTS</name>
+  <emissive>
+   <r>0.92157</r>
+   <g>0.92157</g>
+   <b>0.76471</b>
+   <a>1.0</a>
+  </emissive>
+ </material>
+
+ <material>
+  <name>RWY_WHITE_MEDIUM_LIGHTS</name>
+  <emissive>
+   <r>0.92157</r>
+   <g>0.92157</g>
+   <b>0.76471</b>
+   <a>0.80392</a>
+  </emissive>
+ </material>
+
+ <material>
+  <name>RWY_WHITE_LOW_LIGHTS</name>
+  <emissive>
+   <r>0.92157</r>
+   <g>0.92157</g>
+   <b>0.76471</b>
+   <a>0.60784</a>
+  </emissive>
+ </material>
+
+ <material>
+  <name>RWY_SEQUENCED_LIGHTS</name>
+  <emissive>
+   <r>0.92157</r>
+   <g>0.92157</g>
+   <b>0.76471</b>
+   <a>1.0</a>
+  </emissive>
+ </material>
+
+ <material>
+  <name>RWY_REIL_LIGHTS</name>
+  <emissive>
+   <r>0.92157</r>
+   <g>0.92157</g>
+   <b>0.76471</b>
+   <a>1.0</a>
+  </emissive>
+ </material>
+
+ <material>
+  <name>RWY_YELLOW_LIGHTS</name>
+  <emissive>
+   <r>0.92157</r>
+   <g>0.84314</g>
+   <b>0.078431</b>
+   <a>1.0</a>
+  </emissive>
+ </material>
+
+ <material>
+  <name>RWY_YELLOW_MEDIUM_LIGHTS</name>
+  <emissive>
+   <r>0.92157</r>
+   <g>0.84314</g>
+   <b>0.078431</b>
+   <a>0.80392</a>
+  </emissive>
+ </material>
+
+ <material>
+  <name>RWY_YELLOW_LOW_LIGHTS</name>
+  <emissive>
+   <r>0.92157</r>
+   <g>0.84314</g>
+   <b>0.078431</b>
+   <a>0.60784</a>
+  </emissive>
+ </material>
+
+ <material>
+  <name>RWY_RED_LIGHTS</name>
+  <emissive>
+   <r>0.92157</r>
+   <g>0.35294</g>
+   <b>0.35294</b>
+   <a>1.0</a>
+  </emissive>
+ </material>
+
+ <material>
+  <name>RWY_RED_MEDIUM_LIGHTS</name>
+  <emissive>
+   <r>0.92157</r>
+   <g>0.35294</g>
+   <b>0.35294</b>
+   <a>0.80392</a>
+  </emissive>
+ </material>
+
+ <material>
+  <name>RWY_RED_LOW_LIGHTS</name>
+  <emissive>
+   <r>0.92157</r>
+   <g>0.35294</g>
+   <b>0.35294</b>
+   <a>0.60784</a>
+  </emissive>
+ </material>
+
+ <material>
+  <name>RWY_GREEN_LIGHTS</name>
+  <emissive>
+   <r>0.078431</r>
+   <g>0.92157</g>
+   <b>0.078431</b>
+   <a>1.0</a>
+  </emissive>
+ </material>
+
+ <material>
+  <name>RWY_GREEN_MEDIUM_LIGHTS</name>
+  <emissive>
+   <r>0.078431</r>
+   <g>0.92157</g>
+   <b>0.078431</b>
+   <a>0.80392</a>
+  </emissive>
+ </material>
+
+ <material>
+  <name>RWY_GREEN_LOW_LIGHTS</name>
+  <emissive>
+   <r>0.078431</r>
+   <g>0.92157</g>
+   <b>0.078431</b>
+   <a>0.60784</a>
+  </emissive>
+ </material>
+
+ <material>
+  <name>RWY_GREEN_TAXIWAY_LIGHTS</name>
+  <emissive>
+   <r>0.078431</r>
+   <g>0.92157</g>
+   <b>0.078431</b>
+   <a>0.60784</a>
+  </emissive>
+ </material>
+
+ <material>
+  <name>RWY_BLUE_TAXIWAY_LIGHTS</name>
+  <emissive>
+   <r>0.35294</r>
+   <g>0.35294</g>
+   <b>0.92157</b>
+   <a>0.80392</a>
+  </emissive>
+ </material>
+
+ <material>
+  <name>RWY_VASI_LIGHTS</name>
+  <emissive>
+   <r>0.92157</r>
+   <g>0.92157</g>
+   <b>0.76471</b>
+   <a>1.0</a>
+  </emissive>
+ </material>
+
+</PropertyList>

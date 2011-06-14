@@ -1,0 +1,321 @@
+<?xml version="1.0"?>
+<!--  Submodels are objects which can be dropped or launched from the user aircraft.
+      The trigger is a boolean property, which you define, which when "true" causes
+      the submodel to be released/launched. 
+      A submodel will create an AIBallistic object which will follow a ballistic path.
+      By default one submodel will be released when the corresponding trigger is "true".
+      The initial conditions (IC) define the object's starting point (relative to the
+      user aircraft's "reported position"), and its initial speed and direction
+      (relative to the user aircraft).  If you want to release many similar objects
+      with similar IC, then you may use the <repeat>, <delay> and <count> properties
+      to define this.  The allowed properties are:
+
+      <name>         The name of the submodel.
+      <model>        The path to the visual model.
+      <trigger>      The property which will act as the trigger. 
+      <speed>        Initial speed, in feet/sec, relative to user aircraft.
+      <repeat>       Set "true" if you want multiple releases of this submodel. Defaults
+                     to false
+      <delay>        Time, in seconds, between repeated releases.
+      <count>        Number of submodels available for multiple release.
+      <x-offset>     Submodel's initial fore/aft position relative to user aircraft.  
+                     Fore is positive. (ft)
+      <y-offset>     Submodel's initial left/right position relative to user aircraft.  
+                     Right is positive. (ft)
+      <z-offset>     Submodel's initial up/down position relative to user aircraft.  
+                     Up is positive. (ft)
+      <yaw-offset>   Submodel's initial azimuth, in degrees, relative to user aircraft's
+                     nose.  Right is positive.
+      <pitch-offset> Submodel's initial elevation, in degrees, relative to user aircraft's
+                     pitch.  Up is positive.
+      <buoyancy>     Submodel's upward acceleration (fps) due to buoyancy in air. 32 is 
+                     neutral (contrails),  > 32 exhaust gas, smoke. 
+      <wind>	   		 If true, Submodel is affected by local wind. Defaults to false.
+      <cd>           The Coeffient of Drag. Varies with submodel shape - 0.295 for a bullet, 
+                     0.045 for an airfoil. Enter an appropriate value. Defaults to 0.295.
+      <eda>          Effective drag area (sq ft). Usually the cross-sectional area of the 
+                     submodel normal to the airflow.
+      <weight>       The weight of the submodel (lbs). Defaults to 0.25	
+      <aero-stabilised> If true, the submodel aligns with the local airflow. Defaults to true
+			<external-force> If true the submodel is subjected to an external force
+		  <force-path>   A string describing the property where the magnitude, azimuth and elevation 
+										of the external force is to be found. The following child properties are 
+										instantiated 
+															~/force-lb"
+        											~/force-azimuth-deg
+															~/force-elevation-deg
+      
+-->
+<PropertyList>
+
+	<cannon>
+		<model>Models/Geometry/tracer.xml</model>
+		<speed>2755.9</speed>
+		<cd>0.193</cd>
+		<weight>0.286600941</weight>
+		<eda>0.00338158219</eda>
+		<pitch-offset>0</pitch-offset>
+		<fuse-range>0</fuse-range>
+		<life>40</life>
+		<trigger>controls/armament/trigger</trigger>
+		<expiry>true</expiry>
+		<repeat>true</repeat>
+		<delay>0.41</delay>
+		<count>41</count>
+		<wind>false</wind>
+		<collision>true</collision>
+		<impact>true</impact>
+		<impact-reports>sim/ai/aircraft/collision/cannon</impact-reports>
+		<submodel-path>Aircraft/seahawk/Models/seahawk-subsubmodels.xml</submodel-path>
+	</cannon>
+
+	<submodel>
+		<name>Hispano MkV P Inner</name>
+		<model alias="../../cannon/model"/>
+		<trigger alias="../../cannon/trigger"/>
+		<speed alias="../../cannon/speed"/>
+		<cd alias="../../cannon/cd"/>
+		<eda alias="../../cannon/eda"/>
+		<fuse-range alias="../../cannon/fuse-range"/>
+		<weight alias="../../cannon/weight"/>
+		<life alias="../../cannon/life"/>
+		<repeat alias="../../cannon/repeat"/>
+		<delay alias="../../cannon/delay"/>
+		<count alias="../../cannon/count"/>
+		<wind alias="../../cannon/wind"/>
+		<expiry alias="../../cannon/expiry"/>
+		<collision alias="../../cannon/collision"/>
+		<impact alias="../../cannon/impact"/>
+		<submodel-path alias="../../cannon/submodel-path"/>
+		<x-offset>12.1391  </x-offset>
+		<y-offset>-0.6562  </y-offset>
+		<z-offset>-1.6732  </z-offset>
+		<yaw-offset>0</yaw-offset>
+		<pitch-offset alias="../../cannon/pitch-offset"/>
+
+	</submodel>
+
+	<submodel>
+		<name>Hispano MkV P Inner smoke</name>
+		<model>Aircraft/seahawk/Models/smoke.xml</model>
+		<trigger alias="../../cannon/trigger"/>
+		<speed>200</speed>
+		<repeat>true</repeat>
+		<delay>0.08</delay>
+		<count>200</count>
+		<x-offset>12.1391  </x-offset>
+		<y-offset>-2.0     </y-offset>
+		<z-offset>-1.6732  </z-offset>
+		<yaw-offset>-60</yaw-offset>
+		<pitch-offset>-60</pitch-offset>
+		<eda>10</eda>
+		<wind>true</wind>
+		<buoyancy>33</buoyancy>
+		<life>5</life>
+	</submodel>
+
+	<submodel>
+		<name>Hispano MkV S Inner</name>
+		<model alias="../../cannon/model"/>
+		<trigger alias="../../cannon/trigger"/>
+		<speed alias="../../cannon/speed"/>
+		<cd alias="../../cannon/cd"/>
+		<eda alias="../../cannon/eda"/>
+		<fuse-range alias="../../cannon/fuse-range"/>
+		<weight alias="../../cannon/weight"/>
+		<life alias="../../cannon/life"/>
+		<repeat alias="../../cannon/repeat"/>
+		<delay alias="../../cannon/delay"/>
+		<count alias="../../cannon/count"/>
+		<wind alias="../../cannon/wind"/>
+		<expiry alias="../../cannon/expiry"/>
+		<collision alias="../../cannon/collision"/>
+		<impact alias="../../cannon/impact"/>
+		<submodel-path alias="../../cannon/submodel-path"/>
+		<x-offset>12.1391  </x-offset>
+		<y-offset>0.6562  </y-offset>
+		<z-offset>-1.6732  </z-offset>
+		<yaw-offset>0</yaw-offset>
+		<pitch-offset alias="../../cannon/pitch-offset"/>
+	</submodel>
+	
+	<submodel>
+		<name>Hispano MkV S Inner smoke</name>
+		<model>Aircraft/seahawk/Models/smoke.xml</model>
+    <trigger alias="../../cannon/trigger"/>
+    <speed>200</speed>
+		<repeat>true</repeat>
+		<delay>0.08</delay>
+		<count>200</count>
+		<x-offset>12.1391  </x-offset>
+		<y-offset>2.0  </y-offset>
+		<z-offset>-1.6732  </z-offset>
+		<yaw-offset>60</yaw-offset>
+		<pitch-offset>-60</pitch-offset>
+		<eda>10</eda>
+		<wind>true</wind>
+		<buoyancy>33</buoyancy>
+		<life>5</life>
+	</submodel>
+
+	<submodel>
+		<name>Hispano MkV P Outer</name>
+		<model alias="../../cannon/model"/>
+		<trigger alias="../../cannon/trigger"/>
+		<speed alias="../../cannon/speed"/>
+		<cd alias="../../cannon/cd"/>
+		<eda alias="../../cannon/eda"/>
+		<fuse-range alias="../../cannon/fuse-range"/>
+		<weight alias="../../cannon/weight"/>
+		<life alias="../../cannon/life"/>
+		<repeat alias="../../cannon/repeat"/>
+		<delay alias="../../cannon/delay"/>
+		<count alias="../../cannon/count"/>
+		<wind alias="../../cannon/wind"/>
+		<expiry alias="../../cannon/expiry"/>
+		<collision alias="../../cannon/collision"/>
+		<impact alias="../../cannon/impact"/>
+		<submodel-path alias="../../cannon/submodel-path"/>
+		<x-offset>12.0079  </x-offset>
+		<y-offset>-1.2795  </y-offset>
+		<z-offset>-1.3451  </z-offset>
+		<yaw-offset>0</yaw-offset>
+		<pitch-offset alias="../../cannon/pitch-offset"/>
+	</submodel>
+
+	<submodel>
+		<name>Hispano MkV P Outer smoke</name>
+		<model>Aircraft/seahawk/Models/smoke.xml</model>
+    <trigger alias="../../cannon/trigger"/>
+    <speed>200</speed>
+		<repeat>true</repeat>
+		<delay>0.08</delay>
+		<count>200</count>
+		<x-offset>12.0079</x-offset>
+		<y-offset>-2.5   </y-offset>
+		<z-offset>-1.3451</z-offset>
+		<yaw-offset>-60</yaw-offset>
+		<pitch-offset>-60</pitch-offset>
+		<eda>10</eda>
+		<wind>true</wind>
+		<buoyancy>33</buoyancy>
+		<life>5</life>
+	</submodel>
+
+	<submodel>
+		<model alias="../../cannon/model"/>
+		<trigger alias="../../cannon/trigger"/>
+		<speed alias="../../cannon/speed"/>
+		<cd alias="../../cannon/cd"/>
+		<eda alias="../../cannon/eda"/>
+		<fuse-range alias="../../cannon/fuse-range"/>
+		<weight alias="../../cannon/weight"/>
+		<life alias="../../cannon/life"/>
+		<repeat alias="../../cannon/repeat"/>
+		<delay alias="../../cannon/delay"/>
+		<count alias="../../cannon/count"/>
+		<wind alias="../../cannon/wind"/>
+		<expiry alias="../../cannon/expiry"/>
+		<collision alias="../../cannon/collision"/>
+		<impact alias="../../cannon/impact"/>
+		<submodel-path alias="../../cannon/submodel-path"/>
+		<x-offset>12.0079  </x-offset>
+		<y-offset>1.2795  </y-offset>
+		<z-offset>-1.3451  </z-offset>
+		<yaw-offset>0</yaw-offset>
+		<pitch-offset>0</pitch-offset>
+	</submodel>
+
+	<submodel>
+		<name>Hispano MkV S Outer smoke</name>
+		<model>Aircraft/seahawk/Models/smoke.xml</model>
+    <trigger alias="../../cannon/trigger"/>
+    <speed>200</speed>
+		<repeat>true</repeat>
+		<delay>0.08</delay>
+		<count>200</count>
+		<x-offset>12.0079  </x-offset>
+		<y-offset>2.5  </y-offset>
+		<z-offset>-1.3451  </z-offset>
+		<yaw-offset>60</yaw-offset>
+		<pitch-offset>-60</pitch-offset>
+		<eda>10</eda>
+		<wind>true</wind>
+		<buoyancy>33</buoyancy>
+		<life>5</life>
+	</submodel>
+
+	<submodel>
+		<name>strop</name>
+		<model>Aircraft/seahawk/Models/strop.ac</model>
+		<trigger>/gear/launchbar/strop</trigger>
+		<speed>0</speed>
+		<repeat>false</repeat>
+		<count>-1</count>
+		<x-offset>7.185</x-offset>
+		<y-offset>0</y-offset>
+		<z-offset>-2.559</z-offset>
+		<yaw-offset>0</yaw-offset>
+		<pitch-offset>-30</pitch-offset>
+		<wind>false</wind>
+		<eda>2</eda>
+		<weight>50</weight>
+		<cd>0.8</cd>
+		<aero-stabilised>true</aero-stabilised>
+		<impact>true</impact>
+		<impact-reports>sim/ai/aircraft/impact/droptank</impact-reports>
+		<submodel-path>Aircraft/seahawk/Models/seahawk-subsubmodels2.xml</submodel-path>
+	</submodel>
+
+	<!--<submodel>
+		<name>wingman-droptank-s</name>
+		<model>/Aircraft/seahawk/Models/droptank.xml</model>
+		<trigger>sim/stores/load-tanks</trigger>
+		<speed>0</speed>
+		<repeat>false</repeat>
+		<count>1</count>
+		<life>-1</life>
+		<x-offset>2.3225</x-offset>
+		<y-offset>5.5446</y-offset>
+		<z-offset>-1.875</z-offset>
+		<yaw-offset>0</yaw-offset>
+		<pitch-offset>-2</pitch-offset>
+		<wind>false</wind>
+		<eda>2.11348887</eda>
+		<weight>170</weight>
+		<cd>0.2</cd>
+		<contents>/consumables/fuel/tank[3]</contents>
+		<impact>true</impact>
+		<impact-reports>sim/ai/aircraft/impact/droptank</impact-reports>
+		<external-force>true</external-force>
+		<force-path>/sim/ai/ballistic/force[0]</force-path>
+		<slaved>true</slaved>
+	</submodel>
+
+	<submodel>
+		<name>wingman-droptank-p</name>
+		<model>/Aircraft/seahawk/Models/droptank.xml</model>
+		<trigger>sim/stores/load-tanks</trigger>
+		<speed>0</speed>
+		<repeat>false</repeat>
+		<count>1</count>
+		<life>-1</life>
+		<x-offset>2.3225</x-offset>
+		<y-offset>-5.5446</y-offset>
+		<z-offset>-1.875</z-offset>
+		<yaw-offset>0</yaw-offset>
+		<pitch-offset>-2</pitch-offset>
+		<wind>false</wind>
+		<eda>2.11348887</eda>
+		<weight>170</weight>
+		<cd>0.2</cd>
+		<contents>/consumables/fuel/tank[4]</contents>
+		<impact>true</impact>
+		<impact-reports>sim/ai/aircraft/impact/droptank</impact-reports>
+		<external-force>true</external-force>
+		<force-path>/sim/ai/ballistic/force[1]</force-path>
+		<slaved>true</slaved>
+	</submodel>-->
+
+
+</PropertyList>

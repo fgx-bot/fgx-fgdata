@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<path>fuel-gauge.ac</path>
+
+
+ <animation>
+  <type>scale</type>
+  <object-name>fuel</object-name>
+  <property>consumables/fuel/tank/level-gal_us</property>
+  <x-factor>0.0</x-factor>
+  <x-offset>1.0</x-offset>
+  <y-factor>0.0</y-factor>
+  <y-offset>1.0</y-offset>
+  <z-factor>0.05051</z-factor>
+  <z-offset>0.0</z-offset>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0</z-m>
+  </center>
+ </animation>
+
+    <animation>
+        <type>material</type>
+        <object-name>fuel</object-name>
+        <emission>
+            <red>0.655</red>
+            <green>0.169</green>
+            <blue>0.0</blue>
+            <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+        </emission>
+    </animation>
+    
+</PropertyList>

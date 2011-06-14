@@ -1,0 +1,31 @@
+<!--
+************************************************************************
+XML DTD for FlightGear Materials.
+
+This DTD is advisory only: it is perfectly legal to include additional
+properties in materials.xml.
+************************************************************************
+-->
+
+<!ENTITY % colours "r?, g?, b?, a?">
+
+<!ELEMENT PropertyList (material+)>
+<!ELEMENT material (name+, texture, wrapu?, wrapv?, mipmap?,  
+                    xsize?, ysize?,
+		    light-coverage?, ambient?, diffuse?, specular?, emissive?)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT texture (#PCDATA)>
+<!ELEMENT wrapu (#PCDATA)>
+<!ELEMENT wrapv (#PCDATA)>
+<!ELEMENT mipmap (#PCDATA)>
+<!ELEMENT xsize (#PCDATA)>
+<!ELEMENT ysize (#PCDATA)>
+<!ELEMENT light-coverage (#PCDATA)>
+<!ELEMENT ambient (%colours;)>
+<!ELEMENT diffuse (%colours;)>
+<!ELEMENT specular (%colours;)>
+<!ELEMENT emissive (%colours;)>
+<!ELEMENT r (#PCDATA)>
+<!ELEMENT g (#PCDATA)>
+<!ELEMENT b (#PCDATA)>
+<!ELEMENT a (#PCDATA)>

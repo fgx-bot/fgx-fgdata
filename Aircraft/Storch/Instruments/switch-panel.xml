@@ -1,0 +1,223 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<path>switch-panel.ac</path>
+
+    <animation>
+        <type>material</type>
+        <object-name>LED</object-name>
+        <emission>
+            <red>0.9</red>
+            <green>0.0</green>
+            <blue>0.0</blue>
+            <factor-prop>controls/FIXME</factor-prop>
+        </emission>
+    </animation>
+
+
+    <animation>
+        <type>rotate</type>
+        <object-name>BattToggle</object-name>
+        <property>controls/electric/battery-switch</property>
+        <factor>40</factor>
+        <axis>
+            <x>0.0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m> 0.0</x-m>
+            <y-m>-0.4</y-m>
+            <z-m>-0.009</z-m>
+        </center>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>BattToggle</object-name>
+        <action>
+            <name>Battery Toggle</name>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+	        <property>controls/electric/battery-switch</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>AltToggle</object-name>
+        <property>controls/electric/engine/generator</property>
+        <factor>40</factor>
+        <axis>
+            <x>0.0</x>
+            <y>-1.0</y>
+            <z>-0.0</z>
+        </axis>
+        <center>
+            <x-m> 0.0</x-m>
+            <y-m>-0.2</y-m>
+            <z-m>-0.009</z-m>
+        </center>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>AltToggle</object-name>
+        <action>
+            <name>Generator Toggle</name>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+	        <property>controls/electric/engine/generator</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>AvionicsToggle</object-name>
+        <property>controls/FIXME</property>
+        <factor>40</factor>
+        <axis>
+            <x>0.0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m> 0.0</x-m>
+            <y-m> 0.0</y-m>
+            <z-m>-0.009</z-m>
+        </center>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <action>
+            <name>Avionics Power Toggle</name>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+	        <property>controls/FIXME</property>
+            </binding>
+        </action>
+        <object-name>AvionicsToggle</object-name>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>PitotToggle</object-name>
+        <property>controls/anti-ice/engine/carb-heat</property>
+        <factor>40</factor>
+        <axis>
+            <x>0.0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m> 0.0</x-m>
+            <y-m>-0.2</y-m>
+            <z-m> 0.01</z-m>
+        </center>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <action>
+            <name>Carb Heat Toggle</name>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+	        <property>controls/anti-ice/engine/carb-heat</property>
+            </binding>
+        </action>
+        <object-name>PitotToggle</object-name>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>L_lightToggle</object-name>
+        <property>controls/lighting/landing-lights[0]</property>
+        <factor>40</factor>
+        <axis>
+            <x>0.0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m> 0.0</x-m>
+            <y-m> 0.0</y-m>
+            <z-m> 0.01</z-m>
+        </center>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>L_lightToggle</object-name>
+        <action>
+            <name>Landing Light Toggle</name>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+	        <property>controls/lighting/landing-lights[0]</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Instr_Toggle</object-name>
+        <property>controls/lighting/instrument-lights</property>
+        <factor>40</factor>
+        <axis>
+            <x>0.0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m> 0.0</x-m>
+            <y-m> 0.2</y-m>
+            <z-m> 0.01</z-m>
+        </center>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>Instr_Toggle</object-name>
+        <action>
+            <name>Instrument Light Toggle</name>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+	        <property>controls/lighting/instrument-lights</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>N_lightToggle</object-name>
+        <property>controls/lighting/nav-lights</property>
+        <factor>40</factor>
+        <axis>
+            <x>0.0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m> 0.0</x-m>
+            <y-m> 0.4</y-m>
+            <z-m> 0.01</z-m>
+        </center>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>N_lightToggle</object-name>
+        <action>
+            <name>Nav Light Toggle</name>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+	        <property>controls/lighting/nav-lights</property>
+           </binding>
+        </action>
+    </animation>
+
+
+</PropertyList>

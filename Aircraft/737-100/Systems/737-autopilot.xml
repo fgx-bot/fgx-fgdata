@@ -1,0 +1,674 @@
+<?xml version="1.0"?>
+<!--
+===============================================================
+Boeing 737-100 Autopilot Configuration V1.3 (wip - work in progress)
+Based on own stepwise approximation and on all existing autopilots in FG
+===============================================================
+http://wiki.flightgear.org/index.php/Autopilot_Tuning_Resources
+-->
+<PropertyList>
+<!-- =============================================================== -->
+<!-- Prediction Filters -->
+<!-- =============================================================== -->
+<predict-simple>
+	<input>autopilot/internal/nav1-track-error-deg</input>
+	<output>autopilot/internal/nav1-track-error-lookahead-deg</output>
+	<seconds>8.0</seconds>
+	<filter-gain>0.0</filter-gain>
+</predict-simple>
+<!-- =============================================================== -->
+<!-- Roll Axis Modes                                                 -->
+<!-- =============================================================== -->
+<!-- Wing leveler -->
+<pid-controller>
+	<name>Wing Leveler (Turn Indicator)</name>
+	<debug>false</debug>
+	<enable>
+		<prop>autopilot/locks/heading</prop>
+		<value>wing-leveler</value>
+	</enable>
+	<input>
+		<prop>autopilot/internal/indicated-turn-rate-lookahead</prop>
+	</input>
+	<reference>
+		<value>0.0</value>
+	</reference>
+	<output>
+		<prop>controls/flight/aileron</prop>
+	</output>
+	<config>
+		<Kp>0.5</Kp>
+		<beta>1.0</beta>
+		<alpha>0.1</alpha>
+		<gamma>0.0</gamma>
+		<Ti>20.0</Ti>
+		<Td>0.01</Td>
+		<u_min>-1.0</u_min>
+		<u_max>1.0</u_max>
+	</config>
+</pid-controller>
+<!-- =============================================================== -->
+<!-- Heading Bug Hold 2 stage cascade controller                     -->
+<!-- =============================================================== -->
+<!-- Stage #1 -->
+<pid-controller>
+	<name>Heading Bug Hold (FDM) Stage 1</name>
+	<debug>false</debug>
+	<enable>
+		<prop>autopilot/locks/heading</prop>
+		<value>dg-heading-hold</value>
+	</enable>
+	<input>
+		<prop>autopilot/internal/fdm-heading-bug-error-deg</prop>
+	</input>
+	<reference>
+		<value>0.0</value>
+	</reference>
+	<output>
+		<prop>autopilot/internal/target-roll-deg</prop>
+	</output>
+	<config>
+		<Kp>-2.5</Kp>
+		<beta>1.0</beta>
+		<alpha>0.1</alpha>
+		<gamma>0.0</gamma>
+		<Ti>10.0</Ti>
+		<Td>0.00001</Td>
+		<u_min>-25.0</u_min>
+		<u_max>25.0</u_max>
+	</config>
+</pid-controller>
+<!-- Stage #2 -->
+<pid-controller>
+	<name>Heading Bug Hold (Orientation Roll) Stage 2</name>
+	<debug>false</debug>
+	<enable>
+		<prop>autopilot/locks/heading</prop>
+		<value>dg-heading-hold</value>
+	</enable>
+	<input>
+		<prop>orientation/roll-deg</prop>
+	</input>
+	<reference>
+		<prop>autopilot/internal/target-roll-deg</prop>
+	</reference>
+	<output>
+		<prop>controls/flight/aileron</prop>
+	</output>
+	<config>
+		<Kp>0.02</Kp>
+		<beta>1.0</beta>
+		<alpha>0.1</alpha>
+		<gamma>0.0</gamma>
+		<Ti>10.0</Ti>
+		<Td>0.00001</Td>
+		<u_min>-1.0</u_min>
+		<u_max>1.0</u_max>
+	</config>
+</pid-controller>
+<!-- =============================================================== -->
+<!-- True Heading hold 2 stage cascade controller                    -->
+<!-- =============================================================== -->
+<!-- Stage #1 -->
+<pid-controller>
+	<name>True Heading Hold (True Heading Error) Stage 1</name>
+	<debug>false</debug>
+	<enable>
+		<prop>autopilot/locks/heading</prop>
+		<value>true-heading-hold</value>
+	</enable>
+	<input>
+		<prop>autopilot/internal/true-heading-error-deg</prop>
+	</input>
+	<reference>
+		<value>0.0</value>
+	</reference>
+	<output>
+		<prop>autopilot/internal/target-roll-deg</prop>
+	</output>
+	<config>
+		<Kp>-2.5</Kp>
+		<beta>1.0</beta>
+		<alpha>0.1</alpha>
+		<gamma>0.0</gamma>
+		<Ti>10.0</Ti>
+		<Td>0.00001</Td>
+		<u_min>-25.0</u_min>
+		<u_max>25.0</u_max>
+	</config>
+</pid-controller>
+<!-- Stage #2 -->
+<pid-controller>
+	<name>True Heading Hold (Orientation Roll) Stage 2</name>
+	<debug>false</debug>
+	<enable>
+		<prop>autopilot/locks/heading</prop>
+		<value>true-heading-hold</value>
+	</enable>
+	<input>
+		<prop>orientation/roll-deg</prop>
+	</input>
+	<reference>
+		<prop>autopilot/internal/target-roll-deg</prop>
+	</reference>
+	<output>
+		<prop>controls/flight/aileron</prop>
+	</output>
+	<config>
+		<Kp>0.02</Kp>
+		<beta>1.0</beta>
+		<alpha>0.1</alpha>
+		<gamma>0.0</gamma>
+		<Ti>10.0</Ti>
+		<Td>0.00001</Td>
+		<u_min>-1.0</u_min>
+		<u_max>1.0</u_max>
+	</config>
+</pid-controller>
+<!-- =============================================================== -->
+<!-- Nav1 hold 2 stage cascade controller                            -->
+<!-- =============================================================== -->
+<!-- Stage #1 -->
+<pid-controller>
+	<name>Nav1 Hold Stage 1</name>
+	<debug>false</debug>
+	<enable>
+		<prop>autopilot/locks/heading</prop>
+		<value>nav1-hold</value>
+	</enable>
+	<input>
+		<prop>autopilot/internal/nav1-track-error-lookahead-deg</prop>
+	</input>
+	<reference>
+		<value>0.0</value>
+	</reference>
+	<output>
+		<prop>autopilot/internal/target-roll-deg</prop>
+	</output>
+	<config>
+		<Kp>-1.5</Kp>
+		<beta>1.0</beta>
+		<alpha>0.1</alpha>
+		<gamma>0.0</gamma>
+		<Ti>10.0</Ti>
+		<Td>0.00001</Td>
+		<u_min>-25.0</u_min>
+		<u_max>25.0</u_max>
+	</config>
+</pid-controller>
+<!-- Stage #2 (aileron control) -->
+<pid-controller>
+	<name>Nav1 Hold Stage 2</name>
+	<debug>false</debug>
+	<enable>
+		<prop>autopilot/locks/heading</prop>
+		<value>nav1-hold</value>
+		<honor-passive>true</honor-passive>
+	</enable>
+	<input>
+		<prop>orientation/roll-deg</prop>
+	</input>
+	<reference>
+		<prop>autopilot/internal/target-roll-deg</prop>
+	</reference>
+	<output>
+		<prop>controls/flight/aileron</prop>
+	</output>
+	<config>
+		<Kp>0.002</Kp>
+		<beta>1.0</beta>
+		<alpha>0.1</alpha>
+		<gamma>0.0</gamma>
+		<Ti>10.0</Ti>
+		<Td>0.00001</Td>
+		<u_min>-1.0</u_min>
+		<u_max>1.0</u_max>
+	</config>
+</pid-controller>
+<!-- Second Stage #2 (rudder control)
+<pid-controller>
+	<name>Nav 1 Stage 2-2</name>
+	<debug>false</debug>
+	<enable>
+		<prop>autopilot/locks/heading</prop>
+		<value>nav1-hold</value>
+	</enable>
+	<input>
+		<prop>orientation/roll-deg</prop>
+	</input>
+	<reference>
+		<prop>/autopilot/internal/target-roll-deg</prop>
+	</reference>
+	<output>
+		<prop>/controls/flight/rudder</prop>
+	</output>
+	<config>
+		<Kp>0.25</Kp>
+		<beta>1.0</beta>
+		<alpha>0.1</alpha>
+		<gamma>0.0</gamma>
+		<Ti>10.0</Ti>     
+		<Td>0.000000001</Td>
+		<u_min>-0.25</u_min>
+		<u_max>0.25</u_max> 
+	</config>
+</pid-controller> -->
+<!-- =============================================================== -->
+<!-- Pitch Axis Modes                                                -->
+<!-- =============================================================== -->
+<!-- Simple pitch hold -->
+<pid-controller>
+	<name>Pitch hold</name>
+	<debug>false</debug>
+	<enable>
+		<prop>autopilot/locks/altitude</prop>
+		<value>pitch-hold</value>
+	</enable>
+	<input>
+		<prop>orientation/pitch-deg</prop>
+	</input>
+	<reference>
+		<prop>autopilot/settings/target-pitch-deg</prop>
+	</reference>
+	<output>
+		<prop>controls/flight/elevator</prop>
+	</output>
+	<config>
+		<Kp>-0.15</Kp>
+		<beta>1.0</beta>
+		<alpha>0.1</alpha>
+		<gamma>0.0</gamma>
+		<Ti>5.0</Ti>
+		<Td>0.1</Td>
+		<u_min>-1.0</u_min>
+		<u_max>1.0</u_max>
+	</config>
+</pid-controller>
+
+<!-- Simple angle of attack hold -->
+<pid-controller>
+	<name>AOA hold</name>
+	<debug>false</debug>
+	<enable>
+		<prop>autopilot/locks/altitude</prop>
+		<value>aoa-hold</value>
+	</enable>
+	<input>
+		<prop>orientation/alpha-deg</prop>
+	</input>
+	<reference>
+		<prop>autopilot/settings/target-aoa-deg</prop>
+	</reference>
+	<output>
+		<prop>autopilot/internal/elevator</prop>
+	</output>
+	<config>
+		<Kp>-0.15</Kp>
+		<beta>1.0</beta>
+		<alpha>0.1</alpha>
+		<gamma>0.0</gamma>
+		<Ti>1.0</Ti>
+		<Td>0.00001</Td>
+		<u_min>-1.0</u_min>
+		<u_max>1.0</u_max>
+	</config>
+</pid-controller>
+
+<!-- =============================================================== -->
+<!-- Altitude hold 2 stage cascade controller                        -->
+<!-- =============================================================== -->
+<!-- Stage #1 -->
+<pi-simple-controller>
+	<name>Altitude Hold (Altimeter) Stage #1</name>
+	<debug>false</debug>
+	<enable>
+		<prop>autopilot/locks/altitude</prop>
+		<value>altitude-hold</value>
+	</enable>
+	<input>
+		<prop>instrumentation/altimeter/indicated-altitude-ft</prop>
+	</input>
+	<reference>
+		<prop>autopilot/settings/target-altitude-ft</prop>
+	</reference>
+	<output>
+		<prop>autopilot/internal/target-climb-rate-fps</prop>
+	</output>
+	<config>
+		<Kp>0.05</Kp>
+		<Ki>0.0</Ki>
+		<u_min>-25.0</u_min>
+		<u_max>40.0</u_max>
+	</config>
+</pi-simple-controller>
+<!-- Stage #2 -->
+<pid-controller>
+	<name>Altitude Hold (Vertical velocity) Stage #2</name>
+	<debug>false</debug>
+	<enable>
+		<prop>autopilot/locks/altitude</prop>
+		<value>altitude-hold</value>
+	</enable>
+	<input>
+		<prop>velocities/vertical-speed-fps</prop>
+	</input>
+	<reference>
+		<prop>autopilot/internal/target-climb-rate-fps</prop>
+	</reference>
+	<output>
+		<prop>controls/flight/elevator</prop>
+	</output>
+	<config>
+		<Kp>-0.006</Kp>
+		<beta>1.0</beta>
+		<alpha>0.1</alpha>
+		<gamma>0.0</gamma>
+		<Ti>10.0</Ti>
+		<Td>0.00001</Td>
+		<u_min>-1.0</u_min>
+		<u_max>1.0</u_max>
+	</config>
+</pid-controller>
+
+<!-- =============================================================== -->
+<!-- AGL hold 2 stage cascade controller                             -->
+<!-- =============================================================== -->
+<!-- Stage #1 -->
+<pid-controller>
+	<name>AGL Hold (Altimeter) Stage 1</name>
+	<debug>false</debug>
+	<enable>
+		<prop>autopilot/locks/altitude</prop>
+		<value>agl-hold</value>
+	</enable>
+	<input>
+		<prop>autopilot/internal/indicated-altitude-ft</prop>
+	</input>
+	<reference>
+		<prop>autopilot/settings/target-agl-ft</prop>
+	</reference>
+	<output>
+		<prop>autopilot/internal/target-climb-rate-fps</prop>
+	</output>
+	<config>
+		<Kp>0.3</Kp>
+		<beta>1.0</beta>
+		<alpha>0.1</alpha>
+		<gamma>0.0</gamma>
+		<Ti>10.0</Ti>
+		<Td>0.00001</Td>
+		<u_min>-16.67</u_min>
+		<u_max>8.33</u_max>
+	</config>
+</pid-controller>
+<!-- Stage #2 -->
+<pid-controller>
+	<name>AGL Hold (Vertical Speed Indicator) Stage 2</name>
+	<debug>false</debug>
+	<enable>
+		<prop>autopilot/locks/altitude</prop>
+		<value>agl-hold</value>
+	</enable>
+	<input>
+		<prop>velocities/vertical-speed-fps</prop>
+	</input>
+	<reference>
+		<prop>autopilot/internal/target-climb-rate-fps</prop>
+	</reference>
+	<output>
+		<prop>controls/flight/elevator</prop>
+	</output>
+	<config>
+		<Kp>-0.01</Kp>
+		<beta>1.0</beta>
+		<alpha>0.1</alpha>
+		<gamma>0.0</gamma>
+		<Ti>10.0</Ti>
+		<Td>0.00001</Td>
+		<u_min>-1.0</u_min>
+		<u_max>1.0</u_max>
+	</config>
+</pid-controller>
+
+<!-- =============================================================== -->
+<!-- Glideslope hold                                                 -->
+<!-- =============================================================== -->
+<pid-controller>
+	<name>NAV1 Glideslope Hold</name>
+	<debug>false</debug>
+	<enable>
+		<prop>autopilot/locks/altitude</prop>
+		<value>gs1-hold</value>
+	</enable>
+	<input>
+		<prop>velocities/vertical-speed-fps</prop>
+	</input>
+	<reference>
+		<prop>instrumentation/nav[0]/gs-rate-of-climb</prop>
+	</reference>
+	<output>
+		<prop>controls/flight/elevator</prop>
+	</output>
+	<config>
+		<Kp>-0.007</Kp>
+		<beta>1.0</beta>
+		<alpha>0.1</alpha>
+		<gamma>0.0</gamma>
+		<Ti>40.0</Ti>
+		<Td>0.00001</Td>
+		<u_min>-5.0</u_min>
+		<u_max>5.0</u_max>
+	</config>
+</pid-controller>
+
+<!-- Vertical Speed hold -->
+<pid-controller>
+	<name>Vertical Speed Hold</name>
+	<debug>false</debug>
+	<enable>
+		<prop>autopilot/locks/altitude</prop>
+		<value>vertical-speed-hold</value>
+	</enable>
+	<input>
+		<prop>velocities/vertical-speed-fps</prop>
+	</input>
+	<reference>
+		<prop>autopilot/settings/vertical-speed-fpm</prop>
+		<scale>0.01667</scale>
+	</reference>
+	<output>
+		<prop>controls/flight/elevator</prop>
+	</output>
+	<config>
+		<Kp>-0.007</Kp>
+		<beta>1.0</beta>
+		<alpha>0.1</alpha>
+		<gamma>0.0</gamma>
+		<Ti>40.0</Ti>
+		<Td>0.00001</Td>
+		<u_min>-2.0</u_min>
+		<u_max>2.0</u_max>
+	</config>
+</pid-controller>
+
+<!-- =============================================================== -->
+<!-- Velocity Modes                                                  -->
+<!-- =============================================================== -->
+<!-- Auto throttle -->
+<pid-controller>
+	<name>Auto Throttle (Lookahead)</name>
+	<debug>false</debug>
+	<enable>
+		<prop>autopilot/locks/speed</prop>
+		<value>speed-with-throttle</value>
+	</enable>
+	<input>
+		<prop>autopilot/internal/lookahead-5-sec-airspeed-kt</prop>
+	</input>
+	<reference>
+		<prop>autopilot/settings/target-speed-kt</prop>
+	</reference>
+	<output>
+		<prop>controls/engines/engine[0]/throttle</prop>
+		<prop>controls/engines/engine[1]/throttle</prop>
+	</output>
+	<config>
+		<Kp>0.05</Kp>
+		<beta>1.0</beta>
+		<alpha>0.1</alpha>
+		<gamma>0.0</gamma>
+		<Ti>10.0</Ti>
+		<Td>0.00001</Td>
+		<u_min>0.0</u_min>
+		<u_max>1.0</u_max>
+	</config>
+</pid-controller>
+
+<!-- =============================================================== -->
+<!-- Speed Hold Pitch Vary 2 stage cascade controller                -->
+<!-- =============================================================== -->
+<!-- Stage #1 -->
+<pid-controller>
+	<name>Speed Hold (Vary Pitch Trim) Stage #1</name>
+	<debug>false</debug>
+	<enable>
+		<prop>autopilot/locks/speed</prop>
+		<value>speed-with-pitch</value>
+	</enable>
+	<input>
+		<prop>autopilot/internal/lookahead-5-sec-airspeed-kt</prop>
+	</input>
+	<reference>
+		<prop>autopilot/settings/target-speed-kt</prop>
+	</reference>
+	<output>
+		<prop>autopilot/settings/target-pitch-deg</prop>
+	</output>
+	<config>
+		<Kp>-1.5</Kp>
+		<beta>1.0</beta>
+		<alpha>0.1</alpha>
+		<gamma>0.0</gamma>
+		<Ti>10.0</Ti>
+		<Td>0.00001</Td>
+		<u_min>-10.0</u_min>
+		<u_max>10.0</u_max>
+	</config>
+</pid-controller>
+<!-- Stage #2 -->
+<pid-controller>
+	<name>Speed hold (vary pitch trim) Stage #2</name>
+	<debug>false</debug>
+	<enable>
+		<prop>autopilot/locks/speed</prop>
+		<value>speed-with-pitch</value>
+	</enable>
+	<input>
+		<prop>orientation/pitch-deg</prop>
+	</input>
+	<reference>
+		<prop>autopilot/settings/target-pitch-deg</prop>
+	</reference>
+	<output>
+		<prop>controls/flight/elevator</prop>
+	</output>
+	<config>
+		<Kp>-0.001</Kp>
+		<beta>1.0</beta>
+		<alpha>0.1</alpha>
+		<gamma>0.0</gamma>
+		<Ti>5.0</Ti>
+		<Td>0.00001</Td>
+		<u_min>-1.0</u_min>
+		<u_max>1.0</u_max>
+	</config>
+</pid-controller>
+
+<!-- =============================================================== -->
+<!-- Track hold 2 stage cascade controllerc                          -->
+<!-- =============================================================== -->  
+<!-- Stage #1 -->
+<pid-controller>
+	<name>Track Hold Stage 1</name>
+	<debug>false</debug>
+	<enable>
+		<prop>/autopilot/locks/heading</prop>
+		<value>track-hold</value>
+	</enable>
+	<input>
+		<prop>/instrumentation/flightdirector/curr-intrcpt-hdg-err</prop>
+	</input>
+	<reference>
+		<value>0</value>
+	</reference>
+	<output>
+		<prop>/autopilot/internal/target-roll-deg</prop>
+	</output>
+	<config>
+		<Kp>-3.0</Kp>
+		<beta>1.0</beta>
+		<alpha>0.1</alpha>
+		<gamma>0.0</gamma>
+		<Ti>10.0</Ti>
+		<Td>0.00001</Td>
+		<u_min>-30.0</u_min>
+		<u_max>30.0</u_max>
+	</config>
+</pid-controller>
+<!-- Stage #2 drives the aileron-->
+<pid-controller>
+	<name>Track Hold Stage 2</name>
+	<debug>false</debug>
+	<enable>
+		<prop>/autopilot/locks/heading</prop>
+		<value>track-hold</value>
+	</enable>
+	<input>
+		<prop>/orientation/roll-deg</prop>
+	</input>
+	<reference>
+		<prop>/autopilot/internal/target-roll-deg</prop>
+	</reference>
+	<output>
+		<prop>/controls/flight/aileron</prop>
+	</output>
+	<config>
+		<Kp>0.1</Kp>
+		<beta>1.0</beta>
+		<alpha>0.1</alpha>
+		<gamma>0.1</gamma>
+		<Ti>2.0</Ti>
+		<Td>0.00001</Td>
+		<u_min>-1.0</u_min>
+		<u_max>1.0</u_max>
+	</config>
+</pid-controller>
+<!-- Second Stage #2 drives the rudder -->
+<!--pid-controller>
+	<name>Track Hold Stage 2</name>
+	<debug>false</debug>
+	<enable>
+		<prop>/autopilot/locks/heading</prop>
+		<value>track-hold</value>
+	</enable>
+	<input>
+		<prop>/instrumentation/flightdirector/curr-trk-corr-err</prop>
+	</input>
+	<reference>
+		<value>0</value>
+	</reference>
+	<output>
+		<prop>/controls/flight/rudder</prop>
+	</output>
+	<config>
+		<Kp>0.1</Kp>        
+		<beta>1.0</beta>    
+		<alpha>0.1</alpha>  
+		<gamma>0.0</gamma>  
+		<Ti>1.0</Ti>       
+		<Td>0.00001</Td>    
+		<u_min>-0.25</u_min> 
+		<u_max>0.25</u_max>  
+	</config>
+</pid-controller-->
+</PropertyList>

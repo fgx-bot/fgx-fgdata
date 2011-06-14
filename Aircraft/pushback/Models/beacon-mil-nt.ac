@@ -1,0 +1,153 @@
+AC3Db
+MATERIAL "DefaultWhite" rgb 0.85 0.50 0  amb 0.85 0.50 0  emis 0.85 0.50 0  spec 0.85 0.50 0 shi 20  trans 0
+MATERIAL "WhiteHalo" rgb 0.85 0.50 0 amb 0.85 0.50 0 emis 0.85 0.50 0  spec 0.85 0.50 0 shi 0  trans 0
+MATERIAL "WhiteLight" rgb 0.85 0.50 0 amb 0.85 0.50 0 emis 0.85 0.50 0 spec 0.85 0.50 0 shi 90  trans 0
+MATERIAL "Red" rgb 0.85 0.50 0 amb 0.85 0.50 0 emis 0.85 0.50 0  spec 0.85 0.50 0 shi 70  trans 0
+MATERIAL "GreenLight" rgb 0.85 0.50 0 amb 0.85 0.50 0 emis 0.85 0.50 0  spec 0.85 0.50 0 shi 90  trans 0
+MATERIAL "GreenHalo" rgb 0.85 0.50 0 amb 0.85 0.50 0 emis 0.85 0.50 0  spec 0.85 0.50 0 shi 0  trans 0
+OBJECT world
+kids 0
+OBJECT poly
+name "GreenFlash.2"
+texture "rot-bcn-2.rgb"
+texrep 1 1
+crease 80
+numvert 4
+25 25.700975 0.560277
+24.999996 -24.299025 0.560283
+-25.000008 -24.299021 0.560283
+-24.999994 25.700983 0.560277
+numsurf 2
+SURF 0x20
+mat 4
+refs 3
+0 1.0 1.0
+3 0.0 1.0
+2 0.0 0.0
+SURF 0x20
+mat 4
+refs 3
+0 1.0 1.0
+2 0.0 0.0
+1 1.0 0.0
+kids 0
+OBJECT poly
+name "WhiteFlash1.2"
+texture "rot-bcn-2.rgb"
+texrep 1 1
+crease 80
+numvert 4
+-12.986961 25.700974 21.36748
+-12.986958 -24.299026 21.36748
+12.01305 -24.299022 -21.933794
+12.013041 25.700982 -21.933784
+numsurf 2
+SURF 0x20
+mat 2
+refs 3
+0 1.0 1.0
+3 0.0 1.0
+2 0.0 0.0
+SURF 0x20
+mat 2
+refs 3
+0 1.0 1.0
+2 0.0 0.0
+1 1.0 0.0
+kids 0
+OBJECT poly
+name "WhiteFlash2.2"
+texture "rot-bcn-2.rgb"
+texrep 1 1
+crease 80
+numvert 4
+-12.013039 25.700974 -21.933792
+-12.013039 -24.299026 -21.933789
+12.986955 -24.299022 21.367492
+12.986951 25.700982 21.367479
+numsurf 2
+SURF 0x20
+mat 2
+refs 3
+0 1.0 1.0
+3 0.0 1.0
+2 0.0 0.0
+SURF 0x20
+mat 2
+refs 3
+0 1.0 1.0
+2 0.0 0.0
+1 1.0 0.0
+kids 0
+OBJECT poly
+name "GreenFlash.1"
+texture "rot-bcn-2.rgb"
+texrep 1 1
+crease 80
+numvert 4
+10 10.700978 0.560278
+9.999999 -9.299022 0.560281
+-10.000003 -9.29902 0.560281
+-9.999998 10.700982 0.560278
+numsurf 2
+SURF 0x20
+mat 4
+refs 3
+0 1.0 1.0
+3 0.0 1.0
+2 0.0 0.0
+SURF 0x20
+mat 4
+refs 3
+0 1.0 1.0
+2 0.0 0.0
+1 1.0 0.0
+kids 0
+OBJECT poly
+name "WhiteFlash1.1"
+texture "rot-bcn-2.rgb"
+texrep 1 1
+crease 80
+numvert 4
+-5.486959 10.700976 8.377101
+-5.486957 -9.299024 8.377099
+4.513046 -9.299022 -8.94341
+4.513042 10.70098 -8.943405
+numsurf 2
+SURF 0x20
+mat 2
+refs 3
+0 1.0 1.0
+3 0.0 1.0
+2 0.0 0.0
+SURF 0x20
+mat 2
+refs 3
+0 1.0 1.0
+2 0.0 0.0
+1 1.0 0.0
+kids 0
+OBJECT poly
+name "WhiteFlash2.1"
+texture "rot-bcn-2.rgb"
+texrep 1 1
+crease 80
+numvert 4
+-4.513042 10.700976 -8.943409
+-4.513042 -9.299024 -8.943407
+5.486956 -9.299022 8.377105
+5.486954 10.70098 8.3771
+numsurf 2
+SURF 0x20
+mat 2
+refs 3
+0 1.0 1.0
+3 0.0 1.0
+2 0.0 0.0
+SURF 0x20
+mat 2
+refs 3
+0 1.0 1.0
+2 0.0 0.0
+1 1.0 0.0
+kids 0

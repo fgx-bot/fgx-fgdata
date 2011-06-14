@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!--
+************************************************************************
+Cessna 310R simulation config. This files ties together all the components
+used by FGFS to represent the C310R. Components include the flight data 
+model, instrument panel, and external 3D model.
+3D models can be downloaded from http://home.t-online.de/home/Wolfram.Kuss/
+
+October 23 2001 John Check, fgpanels@rockfish.net
+************************************************************************
+-->
+
+<PropertyList include="c310-yasim-base.xml">
+ <sim>
+
+  <description>Cessna 310 (YASim)</description>
+
+  <panel>
+   <path>Aircraft/c310/c310-vfr-panel.xml</path>
+   <visibility>true</visibility>
+  </panel>
+  <panel_2>
+   <path>Aircraft/c310/c310-mini-panel.xml</path>
+  </panel_2>
+
+  <model>
+   <path>Aircraft/c310u3a/Models/c310u3a.xml</path>
+  </model> 
+
+ </sim>
+
+</PropertyList>
+
+

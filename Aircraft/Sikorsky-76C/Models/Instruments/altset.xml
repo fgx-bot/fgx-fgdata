@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+    <path>altset.ac</path>
+
+<animation>
+    <type>select</type>
+    <object-name>Aset-null</object-name>
+    <condition>
+        <less-than>
+            <property>autopilot/settings/altitude-preset</property>
+            <value>100</value>
+            </less-than>
+    </condition>
+</animation>
+
+<animation>
+    <type>select</type>
+    <object-name>Aset.001</object-name>
+    <object-name>Aset.002</object-name>
+    <object-name>Aset.003</object-name>
+    <object-name>Aset.004</object-name>
+    <object-name>Aset.005</object-name>
+    <condition>
+        <greater-than>
+            <property>autopilot/settings/altitude-preset</property>
+            <value>99.99</value>
+            </greater-than>
+    </condition>
+</animation>
+
+<animation>
+    <type>textranslate</type>
+    <object-name>Aset.001</object-name>
+    <property>autopilot/settings/altitude-preset</property>
+    <factor>0.00001</factor>
+    <step>10000</step>
+    <axis>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>textranslate</type>
+    <object-name>Aset.002</object-name>
+    <property>autopilot/settings/altitude-preset</property>
+    <factor>0.0001</factor>
+    <step>1000</step>
+    <axis>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>textranslate</type>
+    <object-name>Aset.003</object-name>
+    <property>autopilot/settings/altitude-preset</property>
+    <factor>0.001</factor>
+    <step>100</step>
+    <axis>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>textranslate</type>
+    <object-name>Aset.004</object-name>
+    <property>autopilot/settings/altitude-preset</property>
+    <factor>0.01</factor>
+    <step>10</step>
+    <axis>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>textranslate</type>
+    <object-name>Aset.005</object-name>
+    <property>autopilot/settings/altitude-preset</property>
+    <factor>0.1</factor>
+    <step>1</step>
+    <axis>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
+    </axis>
+</animation>
+
+<!-- Hotspots-->
+
+    <animation>
+        <type>pick</type>
+        <object-name>altset.dn</object-name>
+        <visible>0</visible>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.1</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>autopilot/settings/altitude-preset</property>
+                <step>-100</step>
+                <min>0</min>
+                <max>18000</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>altset.dn</object-name>
+        <visible>0</visible>
+        <action>
+            <button>1</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.1</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>autopilot/settings/altitude-preset</property>
+                <step>-1000</step>
+                <min>0</min>
+                <max>18000</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>altset.up</object-name>
+        <visible>0</visible>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.1</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>autopilot/settings/altitude-preset</property>
+                <step>100</step>
+                <min>0</min>
+                <max>18000</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>altset.up</object-name>
+        <visible>0</visible>
+        <action>
+            <button>1</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.1</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>autopilot/settings/altitude-preset</property>
+                <step>1000</step>
+                <min>0</min>
+                <max>18000</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+</PropertyList>

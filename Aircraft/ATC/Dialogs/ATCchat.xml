@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+    <name>ATCchat</name>
+    <x>0</x>
+    <y>15</y>
+    <width>880</width>
+    <height>20</height>
+    <modal>false</modal>
+    <font>
+        <name>HELVETICA_12</name>
+    </font>
+    <color>
+        <red>0.8</red>
+        <green>0.8</green>
+        <blue>0.8</blue>
+        <alpha>0</alpha>
+    </color>
+    <draggable>true</draggable>
+    <layout>vbox</layout>
+
+    <group>
+        <layout>hbox</layout>
+
+        <text>
+            <x>0</x>
+            <y>12</y>
+            <label>ATC Chat</label>
+            <color>
+                <red>1.0</red>
+                <green>1.0</green>
+                <blue>1.0</blue>
+            </color>
+        </text>
+
+        <input>
+            <name>compose</name>
+            <color>
+                <red>0.0</red>
+                <green>0.0</green>
+                <blue>0.0</blue>
+            </color>
+            <pref-width>880</pref-width>
+            <stretch>true</stretch>
+            <halign>fill</halign>
+            <length>880</length>
+            <property>/sim/multiplay/chat-compose</property>
+        </input>
+
+        <button>
+            <legend>Send</legend>
+            <default>true</default>
+            <key>Enter</key>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>
+                    var lchat = getprop("/sim/multiplay/chat-compose");
+                    if (lchat != "")
+                    {
+                    setprop("/sim/multiplay/chat", lchat);
+                    setprop("/sim/multiplay/chat-compose", "");
+                    fgcommand("dialog-update", props.Node.new({"object-name": "compose",
+                    "dialog-name": "ATCchat"}));
+                    }
+                </script>
+            </binding>
+        </button>
+    </group>
+</PropertyList>

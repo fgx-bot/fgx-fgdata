@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+ <path>ignition-ger.ac</path>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>knob</object-name>
+  <property>/controls/engines/engine[0]/magnetos</property>
+  <interpolation>
+   <entry>
+    <ind>0</ind>
+    <dep>0</dep>
+   </entry>
+   <entry>
+    <ind>1</ind>
+    <dep>12</dep>
+   </entry>
+   <entry>
+    <ind>2</ind>
+    <dep>35</dep>
+   </entry>
+   <entry>
+    <ind>3</ind>
+    <dep>50</dep>
+   </entry>
+  </interpolation>
+  <center>
+   <x-m>-0.04</x-m>
+   <y-m>-0.01</y-m>
+   <z-m>0.00</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+</PropertyList>
+
+

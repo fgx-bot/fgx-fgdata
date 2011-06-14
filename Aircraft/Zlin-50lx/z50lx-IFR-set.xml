@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- <PropertyList include="z50lx-jsbsim-cnf.xml"> -->
+<PropertyList include="z50lx-IFR-yasim-cnf.xml">
+
+  <sim>
+
+    <description>Zlin 50 lx</description>
+    <author>Emmanuel BARANGER (3D), Pierre GEOFFROY (FDM), Sebastien MARQUE (Panel), Laurent HAYVEL (Texture), Victhor (IRF Mod)</author>
+
+    <submodels>
+      <serviceable type="bool">true</serviceable>
+      <path>Aircraft/Zlin-50lx/Effects/Submodels/submodels.xml</path>
+    </submodels>
+
+  </sim>
+
+</PropertyList>
+

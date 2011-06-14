@@ -1,0 +1,69 @@
+<airplane mass="12000">
+
+<approach speed="105" aoa="6" fuel="0.8">
+  <control-setting axis="/controls/engines/engine[0]/throttle" value="0.25"/>
+  <control-setting axis="/controls/engines/engine[1]/throttle" value="0.25"/>
+  <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.0"/>
+</approach>
+
+<cruise speed="286" alt="25000" fuel="0.8">
+  <control-setting axis="/controls/engines/engine[0]/throttle" value="1.0"/>
+  <control-setting axis="/controls/engines/engine[1]/throttle" value="1.0"/>
+  <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
+</cruise>
+
+<cockpit x="-1.0" y="0.4" z="0.55"/>
+
+<fuselage ax="0.0"  ay="0" az="1.5" bx="-6.0" by="0" bz="1.5" 
+width="1.0" taper="0" midpoint="0.35"/>
+
+
+
+<wing x="-5.8" y="0.0" z="1.0" length="1.68" chord="1.0" camber="0">
+    <stall aoa="16" width="4" peak="1.5"/>
+</wing>
+<mstab x="-2.0" y="0.237" z="0.61" length="1.8" chord="1.2" >
+</mstab>
+
+<jet x="-5.8" y="0" z="1.00"
+   n1-idle="30" n1-max="70" n2-idle="35" n2-max="75" exhaust-speed="120"
+   egt="850" tsfc="1.39" mass="400" thrust="4000" rotate="-180" >
+  <actionpt x="-2.7" y="0" z="-0.8" />
+  <control-input axis="/controls/gear/brake-right" control="THROTTLE"/>
+  <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
+  <control-input axis="/controls/engines/engine[0]/mixture" control="VECTOR"
+                 src0="0" src1="1" dst0="1" dst1="0"/>
+</jet>
+
+<tank x="-1.8" y="1.3" z="-0.9" capacity="372"/>
+
+<gear x="-0.7" y="1.2" z="-1.0" compression="0.3"
+	sfric="1.9">
+<control-input axis="/controls/flight/aileron" control="STEER"  
+ src0="-1.0" src1="1.0"
+ dst0="-0.4" dst1="0.4"/>
+  <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+</gear>
+<gear x="-0.7" y="-1.2" z="-1.0" compression="0.3"
+	sfric="1.9">
+<control-input axis="/controls/flight/aileron" control="STEER"  
+ src0="-1.0" src1="1.0"
+ dst0="-0.4" dst1="0.4"/>
+  <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+</gear>
+
+<gear x="-5.2" y="1.2" z="-1.0" compression="0.3"
+	sfric="1.9">
+  <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+  <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+</gear>
+
+<gear x="-5.2" y="-1.2" z="-1.0" compression="0.3"
+	sfric="1.9">
+  <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+  <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+</gear>
+
+<ballast x="-1.5" y="0" z="0.7" mass="5000"/>
+
+</airplane>

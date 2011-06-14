@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<PropertyList>
+    <path>circuitbreaker.ac</path>
+
+    <animation>
+        <type>noshadow</type>
+        <object-name>cbpanel</object-name>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>cbpanel.cb.0_1</object-name>
+        <property>/controls/electric/circuitbreaker/cb_0_1</property>
+        <factor>0.007</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>cbpanel.cb.0_1</object-name>
+        <action>
+            <name>cb_0_1</name>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>/controls/electric/circuitbreaker/cb_0_1</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>cbpanel.cb.0_2</object-name>
+        <property>/controls/electric/circuitbreaker/cb_0_2</property>
+        <factor>0.007</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+        <type>pick</type>
+        <object-name>cbpanel.cb.0_2</object-name>
+        <action>
+            <name>cb_0_2</name>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>/controls/electric/circuitbreaker/cb_0_2</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>cbpanel.cb.0_3</object-name>
+        <property>/controls/electric/circuitbreaker/cb_0_3</property>
+        <factor>0.007</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+        <type>pick</type>
+        <object-name>cbpanel.cb.0_3</object-name>
+        <action>
+            <name>cb_0_3</name>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>/controls/electric/circuitbreaker/cb_0_3</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>cbpanel.cb.0_4</object-name>
+        <property>/controls/electric/circuitbreaker/cb_0_4</property>
+        <factor>0.007</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+        <type>pick</type>
+        <object-name>cbpanel.cb.0_4</object-name>
+        <action>
+            <name>cb_0_4</name>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>/controls/electric/circuitbreaker/cb_0_4</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>cbpanel.cb.0_5</object-name>
+        <property>/controls/electric/circuitbreaker/cb_0_5</property>
+        <factor>0.007</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+        <type>pick</type>
+        <object-name>cbpanel.cb.0_5</object-name>
+        <action>
+            <name>cb_0_5</name>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>/controls/electric/circuitbreaker/cb_0_5</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>cbpanel.cb.0_6</object-name>
+        <property>/controls/electric/circuitbreaker/cb_0_6</property>
+        <factor>0.007</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+        <type>pick</type>
+        <object-name>cbpanel.cb.0_6</object-name>
+        <action>
+            <name>cb_0_6</name>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>/controls/electric/circuitbreaker/cb_0_6</property>
+            </binding>
+        </action>
+    </animation>
+
+</PropertyList>

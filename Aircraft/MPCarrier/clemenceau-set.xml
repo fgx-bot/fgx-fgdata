@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!-- $Id$ -->
+<!--
+  Clemenceau -set file for FlightGear.
+
+  Copyright (C) 2007 - 2009  Anders Gidenstam  (anders(at)gidenstam.org)
+  This file is released under the GPL license version 2 or later.
+-->
+<PropertyList include="common.xml">
+
+ <sim include="Systems/foch-views.xml">
+
+  <description>Multiplayer carrier Clemenceau - Other pilots can land on it.</description>
+  <author>Anders Gidenstam</author>
+  <status>experimental</status>
+  <aircraft-version>0.1</aircraft-version>
+
+  <flight-model>null</flight-model>
+
+  <presets>
+   <onground>true</onground>
+  </presets>
+
+  <startup>
+   <splash-texture>Aircraft/MPCarrier/nimitz-splash.rgb</splash-texture>
+  </startup>
+
+  <sound>
+   <audible>false</audible>
+   <path/>
+  </sound>
+
+  <model>
+   <path>Aircraft/MPCarrier/Models/mp-clemenceau.xml</path>
+  </model>
+
+  <systems>
+
+   <electrical>
+    <path/>
+   </electrical>
+
+   <static>
+   </static>
+
+  </systems>
+
+  <instrumentation>
+   <path/>
+  </instrumentation>
+
+  <!-- This aircraft is pointless without the clemenceau_demo scenario. -->
+  <ai>
+   <enabled type="bool">true</enabled>
+   <scenario n="100">clemenceau_demo</scenario>
+  </ai>
+
+  <chase-distance-m type="double" archive="y">-300.0</chase-distance-m>
+
+  <mp-carriers>
+   <clemenceau-callsign type="string"></clemenceau-callsign>
+  </mp-carriers>
+ </sim>
+
+ <controls>
+  <rudder-pos-deg type="float"> 0.0 </rudder-pos-deg>
+  <speed-kts type="float"> 0.0 </speed-kts>
+ </controls>
+
+ <surface-positions>
+  <!-- These will be (ab)used for transmitting rudder-deg and speed-kts. -->
+  <rudder-pos-norm type="float"> 0.0 </rudder-pos-norm>
+  <flap-pos-norm type="float"> 0.0 </flap-pos-norm>
+ </surface-positions>
+
+
+ <nasal>
+  <!-- Nasal Carrier View -->
+  <CarrierControl>
+   <file>Aircraft/MPCarrier/Systems/commander.nas</file>
+   <script>
+    var carrier_name = "Clemenceau";
+   </script>
+  </CarrierControl> 
+ </nasal>
+
+</PropertyList>

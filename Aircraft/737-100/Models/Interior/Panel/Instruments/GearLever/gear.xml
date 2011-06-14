@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>gear.ac</path>
+
+  <animation>
+    <object-name>Gear</object-name>
+    <object-name>GearLever</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>Gear</object-name>
+    <object-name>GearLever</object-name>
+    <emission>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>GearLever</object-name>
+    <property>gear/gear[0]/position-norm</property>
+    <factor> 40 </factor>
+    <center>
+      <x-m> -0.174 </x-m>
+      <y-m>  0.013 </y-m>
+      <z-m>  0.020 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+ </animation>
+
+</PropertyList>

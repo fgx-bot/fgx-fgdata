@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+
+<!-- flap indicator -->
+
+<PropertyList>
+
+	<path>undercarriage-up-down.ac</path>
+
+	<!-- **************** gear-up **************** -->
+	<animation>
+		<type>translate</type>
+		<object-name>up-button</object-name>
+		<object-name>up-button-front</object-name>
+		<property>/controls/gear/gear-down</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0.01</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>0</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>up-lamp</object-name>
+		<property>/controls/gear/gear-down</property>
+		<condition>
+			<equals>
+				<property>/controls/gear/gear-down</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+
+	<!-- **************** gear-down **************** -->
+	<animation>
+		<type>translate</type>
+		<object-name>down-button</object-name>
+		<object-name>down-button-front</object-name>
+		<property>/controls/gear/gear-down</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0.01</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>0</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>down-lamp</object-name>
+		<property>/controls/gear/gear-down</property>
+		<condition>
+			<equals>
+				<property>/controls/gear/gear-down</property>
+				<value>0</value>
+			</equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>material</type>
+		<object-name>mount</object-name>
+		<emission>
+			<factor-prop>/controls/lighting/panel-norm</factor-prop>
+			<red>0.75</red>
+			<green>0.25</green>
+			<blue>0.25</blue>
+		</emission>
+	</animation>
+
+
+	<!-- *** LoD *** -->
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
+	</animation>
+</PropertyList>

@@ -1,0 +1,721 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <name>ATC</name>
+    <w-base>1024</w-base>
+    <h-base>768</h-base>
+<!-- Layers -->
+
+    <layers>
+
+        <layer>
+            <name>atc panel</name>
+            <texture>
+                <path>Aircraft/ATC/panel-bg.rgb</path>
+                <x1>0</x1>
+                <y1>0</y1>
+                <x2>1</x2>
+                <y2>0.748</y2>
+            </texture>
+            <w>1024</w>
+            <h>768</h>
+        </layer>
+
+        <layer>
+            <name>Tower ID</name>
+            <type>text</type>
+            <font>default</font>
+            <point-size>16</point-size>
+            <color>
+                <red>0.0</red>
+                <green>0.0</green>
+                <blue>0.0</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>text-value</type>
+                    <property>/sim/tower/airport-id</property>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-50</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>-140</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+
+        <layer>
+            <name>MP number</name>
+            <type>text</type>
+            <condition>
+                <greater-than>
+                    <property>/sim/atc/target-number</property>
+                    <value>-1</value>
+                </greater-than>
+            </condition>
+            <font>default</font>
+            <point-size>15</point-size>
+            <color>
+                <red>0.8</red>
+                <green>0.8</green>
+                <blue>0.8</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>number-value</type>
+                    <property>/sim/atc/target-number</property>
+                    <format>% 2.0f</format>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-24</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>-280</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <name>MP callsign</name>
+            <type>text</type>
+            <condition>
+                <greater-than>
+                    <property>/sim/atc/target-number</property>
+                    <value>-1</value>
+                </greater-than>
+            </condition>
+            <font>default</font>
+            <point-size>14</point-size>
+            <color>
+                <red>0.8</red>
+                <green>0.8</green>
+                <blue>0.8</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>text-value</type>
+                    <property>/sim/atc/target-id</property>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-36</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>-310</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <name>MP altitude</name>
+            <type>text</type>
+            <condition>
+                <greater-than>
+                    <property>/sim/atc/target-number</property>
+                    <value>-1</value>
+                </greater-than>
+            </condition>
+            <font>default</font>
+            <point-size>14</point-size>
+            <color>
+                <red>0.8</red>
+                <green>0.8</green>
+                <blue>0.8</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>number-value</type>
+                    <property>/sim/atc/target-alt</property>
+                    <format>%- 5.1f</format>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>160</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>-250</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <name>MP range</name>
+            <type>text</type>
+            <condition>
+                <greater-than>
+                    <property>/sim/atc/target-number</property>
+                    <value>-1</value>
+                </greater-than>
+            </condition>
+            <font>default</font>
+            <point-size>14</point-size>
+            <color>
+                <red>0.8</red>
+                <green>0.8</green>
+                <blue>0.8</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>number-value</type>
+                    <property>/sim/atc/target-range</property>
+                    <format>%- 3.1f</format>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>160</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>-280</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <name>MP airspeed</name>
+            <type>text</type>
+            <condition>
+                <greater-than>
+                    <property>/sim/atc/target-number</property>
+                    <value>-1</value>
+                </greater-than>
+            </condition>
+            <font>default</font>
+            <point-size>14</point-size>
+            <color>
+                <red>0.8</red>
+                <green>0.8</green>
+                <blue>0.8</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>number-value</type>
+                    <property>/sim/atc/target-kt</property>
+                    <format>%- 3.1f</format>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>160</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>-310</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <name>MP heading</name>
+            <type>text</type>
+            <condition>
+                <greater-than>
+                    <property>/sim/atc/target-number</property>
+                    <value>-1</value>
+                </greater-than>
+            </condition>
+            <font>default</font>
+            <point-size>14</point-size>
+            <color>
+                <red>0.8</red>
+                <green>0.8</green>
+                <blue>0.8</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>number-value</type>
+                    <property>/sim/atc/target-hdg</property>
+                    <format>%- 3.1f</format>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>160</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>-340</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+                <!--    RADAR    -->
+
+        <layer>
+            <name>radar range</name>
+            <type>text</type>
+            <font>default</font>
+            <point-size>14</point-size>
+            <color>
+                <red>0.8</red>
+                <green>0.8</green>
+                <blue>0.8</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>number-value</type>
+                    <property>/instrumentation/radar/range</property>
+                    <format>%- 3.0f</format>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>365</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>-280</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+                <!-- layer>
+        <name>radar l-half</name>
+        <type>text</type>
+        <font>default</font>
+        <point-size>10</point-size>
+        <color>
+            <red>0.2</red>
+            <green>0.8</green>
+            <blue>0.2</blue>
+        </color>
+        <chunks>
+            <chunk>
+                <type>number-value</type>
+                <property>/instrumentation/radar/range</property>
+                <scale>0.5</scale>
+                <format>%- 2.1f</format>
+            </chunk>
+        </chunks>
+        <transformations>
+            <transformation>
+                <type>x-shift</type>
+                <offset>-100</offset>
+            </transformation>
+            <transformation>
+                <type>y-shift</type>
+                <offset>28</offset>
+            </transformation>
+        </transformations>
+    </layer>
+
+    <layer>
+        <name>radar r-half</name>
+        <type>text</type>
+        <font>default</font>
+        <point-size>10</point-size>
+        <color>
+            <red>0.2</red>
+            <green>0.8</green>
+            <blue>0.2</blue>
+        </color>
+        <chunks>
+            <chunk>
+                <type>number-value</type>
+                <property>/instrumentation/radar/range</property>
+                <scale>0.5</scale>
+                <format>%- 2.1f</format>
+            </chunk>
+        </chunks>
+        <transformations>
+            <transformation>
+                <type>x-shift</type>
+                <offset>365</offset>
+            </transformation>
+            <transformation>
+                <type>y-shift</type>
+                <offset>-280</offset>
+            </transformation>
+        </transformations>
+    </layer-->
+
+
+<!-- COM 1 selected-->
+        <layer>
+            <name>com1 frequency</name>
+            <type>text</type>
+            <font>led</font>
+            <point-size>7</point-size>
+            <color>
+                <red>1.0</red>
+                <green>0.5</green>
+                <blue>0.0</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>number-value</type>
+                    <property>instrumentation/comm/frequencies/selected-mhz</property>
+                    <format>%.3f</format>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-450</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>-30</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+<!-- COM 1 selected-->
+        <layer>
+            <name>com1 standby</name>
+            <type>text</type>
+            <font>led</font>
+            <point-size>7</point-size>
+            <color>
+                <red>0.7</red>
+                <green>0.3</green>
+                <blue>0.0</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>number-value</type>
+                    <property>instrumentation/comm/frequencies/standby-mhz</property>
+                    <format>%.3f</format>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-300</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>-30</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+<!-- COM 2 selected-->
+        <layer>
+            <name>com2 frequency</name>
+            <type>text</type>
+            <font>led</font>
+            <point-size>7</point-size>
+            <color>
+                <red>1.0</red>
+                <green>0.5</green>
+                <blue>0.0</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>number-value</type>
+                    <property>instrumentation/comm[1]/frequencies/selected-mhz</property>
+                    <format>%.3f</format>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-450</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>-62</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+<!-- COM 2 standby-->
+        <layer>
+            <name>com2 frequency</name>
+            <type>text</type>
+            <font>led</font>
+            <point-size>7</point-size>
+            <color>
+                <red>0.7</red>
+                <green>0.3</green>
+                <blue>0.0</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>number-value</type>
+                    <property>instrumentation/comm[1]/frequencies/standby-mhz</property>
+                    <format>%.3f</format>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-300</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>-62</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+    </layers>
+
+    <actions>
+
+<!--    COMMS    -->
+        <action>
+            <name>com1 frequency decrease (decimal part)</name>
+            <button>0</button>
+            <x>-208</x>
+            <y>-35</y>
+            <w>24</w>
+            <h>24</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/comm/frequencies/standby-mhz</property>
+                <mask>decimal</mask>
+                <step>-0.025</step>
+                <min>0.000</min>
+                <max>1.000</max>
+                <resolution>0.025</resolution>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+
+        <action>
+            <name>com1 frequency decrease (integer part)</name>
+            <button>1</button>
+            <x>-208</x>
+            <y>-35</y>
+            <w>24</w>
+            <h>24</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/comm/frequencies/standby-mhz</property>
+                <mask>integer</mask>
+                <step>-1</step>
+                <min>118</min>
+                <max>136</max>
+                <resolution>1</resolution>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+
+        <action>
+            <name>com1 frequency increase (decimal part)</name>
+            <button>0</button>
+            <x>-172</x>
+            <y>-35</y>
+            <w>24</w>
+            <h>24</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/comm/frequencies/standby-mhz</property>
+                <mask>decimal</mask>
+                <step>0.025</step>
+                <min>0.000</min>
+                <max>1.000</max>
+                <resolution>0.025</resolution>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+
+        <action>
+            <name>com1 frequency increase (integer part)</name>
+            <button>1</button>
+            <x>-172</x>
+            <y>-35</y>
+            <w>24</w>
+            <h>24</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/comm/frequencies/standby-mhz</property>
+                <mask>integer</mask>
+                <step>1</step>
+                <min>118</min>
+                <max>136</max>
+                <resolution>1</resolution>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+
+        <action>
+            <name>swap com1 frequencies</name>
+            <button>0</button>
+            <x>-352</x>
+            <y>-35</y>
+            <w>32</w>
+            <h>24</h>
+            <binding>
+                <command>property-swap</command>
+                <property>instrumentation/comm/frequencies/selected-mhz</property>
+                <property>instrumentation/comm/frequencies/standby-mhz</property>
+            </binding>
+        </action>
+
+        <action>
+            <name>com2 frequency decrease (decimal part)</name>
+            <button>0</button>
+            <x>-208</x>
+            <y>-67</y>
+            <w>24</w>
+            <h>24</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/comm[1]/frequencies/standby-mhz</property>
+                <mask>decimal</mask>
+                <step>-0.025</step>
+                <min>0.000</min>
+                <max>1.000</max>
+                <resolution>0.025</resolution>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+
+        <action>
+            <name>com2 frequency decrease (integer part)</name>
+            <button>1</button>
+            <x>-208</x>
+            <y>-67</y>
+            <w>24</w>
+            <h>24</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/comm[1]/frequencies/standby-mhz</property>
+                <mask>integer</mask>
+                <step>-1</step>
+                <min>118</min>
+                <max>136</max>
+                <resolution>1</resolution>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+
+        <action>
+            <name>com2 frequency increase (decimal part)</name>
+            <button>0</button>
+            <x>-172</x>
+            <y>-67</y>
+            <w>24</w>
+            <h>24</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/comm[1]/frequencies/standby-mhz</property>
+                <mask>decimal</mask>
+                <step>0.025</step>
+                <min>0.000</min>
+                <max>1.000</max>
+                <resolution>0.025</resolution>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+
+        <action>
+            <name>com2 frequency increase (integer part)</name>
+            <button>1</button>
+            <x>-172</x>
+            <y>-67</y>
+            <w>24</w>
+            <h>24</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/comm[1]/frequencies/standby-mhz</property>
+                <mask>integer</mask>
+                <step>1</step>
+                <min>118</min>
+                <max>136</max>
+                <resolution>1</resolution>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+
+        <action>
+            <name>swap com2 frequencies</name>
+            <button>0</button>
+            <x>-352</x>
+            <y>-67</y>
+            <w>32</w>
+            <h>24</h>
+            <binding>
+                <command>property-swap</command>
+                <property>instrumentation/comm[1]/frequencies/selected-mhz</property>
+                <property>instrumentation/comm[1]/frequencies/standby-mhz</property>
+            </binding>
+        </action>
+
+
+                <action>
+                        <name>previous mp</name>
+                        <type>adjust</type>
+                        <button>0</button>
+                        <x>-98</x>
+                        <y>-282</y>
+                        <w>24</w>
+                        <h>24</h>
+                        <binding>
+                                <command>nasal</command>
+                                <script>globals.ATC.step_target(-1);</script>
+                        </binding>
+                </action>
+
+                <action>
+                        <name>next mp</name>
+                        <type>adjust</type>
+                        <button>0</button>
+                        <x>22</x>
+                        <y>-282</y>
+                        <w>24</w>
+                        <h>24</h>
+                        <binding>
+                                <command>nasal</command>
+                                <script>globals.ATC.step_target(1);</script>
+                        </binding>
+                </action>
+
+                <!--    radar     -->
+
+                <action>
+                        <name>radar down</name>
+                        <type>adjust</type>
+                        <button>0</button>
+                        <x>336</x>
+                        <y>-282</y>
+                        <w>24</w>
+                        <h>24</h>
+                        <binding>
+                                <command>nasal</command>
+                                <script>globals.ATC.step_radar_range(-1);</script>
+                        </binding>
+                </action>
+
+                <action>
+                        <name>radar up</name>
+                        <type>adjust</type>
+                        <button>0</button>
+                        <x>420</x>
+                        <y>-282</y>
+                        <w>24</w>
+                        <h>24</h>
+                        <binding>
+                                <command>nasal</command>
+                                <script>globals.ATC.step_radar_range(1);</script>
+                        </binding>
+                </action>
+
+        </actions>
+
+</PropertyList>

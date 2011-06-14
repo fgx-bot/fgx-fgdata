@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+ <sim>
+  <model>
+   <livery>
+    <name type="string">Default</name>
+    <texture>storch.rgb</texture>
+   </livery>
+  </model>
+ </sim>
+</PropertyList>

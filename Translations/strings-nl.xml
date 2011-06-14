@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!-- FlightGear menu en options vertalingen voor Nederlands -->
+
+<PropertyList>
+  <!-- Fall back -->
+  <null>Deze tekst is nog niet vertaald</null>
+
+  <!--         -->
+  <!-- General -->
+  <!--         -->
+
+  <system-time>de systeem tijd</system-time>
+  <gmt>Greenwich Mean Time</gmt>
+  <locale-aircraft-time>de lokale tijd van het vliegtuig</locale-aircraft-time>
+  <units-feet>(in voeten tenzij --units-meters is opgegeven)</units-feet>
+  <multiple-instance>(kan meerdere keren worden opgegeven)</multiple-instance>
+
+  <!--      -->
+  <!-- Menu -->
+  <!--      -->
+
+  <!-- File menu -->
+  <file>Bestand</file>
+  <save-flight>Huidige situatie bewaren</save-flight>
+  <load-flight>Oude situatie opvragen</load-flight>
+  <reset>Begin situatie herstellen</reset>
+  <hi-res-snap-shot>Hoge resolutie opname</hi-res-snap-shot>
+  <snap-shot>Moment opname</snap-shot>
+  <print>Afdrukken</print>
+  <exit>Beëindigen</exit>
+
+  <!-- View menu -->
+  <view>Visueel</view>
+  <toggle-panel>Paneel zichtbaarheid</toggle-panel>
+  <pilot-offset>Piloot verplaatsen</pilot-offset>
+  <hud-alpha>HUD intensiteit</hud-alpha>
+  <properties>Instellingen</properties>
+
+  <!-- Environment menu -->
+  <environment>Omgeving</environment>
+  <goto-airport>Ander vliegveld</goto-airport>
+
+  <!-- Autopilot menu -->
+  <autopilot>Automatische piloot</autopilot>
+  <set-heading>Verander richting</set-heading>
+  <set-altitude>Verander hoogte</set-altitude>
+  <add-waypoint>Tussenstation toevoegen</add-waypoint>
+  <skip-current-waypoint>Tussenstation orverslaan</skip-current-waypoint>
+  <clear-route>Route opschonen</clear-route>
+  <adjust-ap-settings>Verander AP instellingen</adjust-ap-settings>
+  <toggle-hud-format>Verander HUD indeling</toggle-hud-format>
+
+  <!-- Help menu -->
+  <help>Hulp</help>
+
+  <!--              -->
+  <!-- options file -->
+  <!--              -->
+  <usage>fgfs [ opties ... ]</usage>
+  <verbose-help>Voor een complete lijst van de opties geef dan --help --verbose op</verbose-help>
+
+  <!-- General options -->
+  <general-options>Standaard opties</general-options>
+  <help-desc>Geef de belangrijkste instellingen weer</help-desc>
+  <verbose-desc>Laat alle opties zien, wanneer gebruikt in combinatie met --help of -h</verbose-desc>
+  <fg-root-desc>Definiëer de locatie van de hoofd directory</fg-root-desc>
+  <fg-scenery-desc n="0">Definiëer de locatie van de scenery directory;</fg-scenery-desc>
+  <fg-scenery-desc n="1">Standaard is dit $FG_ROOT/Scenery</fg-scenery-desc>
+  <language-desc>Specificeer de taal voor deze sessie</language-desc>
+  <disable-game-mode-desc>Schermvullende spelode uitschakelen</disable-game-mode-desc>
+  <enable-game-mode-desc>Schermvullende spelmode inschakelen</enable-game-mode-desc>
+  <disable-splash-screen-desc>Introductie scherm overslaan</disable-splash-screen-desc>
+  <enable-splash-screen-desc>Introductie scherm laten zien</enable-splash-screen-desc>
+  <disable-intro-music-desc>Introductie muziek overslaan</disable-intro-music-desc>
+  <enable-intro-music-desc>Introductie muziek laten horen</enable-intro-music-desc>
+  <disable-mouse-pointer-desc>Extra muis aanwijzer uitschakelen</disable-mouse-pointer-desc>
+  <enable-mouse-pointer-desc n="0">Extra muis aanwijzer inschakelen</enable-mouse-pointer-desc>
+  <enable-mouse-pointer-desc n="1">(voor Voodoo kaarten in volledige scherm mode)</enable-mouse-pointer-desc>
+  <disable-random-objects-desc>Willekeurig geplaatste objecten verbergen</disable-random-objects-desc>
+  <enable-random-objects-desc>Willekeurig geplaatste objecten wel tonen</enable-random-objects-desc>
+  <random-objects-desc>(huizen, gebouwen, etc.)</random-objects-desc>
+  <disable-freeze-desc>Start in een normale situatie</disable-freeze-desc>
+  <enable-freeze-desc>Start in een bevroren situatie</enable-freeze-desc>
+  <disable-fuel-freeze-desc>Brandstof vebruik is normaal</disable-fuel-freeze-desc>
+  <enable-fuel-freeze-desc>Vebruik geen brandstof</enable-fuel-freeze-desc>
+  <disable-clock-freeze-desc>Laat de klok normaal lopen</disable-clock-freeze-desc>
+  <enable-clock-freeze-desc>Zet de klok stil</enable-clock-freeze-desc>
+  <control-desc>Besturings methode (joystick, toetsenbord, muis)</control-desc>
+  <enable-auto-coordination-desc>Automatische coördinatie inschakelen</enable-auto-coordination-desc>
+  <disable-auto-coordination-desc>Automatische coördinatie uitschakelen</disable-auto-coordination-desc>
+  <browser-app-desc>Definiëer het pad naar de web bowser</browser-app-desc>
+  <prop-desc>Geef de instelling &lt;naam&gt; de waarde &lt;waarde&gt;</prop-desc>
+  <config-desc>Voeg extra properties toe uit het bestand</config-desc>
+  <units-feet-desc>Definiëer de afstanden in voeten</units-feet-desc>
+  <units-meters-desc>Definiëer de afstanden in meters</units-meters-desc>
+
+  <!-- Features options -->
+  <features-options>Eigenschappen</features-options>
+  <disable-hud-desc>Heads Up Display (HUD) verbergen</disable-hud-desc>
+  <enable-hud-desc>Heads Up Display (HUD) tonen</enable-hud-desc>
+  <disable-panel-desc>Insturmenten paneel verbergen</disable-panel-desc>
+  <enable-panel-desc>Insturmenten paneel tonen</enable-panel-desc>
+  <disable-sound-desc>Geluid effecten uitschakelen</disable-sound-desc>
+  <enable-sound-desc>Geluid effecten inschakelen</enable-sound-desc>
+  <disable-anti-alias-hud-desc>Korrelige HUD gebruiken</disable-anti-alias-hud-desc>
+  <enable-anti-alias-hud-desc>Scherpe gerande HUD gebruiken</enable-anti-alias-hud-desc>
+
+  <!-- Aircraft options -->
+  <aircraft-options>Vliegtuig</aircraft-options>
+  <aircraft-desc>Selecteer een vliegtuig zoals gedefiniëerd in een van de &lt;naam&gt;-set.xml bestanden</aircraft-desc>
+  <show-aircraft-desc>Laat een lijst zien van de beschikbare vliegtuig typen</show-aircraft-desc>
+
+  <!-- Flight Dynamics Model options -->
+  <fdm-options>Vlieg eigenschappen</fdm-options>
+  <fdm-desc n="0">Bepaal de standaard simulatie model</fdm-desc>
+  <fdm-desc n="1">Dit kan een van de volgende modellen zijn: jsb, larcsim, yasim, magic, balloon, ada, external, of null</fdm-desc>
+  <aero-desc>Bepaal welk aerodynamica model geladen wordt</aero-desc>
+  <model-hz-desc>Voer de FDM uit met deze snelheid</model-hz-desc>
+  <speed-desc>Voer de FDM 'n' keer sneller uit dan normaal</speed-desc>
+  <notrim-desc n="0">Probeer het model niet uit te trimmen</notrim-desc>
+  <notrim-desc n="1">(alleen met fdm=jsbsim)</notrim-desc>
+  <on-ground-desc>Start op de grond (standaard)</on-ground-desc>
+  <in-air-desc>Start in de lucht (wordt ook gekozen als --altitude is opgegeven)</in-air-desc>
+  <wind-desc>Specificeer wind uit de richting DIR (graden) met snelheid SPEED (knopen)</wind-desc>
+  <turbulence-desc>Specificeer de turbulentie waarde. 0.0 is kalm. 1.0 is hevig</turbulence-desc>
+  <ceiling-desc>Start met een overtrokken wolkendek, eventuaal met een aangegeven dokte (standaard 2000 feet)</ceiling-desc>
+  <aircraft-dir-desc>De locatie van het vliegtuig configuratiebestand relatief tot de locatie van het hoofdprogramma</aircraft-dir-desc>
+
+  <aircraft-model-options>Vliegtuig model locatie (Alleen voor de UIUC FDM)</aircraft-model-options>
+
+  <!-- Position and Orientation options -->
+  <position-options>Beginpositie en -oriëntatie</position-options>
+  <airport-desc>Geef de start positie ten opzichte van een vliegveld</airport-desc>
+  <vor-desc>Geef de start positie ten opzichte van een VOR</vor-desc>
+  <ndb-desc>Geef de start positie ten opzichte van een NDB</ndb-desc>
+  <fix-desc>Geef de start positie ten opzichte van een fix</fix-desc>
+  <runway-no-desc>Geef het vertrek startbaan nummer (er moet ook een vliegveld worden opgegeven)</runway-no-desc>
+  <offset-distance-desc>Specificeer de afstand tot de baandrempel</offset-distance-desc>
+  <offset-azimuth-desc>Specificeer de richting van de baandrempel</offset-azimuth-desc>
+  <lon-desc>Geografische lengte aan de start (west = -)</lon-desc>
+  <lat-desc>Geografische breedte aan de start (zuid = -)</lat-desc>
+  <altitude-desc>Specificeer de aanvang hoogte</altitude-desc>
+  <heading-desc>Geef de aanvang koers (Psi)</heading-desc>
+  <roll-desc>Geef de aanvang rolhoek (Phi)</roll-desc>
+  <pitch-desc>Geef de aanvang hellingshoek (Theta)</pitch-desc>
+  <uBody-desc>Geef de aanvang snelheid langs de X-as</uBody-desc>
+  <vBody-desc>Geef de aanvang snelheid langs de Y-as</vBody-desc>
+  <wBody-desc>Geef de aanvang snelheid lang de Z-as</wBody-desc>
+  <vc-desc>Specificeer de aanvang snelheid</vc-desc>
+  <mach-desc>Specificeer de de start snelheid als mach nummer</mach-desc>
+  <glideslope-desc>Specificeer het glijpad bij de start (mag positief zijn)</glideslope-desc>
+  <roc-desc>Specificeer de klimsnelheid bij de start (mag negatief zijn)</roc-desc>
+
+  <!-- Rendering options -->
+  <rendering-options>Weergave Instellingen</rendering-options>
+  <bpp-desc>Definiëer het aantal bits per schermpunt</bpp-desc>
+  <fog-disable-desc>Laat geen mist zien</fog-disable-desc>
+  <fog-fastest-desc>Selecteer de snelste mist generator</fog-fastest-desc>
+  <fog-nicest-desc>Selecteer de beste mist generator</fog-nicest-desc>
+  <disable-horizon-effect>Laat hemellichamen niet groter zien als ze dicht bij de horizon staan</disable-horizon-effect>
+  <enable-horizon-effect>Laat hemellichamen wel groter zien als ze dicht bij de horizon staan</enable-horizon-effect>
+  <disable-enhanced-lighting>Standaard startbaan verlichting</disable-enhanced-lighting>
+  <enable-enhanced-lighting>Verbeterde startbaan verlichting</enable-enhanced-lighting>
+  <disable-distance-attenuation>Lichtpunt verkleining voor voor verre lichten niet gebruiken</disable-distance-attenuation>
+  <enable-distance-attenuation>Lichtpunt verkleining voor voor verre lichten wel gebruiken</enable-distance-attenuation>
+  <disable-specular-highlight>Laat geen zon reflecties zien op voorwerpen met textures</disable-specular-highlight>
+  <enable-specular-highlight>Laat de directe zonlicht reflecties op voorwerpen met een texture wel zien</enable-specular-highlight>
+  <enable-clouds-desc>2D (vlakke) bewolking tonen</enable-clouds-desc>
+  <disable-clouds-desc>2D (vlakke) bewolking verbergen</disable-clouds-desc>
+  <enable-clouds3d-desc>3D (natuurlijke) bewolking tonen</enable-clouds3d-desc>
+  <disable-clouds3d-desc>3D (natuurlijke) bewolking verbergen</disable-clouds3d-desc>
+  <fov-desc>Specificeer het zichtveld</fov-desc>
+  <disable-fullscreen-desc>Volledige scherm modus niet gebruiken</disable-fullscreen-desc>
+  <enable-fullscreen-desc>In volledige scherm modus uitvoeren</enable-fullscreen-desc>
+  <shading-flat-desc>Gebruik scherpe schaduwen</shading-flat-desc>
+  <shading-smooth-desc>Gebruik natuurlijke schaduwen</shading-smooth-desc>
+  <disable-skyblend-desc>Hemel opbouw verbergen</disable-skyblend-desc>
+  <enable-skyblend-desc>Hemel opbouw tonen</enable-skyblend-desc>
+  <disable-textures-desc>Textures gebruiken</disable-textures-desc>
+  <enable-textures-desc>Textures niet gebruiken</enable-textures-desc>
+  <disable-wireframe-desc>Model frame opbouw niet gebruiken</disable-wireframe-desc>
+  <enable-wireframe-desc>Model frame opbouw wel gebruiken</enable-wireframe-desc>
+  <geometry-desc>Specificeer de scherm resolutie (640x480, etc)</geometry-desc>
+  <view-offset-desc>Specificeer de kijkrichting aan ten opzichte van recht vooruit. Beschikbare typen zijn: LEFT, RIGHT, CENTER, of een waarde in graden</view-offset-desc>
+  <visibility-desc>Maximale zichtafstand</visibility-desc>
+  <visibility-miles-desc>Maximale zichtafstand in mijlen</visibility-miles-desc>
+
+  <!-- Hud options -->
+  <hud-options>Hud Instellingen</hud-options>
+  <hud-tris-desc>HUD geeft het aantal weergegeven driekhoeken</hud-tris-desc>
+  <hud-culled-desc>HUD geeft het percentage verborgen driehoeken</hud-culled-desc>
+
+  <!-- Time options -->
+  <time-options>Tijd Instellingen</time-options>
+  <timeofday-desc>Specificeer de tijd op de dag ('s-morgens, 's-middags, 's-avonds, 's-nachts</timeofday-desc>
+  <time-offset-desc>Verhoog de tijd met deze waarde</time-offset-desc>
+  <time-match-real-desc>Synchronizeer de tijd met de huidige tijd</time-match-real-desc>
+  <time-match-local-desc>Synchronizeer de tijd met de lokale tijd</time-match-local-desc>
+  <start-date-desc>Geef een start tijd/datum relatief tot</start-date-desc>
+
+  <!-- Network options -->
+  <network-options>Netwerk Instellingen</network-options>
+  <httpd-desc>Activeer de http server op dit poortnummer</httpd-desc>
+  <telnet-desc>Activeer de telnet server op dit poortnummer</telnet-desc>
+  <jpg-httpd-desc>Activeer de schermafdruk server op dit poortnummer</jpg-httpd-desc>
+
+  <!-- MultiPlayer options -->
+ <multiplayer-options>MultiPlayer Instellingen</multiplayer-options>
+ <multiplay-desc>Definiëer de multipilot communicatie instellingen</multiplay-desc>
+ <callsign-desc>Geef een speler een unieke naam</callsign-desc>
+
+  <!-- Route/Way Point Options -->
+  <route-options>Route/Tussen station Instellingen</route-options>
+  <wp-desc>Definiëer een tussenstation voor de automatische piloot;</wp-desc>
+  <flight-plan-desc>Lees alle tussenstations uit een bestand</flight-plan-desc>
+
+  <!-- IO Options -->
+  <io-options>Invoer/Uitvoer Instellingen</io-options>
+  <garmin-desc>Verbinden met het Garmin GPS protocol</garmin-desc>
+  <joyclient-desc>Verbinden met de Agwagon joystick</joyclient-desc>
+  <native-ctrls-desc>Verbinden met het eigen FG besturings protocol</native-ctrls-desc>
+  <native-fdm-desc>Verbinden met het eigen FG FDM protocol</native-fdm-desc>
+  <native-desc>Verbinden met het eigen FG protocol</native-desc>
+  <nmea-desc>Verbinden met het NMEA protocol</nmea-desc>
+  <generic-desc>Verbinden met een voorop aangegeven communicatie interface een een voorgeselecteerde communicatie protocol</generic-desc>
+  <opengc-desc>Verbinden met het OpenGC protocol</opengc-desc>
+  <props-desc>Verbinden met de interactive instelling manager</props-desc>
+  <pve-desc>Verbinden met het PVE protocol</pve-desc>
+  <ray-desc>Verbinden met het Ray Woodworth bewegende stoel protocol</ray-desc>
+  <rul-desc>Verbinden met het RUL protocol</rul-desc>
+  <atc610x-desc>De atc610x interface activeren</atc610x-desc>
+
+  <!-- Avionics Options -->
+ <avionics-options>Avionica Opties</avionics-options>
+ <nav1-desc>Zet de NAV1 radio frequentie, eventueel voorafgegaand door een radial</nav1-desc>
+ <nav2-desc>Zet de NAV2 radio frequentie, eventueel voorafgegaand door een radial</nav2-desc>
+ <adf1-desc>Zet de ADF1 radio frequentie, eventueel voorafgegaand door een kaart verdraaing</adf1-desc>
+ <adf2-desc>Zet de ADF2 radio frequentie, eventueel voorafgegaand door een kaart verdraaing</adf2-desc>
+ <dme-desc>Maak de ADF afhankelijk van een van de radio's, of zet zijn interne frequentie</dme-desc>
+
+  <situation-options>Situatie opties</situation-options>
+ <failure-desc>Zorg dat de pitot, static, vacuum, of het elektrische systeem niet werkt (herhaal de optie voor meerdere systeem fouten)</failure-desc>
+
+  <!-- Debugging Options -->
+  <debugging-options>Foutopsporings Instellingen</debugging-options>
+  <trace-read-desc>Bewaak de uitlezingen van een instelling;</trace-read-desc>
+  <trace-write-desc>Bewaak de veranderingen van een instelling;</trace-write-desc>
+
+</PropertyList>

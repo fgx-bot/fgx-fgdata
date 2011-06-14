@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<trafficlist>
+
+    <aircraft>
+        <model>AI/Aircraft/737/737-Cargoair.xml</model>
+        <livery>Cargoair</livery>
+        <airline>GOA</airline>
+        <actype>737-300</actype>
+        <offset>10</offset>
+        <radius>23</radius>
+        <flighttype>cargo</flighttype>
+        <performance-class>jet_transport</performance-class>
+        <registration>N1238LX</registration>
+        <heavy>false</heavy>
+
+        <flight>
+            <callsign>goair33LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KLAX</port>
+               <time>09:35:00</time>
+            </departure>
+            <cruise-alt>300</cruise-alt>
+            <arrival>
+                <port>TJSJ</port>
+                <time>17:05:00</time>
+            </arrival>
+        <repeat>24Hr</repeat>
+       </flight> 
+
+       <flight>
+            <callsign>goair338LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>TJSJ</port>
+               <time>21:35:00</time>
+            </departure>
+            <cruise-alt>310</cruise-alt>
+            <arrival>
+                <port>KLAX</port>
+                <time>05:05:00</time>
+            </arrival>
+        <repeat>24Hr</repeat>
+       </flight>  
+
+    </aircraft> 
+             
+    <aircraft>
+        <model>AI/Aircraft/737/737-Cargoair.xml</model>
+        <livery>Cargoair</livery>
+        <airline>GOA</airline>
+        <actype>737-300</actype>
+        <offset>10</offset>
+        <radius>23</radius>
+        <flighttype>cargo</flighttype>
+        <performance-class>jet_transport</performance-class>
+        <registration>N1234LX</registration>
+        <heavy>false</heavy>
+
+        <flight>
+            <callsign>goair34LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KLAX</port>
+               <time>11:35:00</time>
+            </departure>
+            <cruise-alt>300</cruise-alt>
+            <arrival>
+                <port>TJSJ</port>
+                <time>19:05:00</time>
+            </arrival>
+        <repeat>24Hr</repeat>
+       </flight> 
+
+       <flight>
+            <callsign>goair334LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>TJSJ</port>
+               <time>23:35:00</time>
+            </departure>
+            <cruise-alt>310</cruise-alt>
+            <arrival>
+                <port>KLAX</port>
+                <time>07:05:00</time>
+            </arrival>
+        <repeat>24Hr</repeat>TJSJ
+       </flight>  
+
+    </aircraft> 
+           
+    <aircraft>
+        <model>AI/Aircraft/737/737-Cargoair.xml</model>
+        <livery>Cargoair</livery>
+        <airline>GOA</airline>
+        <actype>737-300</actype>
+        <offset>10</offset>
+        <radius>23</radius>
+        <flighttype>cargo</flighttype>
+        <performance-class>jet_transport</performance-class>
+        <registration>N1235LX</registration>
+        <heavy>false</heavy>
+
+        <flight>
+            <callsign>goair35LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KLAX</port>
+               <time>13:35:00</time>
+            </departure>
+            <cruise-alt>300</cruise-alt>
+            <arrival>
+                <port>TJSJ</port>
+                <time>21:05:00</time>
+            </arrival>
+        <repeat>24Hr</repeat>
+       </flight> 
+
+       <flight>
+            <callsign>goair335LX</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>TJSJ</port>
+               <time>01:35:00</time>
+            </departure>
+            <cruise-alt>310</cruise-alt>
+            <arrival>
+                <port>KLAX</port>
+                <time>09:05:00</time>
+            </arrival>
+        <repeat>24Hr</repeat>
+       </flight>  
+
+    </aircraft> 
+                                                     
+                                        
+</trafficlist>

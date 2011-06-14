@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Boeing 737-100 BARANGER Emmanuel (2009)
+
+     Sources : http://en.wikipedia.org/wiki/Boeing_737
+
+     Wingspan        : 28.35 m    (   93 ft 0 in)
+     Lenght          : 28.65 m    (   94 ft 0 in)
+     Height          : 11.30 m    (   37 ft 0 in)
+     Empty mass      : 28120 kg   (61864 lb)
+     Cruise speed    : 780 km/h   (  421 kt)
+     Maximum speed   :   876 km/h (  473 kt)
+-->
+
+<airplane mass="61864">
+
+  <!-- Approach configuration -->
+  <approach speed="140" aoa="5" fuel="0.30">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="1"/>
+    <control-setting axis="/controls/engines/engine[1]/throttle" value="1"/>
+    <control-setting axis="/controls/flight/flaps" value="1"/>
+    <control-setting axis="/controls/gear/gear-down" value="1"/>
+  </approach>
+
+  <!-- Cruise configuration -->
+  <cruise speed="421" alt="10000" fuel="0.7">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.7"/>
+    <control-setting axis="/controls/engines/engine[1]/throttle" value="0.7"/>
+    <control-setting axis="/controls/flight/flaps" value="0"/>
+    <control-setting axis="/controls/flight/elevator-trim" value="0"/>
+    <control-setting axis="/controls/gear/gear-down" value="0"/>
+  </cruise>
+
+  <cockpit x="11.743" y="0.485" z="-1.726"/>
+
+  <fuselage ax="14.310" ay="0" az="-2.896" bx="-13.348" by="0" bz="-1.166" width="4" taper="0.4" midpoint="0.25"/>
+
+  <!-- Engines -->
+  <fuselage ax="3.690" ay="5.082" az="-4.207" bx="-1.960" by="5.082" bz="-4.207" width="1.2" taper="0.9" midpoint="0.1"/>
+
+  <fuselage ax="3.690" ay="-5.082" az="-4.207" bx="-1.960" by="-5.082" bz="-4.207" width="1.2" taper="0.9" midpoint="0.1"/>
+
+  <wing x="1.494" y="1.955" z="-3.439"
+        chord="6.037"
+        length="13"
+        taper="0.25"
+        sweep="20"
+        dihedral="5"
+        camber="0.105">
+        <stall aoa="15" width="12" peak="1.5"/>
+        <flap0 start="0.004" end=".749" lift="1.4" drag="2"/>
+        <flap1 start="0.749" end="0.923" lift="1.4" drag="1.1"/>
+        <slat start="0" end="1" aoa="2" drag="1.2"/>
+        <spoiler start="0.295" end="0.626" lift="0.2" drag="2.0"/>
+
+        <control-input axis="/controls/flight/flaps" control="FLAP0"/>
+        <control-input axis="/surface-positions/flap-pos-norm" control="SLAT"/>
+        <control-input axis="/controls/flight/spoilers" control="SPOILER"/>
+        <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
+        <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
+
+        <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
+        <control-output control="FLAP0" prop="/surface-positions/slats"/>
+        <control-output control="SPOILER" prop="/surface-positions/speedbrake-norm"/>
+        <control-output control="FLAP1" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
+        <control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
+
+        <control-speed control="FLAP0" transition-time="10"/>
+        <control-speed control="SPOILER" transition-time="5"/>
+  </wing>
+
+  <hstab x="-11.032" y="0" z="-1.314"
+         chord="3.945"
+         length="6.2"
+         taper="0.35"
+         sweep="25"
+         dihedral="7">
+         <stall aoa="12" width="5" peak="1.5"/>
+         <flap0 start="0" end="1" lift="1.6" drag="1.2"/>
+
+         <control-input axis="/controls/flight/elevator" control="FLAP0"/>
+         <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+  </hstab>
+
+  <vstab x="-9.108" y="0" z="-0.681"
+         chord="6.725"
+         length="7.5"
+         taper="0.22"
+         sweep="34">
+         <stall aoa="10" width="4" peak="1.5"/>
+         <flap0 start="0" end="1" lift="1.5" drag="1.2"/>
+
+         <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
+         <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm" min="1" max="-1"/>
+  </vstab>
+
+  <!-- Sources : http://en.wikipedia.org/wiki/Pratt_%26_Whitney_JT8D
+
+       Engines   : Pratt & Whitney JT8D
+       Type      : Turbofan
+       Trust max : 21700 lbf
+       Masse     : 3200 lb
+  -->
+  <!-- Engine left -->
+  <jet x="0.966" y="5.082"  z="-4.207"
+       mass="3200"
+       thrust="21700"
+       n1-idle="45"
+       n1-max="105"
+       n2-idle="70"
+       n2-max="108"
+       egt="840"
+       tsfc="0.576"
+       rotate="0">
+       <actionpt x="-1.833" y="5.082" z="-4.207"/>
+       <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
+       <control-input axis="/controls/engines/engine[0]/mixture" control="MIXTURE"/>
+       <control-input axis="/controls/engines/engine[0]/reverser" control="REVERSE_THRUST"/>
+
+       <control-output control="REVERSE_THRUST" prop="/surface-positions/reverser-norm[0]"/>
+
+       <control-speed control="REVERSE_THRUST" transition-time="1.5"/>
+  </jet>
+
+  <jet x="0.966" y="-5.082"  z="-4.207"
+       mass="3200"
+       thrust="21700"
+       n1-idle="45"
+       n1-max="105"
+       n2-idle="70"
+       n2-max="108"
+       egt="840"
+       tsfc="0.576"
+       rotate="0">
+       <actionpt x="-1.833" y="-5.082" z="-4.207"/>
+       <control-input axis="/controls/engines/engine[1]/throttle" control="THROTTLE"/>
+       <control-input axis="/controls/engines/engine[1]/mixture" control="MIXTURE"/>
+       <control-input axis="/controls/engines/engine[1]/reverser" control="REVERSE_THRUST"/>
+
+       <control-output control="REVERSE_THRUST" prop="/surface-positions/reverser-norm[1]"/>
+
+       <control-speed control="REVERSE_THRUST" transition-time="1.5"/>
+  </jet>
+
+  <!-- nose -->
+  <gear x="10.441" y="0.000" z="-5.377"
+        compression="0.4"
+        spring="0.9"
+        damp="1">
+        <control-input axis="/controls/flight/rudder" control="STEER" square="true"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+
+        <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
+
+        <control-speed control="EXTEND" transition-time="7"/>
+  </gear>
+  
+  <!--thruster for pushback-->
+  <thruster x="10.441" y="0.000" z="-5.377" 
+            vx="1" vy="0" vz="0"
+            thrust="6000">
+            <control-input axis="/sim/model/pushback/target-speed-fps" control="THROTTLE" src0="-1" src1="1" dst0="-1" dst1="1"/>
+  </thruster>
+
+  <gear x="-0.084" y="2.770" z="-5.631"
+        compression="0.3"
+        spring="1.0" >
+        <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+
+        <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
+
+        <control-speed control="EXTEND" transition-time="7"/>
+  </gear>
+
+  <gear x="-0.084" y="-2.770" z="-5.631"
+        compression="0.3"
+        spring="1.0">
+        <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+
+        <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"/>
+
+        <control-speed control="EXTEND" transition-time="7"/>
+  </gear>
+
+  <!-- Quantite max : Centre           8755 L soit 2313 Gal soit envirron 19301 lbs -->
+  <!--                Gauche et droite 5674 L soit 1499 Gal soit envirron 12509 lbs chacun -->
+  <tank x="-0.443" y="7.120"  z="-2.972" jet="true" capacity="12509"/>
+  <tank x="1.494"  y="0.000"  z="-3.698" jet="true" capacity="19301"/>
+  <tank x="-0.443" y="-7.120" z="-2.972" jet="true" capacity="12509"/>
+
+  <ballast x="20" y="0" z="-4" mass="9500"/>
+
+</airplane>

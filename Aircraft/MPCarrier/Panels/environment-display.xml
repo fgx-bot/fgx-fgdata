@@ -1,0 +1,214 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<name>Environment Display</name>
+	<w-base>512</w-base>
+	<h-base>384</h-base>
+	<layers>
+
+		<layer>
+			<name>environment header</name>
+			<type>text</type>
+			<font>helvetica_bold</font>
+			<point-size>14</point-size>
+			<color>
+				<red>0</red>
+				<green>1</green>
+				<blue>0</blue>
+			</color>
+			<chunks>
+				<chunk>
+					<type>literal</type>
+					<text>ENVIRONMENT</text>
+				</chunk>
+			</chunks>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>0</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>0</offset>
+				</transformation>
+			</transformations>
+		</layer>
+
+		<layer>
+			<name>wind</name>
+			<type>text</type>
+			<font>helvetica_bold</font>
+			<point-size>14</point-size>
+			<color>
+				<red>0</red>
+				<green>1</green>
+				<blue>0</blue>
+			</color>
+			<chunks>
+				<chunk>
+					<type>number-value</type>
+					<property>environment/wind-speed-kt</property>
+					<format>Wind:%3.0f kts</format>
+				</chunk>
+			</chunks>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>0</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>-20</offset>
+				</transformation>
+			</transformations>
+		</layer>
+
+		<layer>
+			<name>wind from</name>
+			<type>text</type>
+			<font>helvetica_bold</font>
+			<point-size>14</point-size>
+			<color>
+				<red>0</red>
+				<green>1</green>
+				<blue>0</blue>
+			</color>
+			<chunks>
+				<chunk>
+					<type>number-value</type>
+					<property>environment/wind-from-heading-deg</property>
+					<format>From: %3.0f *</format>
+				</chunk>
+			</chunks>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>0</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>-40</offset>
+				</transformation>
+			</transformations>
+		</layer>
+
+		<layer>
+			<name>wind arrow</name>
+			<texture>
+				<path>Aircraft/MPCarrier/Panels/arrow.png</path>
+				<x1>0</x1>
+				<y1>0</y1>
+				<x2>1</x2>
+				<y2>1</y2>
+			</texture>
+			<emissive>true</emissive>
+			<w>40</w>
+			<h>40</h>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>140</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>-30</offset>
+				</transformation>
+				<transformation>
+					<type>rotation</type>
+					<property>environment/wind-from-heading-deg</property>
+					<scale>1</scale>
+				</transformation>
+			</transformations>
+		</layer>
+
+		<layer>
+			<name>barometer</name>
+			<type>text</type>
+			<font>helvetica_bold</font>
+			<point-size>14</point-size>
+			<color>
+				<red>0</red>
+				<green>1</green>
+				<blue>0</blue>
+			</color>
+			<chunks>
+				<chunk>
+					<type>number-value</type>
+					<property>environment/pressure-sea-level-inhg</property>
+					<format>Barometer: %2.2f inHG</format>
+				</chunk>
+			</chunks>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>0</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>-60</offset>
+				</transformation>
+			</transformations>
+		</layer>
+
+		<layer>
+			<name>barometer mb</name>
+			<type>text</type>
+			<font>helvetica_bold</font>
+			<point-size>14</point-size>
+			<color>
+				<red>0</red>
+				<green>1</green>
+				<blue>0</blue>
+			</color>
+			<chunks>
+				<chunk>
+					<type>number-value</type>
+					<property>environment/pressure-sea-level-inhg</property>
+					<scale>33.8638815789</scale>
+					<format>: %4.0f mb</format>
+				</chunk>
+			</chunks>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>87</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>-80</offset>
+				</transformation>
+			</transformations>
+		</layer>
+
+		<layer>
+			<name>visibility</name>
+			<type>text</type>
+			<font>helvetica_bold</font>
+			<point-size>14</point-size>
+			<color>
+				<red>0</red>
+				<green>1</green>
+				<blue>0</blue>
+			</color>
+			<chunks>
+				<chunk>
+					<type>number-value</type>
+					<property>environment/metar/min-visibility-m</property>
+					<scale>0.00053995</scale>
+					<format>Visibility: %3.1f nm</format>
+				</chunk>
+			</chunks>
+			<transformations>
+				<transformation>
+					<type>x-shift</type>
+					<offset>0</offset>
+				</transformation>
+				<transformation>
+					<type>y-shift</type>
+					<offset>-100</offset>
+				</transformation>
+			</transformations>
+		</layer>
+	</layers>
+
+</PropertyList>

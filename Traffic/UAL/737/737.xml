@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<trafficlist>
+   <traffic include="UAL/737/N376UA.xml"/> 
+   <Traffic include="UAL/737/N377UA.xml"/>
+   <TRaffic include="UAL/737/N388UA.xml"/>
+   <traffic include="UAL/737/N390UA.xml"/>
+</trafficlist>

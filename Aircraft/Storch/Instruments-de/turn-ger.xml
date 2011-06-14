@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<path>turn-ger.ac</path>
+
+    <animation>
+        <type>material</type>
+        <object-name>TURNneedle</object-name>
+        <object-name>Turn.face</object-name>
+        <object-name>slipball</object-name>
+        <emission>
+            <red>0.5</red>
+            <green>0.2</green>
+            <blue>0.0</blue>
+            <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>TURNneedle</object-name>
+        <property>/instrumentation/turn-indicator/indicated-turn-rate</property>
+        <factor>10.0</factor>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>-0.041</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>slipball</object-name>
+        <property>/instrumentation/slip-skid-ball/indicated-slip-skid</property>
+        <min>-1.1</min>
+        <max>1.1</max>
+        <interpolation>
+            <entry><ind>-1.1</ind><dep>-7.2</dep></entry>
+            <entry><ind>1.1</ind><dep>7.2</dep></entry>
+        </interpolation>
+        <axis>
+            <x>-1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0.130</z-m>
+        </center>
+    </animation>
+
+</PropertyList>

@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+ <path>engine-ger.ac</path>
+
+ 
+
+ <animation>
+  <type>rotate</type>
+  <object-name>needlefuel</object-name>
+  <property>engines/engine[0]/oil-pressure-psi</property>
+
+  <min>0</min>
+  <max>143</max>
+  <interpolation>
+   <entry>
+    <ind>0</ind>
+    <dep>0</dep>
+   </entry>
+   <entry>
+    <ind>143</ind>
+    <dep>180</dep>
+   </entry>
+  </interpolation>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0.004</y-m>
+   <z-m>0.0</z-m>
+  </center>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>needleoil</object-name>
+  <property>engines/engine[0]/fuel-pressure-psi</property>
+  <min>0</min>
+  <max>43</max>
+  <interpolation>
+   <entry>
+    <ind>0</ind>
+    <dep>0</dep>
+   </entry>
+   <entry>
+    <ind>43.0</ind>
+    <dep>180</dep>
+   </entry>
+  </interpolation>
+  <center>
+   <x-m>0</x-m>
+   <y-m>-0.004</y-m>
+   <z-m>0.0</z-m>
+  </center>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>material</type>
+  <object-name>Face</object-name>
+  <object-name>needleoil</object-name>
+  <object-name>needlefuel</object-name>
+  <emission>
+    <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+    <red>0.5</red>
+    <green>0.25</green>
+    <blue>0.25</blue>
+  </emission>
+ </animation>
+
+</PropertyList>

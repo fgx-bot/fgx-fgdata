@@ -1,0 +1,231 @@
+<?xml version="1.0"?>
+<trafficlist> 
+    <!-- The PH-KCF is a KLM MD-11, named Annie Romijn -->
+    <aircraft>
+        <model>Aircraft/MD11/Models/KLMmd11-ai.xml</model>
+        <livery>KLM</livery>
+        <airline>KLM</airline>
+        <actype>MD11</actype>
+        <offset>19</offset>
+        <radius>39</radius>
+        <flighttype>gate</flighttype>
+        <performance-class>jet_transport</performance-class>
+        <registration>PH-KCF</registration>
+        <heavy>true</heavy>
+
+        <!-- Day six Amsterdam to San Fransisco, CA, USA -->
+        <flight>
+            <callsign>KLM0605</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>EHAM</port>
+               <time>5/09:45:00</time>
+            </departure>
+            <cruise-alt>330</cruise-alt>
+            <arrival>
+                <port>KSFO</port>
+                <time>5/20:55:00</time>
+            </arrival>
+        <repeat>WEEK</repeat>
+       </flight>
+
+        <!-- Return Flight: Arrive the next day -->
+        <flight>
+            <callsign>KLM0606</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KSFO</port>
+               <time>5/23:00:00</time>
+            </departure>
+            <cruise-alt>340</cruise-alt>
+            <arrival>
+                <port>EHAM</port>
+                <time>6/09:35:00</time>
+            </arrival>
+        <repeat>WEEK</repeat>
+       </flight>
+
+        <!-- Day seven amsterdam to Accra, Ghana -->
+        <flight>
+            <callsign>KLM0589</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>EHAM</port>
+               <time>6/12:20:00</time>
+            </departure>
+            <cruise-alt>330</cruise-alt>
+            <arrival>
+                <port>DGAA</port>
+                <time>6/19:00:00</time>
+            </arrival>
+        <repeat>WEEK</repeat>
+       </flight>
+
+        <!-- Day seven: return Flight: Arrive the next Day -->
+        <flight>
+            <callsign>KLM0590</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>DGAA</port>
+               <time>6/21:15:00</time>
+            </departure>
+            <cruise-alt>340</cruise-alt>
+            <arrival>
+                <port>EHAM</port>
+                <time>0/04:10:00</time>
+            </arrival>
+        <repeat>WEEK</repeat>
+       </flight>
+
+         <!-- Day one: Amsterdam to Vancouver, BC, Canada -->
+         <flight>
+            <callsign>KLM0681</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>EHAM</port>
+               <time>0/08:25:00</time>
+            </departure>
+            <cruise-alt>330</cruise-alt>
+            <arrival>
+                <port>CYVR</port>
+                <time>0/18:20:00</time>
+            </arrival>
+        <repeat>WEEK</repeat>
+       </flight>
+         <!-- Day one: return Flight: Arrive the next day -->
+         <flight>
+            <callsign>KLM0682</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>CYVR</port>
+               <time>0/20:20:00</time>
+            </departure>
+            <cruise-alt>330</cruise-alt>
+            <arrival>
+                <port>EHAM</port>
+                <time>1/05:40:00</time>
+            </arrival>
+        <repeat>WEEK</repeat>
+       </flight>
+         <!-- Day two: Amsterdam to Delhi, India -->
+         <flight>
+            <callsign>KLM0871</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>EHAM</port>
+               <time>1/09:20:00</time>
+            </departure>
+            <cruise-alt>340</cruise-alt>
+            <arrival>
+                <port>VIDP</port>
+                <time>1/17:20:00</time>
+            </arrival>
+        <repeat>WEEK</repeat>
+       </flight>    
+         <!-- Day two: Return Flight: Arrive the next day -->
+         <flight>
+            <callsign>KLM0872</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>VIDP</port>
+               <time>1/19:20:00</time>
+            </departure>
+            <cruise-alt>350</cruise-alt>
+            <arrival>
+                <port>EHAM</port>
+                <time>2/04:00:00</time>
+            </arrival>
+        <repeat>WEEK</repeat>
+       </flight>
+         <!-- Day three: Amsterdam to Lagos, Nigeria -->
+         <flight>
+            <callsign>KLM0587</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>EHAM</port>
+               <time>2/10:30:00</time>
+            </departure>
+            <cruise-alt>340</cruise-alt>
+            <arrival>
+                <port>DNMM</port>
+                <time>2/16:55:00</time>
+            </arrival>
+        <repeat>WEEK</repeat>
+       </flight>  
+        <!-- Day three: Return Flight, Arrive the next day -->
+        <flight>
+            <callsign>KLM0588</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>DNMM</port>
+               <time>2/21:20:00</time>
+            </departure>
+            <cruise-alt>340</cruise-alt>
+            <arrival>
+                <port>EHAM</port>
+                <time>3/06:10:00</time>
+            </arrival>
+        <repeat>WEEK</repeat>
+       </flight>         
+        <!-- Day four: Amsterdam to Montreal, Quebec, Canada -->
+        <flight>
+            <callsign>KLM0671</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>EHAM</port>
+               <time>3/12:20:00</time>
+            </departure>
+            <cruise-alt>340</cruise-alt>
+            <arrival>
+                <port>CYUL</port>
+                <time>3/19:50:00</time>
+            </arrival>
+        <repeat>WEEK</repeat>
+       </flight>     
+        <!-- Day four: Return Flight. Arrive the next day -->
+        <flight>
+            <callsign>KLM0672</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>CYUL</port>
+               <time>3/22:00:00</time>
+            </departure>
+            <cruise-alt>340</cruise-alt>
+            <arrival>
+                <port>EHAM</port>
+                <time>4/04:45:00</time>
+            </arrival>
+        <repeat>WEEK</repeat>
+       </flight>    
+       <!-- Day Five: Minneapolis/St. Paul, MN, USA -->
+       <flight>
+            <callsign>KLM0667</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>EHAM</port>
+               <time>4/12:05:00</time>
+            </departure>
+            <cruise-alt>330</cruise-alt>
+            <arrival>
+                <port>KMSP</port>
+                <time>4/20:50:00</time>
+            </arrival>
+        <repeat>WEEK</repeat>
+       </flight>
+       <!-- Day Five: Return Flight, Arrive the next day. -->
+       <flight>
+            <callsign>KLM0668</callsign>
+            <fltrules>IFR</fltrules>
+            <departure>
+               <port>KMSP</port>
+               <time>4/23:00:00</time>
+            </departure>
+            <cruise-alt>340</cruise-alt>
+            <arrival>
+                <port>EHAM</port>
+                <time>5/07:15:00</time>
+            </arrival>
+        <repeat>WEEK</repeat>
+       </flight>                
+    </aircraft>
+</trafficlist>

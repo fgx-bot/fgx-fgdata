@@ -1,0 +1,318 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <path>WrightFlyer-pb-jw.ac</path>
+
+ <!-- object selection -->
+
+ <!-- hide hat if view is pilot's eye (or very near Orville's face) -->
+ <animation>
+  <type>select</type>
+  <object-name>OrvilleHat</object-name>
+  <condition>
+   <and>
+     <or>
+     <greater-than>
+      <property>/sim/current-view/x-offset-m</property>
+      <value>-0.41</value>
+     </greater-than>
+     <less-than>
+      <property>/sim/current-view/x-offset-m</property>
+      <value>-0.51</value>
+     </less-than>
+     </or>
+     <or>
+     <greater-than>
+      <property>/sim/current-view/z-offset-m</property>
+      <value>-0.77</value>
+     </greater-than>
+     <less-than>
+      <property>/sim/current-view/z-offset-m</property>
+      <value>-0.87</value>
+     </less-than>
+     </or>
+   </and>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>select</type>
+  <object-name>Disks</object-name>
+  <condition>
+   <greater-than>
+    <property>engines/engine[0]/rpm</property>
+    <value>800</value>
+   </greater-than>
+  </condition>
+ </animation>
+
+ <!-- wing warp -->
+
+ <animation>
+  <type>select</type>
+  <object-name>WingTop</object-name>
+  <object-name>WingBottom</object-name>
+  <condition>
+   <and>
+   <less-than>
+    <property>controls/flight/aileron</property>
+    <value>0.5</value>
+   </less-than>
+   <greater-than>
+    <property>controls/flight/aileron</property>
+    <value>-0.5</value>
+   </greater-than>
+   </and>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>select</type>
+  <object-name>WingTopWarpLeft</object-name>
+  <object-name>WingBottomWarpLeft</object-name>
+  <condition>
+   <less-than>
+    <property>controls/flight/aileron</property>
+    <value>-0.5</value>
+   </less-than>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>select</type>
+  <object-name>WingTopWarpRight</object-name>
+  <object-name>WingBottomWarpRight</object-name>
+  <condition>
+   <greater-than>
+    <property>controls/flight/aileron</property>
+    <value>0.5</value>
+   </greater-than>
+  </condition>
+ </animation>
+
+ <!-- animations -->
+
+ <animation>
+  <type>spin</type>
+  <object-name>RightPropeller</object-name>
+  <object-name>CogRightPropShaft</object-name>
+  <property>engines/engine[0]/rpm</property>
+  <factor>.133</factor>
+  <center>
+   <x-m>1.56</x-m>
+   <y-m>1.69</y-m>
+   <z-m>0.53</z-m>
+  </center>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>spin</type>
+  <object-name>LeftPropeller</object-name>
+  <object-name>CogLeftPropShaft</object-name>
+  <property>engines/engine[0]/rpm</property>
+  <factor>.133</factor>
+  <center>
+   <x-m>1.56</x-m>
+   <y-m>-1.69</y-m>
+   <z-m>0.53</z-m>
+  </center>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Rudder</object-name>
+  <property>controls/flight/rudder</property>
+  <factor>20</factor> <!-- check -->
+  <center>
+   <x-m>2.96</x-m>
+   <y-m>0</y-m>
+   <z-m>0.16</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>0</y>
+   <z>1</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>ElevatorTop</object-name>
+  <property>controls/flight/elevator</property>
+  <factor>-11</factor> <!-- check -->
+  <center>
+   <x-m>-2.98</x-m>
+   <y-m>0</y-m>
+   <z-m>0.37</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>ElevatorBottom</object-name>
+  <property>controls/flight/elevator</property>
+  <factor>-11</factor> <!-- check -->
+  <center>
+   <x-m>-2.98</x-m>
+   <y-m>0</y-m>
+   <z-m>-0.32</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>ElevatorTieCenter</object-name>
+  <object-name>ElevatorTieRight</object-name>
+  <object-name>ElevatorTieLeft</object-name>
+  <object-name>ElevatorSprocket</object-name>
+  <property>controls/flight/elevator</property>
+  <factor>-11</factor> <!-- check -->
+  <center>
+   <x-m>-2.95</x-m>
+   <y-m>0</y-m>
+   <z-m>0.02</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>translate</type>
+  <object-name>ElevatorRearPostCenter</object-name>
+  <object-name>ElevatorRearPostRight</object-name>
+  <object-name>ElevatorRearPostLeft</object-name>
+  <property>controls/flight/elevator</property>
+  <factor>0.075</factor> <!-- check -->
+  <axis>
+   <x>0</x>
+   <y>0</y>
+   <z>1</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>translate</type>
+  <object-name>ElevatorSpringPostCenter</object-name>
+  <object-name>ElevatorSpringPostRight</object-name>
+  <object-name>ElevatorSpringPostLeft</object-name>
+  <property>controls/flight/elevator</property>
+  <factor>-0.05</factor> <!-- check -->
+  <axis>
+   <x>0</x>
+   <y>0</y>
+   <z>1</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>ElevatorControlStick</object-name>
+  <property>controls/flight/elevator</property>
+  <factor>-11</factor> <!-- check -->
+  <center>
+   <x-m>-0.91</x-m>
+   <y-m>0</y-m>
+   <z-m>-0.61</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+
+ <animation>
+  <type>rotate</type>
+  <object-name>OrvilleLeftArm</object-name>
+  <object-name>OrvilleLeftForeArm</object-name>
+  <property>controls/flight/elevator</property>
+  <factor>5.5</factor> <!-- check -->
+  <center>
+   <x-m>-0.56</x-m>
+   <y-m>0.75</y-m>
+   <z-m>-0.27</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>OrvilleLeftForeArm</object-name>
+  <property>controls/flight/elevator</property>
+  <factor>-8</factor> <!-- check -->
+  <center>
+   <x-m>-0.62</x-m>
+   <y-m>0.75</y-m>
+   <z-m>-0.58</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>OrvilleLeftHand</object-name>
+  <property>controls/flight/elevator</property>
+  <factor>11</factor> <!-- check -->
+  <center>
+   <x-m>-1.00</x-m>
+   <y-m>0.75</y-m>
+   <z-m>-0.37</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>OrvilleLeftHand</object-name>
+  <property>controls/flight/elevator</property>
+  <factor>-11</factor> <!-- check -->
+  <center>
+   <x-m>-0.91</x-m>
+   <y-m>0</y-m>
+   <z-m>-0.61</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+</PropertyList>

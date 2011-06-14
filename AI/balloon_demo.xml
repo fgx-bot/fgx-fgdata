@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <scenario>
+
+  <description>
+     Places 7 balloons that will drift with the wind.
+     nasal code by Detlef Faber and Torsten Dreyer
+     needs balloon.nas in the data/Nasal directory to place
+     the models initially at your position.
+     This file Modified from refueling_demo.xml by Dave Culp
+
+     Brett Harrison Feb. 2009
+  </description>
+ 
+  <entry>
+   <callsign>ballon01</callsign>
+   <type>tanker</type>
+   <class>tanker</class>
+   <model>Aircraft/balloon/flightgear.xml</model>
+  </entry>
+
+  <entry>
+   <callsign>ballon02</callsign>
+   <type>tanker</type>
+   <class>tanker</class>
+   <model>Aircraft/balloon/balloon4.xml</model>
+  </entry>
+
+
+  <entry>
+   <callsign>ballon03</callsign>
+   <type>tanker</type>
+   <class>tanker</class>
+   <model>Aircraft/balloon/balloon3.xml</model>
+  </entry>
+
+  <entry>
+   <callsign>ballon04</callsign>
+   <type>tanker</type>
+   <class>tanker</class>
+   <model>Aircraft/balloon/balloon2.xml</model>
+  </entry>
+
+
+  <entry>
+   <callsign>ballon05</callsign>
+   <type>tanker</type>
+   <class>tanker</class>
+   <model>Aircraft/balloon/balloon5.xml</model>
+  </entry>
+
+
+  <entry>
+   <callsign>ballon06</callsign>
+   <type>tanker</type>
+   <class>tanker</class>
+   <model>Aircraft/balloon/miss-velma.xml</model>
+  </entry>
+
+  <entry>
+   <callsign>ballon07</callsign>
+   <type>tanker</type>
+   <class>tanker</class>
+   <model>Aircraft/balloon/iva.xml</model>
+  </entry>
+
+ </scenario>
+
+
+</PropertyList>

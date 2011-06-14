@@ -1,0 +1,195 @@
+<?xml version="1.0"?>
+<!-- Buccaneer main panel -->
+<!-- Vivian Meazza 2007/11/6 vivian.meazza@lineone.net -->
+<!-- Ver 0.1.0 -->
+
+<PropertyList>
+
+	<!-- **************** Main Panel ********** -->
+
+	<main-panel>
+		<offsets>
+			<x-m>3.4850</x-m>
+		</offsets>
+	</main-panel>
+
+	<model>
+		<path>AI/Aircraft/Buccaneer/Models/aoa.xml</path>
+		<offsets>
+			<x-m alias="../../../main-panel/offsets/x-m"/>
+			<y-m>-0.275026</y-m>
+			<z-m> 0.745282</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>AI/Aircraft/Buccaneer/Instruments/fast_erect_panel.xml</path>
+		<offsets>
+			<x-m alias="../../../main-panel/offsets/x-m"/>
+			<y-m>-0.37</y-m>
+			<z-m>0.52068</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>AI/Aircraft/Buccaneer/Instruments/altimeter_vsi.xml</path>
+		<offsets>
+			<x-m alias="../../../main-panel/offsets/x-m"/>
+			<y-m>-0.287387</y-m>
+			<z-m>0.52068</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>AI/Aircraft/Buccaneer/Instruments/standby_ai.xml</path>
+		<offsets>
+			<x-m alias="../../../main-panel/offsets/x-m"/>
+			<y-m>0.0996834</y-m>
+			<z-m>0.685786</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>AI/Aircraft/Buccaneer/Instruments/attitude_rb.xml</path>
+		<offsets>
+			<x-m alias="../../../main-panel/offsets/x-m"/>
+			<y-m>-0.1408</y-m>
+			<z-m>0.52068</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>AI/Aircraft/Buccaneer/Instruments/nav_display.xml</path>
+		<offsets>
+			<x-m alias="../../../main-panel/offsets/x-m"/>
+			<y-m>0.0392</y-m>
+			<z-m>0.52068</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>AI/Aircraft/Buccaneer/Instruments/speed_display.xml</path>
+		<offsets>
+			<x-m alias="../../../main-panel/offsets/x-m"/>
+			<y-m>-0.175319</y-m>
+			<z-m>0.651294</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>AI/Aircraft/Buccaneer/Instruments/standby_heading_indicator.xml</path>
+		<offsets>
+			<x-m alias="../../../main-panel/offsets/x-m"/>
+			<y-m>0.204185</y-m>
+			<z-m>0.761135</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>AI/Aircraft/Buccaneer/Instruments/exh2.xml</path>
+		<offsets>
+			<x-m alias="../../../main-panel/offsets/x-m"/>
+			<y-m>0.192853</y-m>
+			<z-m>0.556728</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>AI/Aircraft/Buccaneer/Instruments/exh1.xml</path>
+		<offsets>
+			<x-m alias="../../../main-panel/offsets/x-m"/>
+			<y-m>0.269613</y-m>
+			<z-m>0.556728</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>AI/Aircraft/Buccaneer/Instruments/rpm.xml</path>
+		<offsets>
+			<x-m alias="../../../main-panel/offsets/x-m"/>
+			<y-m>0.269613</y-m>
+			<z-m>0.62372</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>AI/Aircraft/Buccaneer/Instruments/rpm2.xml</path>
+		<offsets>
+			<x-m alias="../../../main-panel/offsets/x-m"/>
+			<y-m>0.191928</y-m>
+			<z-m>0.62372</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>AI/Aircraft/Buccaneer/Instruments/rpm3.xml</path>
+		<offsets>
+			<x-m alias="../../../main-panel/offsets/x-m"/>
+			<y-m>0.269613</y-m>
+			<z-m>0.489736</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>AI/Aircraft/Buccaneer/Instruments/rpm4.xml</path>
+		<offsets>
+			<x-m alias="../../../main-panel/offsets/x-m"/>
+			<y-m>0.191928</y-m>
+			<z-m>0.489736</z-m>
+		</offsets>
+	</model>
+  
+	<model>
+		<path>AI/Aircraft/Buccaneer/Instruments/mag_indicator_oilp-2.xml</path>
+		<offsets>
+			<x-m alias="../../../main-panel/offsets/x-m"/>
+			<y-m>0.280158</y-m>
+			<z-m>0.439899</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>AI/Aircraft/Buccaneer/Instruments/mag_indicator_oilp-1.xml</path>
+		<offsets>
+			<x-m alias="../../../main-panel/offsets/x-m"/>
+			<y-m>0.175596</y-m>
+			<z-m>0.439899</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>AI/Aircraft/Buccaneer/Instruments/lp_ospeed1.xml</path>
+		<offsets>
+			<x-m alias="../../../main-panel/offsets/x-m"/>
+			<y-m>0.356726</y-m>
+			<z-m>0.634352</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>AI/Aircraft/Buccaneer/Instruments/lp_ospeed2.xml</path>
+		<offsets>
+			<x-m alias="../../../main-panel/offsets/x-m"/>
+			<y-m>0.324243</y-m>
+			<z-m>0.629711</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>AI/Aircraft/Buccaneer/Instruments/lp_rotating.xml</path>
+		<offsets>
+			<x-m alias="../../../main-panel/offsets/x-m"/>
+			<y-m>0.229113</y-m>
+			<z-m>0.650593</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>AI/Aircraft/Buccaneer/Instruments/uc_warning.xml</path>
+		<offsets>
+			<x-m alias="../../../main-panel/offsets/x-m"/>
+			<y-m>0.0187441</y-m>
+			<z-m>0.659101</z-m>
+		</offsets>
+	</model>
+</PropertyList>

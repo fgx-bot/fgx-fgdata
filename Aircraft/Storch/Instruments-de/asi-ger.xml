@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+ <path>asi-ger.ac</path>
+
+ <animation>
+  <type>material</type>
+  <object-name>Face</object-name>
+  <object-name>needle</object-name>
+  <emission>
+    <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+    <red>0.5</red>
+    <green>0.25</green>
+    <blue>0.25</blue>
+  </emission>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>needle</object-name>
+  <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+  <interpolation>
+   <entry>
+    <ind>0</ind>
+    <dep>0</dep>
+   </entry>
+   <entry>
+    <ind>27</ind> <!-- 50 km/h -->
+    <dep>12.5</dep>
+   </entry>
+   <entry>
+    <ind>54</ind> <!-- 100 km/h -->
+    <dep>46</dep>
+   </entry>
+   <entry>
+    <ind>81</ind> <!-- 150 km/h -->
+    <dep>94</dep>
+   </entry>
+   <entry>
+    <ind>108</ind> <!-- 200 km/h -->
+    <dep>154</dep>
+   </entry>
+   <entry>
+    <ind>135</ind> <!-- 250 km/h -->
+    <dep>219</dep>
+   </entry>
+   <entry>
+    <ind>162</ind> <!-- 300 km/h -->
+    <dep>284.5</dep>
+   </entry>
+   <entry>
+    <ind>189</ind> <!-- 350 km/h -->
+    <dep>350</dep>
+   </entry>
+  </interpolation>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+</PropertyList>
+
+

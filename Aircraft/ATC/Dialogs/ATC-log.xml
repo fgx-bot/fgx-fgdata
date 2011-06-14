@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+  <name>ATC-log</name>
+  <modal>false</modal>
+  <layout>hbox</layout>
+
+    <group>
+  <layout>hbox</layout>
+    <x>0</x>
+    <y>25</y>
+    <width>320</width>
+    <height>150</height>
+    <font>
+        <name>HELVETICA_12</name>
+    </font>
+    <color>
+        <red>0.8</red>
+        <green>0.8</green>
+        <blue>0.8</blue>
+        <alpha>1</alpha>
+    </color>
+    <draggable>true</draggable>
+
+  <textbox>
+    <color>
+        <red>0.0</red>
+        <green>0.0</green>
+        <blue>0.0</blue>
+        <alpha>1</alpha>
+    </color>
+    <halign>fill</halign>
+    <pref-width>320</pref-width>
+    <pref-height>150</pref-height>
+    <slider>12</slider>
+    <live>true</live>
+    <wrap>false</wrap>
+    <editable>false</editable>
+    <property>/sim/multiplay/chat-history</property>
+  </textbox>
+    </group>
+</PropertyList>

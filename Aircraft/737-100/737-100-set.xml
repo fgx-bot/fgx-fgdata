@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- <PropertyList include="737-100-jsbsim-cnf.xml"> -->
+<PropertyList include="737-100-yasim-cnf.xml">
+
+  <sim>
+    <description>Boeing 737-100</description>
+    <author>BARANGER Emmanuel</author>
+    <systems>
+      <autopilot>
+        <path>Aircraft/737-100/Systems/737-autopilot.xml</path>
+      </autopilot>
+    </systems>
+  </sim>
+</PropertyList>
+

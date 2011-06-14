@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>ASI.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>Face</object-name>
+    <object-name>Bezel</object-name>
+    <object-name>PointerTip</object-name>
+
+    <!-- Objets transparents -->
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>Face</object-name>
+    <object-name>PointerTip</object-name>
+    <emission>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>PointerTip</object-name>
+    <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+    <interpolation>
+      <entry><ind>   0.000 </ind><dep>   0.00 </dep></entry>
+      <entry><ind>  32.397 </ind><dep>  60.00 </dep></entry>
+      <entry><ind>  75.594 </ind><dep> 240.00 </dep></entry>
+      <entry><ind>  97.192 </ind><dep> 330.00 </dep></entry>
+      <entry><ind> 113.390 </ind><dep> 387.00 </dep></entry>
+      <entry><ind> 135.000 </ind><dep> 459.00 </dep></entry>
+      <entry><ind> 162.000 </ind><dep> 547.50 </dep></entry>
+      <entry><ind> 178.190 </ind><dep> 602.14 </dep></entry>
+      <entry><ind> 210.580 </ind><dep> 711.40 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> 0 </x-m>
+      <y-m> 0 </y-m>
+      <z-m> 0 </z-m>
+    </center>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>
+

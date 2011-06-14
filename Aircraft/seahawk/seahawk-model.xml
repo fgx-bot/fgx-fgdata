@@ -1,0 +1,337 @@
+<?xml version="1.0"?>
+
+<!-- Sea Hawk model config file -->
+<!-- Lee Elliott 2002/12/26 leee-fgfs@spatial.freeserve.co.uk -->
+
+<PropertyList>
+ <path>SeaHawk.ac</path>
+ <offsets>
+   <z-m>0.0</z-m>
+   <pitch-deg>0</pitch-deg>
+ </offsets>
+
+<!-- Canopy -->
+ <animation>
+  <type>rotate</type>
+  <object-name>Canopy</object-name>
+  <property>/canopy/position-norm</property>
+  <factor>4.0</factor>
+  <center>
+   <x-m>-2.0</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-10.0</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+<!-- Left Wing -->
+ <animation>
+  <type>rotate</type>
+  <object-name>LUWing</object-name>
+  <object-name>LLWing</object-name>
+  <object-name>LUAileron</object-name>
+  <object-name>LLAileron</object-name>
+  <object-name>LFlap</object-name>
+  <property>/canopy/position-norm</property>
+  <factor>-108</factor>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>-1.66</y-m>
+   <z-m>0.1</z-m>
+  </center>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+<!-- Right Wing -->
+ <animation>
+  <type>rotate</type>
+  <object-name>RUWing</object-name>
+  <object-name>RLWing</object-name>
+  <object-name>RUAileron</object-name>
+  <object-name>RLAileron</object-name>
+  <object-name>RFlap</object-name>
+  <property>/canopy/position-norm</property>
+  <factor>108</factor>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>1.66</y-m>
+   <z-m>0.1</z-m>
+  </center>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+<!-- Rudder bits -->
+ <animation>
+  <type>rotate</type>
+  <object-name>Rudder</object-name>
+  <property>/surface-positions/rudder-pos-norm</property>
+  <factor>-50</factor>
+  <center>
+   <x-m>5.38</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>0</y>
+   <z>1</z>
+  </axis>
+ </animation>
+
+<!-- Elevator bits -->
+ <animation>
+  <type>rotate</type>
+  <object-name>LUElevator</object-name>
+  <object-name>LLElevator</object-name>
+  <property>/surface-positions/elevator-pos-norm</property>
+  <factor>40</factor>
+  <center>
+   <x-m>5.39</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.70</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>RUElevator</object-name>
+  <object-name>RLElevator</object-name>
+  <property>/surface-positions/elevator-pos-norm</property>
+  <factor>40</factor>
+  <center>
+   <x-m>5.39</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.70</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+<!-- Alieron bits -->
+ <animation>
+  <type>rotate</type>
+  <object-name>LUAileron</object-name>
+  <object-name>LLAileron</object-name>
+  <property>/surface-positions/left-aileron-pos-norm</property>
+  <factor>40</factor>
+  <center>
+   <x-m>0.24</x-m>
+   <y-m>-3.39</y-m>
+   <z-m>0.04</z-m>
+  </center>
+  <axis>
+   <x>0.17</x>
+   <y>1</y>
+   <z>-0.065</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>RUAileron</object-name>
+  <object-name>RLAileron</object-name>
+  <property>/surface-positions/right-aileron-pos-norm</property>
+  <factor>-40</factor>
+  <center>
+   <x-m>0.24</x-m>
+   <y-m>3.39</y-m>
+   <z-m>0.04</z-m>
+  </center>
+  <axis>
+   <x>0.17</x>
+   <y>-1</y>
+   <z>-0.065</z>
+  </axis>
+ </animation>
+
+<!-- Flap bits -->
+ <animation>
+  <type>rotate</type>
+  <object-name>LFlap</object-name>
+  <property>/surface-positions/flap-pos-norm</property>
+  <factor>70</factor>
+  <center>
+   <x-m>0.36</x-m>
+   <y-m>-1.65</y-m>
+   <z-m>-0.09</z-m>
+  </center>
+  <axis>
+   <x>0.17</x>
+   <y>1</y>
+   <z>-0.065</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>RFlap</object-name>
+  <property>/surface-positions/flap-pos-norm</property>
+  <factor>-70</factor>
+  <center>
+   <x-m>0.36</x-m>
+   <y-m>1.65</y-m>
+   <z-m>-0.09</z-m>
+  </center>
+  <axis>
+   <x>0.17</x>
+   <y>-1</y>
+   <z>-0.065</z>
+  </axis>
+ </animation>
+
+<!-- Landing Gear -->
+<!-- Front u/c -->
+ <animation>
+  <type>rotate</type>
+  <object-name>FStrut</object-name>
+  <object-name>FTyre</object-name>
+  <property>/gear/gear/position-norm</property>
+  <offset-deg>120</offset-deg>
+  <factor>-120</factor>
+  <center>
+   <x-m>-4.0</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-0.4</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>FDoor</object-name>
+  <property>/gear/gear/position-norm</property>
+  <offset-deg>-70</offset-deg>
+  <factor>70</factor>
+  <center>
+   <x-m>-5.05</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-0.07</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>BDoor</object-name>
+  <property>/gear/gear/position-norm</property>
+  <offset-deg>170</offset-deg>
+  <factor>-170</factor>
+  <center>
+   <x-m>-4.0</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-0.47</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+<!-- Left u/c -->
+ <animation>
+  <type>rotate</type>
+  <object-name>LStrut</object-name>
+  <object-name>LTyre</object-name>
+  <property>/gear/gear/position-norm</property>
+  <offset-deg>100</offset-deg>
+  <factor>-100</factor>
+  <center>
+   <x-m>0.08</x-m>
+   <y-m>-1.45</y-m>
+   <z-m>-0.13</z-m>
+  </center>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>LDoor1</object-name>
+  <object-name>LDoor2</object-name>
+  <property>/gear/gear/position-norm</property>
+  <offset-deg>85</offset-deg>
+  <factor>-85</factor>
+  <center>
+   <x-m>0.08</x-m>
+   <y-m>-1.58</y-m>
+   <z-m>-0.14</z-m>
+  </center>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+<!-- Right u/c -->
+ <animation>
+  <type>rotate</type>
+  <object-name>RStrut</object-name>
+  <object-name>RTyre</object-name>
+  <property>/gear/gear/position-norm</property>
+  <offset-deg>-100</offset-deg>
+  <factor>100</factor>
+  <center>
+   <x-m>0.08</x-m>
+   <y-m>1.45</y-m>
+   <z-m>-0.13</z-m>
+  </center>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>RDoor1</object-name>
+  <object-name>RDoor2</object-name>
+  <property>/gear/gear/position-norm</property>
+  <offset-deg>-85</offset-deg>
+  <factor>85</factor>
+  <center>
+   <x-m>0.08</x-m>
+   <y-m>1.58</y-m>
+   <z-m>-0.14</z-m>
+  </center>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+</PropertyList>

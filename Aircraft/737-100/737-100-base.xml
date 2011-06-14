@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <sim include="Nasal/views.xml">
+
+    <author>BARANGER Emmanuel (3D/FDM)</author>
+    <aircraft-version>0.1</aircraft-version>
+    <status>Alpha</status>
+
+    <fuel-fraction>0.8</fuel-fraction>
+
+    <startup>
+      <splash-texture>Aircraft/737-100/737-100-splash.png</splash-texture>
+    </startup>
+
+    <model>
+      <path>Aircraft/737-100/Models/737-100.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+    </model>
+
+    <!-- Sources : http://www.b737.org.uk/images/pwratt-200.gif -->
+    <flaps>
+      <setting>0.000</setting> <!-- flaps up -->
+      <setting>0.125</setting> <!-- flaps  1 -->
+      <setting>0.375</setting> <!-- flaps  5 -->
+      <setting>0.625</setting> <!-- flaps 15 -->
+      <setting>0.750</setting> <!-- flaps 25 -->
+      <setting>0.875</setting> <!-- flaps 30 -->
+      <setting>1.000</setting> <!-- flaps 40 -->
+    </flaps>
+
+    <sound>
+      <path>Aircraft/737-100/Sounds/737-100-sound.xml</path>
+      <switch type="bool">0</switch>
+      <stall-horn type="bool">0</stall-horn>
+    </sound>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic> 
+        <int type="int">0</int>  <!-- 0 immat -->
+        <int type="int">0</int>  <!-- 1 immat -->
+        <int type="int">0</int>  <!-- 2 immat -->
+        <int type="int">0</int>  <!-- 3 immat -->
+        <int type="int">0</int>  <!-- 4 immat -->
+        <int type="int">0</int>  <!-- 5 immat -->
+        <int type="bool">0</int> <!-- 6 smoke -->
+        <int type="int">0</int>  <!-- 7 color -->
+        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
+        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
+      </generic>
+    </multiplay>
+
+    <help>
+      <title>Boeing 737-100</title>
+      <key>
+        <name>Delete</name>
+        <desc>toggle thrust reversers</desc>
+      </key>
+      <key>
+        <name>Ctrl-b</name>
+        <desc>toggle speed brakes</desc>
+      </key>
+      <key>
+        <name>d</name>
+        <desc>Open/Close door</desc>
+      </key>
+      <key>
+        <name>j/k</name>
+        <desc>Spoilers</desc>
+      </key>
+
+    </help>
+
+    <menubar include="Dialogs/737-100-menu.xml"/>
+
+    <!-- Added by D-SKY1 Thanks to him -->
+    <systems>
+      <autopilot>
+        <path>Aircraft/737-100/Systems/737-autopilot.xml</path>
+      </autopilot>
+    </systems>
+
+  </sim>
+
+  <gear>
+    <gear n="0">
+      <tyre-smoke type="int">0</tyre-smoke>
+      <sprayspeed-ms type="double">0</sprayspeed-ms>
+      <spray-density type="double">0</spray-density>
+    </gear>
+    <gear n="1">
+      <tyre-smoke type="int">0</tyre-smoke>
+      <sprayspeed-ms type="double">0</sprayspeed-ms>
+      <spray-density type="double">0</spray-density>
+    </gear>
+    <gear n="2">
+      <tyre-smoke type="int">0</tyre-smoke>
+      <sprayspeed-ms type="double">0</sprayspeed-ms>
+      <spray-density type="double">0</spray-density>
+    </gear>
+  </gear>
+	
+  <controls>
+    <gear>
+      <brake-parking type="double">1</brake-parking>
+    </gear>
+  </controls>
+
+  <engines>
+    <engine n="0">
+      <engine-num type="int">0</engine-num>
+      <running>true</running>
+    </engine>
+    <engine n="1">
+      <engine-num type="int">1</engine-num>
+      <running>true</running>
+    </engine>
+  </engines>
+
+  <input>
+    <keyboard include="Nasal/737-100-keyboard.xml"/>
+  </input>
+
+  <nasal>
+    <doors>
+      <file>Aircraft/737-100/Nasal/doors.nas</file>
+    </doors>
+    <b737100>
+      <file>Aircraft/737-100/Nasal/liveries.nas</file>
+      <file>Aircraft/737-100/Nasal/light.nas</file>
+      <file>Aircraft/737-100/Nasal/system.nas</file>
+    </b737100>
+    <tyresmoke>
+      <file>Aircraft/737-100/Nasal/tyresmoke.nas</file>
+    </tyresmoke>
+  </nasal>
+
+</PropertyList>

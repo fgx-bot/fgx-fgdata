@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+
+<!-- turn and slip indicator -->
+
+<PropertyList>
+
+	<path>turn.ac</path>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Ball</object-name>
+		<property>/instrumentation/slip-skid-ball/indicated-slip-skid</property>
+		<min>-1.1</min>
+		<max>1.1</max>
+		<interpolation>
+			<entry>
+				<ind>-1.1</ind>
+				<dep>-7.2</dep>
+			</entry>
+			<entry>
+				<ind>1.1</ind>
+				<dep>7.2</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0.22</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Needle1</object-name>
+		<property>/instrumentation/turn-indicator/indicated-turn-rate</property>
+		<interpolation>
+			<entry>
+				<ind>-3</ind>
+				<dep>-50</dep>
+			</entry>
+			<entry>
+				<ind>-2</ind>
+				<dep>-35</dep>
+			</entry>
+			<entry>
+				<ind>-1</ind>
+				<dep>-20</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>20</dep>
+			</entry>
+			<entry>
+				<ind>2</ind>
+				<dep>35</dep>
+			</entry>
+			<entry>
+				<ind>3</ind>
+				<dep>50</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>material</type>
+		<emission>
+			<factor-prop>/controls/lighting/panel-norm</factor-prop>
+			<red>0.75</red>
+			<green>0.25</green>
+			<blue>0.25</blue>
+		</emission>
+	</animation>
+
+	<!-- *** LoD *** -->
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
+
+	</animation>
+
+</PropertyList>
+
+

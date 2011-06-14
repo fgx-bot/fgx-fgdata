@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<trafficlist>
+<!-- <traffic include="KLM/KLM.xml"/> -->
+<traffic include="UAL/UAL.xml"/>
+<!-- <traffic include="general/KSFO/c172.xml"/> -->
+<!-- <traffic include="traffic.xml"/> -->
+</trafficlist>

@@ -1,0 +1,23 @@
+AC3Db
+MATERIAL "ac3dmat1" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 1 1 1  shi 0  trans 0
+OBJECT world
+kids 1
+OBJECT poly
+name "rect"
+loc 0 126.409 16.8404
+texture "cumulus_textures5.rgb"
+crease 45.000000
+numvert 4
+0 -270.241 -367.082
+0 -270.241 356.954
+0 277.984 356.954
+0 277.984 -367.082
+numsurf 1
+SURF 0x30
+mat 0
+refs 4
+3 0 0.733349
+2 0.507812 0.733349
+1 0.507812 0.367188
+0 0 0.367188
+kids 0

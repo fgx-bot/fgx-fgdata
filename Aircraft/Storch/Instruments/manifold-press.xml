@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<path>manifold-press.ac</path>
+
+    <animation>
+        <type>material</type>
+        <object-name>needle</object-name>
+        <object-name>face</object-name>
+        <emission>
+            <red>0.5</red>
+            <green>0.35</green>
+            <blue>0.2</blue>
+            <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>needle</object-name>
+        <property>engines/engine/mp-osi</property>
+        <interpolation>
+            <!-- Engine model is broken so I am uncalibrating the 
+                 gauge to read what pilots expect... -->
+            <entry><ind>10.0</ind><dep>  0.0</dep></entry>
+            <entry><ind>15.0</ind><dep> 61.0</dep></entry>
+            <!-- <entry><ind> 6.0</ind><dep>  0.0</dep></entry>
+            <entry><ind> 7.0</ind><dep> 61.0</dep></entry> -->
+            <entry><ind>20.0</ind><dep>123.0</dep></entry>
+            <entry><ind>25.0</ind><dep>186.0</dep></entry>
+            <entry><ind>30.0</ind><dep>241.0</dep></entry>
+            <entry><ind>35.0</ind><dep>296.0</dep></entry>
+        </interpolation>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+        </center>
+    </animation>
+
+</PropertyList>

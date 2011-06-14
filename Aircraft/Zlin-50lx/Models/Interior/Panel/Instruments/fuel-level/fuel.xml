@@ -1,0 +1,84 @@
+<?xml version="1.0" ?>
+<PropertyList>
+
+	<path>fuel.ac</path>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>GalsL10</object-name>
+    <property>/consumables/fuel/tank[1]/level-liters</property>
+    <factor>0.01</factor>
+    <step>10</step>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>GalsL1</object-name>
+    <property>/consumables/fuel/tank[1]/level-liters</property>
+    <factor>0.1</factor>
+    <step>1</step>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>GalsF10</object-name>
+    <property>/consumables/fuel/tank[0]/level-liters</property>
+    <factor>0.01</factor>
+    <step>10</step>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>GalsF1</object-name>
+    <property>/consumables/fuel/tank[0]/level-liters</property>
+    <factor>0.1</factor>
+    <step>1</step>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>GalsR10</object-name>
+    <property>/consumables/fuel/tank[2]/level-liters</property>
+    <factor>0.01</factor>
+    <step>10</step>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>GalsR1</object-name>
+    <property>/consumables/fuel/tank[2]/level-liters</property>
+    <factor>0.1</factor>
+    <step>1</step>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+</PropertyList>

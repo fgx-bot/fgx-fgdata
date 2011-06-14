@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!-- $Id$ -->
+<!--
+  MP carriers for FlightGear.
+
+  Copyright (C) 2007 - 2009  Anders Gidenstam  (anders(at)gidenstam.org)
+  This file is released under the GPL license version 2 or later.
+-->
+<PropertyList>
+	<!-- Specific keys -->
+	<title>Controlable AI carrier</title>
+	<key>
+		<name>Ctrl-A</name>
+		<desc>Toggle Manual/AI control.</desc>
+	</key>
+	<key>
+		<name>PageUp</name>
+		<desc>Increase speed.</desc>
+	</key>
+	<key>
+		<name>PageDown</name>
+		<desc>Decrease speed.</desc>
+	</key>
+	<key>
+		<name>Left</name>
+		<desc>Decrease target course.</desc>
+	</key>
+	<key>
+		<name>Right</name>
+		<desc>Increase target course.</desc>
+	</key>
+	<key>
+		<name>shift-p</name>
+		<desc>Toggle radar display. (Bridge View only)</desc>
+	</key>
+
+	<line></line>
+	<line>Course control is only possible in manual control mode.</line>
+	<line>Use the ATC/AI->Options dialog to select base/launch/recovery</line>
+	<line>course, to control deck elevators and deck lights, and</line>
+	<line>to select LSO commentary.</line>
+	<line></line>
+	<line>LSO Commentary defaults to ON. It is selected in LSO View for</line>
+	<line>the selected aircraft or in Approach View for any aircraft that</line>
+	<line>is within the coverage of the FLOLS and range is less than 4 nm</line>
+	<line></line>
+	<line>Radar Display defaults to ON. Parameters may be selected by </line>
+	<line>clicking on items in either of the CONTROL panels. Items in </line>
+	<line>the STATUS or ENVIRONMENT panels are NOT clickable</line>
+</PropertyList>
