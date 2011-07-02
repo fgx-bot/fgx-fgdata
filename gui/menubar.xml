@@ -329,7 +329,8 @@
 
 		<item>
 			<label>Local Weather</label>
-			<name>local_weather</name>
+			<name>local_weather_tiles</name>
+			<enabled>false</enabled>
 			<binding>
 				<command>dialog-show</command>
 				<dialog-name>local_weather_tiles</dialog-name>
@@ -358,6 +359,14 @@
 			<binding>
 				<command>nasal</command>
 				<script>wildfire.dialog.show()</script>
+			</binding>
+		</item>
+
+		<item>
+			<label>Scenery Download</label>
+			<binding>
+				<command>dialog-show</command>
+				<dialog-name>terrasync</dialog-name>
 			</binding>
 		</item>
 
@@ -495,6 +504,17 @@
 			</binding>
 		</item>
 
+                <item>
+                        <label>Jetway Settings</label>
+<!--                        <binding>
+                                <command>nasal</command>
+                                <script>jetways.jetways.dialog()</script>
+                        </binding>-->
+			<binding>
+				<command>dialog-show</command>
+				<dialog-name>jetways</dialog-name>
+			</binding>
+                </item>
 
 
 	</menu>
@@ -503,6 +523,14 @@
 		<label>Multiplayer</label>
 		<name>multiplayer</name>
 
+        <item>
+			<label>Multiplayer settings</label>
+			<binding>
+				<command>dialog-show</command>
+				<dialog-name>multiplayer</dialog-name>
+			</binding>
+		</item>
+		
 		<item>
 			<label>Chat Dialog</label>
 			<binding>
@@ -596,14 +624,6 @@
 		</item>
 
 		<item>
-			<label>Reload Scenery</label>
-			<binding>
-				<command>reinit</command>
-				<subsystem>tile-manager</subsystem>
-			</binding>
-		</item>
-
-		<item>
 			<label>Nasal Console</label>
 			<binding>
 				<command>dialog-show</command>
@@ -631,7 +651,10 @@
 			<label>Display Tutorial Marker</label>
 			<binding>
 				<command>nasal</command>
-				<script>tutorial.dialog()</script>
+				<script>
+					setprop("/nasal/tutorial/enabled",1); # load module on demand
+					tutorial.dialog();
+				</script>
 			</binding>
 		</item>
 
@@ -687,6 +710,7 @@
 		<item>
 			<label>Local Weather (Test)</label>
 			<name>local_weather</name>
+			<enabled>false</enabled>
 			<binding>
 				<command>dialog-show</command>
 				<dialog-name>local_weather</dialog-name>

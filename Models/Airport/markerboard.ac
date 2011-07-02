@@ -4,7 +4,7 @@ OBJECT world
 kids 2
 OBJECT poly
 name "Plane.001"
-texture "//markerboard.png"
+texture "markerboard.png"
 texrep 1 1
 numvert 8
 1.502466 0.700003 2e-06

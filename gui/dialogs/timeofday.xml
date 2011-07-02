@@ -173,7 +173,6 @@
 			<button>
 				<legend>Clock Time</legend>
 				<equal>true</equal>
-				<key>0</key>
 				<binding>
 					<command>timeofday</command>
 					<timeofday>real</timeofday>
@@ -183,7 +182,6 @@
 			<button>
 				<legend>Dawn</legend>
 				<equal>true</equal>
-				<key>1</key>
 				<binding>
 					<command>timeofday</command>
 					<timeofday>dawn</timeofday>
@@ -193,7 +191,6 @@
 			<button>
 				<legend>Morning</legend>
 				<equal>true</equal>
-				<key>2</key>
 				<binding>
 					<command>timeofday</command>
 					<timeofday>morning</timeofday>
@@ -203,7 +200,6 @@
 			<button>
 				<legend>Noon</legend>
 				<equal>true</equal>
-				<key>3</key>
 				<binding>
 					<command>timeofday</command>
 					<timeofday>noon</timeofday>
@@ -213,7 +209,6 @@
 			<button>
 				<legend>Afternoon</legend>
 				<equal>true</equal>
-				<key>4</key>
 				<binding>
 					<command>timeofday</command>
 					<timeofday>afternoon</timeofday>
@@ -223,7 +218,6 @@
 			<button>
 				<legend>Dusk</legend>
 				<equal>true</equal>
-				<key>5</key>
 				<binding>
 					<command>timeofday</command>
 					<timeofday>dusk</timeofday>
@@ -233,7 +227,6 @@
 			<button>
 				<legend>Evening</legend>
 				<equal>true</equal>
-				<key>6</key>
 				<binding>
 					<command>timeofday</command>
 					<timeofday>evening</timeofday>
@@ -243,7 +236,6 @@
 			<button>
 				<legend>Night</legend>
 				<equal>true</equal>
-				<key>7</key>
 				<binding>
 					<command>timeofday</command>
 					<timeofday>midnight</timeofday>

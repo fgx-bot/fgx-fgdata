@@ -9,17 +9,20 @@
 	<nasal>
 		<open><![CDATA[
 		 var self = cmdarg();
-		 var dlgname = self.getNode("name").getValue();
 		 var aptlist = props.globals.getNode(self.getNode("text/property").getValue(), 1);
-		 var UPDATE_PERIOD = 1;
+		 var loadedN = props.globals.getNode("/nasal/jetways/loaded", 1);
+		 var UPDATE_PERIOD = 5;
 		 var update = func
 		  {
-		  var list = "";
-		  foreach (var apt; jetways.loaded_airports)
+		  if (loadedN.getBoolValue())
 		   {
+		   var list = "";
+		   foreach (var apt; jetways.loaded_airports)
+		    {
 		   list ~= apt ~ " ";
+		    }
+		   aptlist.setValue(list == "" ? "No airports loaded" : "Loaded airports: " ~ list);
 		   }
-		  aptlist.setValue(list == "" ? "No airports loaded" : "Loaded airports: " ~ list);
 		  settimer(update, UPDATE_PERIOD);
 		  };
 		 settimer(update, 0);
@@ -57,7 +60,7 @@
 	<checkbox>
 		<halign>left</halign>
 		<label>Enable animated jetways</label>
-		<property>/sim/jetways/enabled</property>
+		<property>/nasal/jetways/enabled</property>
 		<live type="bool">true</live>
 		<binding>
 			<command>dialog-apply</command>
@@ -69,7 +72,7 @@
 		<property>/sim/jetways/interact-with-multiplay</property>
 		<live type="bool">true</live>
 		<enable>
-			<property>/sim/jetways/enabled</property>
+			<property>/nasal/jetways/enabled</property>
 		</enable>
 		<binding>
 		        <command>dialog-apply</command>
@@ -78,10 +81,10 @@
 	<checkbox>
 		<halign>left</halign>
 		<label>Enable jetway editor</label>
-		<property>/sim/jetways/enable-editor</property>
+		<property>/nasal/jetways_edit/enabled</property>
 		<live type="bool">true</live>
 		<enable>
-			<property>/sim/jetways/enabled</property>
+			<property>/nasal/jetways/enabled</property>
 		</enable>
 		<binding>
 		        <command>dialog-apply</command>
@@ -93,7 +96,7 @@
 		<property>/sim/jetways/debug</property>
 		<live type="bool">true</live>
 		<enable>
-			<property>/sim/jetways/enabled</property>
+			<property>/nasal/jetways/enabled</property>
 		</enable>
 		<binding>
 		        <command>dialog-apply</command>
@@ -106,15 +109,13 @@
 			<legend>Open editor</legend>
 			<enable>
 				<and>
-					<property>/sim/jetways/enabled</property>
-					<property>/sim/jetways/enable-editor</property>
+					<property>/nasal/jetways/enabled</property>
+					<property>/nasal/jetways_edit/enabled</property>
 				</and>
 			</enable>
 			<binding>
-				<command>nasal</command>
-				<script>
-				 jetways_edit.dialog();
-				</script>
+				<command>dialog-show</command>
+				<dialog-name>jetways-adjust</dialog-name>
 			</binding>
 		</button>
 	</group>
@@ -124,7 +125,7 @@
 	<text>
 		<halign>left</halign>
 		<label>No airports loaded</label>
-		<property>/sim/gui/dialogs/jetways/dialog/loaded-airports</property>
+		<property>/sim/gui/dialogs/jetways/loaded-airports</property>
 		<live type="bool">true</live>
 	</text>
 

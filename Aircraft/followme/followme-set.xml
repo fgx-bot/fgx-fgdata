@@ -5,7 +5,14 @@
 
 	<description>Follow Me</description>
 	<author>Gijs de Rooy</author>
-	<status>alpha</status>
+	<status>early production</status>
+	<rating>
+		<FDM type="int">4</FDM>
+		<systems type="int">2</systems>
+		<cockpit type="int">3</cockpit>
+		<model type="int">4</model>
+	</rating>
+	
 	<flight-model>jsb</flight-model>
 	<aero>followme</aero>
 

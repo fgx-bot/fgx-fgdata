@@ -1752,7 +1752,6 @@
       </textbox>
       <button>
         <legend>Apply</legend>
-        <key>Esc</key>
         <pref-width>50</pref-width>
         <pref-height>50</pref-height>
         <border>2</border>

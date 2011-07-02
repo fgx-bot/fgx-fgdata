@@ -978,6 +978,21 @@
     <description>strings/jpg-httpd-desc</description>
    </option>
 
+   <option>
+    <name>disable-terrasync</name>
+    <description>strings/disable-terrasync-desc</description>
+   </option>
+
+   <option>
+    <name>enable-terrasync</name>
+    <description>strings/enable-terrasync-desc</description>
+   </option>
+
+   <option>
+    <name>terrasync-dir</name>
+    <description>strings/terrasync-dir-desc</description>
+   </option>
+
   </section>
 
   <section>

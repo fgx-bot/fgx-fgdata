@@ -216,6 +216,7 @@ var window = {
 #
 #     dpy.interval = 0;                        # update every frame
 #     dpy.format = "%.3g";                     # max. 3 digits fractional part
+#     dpy.tagformat = "%-12s";                 # align prop names to 12 spaces
 #     dpy.redraw();                            # pick up new settings
 #
 #
@@ -240,6 +241,7 @@ var display = {
 		m.tags = show_tags;
 		m.font = "HELVETICA_14";
 		m.color = [1, 1, 1, 1];
+		m.tagformat = "%s";
 		m.format = "%.12g";
 		m.interval = 0.1;
 		#
@@ -319,9 +321,10 @@ var display = {
 				if (e.node.getPath() == path)
 					continue nextprop;
 				e.parent = e.node;
-				e.tag = me.nameof(e.node);
+				e.tag = sprintf(me.tagformat, me.nameof(e.node));
 			}
-			append(me.entries, { node: n, parent: n, tag: me.nameof(n),
+			append(me.entries, { node: n, parent: n,
+					tag: sprintf(me.tagformat, me.nameof(n)),
 					target: me.base.getChild("entry", size(me.entries), 1) });
 		}
 

@@ -2,7 +2,7 @@
 ##
 ## Nasal module for connecting a local AI carrier to a MP player.
 ##
-##  Copyright (C) 2007 - 2010  Anders Gidenstam  (anders(at)gidenstam.org)
+##  Copyright (C) 2007 - 2011  Anders Gidenstam  (anders(at)gidenstam.org)
 ##  Copyright (C) 2009  Vivian Meazza
 ##  This file is licensed under the GPL license version 2 or later.
 ##
@@ -169,9 +169,11 @@ Manager.update = func {
     distance_to_master * math.sin(v);
   var along_track_error  =
     distance_to_master * math.cos(v);
-  var master_tgt_hdg = (me.rplayer.getNode(mp_tgt_hdg).getValue());
-  var master_tgt_spd = (me.rplayer.getNode(mp_tgt_spd).getValue());
-  var master_turn_radius = (me.rplayer.getNode(mp_turn_radius).getValue());
+  var master_tgt_hdg     = as_num(me.rplayer.getNode(mp_tgt_hdg).getValue(),
+                                  me.rplayer.getNode(mp_heading).getValue());
+  var master_tgt_spd     = as_num(me.rplayer.getNode(mp_tgt_spd).getValue(),
+                                  me.rplayer.getNode(mp_speed).getValue());
+  var master_turn_radius = as_num(me.rplayer.getNode(mp_turn_radius).getValue());
 
   var diff = master_course - master_tgt_hdg;
 
@@ -365,25 +367,6 @@ var find_carrier_players = func {
     return res;
 }
 
-#################################################################
-# Lists the current MP carrier players.
-var list = func {
-    var mpplayers =
-        props.globals.getNode("/ai/models").getChildren("multiplayer");
-    
-    print("MPCarriers ... Carrier list:");
-    foreach (var pilot; mpplayers) {
-        if ((pilot.getNode("valid") != nil) and
-            (pilot.getNode("valid").getValue()) and
-            (pilot.getNode("sim/model/ac-type") != nil) and
-            (pilot.getNode("sim/model/ac-type").getValue() == "MP-Nimitz")) {
-            print("    " ~ pilot.getNode("callsign").getValue() ~
-                  " - " ~ "MP-Nimitz");
-        }
-    }
-    debug.tree("/sim/mp-carriers");
-}
-
 ###############################################################################
 # MPCarrier selection dialog.
 var CARRIER_DLG = 0;
@@ -526,6 +509,10 @@ carrier_dialog.select_action = func (type, n) {
     me._redraw_();
 }
 ###############################################################################
+
+var as_num = func (val, default=0.0) {
+    return (typeof(val) == "scalar") ? val : default;
+}
 
 ###############################################################################
 # Overall initialization. Should only take place when the MPCarrier module is

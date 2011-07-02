@@ -134,8 +134,9 @@ var attributes = func(p, verbose = 1) {
 	var W = p.getAttribute("trace-write") ? "W" : "";
 	var A = p.getAttribute("archive")     ? "A" : "";
 	var U = p.getAttribute("userarchive") ? "U" : "";
+	var P = p.getAttribute("preserve")    ? "P" : "";
 	var T = p.getAttribute("tied")        ? "T" : "";
-	var attr = r ~ w ~ R ~ W ~ A ~ U ~ T;
+	var attr = r ~ w ~ R ~ W ~ A ~ U ~ P ~ T;
 	var type = "(" ~ p.getType();
 	if (size(attr))
 		type ~= ", " ~ attr;

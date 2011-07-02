@@ -6,9 +6,21 @@
 
  <name>local_weather_config</name>
  <width>400</width>
- <height>400</height>
+ <height>440</height>
  <modal>false</modal>
 
+
+<checkbox>
+   <x>5</x>
+   <y>400</y>
+   <width>15</width>
+   <height>15</height>
+   <label>Enable local weather module</label>
+   <property>/nasal/local_weather/enabled</property>
+   <binding>
+    <command>dialog-apply</command>
+   </binding>
+</checkbox>
 
 <text>
   <x>5</x>

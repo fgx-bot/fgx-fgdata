@@ -1265,6 +1265,17 @@ _setlistener("/sim/signals/screenshot", func {
      }
 });
 
+var terrasync_stalled = 0;
+_setlistener("/sim/terrasync/stalled", func {
+     var stalled = getprop("/sim/terrasync/stalled");
+     if (stalled and !terrasync_stalled)
+     {
+         var button = { button: { legend: "Ok", default: 1, binding: { command: "dialog-close" }}};
+         popupTip("Scenery download stalled. Too many errors reported. See log output.", 600, button);
+     }
+     terrasync_stalled = stalled;
+});
+
 var do_welcome = 1;
 _setlistener("/sim/signals/fdm-initialized", func {
     var haveTutorials = size(props.globals.getNode("/sim/tutorials", 1).getChildren("tutorial"));

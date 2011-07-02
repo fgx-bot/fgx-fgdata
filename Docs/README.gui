@@ -400,6 +400,7 @@ The flags printed after the node type have the following meaning:
   W       ->  trace write operations
   A       ->  archive bit set
   U       ->  user archive bit set
+  P       ->  preserved bit set (value is preserved on sim-reset)
   T       ->  property is "tied"
 
   Ln      ->  number of listeners attached to this node

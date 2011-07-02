@@ -44,30 +44,31 @@
 			foreach (var v; view.views) {
 				var index = v.getIndex();
 				var enabled = v.initNode("enabled", 1, "BOOL");
-
-				if (index >= 200) {
-					if (mode != 2) {
-						mode = 2;
-						group.getChild("hrule", 1, 1);
-						var t = group.getChild("text", 1, 1);
-						t.getNode("label", 1).setValue("Other Views");
-					}
-
-				} elsif (index >= 100) {
-					aircraft.data.add(enabled);
-					if (mode != 1) {
-						mode = 1;
-						group.getChild("hrule", 0, 1);
-						var t = group.getChild("text", 0, 1);
-						t.getNode("label", 1).setValue("\"" ~ ac ~ "\" Specific Views");
-					}
-				}
-
-				var target = group.getChild("checkbox", index, 1);
-				props.copy(group.getNode("checkbox-template"), target);
 				var name = v.getNode("name");
-				target.getNode("label").setValue(name != nil ? name.getValue() : ("** unnamed view " ~ index ~ " **"));
-				target.getNode("property").setValue(enabled.getPath());
+				if (name != nil) {
+					if (index >= 200) {
+						if (mode != 2) {
+							mode = 2;
+							group.getChild("hrule", 1, 1);
+							var t = group.getChild("text", 1, 1);
+							t.getNode("label", 1).setValue("Other Views");
+						}
+
+					} elsif (index >= 100) {
+						aircraft.data.add(enabled);
+						if (mode != 1) {
+							mode = 1;
+							group.getChild("hrule", 0, 1);
+							var t = group.getChild("text", 0, 1);
+							t.getNode("label", 1).setValue("\"" ~ ac ~ "\" Specific Views");
+						}
+					}
+
+					var target = group.getChild("checkbox", index, 1);
+					props.copy(group.getNode("checkbox-template"), target);
+					target.getNode("label").setValue(name != nil ? name.getValue() : ("** unnamed view " ~ index ~ " **"));
+					target.getNode("property").setValue(enabled.getPath());
+				}
 			}
 		</open>
 	</nasal>

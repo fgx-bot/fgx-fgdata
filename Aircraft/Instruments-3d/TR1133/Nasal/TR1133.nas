@@ -49,9 +49,14 @@ var TR1133_init = func(){
     comm1_selected_node.setValue(0);
     comm1_standby_node.setValue(0);
 
+    # override F12
+    setprop("input/keyboard/key[268]/binding/command", "nasal");
+    setprop("input/keyboard/key[268]/binding/script", "TR1133.radio_dlg.open()");
+
     # Disable the menu item "Equipment > radio" so we use our own gui: " > Radio".
-    print("Disabling Menu: Equipment -> Radios GUI use Spitfire -> Radio");
-    gui.menuEnable("radio",0);
+    print("Disabling Menu: Equipment -> Radios GUI using TR1133 -> Radio");
+
+    gui.menuBind("radio", "TR1133.radio_dlg.open()");
 
 
 # =============================== listeners ===============================
