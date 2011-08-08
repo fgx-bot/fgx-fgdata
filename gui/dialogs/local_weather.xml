@@ -1008,7 +1008,7 @@
    </binding>
   </button>
 
-<button>
+<!--<button>
    <x>300</x>
    <y>0</y>
    <legend>Test</legend>
@@ -1017,7 +1017,7 @@
     <command>nasal</command>
      <script>local_weather.test()</script>
    </binding>
-  </button>
+  </button>-->
 
  </group>
 

@@ -87,32 +87,10 @@
         <command>nasal</command>
         <script>apply()</script>
       </binding>
-     <binding>
-        <command>reinit</command>
-        <subsystem>ai_model</subsystem>
-      </binding>
       <binding>
         <command>dialog-close</command>
       </binding>
     </button>
-
-<!--
-    <button>
-      <legend>Apply</legend>
-      <equal>true</equal>
-      <binding>
-        <command>dialog-apply</command>
-      </binding>
-      <binding>
-        <command>nasal</command>
-        <script>apply()</script>
-      </binding>
-     <binding>
-        <command>reinit</command>
-        <subsystem>ai_model</subsystem>
-      </binding>
-    </button>
--->
 
     <button>
       <legend>Cancel</legend>

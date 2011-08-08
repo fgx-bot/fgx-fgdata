@@ -77,9 +77,9 @@ void main (void)
     float ReflectedEye = max(dot(Reflected, Eye), 0.0);
     float eyeFact = pow(ReflectedEye, 20.0);
     c1 += 0.3 * gl_LightSource[0].diffuse * (1.0-eyeFact) * bumpFact*bumpFact;
-    c1 += 0.4 * gl_LightSource[0].diffuse * eyeFact * 3*bumpFact;
+    c1 += 0.4 * gl_LightSource[0].diffuse * eyeFact * 3.0*bumpFact;
     eyeFact = pow(eyeFact, 20.0);
-    c1 += gl_LightSource[0].specular * eyeFact * 4*bumpFact;
+    c1 += gl_LightSource[0].specular * eyeFact * 4.0*bumpFact;
 
     vec4 finalColor = c1;
     gl_FragColor = mix(gl_Fog.color, finalColor, fogFactor);

@@ -6,8 +6,6 @@ varying vec3 VTangent;
 varying vec3 VBinormal;
 varying vec3 VNormal;
 varying vec3 Normal;
-varying float bump;
-varying float fogCoord;
 
 uniform sampler3D NoiseTex;
 uniform sampler2D SampleTex;
@@ -61,6 +59,7 @@ float ray_intersect(sampler2D reliefMap, vec2 dp, vec2 ds)
 
 void main (void)
 {
+	float bump = 1.0;
 
 	if ( quality_level >= 3.5 ) {
 		linear_search_steps = 20;
@@ -100,6 +99,7 @@ void main (void)
 	float vegetationlevel = (rawpos.z)+nvL[2]*3000.0;
 
 	const float LOG2 = 1.442695;
+        float fogCoord = abs(ecPosition.z / ecPosition.w);
 	float fogFactor = exp(-gl_Fog.density * gl_Fog.density * fogCoord * fogCoord);
 	float biasFactor = exp2(-0.00000002 * fogCoord * fogCoord * LOG2);
 
@@ -137,39 +137,39 @@ void main (void)
 	c5a = mix(c3, c4a, 1.0);
 	
 	
-	if (vegetationlevel <= 2200) {
+	if (vegetationlevel <= 2200.0) {
 	c1 = mix(c2, c5, clamp(0.65, n*0.1, 0.5));
 	diffuse = gl_Color.rgb * max(0.7, dot(N, l)) * max(0.9, dot(VNormal, gl_LightSource[0].position.xyz));
 	}
 	
-	if (vegetationlevel > 2200 && vegetationlevel < 2300) {
+	if (vegetationlevel > 2200.0 && vegetationlevel < 2300.0) {
 	c1 = mix(c2, c5, clamp(0.65, n*0.5, 0.35));
 	diffuse = gl_Color.rgb * max(0.7, dot(N, l)) * max(0.9, dot(VNormal, gl_LightSource[0].position.xyz));
 	}
 	
-	if (vegetationlevel >= 2300 && vegetationlevel < 2480) {
+	if (vegetationlevel >= 2300.0 && vegetationlevel < 2480.0) {
 	c1 = mix(c2, c5a, clamp(0.65, n*0.5, 0.30));
 	diffuse = gl_Color.rgb * max(0.85, dot(N, l)) * max(0.9, dot(VNormal, gl_LightSource[0].position.xyz));
 	}
 	
-	if (vegetationlevel >= 2480 && vegetationlevel < 2530) {
+	if (vegetationlevel >= 2480.0 && vegetationlevel < 2530.0) {
 	c1 = mix(c2, c5a, clamp(0.65, n*0.5, 0.20));
 	diffuse = gl_Color.rgb * max(0.85, dot(N, l)) * max(0.9, dot(VNormal, gl_LightSource[0].position.xyz));
 	}
 	
-	if (vegetationlevel >= 2530 && vegetationlevel < 2670) {
+	if (vegetationlevel >= 2530.0 && vegetationlevel < 2670.0) {
 	c1 = mix(c2, c5, clamp(0.65, n*0.5, 0.10));
 	diffuse = gl_Color.rgb * max(0.85, dot(N, l)) * max(0.9, dot(VNormal, gl_LightSource[0].position.xyz));
 	}
 	
-	if (vegetationlevel >= 2670) {
+	if (vegetationlevel >= 2670.0) {
 	c1 = mix(c2, c5, clamp(0.0, n*0.1, 0.4));
 	diffuse = gl_Color.rgb * max(0.85, dot(N, l)) * max(0.9, dot(VNormal, gl_LightSource[0].position.xyz));
 	}
 	
 	
 	//adding snow and permanent snow/glacier
-	if (vegetationlevel > snowlevel || vegetationlevel > 3100) {
+	if (vegetationlevel > snowlevel || vegetationlevel > 3100.0) {
 	c3 = mix(vec4(n+1.0, n+1.0, n+1.0, 0.0), c1, smoothstep(0.990, 0.965, abs(normalize(Normal).z)+nvL[2]*1.3));
 	c4 = mix(vec4(n+1.0, n+1.0, n+1.0, 0.0), c1, smoothstep(0.990, 0.965, abs(normalize(Normal).z)+nvL[2]*0.9));
 	c5 = mix(c3, c4, 1.0);

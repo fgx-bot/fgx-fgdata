@@ -28,7 +28,7 @@ void main(void)
   // Find a rotation matrix that rotates 1,0,0 into u. u, r and w are
   // the columns of that matrix.
   vec3 absu = abs(u);
-  vec3 r = normalize(vec3(-u.y, u.x, 0));
+  vec3 r = normalize(vec3(-u.y, u.x, 0.0));
   vec3 w = cross(u, r);
 
   // Do the matrix multiplication by [ u r w pos]. Assume no
@@ -63,7 +63,7 @@ void main(void)
   gl_FrontColor += gl_FrontLightModelProduct.sceneColor;
 
   // As we get within 100m of the sprite, it is faded out. Equally at large distances it also fades out.
-  gl_FrontColor.a = min(smoothstep(10.0, 100.0, fogCoord), 1 - smoothstep(40000.0, 45000.0, fogCoord));
+  gl_FrontColor.a = min(smoothstep(10.0, 100.0, fogCoord), 1.0 - smoothstep(40000.0, 45000.0, fogCoord));
   gl_BackColor = gl_FrontColor;
 
   // Fog doesn't affect clouds as much as other objects.

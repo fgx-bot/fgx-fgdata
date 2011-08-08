@@ -7,20 +7,17 @@
 	<texture alias="../../texture"/> 
 </animation>
 
-<animation>
-	<type>material</type> 
+<effect>
+	<inherits-from>Effects/lightmap</inherits-from>
+	<parameters>
+		<texture n="1">
+			<image>Aircraft/Instruments-3d/cdu/boeing_lightmap.png</image>
+		</texture>
+		<condition><use>/instrumentation/cdu/serviceable</use></condition>
+		<factor><use>/controls/lighting/panel-norm</use></factor>
+	</parameters>
 	<object-name>CDU</object-name>
-	<emission>	
-		<factor-prop>/controls/lighting/panel-norm</factor-prop>
-		<red>0.1</red>	
-		<green>0.1</green>	
-		<blue>0.1</blue>
-	</emission>
-</animation>
-
-<animation>
-	<type>material</type> 
-	<object-name>Btn.A</object-name>
+ 	<object-name>Btn.A</object-name>
 	<object-name>Btn.B</object-name>
 	<object-name>Btn.C</object-name>
 	<object-name>Btn.D</object-name>
@@ -89,15 +86,7 @@
 	<object-name>Btn.side.r.4</object-name>
 	<object-name>Btn.side.r.5</object-name>
 	<object-name>Btn.side.r.6</object-name>
-	<condition>
-		<property>/instrumentation/cdu/serviceable</property>
-	</condition>
-	<emission>	
-		<red>1</red>	
-		<green>0.8</green>	
-		<blue>0.5</blue>
-	</emission>
-</animation>
+</effect>
 
 <model>
 	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>

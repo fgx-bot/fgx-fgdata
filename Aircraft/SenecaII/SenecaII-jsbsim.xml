@@ -760,7 +760,7 @@
     </flight_control>
 
     <system file="property-helpers"/>
-    <!-- system file="prop-governor"/ -->
+    <system file="prop-governor"/>
 
     <!-- **********************************************************************
         AERODYNAMICS

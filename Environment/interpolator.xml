@@ -127,6 +127,22 @@
   </filter>
 
   <filter>
+    <name>EnvironmentInterpolator:wind-from-down</name>
+    <input>
+      <expression>
+        <sum>
+          <property>/environment/thermal-lift-fps</property>
+          <property>/environment/ridge-lift-fps</property>
+          <property>/environment/local-weather-lift-fps</property>
+        </sum>
+      </expression>
+    </input>
+    <output>/environment/wind-from-down-fps</output>
+    <type>exponential</type>
+    <filter-time>0.5</filter-time>
+  </filter>
+
+  <filter>
     <name>EnvironmentInterpolator:turbulence-raw-magnitude</name>
     <enable>
       <condition>

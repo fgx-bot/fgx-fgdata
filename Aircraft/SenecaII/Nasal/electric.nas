@@ -179,7 +179,7 @@ GeneratorElement.new = func(node) {
   obj.switchProperty = props.globals.getNode( s );
 
   s = node.getNode( "rpm-source" ).getValue();
-  obj.rpmNode = props.globals.getNode( s );
+  obj.rpmNode = props.globals.getNode( s, 1 );
   obj.maxVoltsNode = node.getNode( "max-volts" );
   obj.minVoltsNode = node.getNode( "min-volts" );
   obj.maxAmpsNode  = node.getNode( "max-amps" );
@@ -218,18 +218,21 @@ GeneratorElement.generatorElementUpdate = func {
   #if the output is above regulator voltage, switch generator off
   var u = me.node.getParent().getNode("u-volts").getValue();
 
+
   if( rpm < minRPM ) {
     me.u0 = 0.0;
     me.ri = 10;
   } else {
 
     me.u0 = rpm/minRPM * minVolts;
-    var dri = (u-maxVolts) / me.i;
-    me.ri = me.ri - dri;
-    if( me.ri < 0.5 ) {
-      me.ri = 0.5;
+    if( me.i > (u-maxVolts)/(me.ri+0.5) ) {
+      var dri = (u-maxVolts) / me.i;
+      me.ri = me.ri - dri;
+    } else {
+        me.ri = 0.5;
     }
   }
+#print("RPM=", rpm, ", U=", u, , ", U0=", me.u0, ", RI=", me.ri );
 }
 
 GeneratorElement.update = func(dt) {
@@ -295,10 +298,10 @@ BatteryElement.batteryElementUpdate = func(dt) {
   me.voltsNormNode.setDoubleValue( volts_norm );
   me.u0 = me.design_volts * volts_norm;
 
-  if( c != 0 ) {
+  if( c > me.ri_factor/100 ) {
     me.ri = me.ri_factor / c;
   } else {
-    me.ri = 1e99;
+    me.ri = 100;
   }
 }
 

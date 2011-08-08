@@ -1,6 +1,6 @@
 <PropertyList>
 
-  <game-mode type="bool">false</game-mode>
+  <game-mode type="bool">true</game-mode>
 
   <panel include="ifr-panel.xml"/>
 
@@ -8,6 +8,7 @@
     <panel>
       <flip-x type="bool">false</flip-x>
     </panel>
+    <frame-rate-throttle-hz>30</frame-rate-throttle-hz>
     <instrument-options>
       <omit-knobs type="bool">true</omit-knobs>
     </instrument-options>

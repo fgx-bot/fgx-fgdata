@@ -100,8 +100,9 @@ var stepView = func(step, force = 0) {
             n = size(views) - 1;
         elsif (n >= size(views))
             n = 0;
-        if (force or (var e = (views[n].getNode("enabled"))) == nil or
-            (e.getBoolValue() and (views[n].getNode("name")!=nil)))
+        var e = views[n].getNode("enabled");
+        if (force or (e == nil or e.getBoolValue()) and
+            (views[n].getNode("name")!=nil))
             break;
     }
     setprop("/sim/current-view/view-number", n);

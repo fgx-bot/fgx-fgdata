@@ -1313,8 +1313,12 @@ var rc_emblem = determine_emblem();
 var doors = Doors.new();
 var config_dialog = gui.Dialog.new("/sim/gui/dialogs/bo105/config/dialog", "Aircraft/bo105/Dialogs/config.xml");
 
+var first_init = 1;
 
 setlistener("/sim/signals/fdm-initialized", func {
+	if (!first_init) return;
+	first_init = 0;
+
 	gui.menuEnable("autopilot", 0);
 	init_rotoranim();
 	vibration.init();
@@ -1334,7 +1338,8 @@ setlistener("/sim/signals/fdm-initialized", func {
 		collective.setDoubleValue(1);
 		aircraft.livery.rescan();
 		reconfigure();
-		crashed = 0;
+		if (crashed)
+			crash(crashed = 0);
 	});
 
 	setlistener("sim/crashed", func(n) {

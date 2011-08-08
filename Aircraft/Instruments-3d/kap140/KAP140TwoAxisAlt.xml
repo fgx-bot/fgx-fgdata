@@ -261,26 +261,14 @@ properties' values.
       </equals>
     </condition>
   </animation>
+  
   <animation>
     <type>select</type>
     <object-name>vs-minus</object-name>
-    <object-name>vs-digits-minus</object-name>
-    <condition>
-      <and>
-        <equals>
-          <property>/autopilot/KAP140/annunciators/vs-number</property>
-          <value type="bool">true</value>
-        </equals>
-        <greater-than>
-          <value>0</value>
-          <property>/autopilot/KAP140/settings/target-pressure-rate</property>
-        </greater-than>
-      </and>
-    </condition>
-  </animation>
-  <animation>
-    <type>select</type>
-    <object-name>vs-digits</object-name>
+    <object-name>vs-digit2-minus</object-name>
+    <object-name>vs-digit3-minus</object-name>
+    <object-name>vs-digit4-minus</object-name>
+    <object-name>vs-digit5-minus</object-name>
     <condition>
       <and>
         <equals>
@@ -288,25 +276,38 @@ properties' values.
           <value type="bool">true</value>
         </equals>
         <less-than>
-          <value>0</value>
-          <property>/autopilot/KAP140/settings/target-pressure-rate</property>
+          <property>/autopilot/KAP140/settings/target-pressure-rate-fpm</property>
+          <value>-1.0</value>
         </less-than>
+      </and>
+    </condition>
+  </animation>
+  <animation>
+    <type>select</type>
+    <object-name>vs-digit2</object-name>
+    <object-name>vs-digit3</object-name>
+    <object-name>vs-digit4</object-name>
+    <object-name>vs-digit5</object-name>
+    <condition>
+      <and>
+        <equals>
+          <property>/autopilot/KAP140/annunciators/vs-number</property>
+          <value type="bool">true</value>
+        </equals>
+        <greater-than-equals>
+          <property>/autopilot/KAP140/settings/target-pressure-rate-fpm</property>
+          <value>-1.0</value>
+        </greater-than-equals>
       </and>
     </condition>
   </animation>
   <animation>
     <type>textranslate</type>
     <object-name>vs-digit5</object-name>
-    <property>/autopilot/KAP140/settings/target-pressure-rate</property>
-    <condition>
-      <less-than>
-        <value>0</value>
-        <property>/autopilot/KAP140/settings/target-pressure-rate</property>
-      </less-than>
-    </condition>
-    <property>/autopilot/KAP140/settings/target-pressure-rate</property>
-    <factor>-5800</factor>
-    <step>0.000017241379</step>
+    <property>/autopilot/KAP140/settings/target-pressure-rate-fpm</property>
+    <factor>0.1</factor>
+    <step>1</step>
+    <bias>0.5</bias>
     <axis>
       <x>1</x>
       <y>0</y>
@@ -316,16 +317,10 @@ properties' values.
   <animation>
     <type>textranslate</type>
     <object-name>vs-digit4</object-name>
-    <property>/autopilot/KAP140/settings/target-pressure-rate</property>
-    <condition>
-      <less-than>
-        <value>0</value>
-        <property>/autopilot/KAP140/settings/target-pressure-rate</property>
-      </less-than>
-    </condition>
-    <property>/autopilot/KAP140/settings/target-pressure-rate</property>
-    <factor>-580</factor>
-    <step>0.00017241379</step>
+    <property>/autopilot/KAP140/settings/target-pressure-rate-fpm</property>
+    <factor>0.01</factor>
+    <step>10</step>
+    <bias>0.5</bias>
     <axis>
       <x>1</x>
       <y>0</y>
@@ -335,16 +330,10 @@ properties' values.
   <animation>
     <type>textranslate</type>
     <object-name>vs-digit3</object-name>
-    <property>/autopilot/KAP140/settings/target-pressure-rate</property>
-    <condition>
-      <less-than>
-        <value>0</value>
-        <property>/autopilot/KAP140/settings/target-pressure-rate</property>
-      </less-than>
-    </condition>
-    <property>/autopilot/KAP140/settings/target-pressure-rate</property>
-    <factor>-58</factor>
-    <step>0.0017241379</step>
+    <property>/autopilot/KAP140/settings/target-pressure-rate-fpm</property>
+    <factor>0.001</factor>
+    <step>100</step>
+    <bias>0.5</bias>
     <axis>
       <x>1</x>
       <y>0</y>
@@ -354,16 +343,10 @@ properties' values.
   <animation>
     <type>textranslate</type>
     <object-name>vs-digit2</object-name>
-    <property>/autopilot/KAP140/settings/target-pressure-rate</property>
-    <condition>
-      <less-than>
-        <value>0</value>
-        <property>/autopilot/KAP140/settings/target-pressure-rate</property>
-      </less-than>
-    </condition>
-    <property>/autopilot/KAP140/settings/target-pressure-rate</property>
-    <factor>-5.8</factor>
-    <step>0.017241379</step>
+    <property>/autopilot/KAP140/settings/target-pressure-rate-fpm</property>
+    <factor>0.0001</factor>
+    <step>1000</step>
+    <bias>0.5</bias>
     <axis>
       <x>1</x>
       <y>0</y>
@@ -373,16 +356,10 @@ properties' values.
   <animation>
     <type>textranslate</type>
     <object-name>vs-digit5-minus</object-name>
-    <property>/autopilot/KAP140/settings/target-pressure-rate</property>
-    <condition>
-      <greater-than>
-        <value>0</value>
-        <property>/autopilot/KAP140/settings/target-pressure-rate</property>
-      </greater-than>
-    </condition>
-    <property>/autopilot/KAP140/settings/target-pressure-rate</property>
-    <factor>5800</factor>
-    <step>0.000017241379</step>
+    <property>/autopilot/KAP140/settings/target-pressure-rate-fpm</property>
+    <factor>-0.1</factor>
+    <step>1</step>
+    <bias>0.5</bias>    
     <axis>
       <x>1</x>
       <y>0</y>
@@ -392,16 +369,10 @@ properties' values.
   <animation>
     <type>textranslate</type>
     <object-name>vs-digit4-minus</object-name>
-    <property>/autopilot/KAP140/settings/target-pressure-rate</property>
-    <condition>
-      <greater-than>
-        <value>0</value>
-        <property>/autopilot/KAP140/settings/target-pressure-rate</property>
-      </greater-than>
-    </condition>
-    <property>/autopilot/KAP140/settings/target-pressure-rate</property>
-    <factor>580</factor>
-    <step>0.00017241379</step>
+    <property>/autopilot/KAP140/settings/target-pressure-rate-fpm</property>
+    <factor>-0.01</factor>
+    <step>10</step>
+    <bias>9.5</bias>    
     <axis>
       <x>1</x>
       <y>0</y>
@@ -411,16 +382,10 @@ properties' values.
   <animation>
     <type>textranslate</type>
     <object-name>vs-digit3-minus</object-name>
-    <property>/autopilot/KAP140/settings/target-pressure-rate</property>
-    <condition>
-      <greater-than>
-        <value>0</value>
-        <property>/autopilot/KAP140/settings/target-pressure-rate</property>
-      </greater-than>
-    </condition>
-    <property>/autopilot/KAP140/settings/target-pressure-rate</property>
-    <factor>58</factor>
-    <step>0.0017241379</step>
+    <property>/autopilot/KAP140/settings/target-pressure-rate-fpm</property>
+    <factor>-0.001</factor>
+    <step>100</step>
+    <bias>99.5</bias>
     <axis>
       <x>1</x>
       <y>0</y>
@@ -430,22 +395,17 @@ properties' values.
   <animation>
     <type>textranslate</type>
     <object-name>vs-digit2-minus</object-name>
-    <property>/autopilot/KAP140/settings/target-pressure-rate</property>
-    <condition>
-      <greater-than>
-        <value>0</value>
-        <property>/autopilot/KAP140/settings/target-pressure-rate</property>
-      </greater-than>
-    </condition>
-    <property>/autopilot/KAP140/settings/target-pressure-rate</property>
-    <factor>5.8</factor>
-    <step>0.017241379</step>
+    <property>/autopilot/KAP140/settings/target-pressure-rate-fpm</property>
+    <factor>-0.0001</factor>
+    <step>1000</step>
+    <bias>999.5</bias>
     <axis>
       <x>1</x>
       <y>0</y>
       <z>0</z>
     </axis>
   </animation>
+
 <!-- alt-setting -->
   <animation>
     <type>select</type>

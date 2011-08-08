@@ -88,14 +88,14 @@ void main (void)
     float transparency_offset = clamp(refl_correction, -1.0, 1.0);
     float reflFactor = 0.0;
 
-    if(reflect_map > 0){
+    if(reflect_map > 0.0){
         // map the shininess of the object with user input 
         vec4 map = texture2D(Map, gl_TexCoord[0].st);
         //float pam = (map.a * -2) + 1; //reverse map
         reflFactor = map.a + transparency_offset;
     } else {
         // set the reflectivity proportional to shininess with user input 
-        reflFactor = (gl_FrontMaterial.shininess / 128) * ns.a + transparency_offset;
+        reflFactor = (gl_FrontMaterial.shininess / 128.0) * ns.a + transparency_offset;
     }
 
     reflFactor = clamp(reflFactor, 0.0, 1.0);

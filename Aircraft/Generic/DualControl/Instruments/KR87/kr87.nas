@@ -3,7 +3,7 @@
 ## Nasal for dual control of a KR-87 ADF radio over the multiplayer
 ## network.
 ##
-##  Copyright (C) 2007 - 2010  Anders Gidenstam  (anders(at)gidenstam.org)
+##  Copyright (C) 2007 - 2011  Anders Gidenstam  (anders(at)gidenstam.org)
 ##  This file is licensed under the GPL license version 2 or later.
 ##
 ###############################################################################
@@ -116,21 +116,21 @@ var kr87 = [master_kr87.new(0), master_kr87.new(1)];
 
 ###########################################################################
 # n - ADF#
-swap = func(n) {
+var swap = func(n) {
   kr87[n].swap();
 }
 
 ###########################################################################
 # n - ADF#
 # d - adjustment
-adjust_frequency = func(n, d) {
+var adjust_frequency = func(n, d) {
   kr87[n].adjust_frequency(d);
 }
 
 ###########################################################################
 # n - ADF#
 # p - pressed
-toggle_BFO = func(n) {
+var toggle_BFO = func(n) {
   kr87[n].toggle_BFO();
 }
 

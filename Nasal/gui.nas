@@ -1223,7 +1223,7 @@ var common_aircraft_keys = {
         { name: "g/G",       desc: "gear up/down" },
         { name: "h",         desc: "cycle HUD (head up display)" },
         { name: "H",         desc: "cycle HUD brightness" },
-        { name: "i/Shift-i", desc: "normal/alternative HUD" },
+       #{ name: "i/Shift-i", desc: "normal/alternative HUD" },
        #{ name: "j",         desc: "decrease spoilers" },
        #{ name: "k",         desc: "increase spoilers" },
         { name: "l",         desc: "toggle tail-wheel lock" },

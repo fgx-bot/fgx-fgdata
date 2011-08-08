@@ -26,8 +26,8 @@ void main(void)
 
     // map noise vectors
     vec4 noisevec = texture3D(Noise, rawpos.xyz);
-    float noise0 = (noisevec.r * 2) - 1;
-    float noise1 =(noisevec.g * 2) - 1;
+    float noise0 = (noisevec.r * 2.0) - 1.0;
+    float noise1 =(noisevec.g * 2.0) - 1.0;
     vec2 noise2 = noisevec.xy;
 
     gl_TexCoord[0] = gl_TextureMatrix[0] * gl_MultiTexCoord0;
@@ -39,7 +39,7 @@ void main(void)
     // Find a rotation matrix that rotates 1,0,0 into u. u, r and w are
     // the columns of that matrix.
     vec3 absu = abs(u);
-    vec3 r = normalize(vec3(-u.y, u.x, 0));
+    vec3 r = normalize(vec3(-u.y, u.x, 0.0));
     vec3 w = cross(u, r);
 
     // Do the matrix multiplication by [ u r w pos]. Scale
@@ -50,11 +50,11 @@ void main(void)
     gl_Position.xyz += gl_Vertex.z * w * scale_z;
 
     // Adjust the position post-rotation and scaling
-    gl_Position.yz -= 3/2;
+    gl_Position.yz -= 3.0/2.0;
 
     // Offset in y and z directions using a random noise factor
-    float offset_Y = (noise0 * offset_y) + offset_y/2;
-    float offset_Z = (noise0 * offset_z) + offset_z/2;
+    float offset_Y = (noise0 * offset_y) + offset_y/2.0;
+    float offset_Z = (noise0 * offset_z) + offset_z/2.0;
 
     distanceFactor = 1.0 - clamp(abs(noise0), fade_min, fade_max);
 //    distanceFactor = 0.5;
@@ -90,7 +90,7 @@ void main(void)
     gl_FrontColor += gl_FrontLightModelProduct.sceneColor;
 
     // As we get within 100m of the sprite, it is faded out. Equally at large distances it also fades out.
-    gl_FrontColor.a = min(smoothstep(10.0, 100.0, fogCoord), 1 - smoothstep(60000.0, 80000.0, fogCoord));
+    gl_FrontColor.a = min(smoothstep(10.0, 100.0, fogCoord), 1.0 - smoothstep(60000.0, 80000.0, fogCoord));
     gl_BackColor = gl_FrontColor;
 
     // Fog doesn't affect clouds as much as other objects.

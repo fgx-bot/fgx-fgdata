@@ -55,7 +55,7 @@ void main()
     fragColor = color * texel + specular;
 	
 	// The lightmap function
-	if ( condition >= 1 ) {
+	if ( condition >= 1.0 ) {
 		vec3 lightmapTexel = texture2D(lightmap_texture, gl_TexCoord[0].st).rgb * lightmap_factor;
 		fragColor.rgb = max(fragColor.rgb, lightmapTexel * gl_FrontMaterial.diffuse.rgb * texel.rgb);
 		}

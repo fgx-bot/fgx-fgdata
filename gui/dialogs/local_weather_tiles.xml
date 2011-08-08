@@ -35,7 +35,7 @@
    <value>Coldfront</value>
    <value>Warmfront</value>
    <value>Tropical</value>
-   <value>Test tile</value>
+   <!--<value>Test tile</value>-->
    <binding>
     <command>dialog-apply</command>
    </binding>

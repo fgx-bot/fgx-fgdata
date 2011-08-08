@@ -162,6 +162,11 @@ Here's a quick syntax summary:
   Contains two properties or a property and value, and is true if the
   properties have equivalent values.
 
+* <not-equals>...</not-equals>
+
+  Contains two properties or a property and value, and is true if the
+  properties have different values.
+
 * <greater-than>...</greater-than>
 
   Contains two properties or a property and a value, and is true if

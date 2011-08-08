@@ -73,64 +73,64 @@
 			</checkbox>
 
 			<!--
+			<group>
+				<layout>hbox</layout>
+				<text>
+				<label>Lighting</label>
+				<halign>left</halign>
+				</text>
+				<hrule>
+				<stretch>true</stretch>
+				</hrule>
+			</group>
 
-	  <group>
-        <layout>hbox</layout>
-	    <text>
-          <label>Lighting</label>
-          <halign>left</halign>
-        </text>
-	    <hrule>
-          <stretch>true</stretch>
-        </hrule>
-	  </group>
+			<checkbox>
+				<halign>left</halign>
+				<label>Sun/Moon horizon effect</label>
+				<property>/sim/rendering/horizon-effect</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+			</checkbox>
+			-->
 
-      <checkbox>
-        <halign>left</halign>
-        <label>Sun/Moon horizon effect</label>
-        <property>/sim/rendering/horizon-effect</property>
-        <binding>
-          <command>dialog-apply</command>
-        </binding>
-      </checkbox>
+			<checkbox>
+				<halign>left</halign>
+				<label>Use point sprites for runway lights (requires restart)</label>
+				<property>/sim/rendering/point-sprites</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+			</checkbox>
 
-      <checkbox>
-        <halign>left</halign>
-        <label>Use point sprites for runway lights</label>
-        <property>/sim/rendering/point-sprites</property>
-        <binding>
-          <command>dialog-apply</command>
-        </binding>
-      </checkbox>
+			<!--
+			<checkbox>
+				<halign>left</halign>
+				<label>Enhanced runway lighting</label>
+				<property>/sim/rendering/enhanced-lighting</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+			</checkbox>
 
-      <checkbox>
-        <halign>left</halign>
-        <label>Enhanced runway lighting</label>
-        <property>/sim/rendering/enhanced-lighting</property>
-        <binding>
-          <command>dialog-apply</command>
-        </binding>
-      </checkbox>
+			<checkbox>
+				<halign>left</halign>
+				<label>Runway light distance attenuation</label>
+				<property>/sim/rendering/distance-attenuation</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+			</checkbox>
 
-      <checkbox>
-        <halign>left</halign>
-        <label>Runway light distance attenuation</label>
-        <property>/sim/rendering/distance-attenuation</property>
-        <binding>
-          <command>dialog-apply</command>
-        </binding>
-      </checkbox>
-
-      <checkbox>
-        <halign>left</halign>
-        <label>Specular reflections on objects</label>
-        <property>/sim/rendering/specular-highlight</property>
-        <binding>
-          <command>dialog-apply</command>
-        </binding>
-      </checkbox>
-
-	  -->
+			<checkbox>
+				<halign>left</halign>
+				<label>Specular reflections on objects</label>
+				<property>/sim/rendering/specular-highlight</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+			</checkbox>
+			-->
 
 			<group>
 				<layout>hbox</layout>
@@ -167,16 +167,16 @@
 
 			<!--
 
-	  <checkbox>
-        <halign>left</halign>
-        <label>Lightning</label>
-        <property>/sim/rendering/lightning-enable</property>
-        <binding>
-          <command>dialog-apply</command>
-        </binding>
-      </checkbox>
+			<checkbox>
+				<halign>left</halign>
+				<label>Lightning</label>
+				<property>/sim/rendering/lightning-enable</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+			</checkbox>
 
-	  -->
+			-->
 
 			<checkbox>
 				<halign>left</halign>
@@ -207,16 +207,16 @@
 				</binding>
 			</checkbox>
 
-                        <checkbox>
-                                <halign>left</halign>
-                                <label>Animated jetways</label>
-                                <name>jetways</name>
-                                <property>/sim/jetways/enabled</property>
-                                <binding>
-                                        <command>dialog-apply</command>
-                                        <object-name>jetways</object-name>
-                                </binding>
-                        </checkbox>
+			<checkbox>
+				<halign>left</halign>
+				<label>Animated jetways</label>
+				<name>jetways</name>
+				<property>/sim/jetways/enabled</property>
+				<binding>
+					<command>dialog-apply</command>
+					<object-name>jetways</object-name>
+				</binding>
+			</checkbox>
 
 			<group>
 				<layout>hbox</layout>
@@ -231,16 +231,16 @@
 
 			<!--
 
-	  <checkbox>
-        <halign>left</halign>
-        <label>2D clouds</label>
-        <property>/sim/rendering/bump-mapping</property>
-        <binding>
-          <command>dialog-apply</command>
-        </binding>
-      </checkbox>
+			<checkbox>
+				<halign>left</halign>
+				<label>2D clouds</label>
+				<property>/sim/rendering/bump-mapping</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+			</checkbox>
 
-	  -->
+			-->
 
 			<checkbox>
 				<halign>left</halign>
@@ -689,8 +689,6 @@
 					<property>/sim/rendering/dome-density</property>
 				</text>
 			</group>
-
-
 
 		</group>
 	</group>

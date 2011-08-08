@@ -1,10 +1,9 @@
 <?xml version="1.0"?>
-<!-- $Id$ -->
 <!--
 
   Zeppelin NT-07 airship flight model for JSBSim.
 
-    Copyright (C) 2009  Anders Gidenstam  (anders(at)gidenstam.org)
+    Copyright (C) 2009 - 2011  Anders Gidenstam  (anders(at)gidenstam.org)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -98,9 +97,6 @@
 
  <documentation>
   Provide exhaust gas temperature in degC.
-  The scale of the EGT instrument does not agree well with the EGT computed
-  by JSBSim.
-  I use a bogus mapping to map the range 200-500 degC to 600-900 degC.
  </documentation>
  <!-- Updated by FlightGear. -->
  <property value="0.0">/engines/engine[0]/egt-degf</property>
@@ -115,9 +111,7 @@
      <independentVar>/engines/engine[0]/egt-degf</independentVar>
      <tableData>
       -148.0  -100.0
-       212.0   100.0
-       392.0   600.0
-       932.0   900.0
+      1832.0  1000.0
      </tableData>
     </table>
    </function>   
@@ -129,9 +123,7 @@
      <independentVar>/engines/engine[1]/egt-degf</independentVar>
      <tableData>
       -148.0  -100.0
-       212.0   100.0
-       392.0   600.0
-       932.0   900.0
+      1832.0  1000.0
      </tableData>
     </table>
    </function>   
@@ -143,9 +135,7 @@
      <independentVar>/engines/engine[2]/egt-degf</independentVar>
      <tableData>
       -148.0  -100.0
-       212.0   100.0
-       392.0   600.0
-       932.0   900.0
+      1832.0  1000.0
      </tableData>
     </table>
    </function>   

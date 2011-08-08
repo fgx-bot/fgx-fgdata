@@ -7,7 +7,6 @@ varying vec3  VTangent;
 varying vec3  VBinormal;
 varying vec3  Normal;
 varying vec4  constantColor;
-varying float bump;
 
 uniform sampler3D NoiseTex;
 uniform sampler2D BaseTex;
@@ -55,17 +54,23 @@ float ray_intersect(sampler2D reliefMap, vec2 dp, vec2 ds)
 
 void main (void)
 {
-	if ( quality_level >= 3.5 ) {
+	float bump = 1.0;
+
+	if ( quality_level >= 3.0 ) {
 		linear_search_steps = 20;
 	}
-	vec2 uv, dp, ds;
+
+	vec2 uv, dp = vec2(0, 0), ds = vec2(0, 0);
 	vec3 N;
-	float d;
-	if ( bump > 0.9 && quality_level >= 2.0 )
+	float d = 0;
+	if ( bump > 0.9 && quality_level >= 2.0 && quality_level < 3.5)
 	{
 		vec3 V = normalize(ecPosition.xyz);
 		float a = dot(VNormal, -V);
 		vec2 s = vec2(dot(V, VTangent), dot(V, VBinormal));
+
+                // prevent a divide by zero
+                if (a > -1e-3 && a < 1e-3) a = 1e-3;
 		s *= depth_factor / a;
 		ds = s;
 		dp = gl_TexCoord[0].st;

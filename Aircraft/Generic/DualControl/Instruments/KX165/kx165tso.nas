@@ -3,7 +3,7 @@
 ## Nasal for dual control of a KX165 NavComm radio over the multiplayer
 ## network.
 ##
-##  Copyright (C) 2007 - 2010  Anders Gidenstam  (anders(at)gidenstam.org)
+##  Copyright (C) 2007 - 2011  Anders Gidenstam  (anders(at)gidenstam.org)
 ##  This file is licensed under the GPL license version 2 or later.
 ##
 ###############################################################################
@@ -150,13 +150,13 @@ var make_slave_to = func(n, airoot) {
 
 ###########################################################################
 # n - NavComm#
-swap_nav = func(n) {
+var swap_nav = func(n) {
   kx165tso[n].swap_nav();
 }
 
 ###########################################################################
 # n - NavComm#
-swap_comm = func(n, b) {
+var swap_comm = func(n, b) {
   kx165tso[n].comm_base.getNode(swap_btn, 1).setValue(b);
   if (b) kx165tso[n].swap_comm();
 }
@@ -164,14 +164,14 @@ swap_comm = func(n, b) {
 ###########################################################################
 # n - NavComm#
 # d - adjustment
-adjust_nav_frequency = func(n, d) {
+var adjust_nav_frequency = func(n, d) {
   kx165tso[n].adjust_nav_frequency(d);
 }
 
 ###########################################################################
 # n - NavComm#
 # d - adjustment
-adjust_comm_frequency = func(n, d) {
+var adjust_comm_frequency = func(n, d) {
   kx165tso[n].adjust_comm_frequency(d);
 }
 

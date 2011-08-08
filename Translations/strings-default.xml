@@ -100,6 +100,7 @@
  <enable-ai-models-desc>Enable AI subsystem (required for multi-player, AI traffic and many other animations)</enable-ai-models-desc>
  <disable-ai-traffic-desc>Disable artificial traffic.</disable-ai-traffic-desc>
  <enable-ai-traffic-desc>Enable artificial traffic.</enable-ai-traffic-desc>
+ <disable-ai-scenarios>Disable all AI scenarios.</disable-ai-scenarios>
  <ai-scenario>Add and enable a new scenario. Multiple options are allowed.</ai-scenario>
  <disable-freeze-desc>Start in a running state</disable-freeze-desc>
  <enable-freeze-desc>Start in a frozen state</enable-freeze-desc>
